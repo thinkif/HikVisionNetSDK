@@ -1,14 +1,12 @@
-﻿using System;
+﻿using HikVisionNetSDK.Common;
+using HikVisionNetSDK.Enums;
+using HikVisionNetSDK.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using HikVisionNetSDK.Common;
-using HikVisionNetSDK.Enums;
-using HikVisionNetSDK.Models;
-using Office365Fx.Core;
 
 namespace HikVisionNetSDK.Services
 {
@@ -36,25 +34,26 @@ namespace HikVisionNetSDK.Services
                 var struLogInfo = new CHCNetSDK.NET_DVR_USER_LOGIN_INFO();
 
                 //设备IP地址或者域名
-                Byte[] byIP = Encoding.Default.GetBytes(request.IP);
-                struLogInfo.sDeviceAddress = new Byte[129];
-                byIP.CopyTo(struLogInfo.sDeviceAddress, 0);
+                struLogInfo.sDeviceAddress = request.IP;
 
                 //设备服务端口号
                 struLogInfo.wPort = (UInt16)request.LoginPort;
 
                 //设备用户名
-                Byte[] byUserName = Encoding.Default.GetBytes(request.UserName);
-                struLogInfo.sUserName = new Byte[64];
-                byUserName.CopyTo(struLogInfo.sUserName, 0);
+                struLogInfo.sUserName = request.UserName;
 
                 //设备密码
-                Byte[] byPassword = Encoding.Default.GetBytes(request.Password);
-                struLogInfo.sPassword = new Byte[64];
-                byPassword.CopyTo(struLogInfo.sPassword, 0);
+                struLogInfo.sPassword = request.Password;
 
                 struLogInfo.cbLoginResult = new CHCNetSDK.LOGINRESULTCALLBACK(LoginCallBack);
                 struLogInfo.bUseAsynLogin = false;
+
+                // 登录模式(不同模式具体含义详见“Remarks”说明)：0- SDK私有协议，1- ISAPI协议
+                // 设备登录模式有两种：SDK私有协议和ISAPI协议。
+                // 1) SDK私有协议是我司私有的TCP / IP协议，登录使用的是设备服务端口（默认为8000），我司网络设备除特殊产品外基本都支持该协议方式登录，因此一般建议使用SDK私有协议模式登录。
+                // 2) ISAPI协议是基于标准HTTP REST架构，HTTP协议或者HTTPS协议访问设备，登录使用的是设备HTTP端口（默认为80）或者HTTPS端口（默认为443）。不支持SDK私有协议的设备如猎鹰、刀锋等采用ISAPI协议的方式登录。
+                // 使用ISAPI协议方式登录时bySupportLock、byRetryLoginTime、byPasswordLevel、byProxyType、dwSurplusLockTime、byCharEncodeType、bySupportDev5这些参数都不支持。
+                struLogInfo.byLoginMode = request.LoginMode;
 
                 _deviceInfo = new CHCNetSDK.NET_DVR_DEVICEINFO_V40();
                 _userId = CHCNetSDK.NET_DVR_Login_V40(ref struLogInfo, ref _deviceInfo);
@@ -376,20 +375,20 @@ namespace HikVisionNetSDK.Services
                 struDownPara.dwChannel = (UInt32)_loginRequest.ChannelNo;
 
                 //设置下载的开始时间
-                struDownPara.struStartTime.dwYear = (UInt32)request.From.Year;
-                struDownPara.struStartTime.dwMonth = (UInt32)request.From.Month;
-                struDownPara.struStartTime.dwDay = (UInt32)request.From.Day;
-                struDownPara.struStartTime.dwHour = (UInt32)request.From.Hour;
-                struDownPara.struStartTime.dwMinute = (UInt32)request.From.Minute;
-                struDownPara.struStartTime.dwSecond = (UInt32)request.From.Second;
+                struDownPara.struStartTime.dwYear = request.From.Year;
+                struDownPara.struStartTime.dwMonth = request.From.Month;
+                struDownPara.struStartTime.dwDay = request.From.Day;
+                struDownPara.struStartTime.dwHour = request.From.Hour;
+                struDownPara.struStartTime.dwMinute = request.From.Minute;
+                struDownPara.struStartTime.dwSecond = request.From.Second;
 
                 //设置下载的结束时间
-                struDownPara.struStopTime.dwYear = (UInt32)request.To.Year;
-                struDownPara.struStopTime.dwMonth = (UInt32)request.To.Month;
-                struDownPara.struStopTime.dwDay = (UInt32)request.To.Day;
-                struDownPara.struStopTime.dwHour = (UInt32)request.To.Hour;
-                struDownPara.struStopTime.dwMinute = (UInt32)request.To.Minute;
-                struDownPara.struStopTime.dwSecond = (UInt32)request.To.Second;
+                struDownPara.struStopTime.dwYear = request.To.Year;
+                struDownPara.struStopTime.dwMonth = request.To.Month;
+                struDownPara.struStopTime.dwDay = request.To.Day;
+                struDownPara.struStopTime.dwHour = request.To.Hour;
+                struDownPara.struStopTime.dwMinute = request.To.Minute;
+                struDownPara.struStopTime.dwSecond = request.To.Second;
 
                 var m_lDownHandle = CHCNetSDK.NET_DVR_GetFileByTime_V40(_userId, request.FilePath, ref struDownPara);
                 if (m_lDownHandle < 0)
@@ -472,19 +471,19 @@ namespace HikVisionNetSDK.Services
 
                 lpBackupByTime.lChannel = _loginRequest.ChannelNo;
 
-                lpBackupByTime.struStartTime.dwYear = (UInt32)from.Year;
-                lpBackupByTime.struStartTime.dwMonth = (UInt32)from.Month;
-                lpBackupByTime.struStartTime.dwDay = (UInt32)from.Day;
-                lpBackupByTime.struStartTime.dwHour = (UInt32)from.Hour;
-                lpBackupByTime.struStartTime.dwMinute = (UInt32)from.Minute;
-                lpBackupByTime.struStartTime.dwSecond = (UInt32)from.Second;
+                lpBackupByTime.struStartTime.dwYear = from.Year;
+                lpBackupByTime.struStartTime.dwMonth = from.Month;
+                lpBackupByTime.struStartTime.dwDay = from.Day;
+                lpBackupByTime.struStartTime.dwHour = from.Hour;
+                lpBackupByTime.struStartTime.dwMinute = from.Minute;
+                lpBackupByTime.struStartTime.dwSecond = from.Second;
 
-                lpBackupByTime.struStopTime.dwYear = (UInt32)to.Year;
-                lpBackupByTime.struStopTime.dwMonth = (UInt32)to.Month;
-                lpBackupByTime.struStopTime.dwDay = (UInt32)to.Day;
-                lpBackupByTime.struStopTime.dwHour = (UInt32)to.Hour;
-                lpBackupByTime.struStopTime.dwMinute = (UInt32)to.Minute;
-                lpBackupByTime.struStopTime.dwSecond = (UInt32)to.Second;
+                lpBackupByTime.struStopTime.dwYear = to.Year;
+                lpBackupByTime.struStopTime.dwMonth = to.Month;
+                lpBackupByTime.struStopTime.dwDay = to.Day;
+                lpBackupByTime.struStopTime.dwHour = to.Hour;
+                lpBackupByTime.struStopTime.dwMinute = to.Minute;
+                lpBackupByTime.struStopTime.dwSecond = to.Second;
 
                 lpBackupByTime.byDiskDes = availableDesc;   //备份磁盘的描述
                 lpBackupByTime.byWithPlayer = 0;            //是否备份播放器，0-不备份，1-备份
@@ -652,17 +651,17 @@ namespace HikVisionNetSDK.Services
                 struFileCond_V40.dwIsLocked = 0xff; //0-未锁定文件，1-锁定文件，0xff表示所有文件（包括锁定和未锁定）
 
                 //设置录像查找的开始时间
-                struFileCond_V40.struStartTime.dwYear = (UInt32)date.Year;
-                struFileCond_V40.struStartTime.dwMonth = (UInt32)date.Month;
-                struFileCond_V40.struStartTime.dwDay = (UInt32)date.Day;
+                struFileCond_V40.struStartTime.dwYear = date.Year;
+                struFileCond_V40.struStartTime.dwMonth = date.Month;
+                struFileCond_V40.struStartTime.dwDay = date.Day;
                 struFileCond_V40.struStartTime.dwHour = 0;
                 struFileCond_V40.struStartTime.dwMinute = 0;
                 struFileCond_V40.struStartTime.dwSecond = 0;
 
                 //设置录像查找的结束时间
-                struFileCond_V40.struStopTime.dwYear = (UInt32)date.Year;
-                struFileCond_V40.struStopTime.dwMonth = (UInt32)date.Month;
-                struFileCond_V40.struStopTime.dwDay = (UInt32)date.Day;
+                struFileCond_V40.struStopTime.dwYear = date.Year;
+                struFileCond_V40.struStopTime.dwMonth = date.Month;
+                struFileCond_V40.struStopTime.dwDay = date.Day;
                 struFileCond_V40.struStopTime.dwHour = 23;
                 struFileCond_V40.struStopTime.dwMinute = 59;
                 struFileCond_V40.struStopTime.dwSecond = 59;

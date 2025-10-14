@@ -53,10 +53,10 @@ namespace RTUDriverTests
 
             var loginResult = cameraService.Login(new CameraLoginRequest()
             {
-                IP = "192.168.8.170",
+                IP = "192.168.99.55",
                 LoginPort = 8000,
                 UserName = "admin",
-                Password = "lct12345",
+                Password = "mpo@cyzc",
                 ChannelNo = 1
             });
             Assert.True(loginResult.Success);

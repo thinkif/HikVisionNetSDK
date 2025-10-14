@@ -52,6 +52,12 @@ namespace HikVisionNetSDK.Codec
         /// 通道号
         /// </summary>
         public Int32 ChannelNo { get; set; }
+
+        /// <summary>
+        /// 码流类型：1-主码流，2-子码流，3-第三码流，默认是主码流
+        /// </summary>
+        public int StreamType { get; set; } = 1;
+
         /// <summary>
         /// 画面宽度
         /// </summary>

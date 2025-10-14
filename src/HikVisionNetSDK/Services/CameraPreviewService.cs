@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using HikVisionNetSDK.Common;
 using HikVisionNetSDK.Enums;
-using Office365Fx.Core;
 
 namespace HikVisionNetSDK.Services
 {

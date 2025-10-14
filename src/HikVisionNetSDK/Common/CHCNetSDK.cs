@@ -11,6 +11,7 @@ namespace HikVisionNetSDK.Common
         {
         }
 
+        public const int NET_DVR_CHECK_USER_STATUS = 20005; //检测设备是否在线
         //SDK类型
         public const int SDK_PLAYMPEG4 = 1;//播放库
         public const int SDK_HCNETSDK = 2;//网络库
@@ -30,7 +31,7 @@ namespace HikVisionNetSDK.Common
         public const int MAX_NUMBER_LEN = 32;	//号码最大长度
         public const int MAX_NAME_LEN = 128; //设备名称最大长度
 
-        public const int MAX_TIMESEGMENT_V30 = 8;//9000设备最大时间段数
+
         public const int MAX_TIMESEGMENT = 4;//8000设备最大时间段数
         public const int MAX_ICR_NUM = 8;   //抓拍机红外滤光片预置点数
 
@@ -87,20 +88,20 @@ namespace HikVisionNetSDK.Common
         public const int MAX_VIDEOOUT = 2;//8000设备的视频输出数
 
         public const int MAX_PRESET_V30 = 256;// 9000设备支持的云台预置点数
-        public const int MAX_TRACK_V30 = 256;// 9000设备支持的云台轨迹数
+        public const int MAX_TRACK_V30 = 256;// 9000设备支持的花样扫描数
         public const int MAX_CRUISE_V30 = 256;// 9000设备支持的云台巡航数
-        public const int MAX_PRESET = 128;// 8000设备支持的云台预置点数 
-        public const int MAX_TRACK = 128;// 8000设备支持的云台轨迹数
-        public const int MAX_CRUISE = 128;// 8000设备支持的云台巡航数 
+        public const int MAX_PRESET = 128;// 8000设备支持的云台预置点数
+        public const int MAX_TRACK = 128;// 8000设备支持的花样扫描数
+        public const int MAX_CRUISE = 128;// 8000设备支持的云台巡航数
 
-        public const int CRUISE_MAX_PRESET_NUMS = 32;// 一条巡航最多的巡航点 
+        public const int CRUISE_MAX_PRESET_NUMS = 32;// 一条巡航最多的巡航点
 
         public const int MAX_SERIAL_PORT = 8;//9000设备支持232串口数
-        public const int MAX_PREVIEW_MODE = 8;// 设备支持最大预览模式数目 1画面,4画面,9画面,16画面.... 
-        public const int MAX_MATRIXOUT = 16;// 最大模拟矩阵输出个数 
-        public const int LOG_INFO_LEN = 11840; // 日志附加信息 
-        public const int DESC_LEN = 16;// 云台描述字符串长度 
-        public const int PTZ_PROTOCOL_NUM = 200;// 9000最大支持的云台协议数 
+        public const int MAX_PREVIEW_MODE = 8;// 设备支持最大预览模式数目 1画面,4画面,9画面,16画面....
+        public const int MAX_MATRIXOUT = 16;// 最大模拟矩阵输出个数
+        public const int LOG_INFO_LEN = 11840; // 日志附加信息
+        public const int DESC_LEN = 16;// 云台描述字符串长度
+        public const int PTZ_PROTOCOL_NUM = 200;// 9000最大支持的云台协议数
 
         public const int MAX_AUDIO = 1;//8000语音对讲通道数
         public const int MAX_AUDIO_V30 = 2;//9000语音对讲通道数
@@ -109,7 +110,7 @@ namespace HikVisionNetSDK.Common
         public const int MAX_ALARMOUT = 4;//8000设备最大报警输出数
         //9000 IPC接入
         public const int MAX_ANALOG_CHANNUM = 32;//最大32个模拟通道
-        public const int MAX_ANALOG_ALARMOUT = 32; //最大32路模拟报警输出 
+        public const int MAX_ANALOG_ALARMOUT = 32; //最大32路模拟报警输出
         public const int MAX_ANALOG_ALARMIN = 32;//最大32路模拟报警输入
 
         public const int MAX_IP_DEVICE = 32;//允许接入的最大IP设备数
@@ -168,14 +169,14 @@ namespace HikVisionNetSDK.Common
         public const int MAX_TRANSPARENT_ACCESS_NUM = 4;   //每个监听端口允许接入的最大主机数
 
         //ITS
-        public const int MAX_PARKING_STATUS = 8;    //车位状态 0代表无车，1代表有车，2代表压线(优先级最高), 3特殊车位 
+        public const int MAX_PARKING_STATUS = 8;    //车位状态 0代表无车，1代表有车，2代表压线(优先级最高), 3特殊车位
         public const int MAX_PARKING_NUM = 4;    //一个通道最大4个车位 (从左到右车位 数组0～3)
 
         public const int MAX_ITS_SCENE_NUM = 16;   //最大场景数量
         public const int MAX_SCENE_TIMESEG_NUM = 16;   //最大场景时间段数量
         public const int MAX_IVMS_IP_CHANNEL = 128;  //最大IP通道数
         public const int DEVICE_ID_LEN = 48;   //设备编号长度
-        public const int MONITORSITE_ID_LEN = 48;   //监测点编号长度
+        public const int MONITORSITE_ID_LEN = 48;   //显示点编号长度
         public const int MAX_AUXAREA_NUM = 16;   //辅助区域最大数目
         public const int MAX_SLAVE_CHANNEL_NUM = 16;   //最大从通道数量
 
@@ -185,7 +186,7 @@ namespace HikVisionNetSDK.Common
         public const int MAX_SERVERDOMAIN_LEN = 128; //服务器域名最大长度
         public const int MAX_AUTHENTICATEID_LEN = 64; //认证ID最大长度
         public const int MAX_AUTHENTICATEPASSWD_LEN = 32; //认证密码最大长度
-        public const int MAX_SERVERNAME_LEN = 64; //最大服务器用户名 
+        public const int MAX_SERVERNAME_LEN = 64; //最大服务器用户名
         public const int MAX_COMPRESSIONID_LEN = 64; //编码ID的最大长度
         public const int MAX_SIPSERVER_ADDRESS_LEN = 128; //SIP服务器地址支持域名和IP地址
         //压线报警
@@ -198,7 +199,7 @@ namespace HikVisionNetSDK.Common
 
         public const int THERMOMETRY_ALARMRULE_NUM = 40; //热成像报警规则数
 
-        public const int ACS_CARD_NO_LEN = 32; //门禁卡号长度    
+        public const int ACS_CARD_NO_LEN = 32; //门禁卡号长度
         public const int MAX_ID_NUM_LEN = 32;  //最大身份证号长度
         public const int MAX_ID_NAME_LEN = 128;   //最大姓名长度
         public const int MAX_ID_ADDR_LEN = 280;   //最大住址长度
@@ -212,7 +213,7 @@ namespace HikVisionNetSDK.Common
         public const int MAX_INTER_LOCK_DOOR_NUM = 8;   //一个多门互锁组中最大互锁门数
         public const int MAX_CASE_SENSOR_NUM = 8;  //最大case sensor触发器数
         public const int MAX_DOOR_NUM_256 = 256; //最大门数
-        public const int MAX_READER_ROUTE_NUM = 16;  //最大刷卡循序路径 
+        public const int MAX_READER_ROUTE_NUM = 16;  //最大刷卡循序路径
         public const int MAX_FINGER_PRINT_NUM = 10;  //最大指纹个数
         public const int MAX_CARD_READER_NUM_512 = 512; //最大读卡器数
         public const int NET_SDK_MULTI_CARD_GROUP_NUM_20 = 20;   //单门最大多重卡组数
@@ -227,7 +228,16 @@ namespace HikVisionNetSDK.Common
         public const int MAX_DEV_NUMBER_LEN = 32;   //设备编号最大长度
         public const int LOCK_NAME_LEN = 32;  //锁名称
 
+        public const int GROUP_NAME_LEN = 32;  //群组名称长度
+        public const int GROUP_COMBINATION_NUM = 8;   //群组组合数
+        public const int MULTI_CARD_GROUP_NUM = 4;   //单门最大多重卡组数
+
         public const int NET_SDK_EMPLOYEE_NO_LEN = 32;  //工号长度
+        public const int NET_SDK_UUID_LEN = 36;  //UUID长度
+        public const int NET_SDK_EHOME_KEY_LEN = 32;  //EHome Key长度
+
+        public const int NET_DEV_NAME_LEN = 64;  //设备名称长度
+        public const int NET_DEV_TYPE_NAME_LEN = 64; //设备类型名称长度
 
         public const int VCA_MAX_POLYGON_POINT_NUM = 10;//检测区域最多支持10个点的多边形
         public const int MAX_RULE_NUM = 8;//最多规则条数
@@ -239,9 +249,10 @@ namespace HikVisionNetSDK.Common
         public const int MAX_PLATE_NUM = 3;//车牌个数
         public const int MAX_MASK_REGION_NUM = 4;//最多四个屏蔽区域
         public const int MAX_SEGMENT_NUM = 6;//摄像机标定最大样本线数目
-        public const int MIN_SEGMENT_NUM = 3;//摄像机标定最小样本线数目  
+        public const int MIN_SEGMENT_NUM = 3;//摄像机标定最小样本线数目
         public const int MAX_CATEGORY_LEN = 8;       //车牌附加信息最大字符
         public const int SERIAL_NO_LEN = 16;      //泊车位编号
+        public const int ILLEGAL_LEN = 32;      //违法代码长度
 
         //码流连接方式
         public const int NORMALCONNECT = 1;
@@ -349,6 +360,7 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_RTSP_SDK_ERROR = 84;//加载高清IPC通讯库StreamTransClient.dll失败
         public const int NET_DVR_CONVERT_SDK_ERROR = 85;//加载转码库失败
         public const int NET_DVR_IPC_COUNT_OVERFLOW = 86;//超出最大的ip接入通道数
+        public const int NET_DVR_USER_LOCKED = 153;
 
         public const int NET_PLAYM4_NOERROR = 500;//no error
         public const int NET_PLAYM4_PARA_OVER = 501;//input parameter is invalid
@@ -397,20 +409,20 @@ namespace HikVisionNetSDK.Common
 
         /**********************云台控制命令 begin*************************/
         public const int LIGHT_PWRON = 2;// 接通灯光电源
-        public const int WIPER_PWRON = 3;// 接通雨刷开关 
+        public const int WIPER_PWRON = 3;// 接通雨刷开关
         public const int FAN_PWRON = 4;// 接通风扇开关
         public const int HEATER_PWRON = 5;// 接通加热器开关
         public const int AUX_PWRON1 = 6;// 接通辅助设备开关
-        public const int AUX_PWRON2 = 7;// 接通辅助设备开关 
-        public const int SET_PRESET = 8;// 设置预置点 
-        public const int CLE_PRESET = 9;// 清除预置点 
+        public const int AUX_PWRON2 = 7;// 接通辅助设备开关
+        public const int SET_PRESET = 8;// 设置预置点
+        public const int CLE_PRESET = 9;// 清除预置点
 
         public const int ZOOM_IN = 11;// 焦距以速度SS变大(倍率变大)
         public const int ZOOM_OUT = 12;// 焦距以速度SS变小(倍率变小)
-        public const int FOCUS_NEAR = 13;// 焦点以速度SS前调 
+        public const int FOCUS_NEAR = 13;// 焦点以速度SS前调
         public const int FOCUS_FAR = 14;// 焦点以速度SS后调
         public const int IRIS_OPEN = 15;// 光圈以速度SS扩大
-        public const int IRIS_CLOSE = 16;// 光圈以速度SS缩小 
+        public const int IRIS_CLOSE = 16;// 光圈以速度SS缩小
 
         public const int TILT_UP = 21;/* 云台以SS的速度上仰 */
         public const int TILT_DOWN = 22;/* 云台以SS的速度下俯 */
@@ -426,16 +438,16 @@ namespace HikVisionNetSDK.Common
         public const int SET_SEQ_DWELL = 31;/* 设置巡航点停顿时间 */
         public const int SET_SEQ_SPEED = 32;/* 设置巡航速度 */
         public const int CLE_PRE_SEQ = 33;/* 将预置点从巡航序列中删除 */
-        public const int STA_MEM_CRUISE = 34;/* 开始记录轨迹 */
-        public const int STO_MEM_CRUISE = 35;/* 停止记录轨迹 */
-        public const int RUN_CRUISE = 36;/* 开始轨迹 */
+        public const int STA_MEM_CRUISE = 34;/* 开始记录 */
+        public const int STO_MEM_CRUISE = 35;/* 停止记录 */
+        public const int RUN_CRUISE = 36;/* 开始 */
         public const int RUN_SEQ = 37;/* 开始巡航 */
         public const int STOP_SEQ = 38;/* 停止巡航 */
         public const int GOTO_PRESET = 39;/* 快球转到预置点 */
         /**********************云台控制命令 end*************************/
 
         /*************************************************
-        回放时播放控制命令宏定义 
+        回放时播放控制命令宏定义
         NET_DVR_PlayBackControl
         NET_DVR_PlayControlLocDisplay
         NET_DVR_DecPlayBackCtrl的宏定义
@@ -618,18 +630,18 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_GET_PTZSCOPE = 294;//云台获取PTZ范围
 
         public const int NET_DVR_GET_AP_INFO_LIST = 305;//获取无线网络资源参数
-        public const int NET_DVR_SET_WIFI_CFG = 306;//设置IP监控设备无线参数
-        public const int NET_DVR_GET_WIFI_CFG = 307;//获取IP监控设备无线参数
-        public const int NET_DVR_SET_WIFI_WORKMODE = 308;//设置IP监控设备网口工作模式参数
-        public const int NET_DVR_GET_WIFI_WORKMODE = 309;//获取IP监控设备网口工作模式参数 
+        public const int NET_DVR_SET_WIFI_CFG = 306;//设置IP布防设备无线参数
+        public const int NET_DVR_GET_WIFI_CFG = 307;//获取IP布防设备无线参数
+        public const int NET_DVR_SET_WIFI_WORKMODE = 308;//设置IP布防设备网口工作模式参数
+        public const int NET_DVR_GET_WIFI_WORKMODE = 309;//获取IP布防设备网口工作模式参数
         public const int NET_DVR_GET_WIFI_STATUS = 310;	//获取设备当前wifi连接状态
 
         /***************************智能服务器 begin *****************************/
         //智能设备类型
-        public const int DS6001_HF_B = 60;//行为分析：DS6001-HF/B
+        public const int DS6001_HF_B = 60;//异常行为识别：DS6001-HF/B
         public const int DS6001_HF_P = 61;//车牌识别：DS6001-HF/P
-        public const int DS6002_HF_B = 62;//双机跟踪：DS6002-HF/B
-        public const int DS6101_HF_B = 63;//行为分析：DS6101-HF/B
+        public const int DS6002_HF_B = 62;//双机：DS6002-HF/B
+        public const int DS6101_HF_B = 63;//异常行为识别：DS6101-HF/B
         public const int IDS52XX = 64;//智能分析仪IVMS
         public const int DS9000_IVS = 65;//9000系列智能DVR
         public const int DS8004_AHL_A = 66;//智能ATM, DS8004AHL-S/A
@@ -637,15 +649,15 @@ namespace HikVisionNetSDK.Common
 
         //能力获取命令
         public const int VCA_DEV_ABILITY = 256;//设备智能分析的总能力
-        public const int VCA_CHAN_ABILITY = 272;//行为分析能力
+        public const int VCA_CHAN_ABILITY = 272;//异常行为识别能力
         public const int MATRIXDECODER_ABILITY = 512;//多路解码器显示、解码能力
         //获取/设置大接口参数配置命令
         //车牌识别（NET_VCA_PLATE_CFG）
         public const int NET_DVR_SET_PLATECFG = 150;//设置车牌识别参数
         public const int NET_DVR_GET_PLATECFG = 151;//获取车牌识别参数
         //行为对应（NET_VCA_RULECFG）
-        public const int NET_DVR_SET_RULECFG = 152;//设置行为分析规则
-        public const int NET_DVR_GET_RULECFG = 153;//获取行为分析规则
+        public const int NET_DVR_SET_RULECFG = 152;//设置异常行为识别规则
+        public const int NET_DVR_GET_RULECFG = 153;//获取异常行为识别规则
 
         //双摄像机标定参数（NET_DVR_LF_CFG）
         public const int NET_DVR_SET_LF_CFG = 160;//设置双摄像机的配置参数
@@ -683,7 +695,7 @@ namespace HikVisionNetSDK.Common
 
         // IVMS 回放检索
         public const int NET_DVR_IVMS_SET_SEARCHCFG = 178;//设置IVMS回放检索参数
-        public const int NET_DVR_IVMS_GET_SEARCHCFG = 179;//获取IVMS回放检索参数     
+        public const int NET_DVR_IVMS_GET_SEARCHCFG = 179;//获取IVMS回放检索参数
 
         /***************************DS9000新增命令(_V30) begin *****************************/
         //网络(NET_DVR_NETCFG_V30结构)
@@ -714,8 +726,8 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_SET_DDNSCFG_V30 = 1011;//设置DDNS(9000扩展)
 
         //EMAIL功能(NET_DVR_EMAILCFG_V30结构)
-        public const int NET_DVR_GET_EMAILCFG_V30 = 1012;//获取EMAIL参数 
-        public const int NET_DVR_SET_EMAILCFG_V30 = 1013;//设置EMAIL参数 
+        public const int NET_DVR_GET_EMAILCFG_V30 = 1012;//获取EMAIL参数
+        public const int NET_DVR_SET_EMAILCFG_V30 = 1013;//设置EMAIL参数
 
         //巡航参数 (NET_DVR_CRUISE_PARA结构)
         public const int NET_DVR_GET_CRUISE = 1020;
@@ -766,19 +778,19 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_SET_PREVIEWCFG_AUX_V30 = 1047;//设置辅助预览参数
 
         //IP接入配置参数 （NET_DVR_IPPARACFG结构）
-        public const int NET_DVR_GET_IPPARACFG = 1048; //获取IP接入配置信息 
+        public const int NET_DVR_GET_IPPARACFG = 1048; //获取IP接入配置信息
         public const int NET_DVR_SET_IPPARACFG = 1049;//设置IP接入配置信息
 
         //IP接入配置参数 （NET_DVR_IPPARACFG_V40结构）
-        public const int NET_DVR_GET_IPPARACFG_V40 = 1062; //获取IP接入配置信息 
+        public const int NET_DVR_GET_IPPARACFG_V40 = 1062; //获取IP接入配置信息
         public const int NET_DVR_SET_IPPARACFG_V40 = 1063;//设置IP接入配置信息
 
         //IP报警输入接入配置参数 （NET_DVR_IPALARMINCFG结构）
-        public const int NET_DVR_GET_IPALARMINCFG = 1050; //获取IP报警输入接入配置信息 
+        public const int NET_DVR_GET_IPALARMINCFG = 1050; //获取IP报警输入接入配置信息
         public const int NET_DVR_SET_IPALARMINCFG = 1051; //设置IP报警输入接入配置信息
 
         //IP报警输出接入配置参数 （NET_DVR_IPALARMOUTCFG结构）
-        public const int NET_DVR_GET_IPALARMOUTCFG = 1052;//获取IP报警输出接入配置信息 
+        public const int NET_DVR_GET_IPALARMOUTCFG = 1052;//获取IP报警输出接入配置信息
         public const int NET_DVR_SET_IPALARMOUTCFG = 1053;//设置IP报警输出接入配置信息
 
         //硬盘管理的参数获取 (NET_DVR_HDCFG结构)
@@ -794,7 +806,7 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_SET_COMPRESSCFG_AUD = 1059;//设置设备语音对讲编码参数
 
         //IP接入配置参数 （NET_DVR_IPPARACFG_V31结构）
-        public const int NET_DVR_GET_IPPARACFG_V31 = 1060;//获取IP接入配置信息 
+        public const int NET_DVR_GET_IPPARACFG_V31 = 1060;//获取IP接入配置信息
         public const int NET_DVR_SET_IPPARACFG_V31 = 1061; //设置IP接入配置信息
 
         //设备参数配置 （NET_DVR_DEVICECFG_V40结构）
@@ -809,22 +821,82 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_GET_NETWORK_BONDING = 1254;
         public const int NET_DVR_SET_NETWORK_BONDING = 1255;
 
+
+        //人脸比对库配置
+        public const int NET_DVR_GET_FACELIB_TRIGGER = 3962;   //获取人脸比对库的联动配置
+        public const int NET_DVR_SET_FACELIB_TRIGGER = 3963;   //设置人脸比对库的联动配置
+        public const int NET_DVR_GET_FACELIB_SCHEDULE = 3977; //获取人脸比对库的布防时间配置
+        public const int NET_DVR_SET_FACELIB_SCHEDULE = 3978; //设置人脸比对库的布防时间配置
+
         //NAT映射配置参数 （NET_DVR_NAT_CFG结构）
         public const int NET_DVR_GET_NAT_CFG = 6111;    //获取NAT映射参数
-        public const int NET_DVR_SET_NAT_CFG = 6112;    //设置NAT映射参数  
+        public const int NET_DVR_SET_NAT_CFG = 6112;    //设置NAT映射参数
+
+        //电视墙
+        public const int NET_DVR_SET_WINCFG = 1202;//窗口参数设置
+        public const int NET_DVR_MATRIX_BIGSCREENCFG_GET = 1140; //获取大屏拼接参数
+        public const int NET_DVR_MATRIX_BIGSCREENCFG_SET = 1141; //设置大屏拼接参数
+
+        public const int NET_DVR_MATRIX_WALL_GET = 9002;  //获取电视墙中屏幕参数
+        public const int NET_DVR_MATRIX_WALL_SET = 9001;  //设置电视墙中屏幕参数
+
+        public const int NET_DVR_WALLWIN_GET = 9003;  //获取电视墙窗口参数
+        public const int NET_DVR_WALLWIN_SET = 9004;  //设置电视墙窗口参数
+
+        public const int NET_DVR_WALLWINPARAM_SET = 9005;  //获取电视墙窗口相关参数
+        public const int NET_DVR_WALLWINPARAM_GET = 9006;  //设置电视墙窗口相关参数
+
+        public const int NET_DVR_SWITCH_WIN_TOP = 9017;  //窗口置顶
+        public const int NET_DVR_SWITCH_WIN_BOTTOM = 9018;  //窗口置底
+
+        public const int NET_DVR_GET_VIDEOWALLDISPLAYPOSITION = 1734;//获取显示输出位置参数
+        public const int NET_DVR_SET_VIDEOWALLDISPLAYPOSITION = 1733;//设置显示输出位置参数
+
+        public const int NET_DVR_GET_VIDEOWALLDISPLAYNO = 1732;  //获取设备显示输出号
+
+        public const int NET_DVR_GET_VIDEOWALLWINDOWPOSITION = 1735; //获取电视墙窗口参数
+        public const int NET_DVR_SET_VIDEOWALLWINDOWPOSITION = 1736; //设置电视墙窗口参数
+
+        public const int NET_DVR_GET_CHAN_RELATION = 9209;     //获取编码通道关联资源参数
+        public const int NET_DVR_SET_CHAN_RELATION = 9210;     //设置编码通道关联资源参数
+        public const int NET_DVR_GET_ALL_CHAN_RELATION = 9211; //获取所有编码通道关联资源参数
+
+        public const int NET_DVR_GET_VW_SCENE_PARAM = 1746; //获取电视墙场景模式参数
+        public const int NET_DVR_SET_VW_SCENE_PARAM = 1747; //设置电视墙场景模式参数
+
+        public const int NET_DVR_GET_OUTPUT_PIC_WIN_CFG = 9202;    //获取输出口图片窗口参数
+        public const int NET_DVR_SET_OUTPUT_PIC_WIN_CFG = 9203;    //设置输出口图片窗口参数
+
+        public const int NET_DVR_GET_OUTPUT_OSD_CFG = 9206;    //获取输出口OSD参数
+        public const int NET_DVR_SET_OUTPUT_OSD_CFG = 9207;    //设置输出口OSD参数
+
+        public const int NET_DVR_SCENE_CONTROL = 1744; //场景控制
+
+
+        public const int NET_DVR_GET_CARD = 2560;
+        public const int NET_DVR_SET_CARD = 2561;
+        public const int NET_DVR_DEL_CARD = 2562;
+        public const int NET_DVR_GET_FINGERPRINT = 2563;
+        public const int NET_DVR_SET_FINGERPRINT = 2564;
+        public const int NET_DVR_DEL_FINGERPRINT = 2565;
+        public const int NET_DVR_GET_FACE = 2566;
+        public const int NET_DVR_SET_FACE = 2567;
+
+        public const int NET_DVR_DEL_FACE_PARAM_CFG = 2509;      //delete face param configure
+        public const int NET_DVR_CAPTURE_FACE_INFO = 2510;       //capture face information
 
         //预置点名称获取与设置
         public const int NET_DVR_GET_PRESET_NAME = 3383;
         public const int NET_DVR_SET_PRESET_NAME = 3382;
 
-        public const int NET_VCA_GET_RULECFG_V41 = 5011; //获取行为分析参数
-        public const int NET_VCA_SET_RULECFG_V41 = 5012; //设置行为分析参数
+        public const int NET_VCA_GET_RULECFG_V41 = 5011; //获取异常行为识别参数
+        public const int NET_VCA_SET_RULECFG_V41 = 5012; //设置异常行为识别参数
 
         public const int NET_DVR_GET_TRAVERSE_PLANE_DETECTION = 3360; //获取越界侦测配置
         public const int NET_DVR_SET_TRAVERSE_PLANE_DETECTION = 3361; //设置越界侦测配置
 
         public const int NET_DVR_GET_THERMOMETRY_ALARMRULE = 3627; //获取预置点测温报警规则配置
-        public const int NET_DVR_SET_THERMOMETRY_ALARMRULE = 3628; //设置预置点测温报警规则配置     
+        public const int NET_DVR_SET_THERMOMETRY_ALARMRULE = 3628; //设置预置点测温报警规则配置
         public const int NET_DVR_GET_THERMOMETRY_TRIGGER = 3632; //获取测温联动配置
         public const int NET_DVR_SET_THERMOMETRY_TRIGGER = 3633; //设置测温联动配置
 
@@ -834,10 +906,29 @@ namespace HikVisionNetSDK.Common
         public const int NET_DVR_SET_MANUALTHERM = 6708; //设置手动测温数据设置
 
         public const int NET_DVR_GET_MULTI_STREAM_COMPRESSIONCFG = 3216; //远程获取多码流压缩参数
-        public const int NET_DVR_SET_MULTI_STREAM_COMPRESSIONCFG = 3217; //远程设置多码流压缩参数 
+        public const int NET_DVR_SET_MULTI_STREAM_COMPRESSIONCFG = 3217; //远程设置多码流压缩参数
 
         public const int NET_DVR_VIDEO_CALL_SIGNAL_PROCESS = 16032;  //可视话对讲信令处理
+
+        public const int NET_DVR_ARM_ALARMHOST_SUBSYSTEM = 2036;//按布防类型对子系统布防
+
+        public const int NET_DVR_GET_MULTI_CARD_CFG_V50 = 2515;    //获取多重卡参数V50
+        public const int NET_DVR_SET_MULTI_CARD_CFG_V50 = 2516;    //设置多重卡参数V50
+
+        public const int NET_DVR_BARRIERGATE_CTRL = 3128; //道闸控制
+
+        public const int NET_DVR_INQUEST_GET_CDW_STATUS = 6350;  //获取审讯机刻录状态-长连接
+
+        public const int NET_DVR_GET_REALTIME_THERMOMETRY = 3629;    //实时温度检测
+
+        public const int NET_DVR_GET_ACS_EVENT = 2514;//设备事件获取
+
+        public const int NET_SDK_GET_NEXT_STATUS_SUCCESS = 1000;
+        public const int NET_SDK_GET_NEXT_STATUS_NEED_WAIT = 1001;
+        public const int NET_SDK_GET_NEXT_STATUS_FINISH = 1002;
+        public const int NET_SDK_GET_NEXT_STATUS_FAILED = 1003;
         /*************************参数配置命令 end*******************************/
+
 
         /************************DVR日志 begin***************************/
         /* 报警 */
@@ -961,6 +1052,23 @@ namespace HikVisionNetSDK.Common
         public const int MINOR_LOGON_CODESPITTER = 169;	/*视频综合平台：登陆码分器*/
         public const int MINOR_LOGOFF_CODESPITTER = 170;	/*视频综合平台：退出码分器*/
 
+        //2010-12-16 报警板日志
+        public const int MINOR_REMOTE_BYPASS = 0xd0;    /* 远程旁路*/
+        public const int MINOR_REMOTE_UNBYPASS = 0xd1;    /* 远程旁路恢复*/
+        public const int MINOR_REMOTE_SET_ALARMIN_CFG = 0xd2;    /* 远程设置报警输入参数*/
+        public const int MINOR_REMOTE_GET_ALARMIN_CFG = 0xd3;    /* 远程获取报警输入参数*/
+        public const int MINOR_REMOTE_SET_ALARMOUT_CFG = 0xd4;    /* 远程设置报警输出参数*/
+        public const int MINOR_REMOTE_GET_ALARMOUT_CFG = 0xd5;    /* 远程获取报警输出参数*/
+        public const int MINOR_REMOTE_ALARMOUT_OPEN_MAN = 0xd6;    /* 远程手动开启报警输出*/
+        public const int MINOR_REMOTE_ALARMOUT_CLOSE_MAN = 0xd7;    /* 远程手动关闭报警输出*/
+        public const int MINOR_REMOTE_ALARM_ENABLE_CFG = 0xd8;    /* 远程设置报警主机的RS485串口使能状态*/
+        public const int MINOR_DBDATA_OUTPUT = 0xd9;    /* 导出数据库记录 */
+        public const int MINOR_DBDATA_INPUT = 0xda;    /* 导入数据库记录 */
+        public const int MINOR_MU_SWITCH = 0xdb;    /* 级联切换 */
+        public const int MINOR_MU_PTZ = 0xdc;    /* 级联PTZ控制 */
+        public const int MINOR_DELETE_LOGO = 0xdd;    /* 删除logo */
+        public const int MINOR_REMOTE_INQUEST_DEL_FILE = 0xde;       /*远程删除文件*/
+
         /*日志附加信息*/
         //主类型
         public const int MAJOR_INFORMATION = 4;/*附加信息*/
@@ -1001,7 +1109,7 @@ namespace HikVisionNetSDK.Common
 
         /*********************回调函数类型 begin************************/
         public const int COMM_ALARM = 0x1100;//8000报警信息主动上传，对应NET_DVR_ALARMINFO
-        public const int COMM_ALARM_RULE = 0x1102;//行为分析报警信息，对应NET_VCA_RULE_ALARM
+        public const int COMM_ALARM_RULE = 0x1102;//异常行为识别报警信息，对应NET_VCA_RULE_ALARM
         public const int COMM_ALARM_PDC = 0x1103;//人流量统计报警上传，对应NET_DVR_PDC_ALRAM_INFO
         public const int COMM_ALARM_ALARMHOST = 0x1105;//网络报警主机报警上传，对应NET_DVR_ALARMHOST_ALARMINFO
         public const int COMM_ALARM_FACE = 0x1106;//人脸检测识别报警信息，对应NET_DVR_FACEDETECT_ALARM
@@ -1034,7 +1142,7 @@ namespace HikVisionNetSDK.Common
         public const int COMM_ITC_STATUS_DETECT_RESULT = 0x2810;  //实时状态检测结果上传(智能高清IPC)
         public const int COMM_IPC_AUXALARM_RESULT = 0x2820;  //PIR报警、无线报警、呼救报警上传
         public const int COMM_UPLOAD_PICTUREINFO = 0x2900;	 //上传图片信息
-        public const int COMM_SNAP_MATCH_ALARM = 0x2902;  //黑名单比对结果上传
+        public const int COMM_SNAP_MATCH_ALARM = 0x2902;  //禁止名单比对结果上传
         public const int COMM_ITS_PLATE_RESULT = 0x3050;  //终端图片上传
         public const int COMM_ITS_TRAFFIC_COLLECT = 0x3051;  //终端统计数据上传
         public const int COMM_ITS_GATE_VEHICLE = 0x3052;  //出入口车辆抓拍数据上传
@@ -1042,7 +1150,7 @@ namespace HikVisionNetSDK.Common
         public const int COMM_ITS_GATE_COSTITEM = 0x3054;  //出入口过车收费明细 2013-11-19
         public const int COMM_ITS_GATE_HANDOVER = 0x3055; //出入口交接班数据 2013-11-19
         public const int COMM_ITS_PARK_VEHICLE = 0x3056;  //停车场数据上传
-        public const int COMM_ITS_BLACKLIST_ALARM = 0x3057;  //黑名单报警上传
+        public const int COMM_ITS_BLOCKLIST_ALARM = 0x3057;  //禁止名单报警上传
         public const int COMM_ALARM_TPS_REAL_TIME = 0x3081;  //TPS实时过车数据上传
         public const int COMM_ALARM_TPS_STATISTICS = 0x3082;  //TPS统计过车数据上传
         public const int COMM_ALARM_V30 = 0x4000;	 //9000报警信息主动上传
@@ -1053,12 +1161,14 @@ namespace HikVisionNetSDK.Common
         public const int COMM_ALARM_CVR = 0x4005;  //CVR 2.0.X外部报警类型
         public const int COMM_ALARM_HOT_SPARE = 0x4006;  //热备异常报警（N+1模式异常报警）
         public const int COMM_ALARM_V40 = 0x4007;	//移动侦测，视频丢失，遮挡，IO信号量等报警信息主动上传，报警数据为可变长
+        public const int COMM_UPLOAD_HEATMAP_RESULT = 0x4008; //热度图报警上传
 
         public const int COMM_ITS_ROAD_EXCEPTION = 0x4500;	 //路口设备异常报警
         public const int COMM_ITS_EXTERNAL_CONTROL_ALARM = 0x4520;  //外控报警
+        public const int COMM_FIREDETECTION_ALARM = 0x4991;  //火点检测报警
         public const int COMM_SCREEN_ALARM = 0x5000;  //多屏控制器报警类型
         public const int COMM_DVCS_STATE_ALARM = 0x5001;  //分布式大屏控制器报警上传
-        public const int COMM_ALARM_VQD = 0x6000;  //VQD主动报警上传 
+        public const int COMM_ALARM_VQD = 0x6000;  //VQD主动报警上传
         public const int COMM_PUSH_UPDATE_RECORD_INFO = 0x6001;  //推模式录像信息上传
         public const int COMM_DIAGNOSIS_UPLOAD = 0x5100;  //诊断服务器VQD报警上传
         public const int COMM_ALARM_ACS = 0x5002;  //门禁主机报警
@@ -1066,10 +1176,578 @@ namespace HikVisionNetSDK.Common
         public const int COMM_PASSNUM_INFO_ALARM = 0x5201;  //通行人数上报
         public const int COMM_ISAPI_ALARM = 0x6009;
 
+        public const int COMM_THERMOMETRY_ALARM = 0x5212; //温度报警信息
+
         public const int COMM_UPLOAD_AIOP_VIDEO = 0x4021; //设备支持AI开放平台接入，上传视频检测数据
         public const int COMM_UPLOAD_AIOP_PICTURE = 0x4022; //设备支持AI开放平台接入，上传图片检测数据
         public const int COMM_UPLOAD_AIOP_POLLING_SNAP = 0x4023; //设备支持AI开放平台接入，上传轮巡抓图图片检测数据 对应的结构体(NET_AIOP_POLLING_SNAP_HEAD)
         public const int COMM_UPLOAD_AIOP_POLLING_VIDEO = 0x4024; //设备支持AI开放平台接入，上传轮巡视频检测数据 对应的结构体(NET_AIOP_POLLING_VIDEO_HEAD)
+
+
+
+        public const int NET_DVR_JSON_CONFIG = 2550;
+        public const int NET_DVR_FACE_DATA_RECORD = 2551;
+        public const int NET_DVR_FACE_DATA_SEARCH = 2552;
+        public const int NET_DVR_FACE_DATA_MODIFY = 2553;
+
+        public const int NET_DVR_REMOTECONTROL_GATEWAY = 16009;  //远程开锁
+
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_SendWithRecvRemoteConfig(int lHandle, IntPtr lpInBuff, uint dwInBuffSize, IntPtr lpOutBuff, uint dwOutBuffSize, ref uint dwOutDataLen);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_SendWithRecvRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_FACE_RECORD lpInBuff, int dwInBuffSize, ref CHCNetSDK.NET_DVR_FACE_STATUS lpOutBuff, int dwOutBuffSize, IntPtr dwOutDataLen);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_SendWithRecvRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_FINGERPRINT_RECORD lpInBuff, int dwInBuffSize, ref CHCNetSDK.NET_DVR_FINGERPRINT_STATUS lpOutBuff, int dwOutBuffSize, IntPtr dwOutDataLen);
+
+        // 用户调用SendwithRecv接口时，接口返回的状态
+        public enum NET_SDK_SENDWITHRECV_STATUS
+        {
+            NET_SDK_CONFIG_STATUS_SUCCESS = 1000,    // 成功读取到数据，客户端处理完本次数据后需要再次调用NET_DVR_SendWithRecvRemoteConfig获取下一条数据
+            NET_SDK_CONFIG_STATUS_NEEDWAIT,          // 配置等待，客户端可重新NET_DVR_SendWithRecvRemoteConfig
+            NET_SDK_CONFIG_STATUS_FINISH,            // 数据全部取完，此时客户端可调用NET_DVR_StopRemoteConfig结束
+            NET_SDK_CONFIG_STATUS_FAILED,            // 配置失败，客户端可重新NET_DVR_SendWithRecvRemoteConfig
+            NET_SDK_CONFIG_STATUS_EXCEPTION,         // 配置异常，此时客户端可调用NET_DVR_StopRemoteConfig结束
+        }
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_STDXMLConfig(int lUserID, IntPtr lpInputParam, IntPtr lpOutputParam);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_ControlGateway(int lUserID, int lGatewayIndex, uint dwStaic);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_SetDVRMessageCallBack_V50(int iIndex, MSGCallBack fMessageCallBack, IntPtr pUser);
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_JSON_DATA_CFG
+        {
+            public uint dwSize;                    //size of NET_DVR_JSON_DATA_CFG
+            public IntPtr lpJsonData;                //Json data
+            public uint dwJsonDataSize;            //Json data size
+            public IntPtr lpPicData;                //picture data
+            public uint dwPicDataSize;            //picture data size
+            public uint dwInfraredFacePicSize;            //infrared picture data size
+            public IntPtr lpInfraredFacePicBuffer;                //infrared picture data
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 248)]
+            public byte[] byRes;  //reserve
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CAPTURE_FACE_COND
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void init()
+            {
+                byRes = new byte[128];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CAPTURE_FACE_CFG
+        {
+            public int dwSize;
+            public int dwFaceTemplate1Size;//人脸模板1数据大小，等于0时，代表无人脸模板1数据
+            public IntPtr pFaceTemplate1Buffer;//人脸模板1数据缓存（不大于2.5k）
+            public int dwFaceTemplate2Size;//人脸模板2数据大小，等于0时，代表无人脸模板2数据
+            public IntPtr pFaceTemplate2Buffer; //人脸模板2数据缓存（不大于2.5K）
+            public int dwFacePicSize;//人脸图片数据大小，等于0时，代表无人脸图片数据;
+            public IntPtr pFacePicBuffer;//人脸图片数据缓存;
+            public byte byFaceQuality1;//人脸质量，范围1-100
+            public byte byFaceQuality2;//人脸质量，范围1-100
+            public byte byCaptureProgress;    //采集进度，目前只有两种进度值：0-未采集到人脸，100-采集到人脸（只有在进度为100时，才解析人脸信息）
+            public byte byRes1;
+            public int dwInfraredFacePicSize;   //红外人脸图片数据大小，等于0时，代表无人脸图片数据
+            public IntPtr pInfraredFacePicBuffer;      //红外人脸图片数据缓存
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 116, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void init()
+            {
+                byRes = new byte[116];
+            }
+        }
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_CAPTURE_FACE_CFG lpOutBuff, int dwOutBuffSize);
+
+        public const int ERROR_MSG_LEN = 32;
+        public const int MAX_FINGER_PRINT_LEN = 768;
+        public const int NET_DVR_CAPTURE_FINGERPRINT_INFO = 2504;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGERPRINT_STATUS
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo;
+            public byte byCardReaderRecvStatus;//指纹读卡器状态，按字节表示，0-失败，1-成功，2-该指纹模组不在线，3-重试或指纹质量差，4-内存已满，5-已存在该指纹，6-已存在该指纹ID，7-非法指纹ID，8-该指纹模组无需配置
+            public byte byFingerPrintID;//手指编号，有效值范围为1-10
+            public byte byFingerType;//指纹类型  0-普通指纹，1-胁迫指纹
+            public byte byRecvStatus;//主机错误状态：0-成功，1-手指编号错误，2-指纹类型错误，3-卡号错误（卡号规格不符合设备要求），4-指纹未关联工号或卡号（工号或卡号字段为空），5-工号不存在，6-指纹数据长度为0，7-读卡器编号错误，8-工号错误
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ERROR_MSG_LEN)]
+            public byte[] byErrorMsg;//下发错误信息，当byCardReaderRecvStatus为5时，表示已存在指纹对应的卡号
+            public int dwCardReaderNo;//当byCardReaderRecvStatus为5时，表示已存在指纹对应的指纹读卡器编号，可用于下发错误返回。0时表示无错误信息
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20)]
+            public byte[] byRes;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byErrorMsg = new byte[CHCNetSDK.ERROR_MSG_LEN];
+
+                byRes = new byte[20];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGERPRINT_RECORD
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo; //指纹关联的卡号
+            public int dwFingerPrintLen; //指纹数据长度
+            public int dwEnableReaderNo;//需要下发指纹的读卡器编号
+            public byte byFingerPrintID;//手指编号，有效值范围为1-10
+            public byte byFingerType;//指纹类型  0-普通指纹，1-胁迫指纹
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 30)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_FINGER_PRINT_LEN)]
+            public byte[] byFingerData;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 96)]
+            public byte[] byRes;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byRes1 = new byte[30];
+                byFingerData = new byte[CHCNetSDK.MAX_FINGER_PRINT_LEN];
+                byRes = new byte[96];
+            }
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGER_PRINT_INFO_CTRL_V50_ByCardNo
+        {
+            public int dwSize;
+            public byte byMode;  //删除方式，0-按卡号（人员ID）方式删除，1-按读卡器删除
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3)]
+            public byte[] byRes1;
+            public CHCNetSDK.NET_DVR_FINGER_PRINT_BYCARD_V50 struProcessMode;//处理方式
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64)]
+            public byte[] byRes;
+            public void init()
+            {
+                byRes1 = new byte[3];
+                byRes = new byte[64];
+                struProcessMode.init();
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGER_PRINT_BYCARD_V50
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_CARD_READER_NUM_512)]
+            public byte[] byEnableCardReader;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_FINGER_PRINT_NUM)]
+            public byte[] byFingerPrintID;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.NET_SDK_EMPLOYEE_NO_LEN)]
+            public byte[] byEmployeeNo;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byEnableCardReader = new byte[CHCNetSDK.MAX_CARD_READER_NUM_512];
+                byFingerPrintID = new byte[CHCNetSDK.MAX_FINGER_PRINT_NUM];
+                byRes1 = new byte[2];
+                byEmployeeNo = new byte[CHCNetSDK.NET_SDK_EMPLOYEE_NO_LEN];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGER_PRINT_INFO_STATUS_V50
+        {
+            public int dwSize;
+            public int dwCardReaderNo;
+            public byte byStatus;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 63)]
+            public byte[] byRes;
+            public void init()
+            {
+                byRes = new byte[63];
+            }
+        }
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_FINGER_PRINT_INFO_STATUS_V50 lpOutBuff, int dwOutBuffSize);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_ACS_EVENT_CFG lpOutBuff, int dwOutBuffSize);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_FINGERPRINT_RECORD lpOutBuff, int dwOutBuffSize);
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CAPTURE_FINGERPRINT_COND
+        {
+            public int dwSize;
+            public byte byFingerPrintPicType;    //图片类型：0-无意义
+            public byte byFingerNo;              //手指编号，范围1-10
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 126)]
+            public byte[] byRes;
+
+            public void init()
+            {
+                byRes = new byte[126];
+            }
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CAPTURE_FINGERPRINT_CFG
+        {
+            public int dwSize;
+            public int dwFingerPrintDataSize;    //指纹数据大小
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_FINGER_PRINT_LEN)]
+            public byte[] byFingerData;        //指纹数据内容
+            public int dwFingerPrintPicSize;    //指纹图片大小，等于0时，代表无指纹图片数据
+            public IntPtr pFingerPrintPicBuffer;       //指纹图片缓存
+            public byte byFingerNo;              //手指编号，范围1-10
+            public byte byFingerPrintQuality;    //指纹质量，范围1-100
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 62)]
+            public byte[] byRes;
+
+            public void init()
+            {
+                byFingerData = new byte[CHCNetSDK.MAX_FINGER_PRINT_LEN];
+                byRes = new byte[62];
+            }
+        }
+
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_CAPTURE_FINGERPRINT_CFG lpOutBuff, int dwOutBuffSize);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, ref CHCNetSDK.NET_DVR_FACE_RECORD lpOutBuff, int dwOutBuffSize);
+
+        //Network Configure Structure(V50)
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_NETCFG_V50
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ETHERNET, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_ETHERNET_V30[] struEtherNet;        //Network Port
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_IPADDR[] struRes1;                            /*reserve*/
+            public NET_DVR_IPADDR struAlarmHostIpAddr;                    /* IP address of remote management host */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;                                        /* reserve */
+            public ushort wAlarmHostIpPort;                                /* Port of remote management Host */
+            public byte byUseDhcp;                                      /* Whether to enable the DHCP 0xff- invalid 0- enabled 1- not enabled */
+            public byte byIPv6Mode;                                        //IPv6 allocation, 0- routing announcement, 1- manually, 2- enable DHCP allocation
+            public NET_DVR_IPADDR struDnsServer1IpAddr;                    /* IP address of the domain name server 1  */
+            public NET_DVR_IPADDR struDnsServer2IpAddr;                    /* IP address of the domain name server 2  */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOMAIN_NAME, ArraySubType = UnmanagedType.I1)]
+            public byte[] byIpResolver;                    /* IP parse server domain name or IP address */
+            public ushort wIpResolverPort;                                /* Parsing IP server port number */
+            public ushort wHttpPortNo;                                    /* HTTP port number  */
+            public NET_DVR_IPADDR struMulticastIpAddr;                    /* Multicast group address */
+            public NET_DVR_IPADDR struGatewayIpAddr;                        /* Gateway address  */
+            public NET_DVR_PPPOECFG struPPPoE;
+            public byte byEnablePrivateMulticastDiscovery;                //Private multicast search, 0- default, 1- enabled, 2 - disabled
+            public byte byEnableOnvifMulticastDiscovery;                //Onvif multicast search, 0- default, 1- enabled, 2 - disabled
+            public ushort wAlarmHost2IpPort;                                /* Alarm host 2 port */
+            public NET_DVR_IPADDR struAlarmHost2IpAddr;                    /* Alarm host 2 IP addresses */
+            public byte byEnableDNS; //DNS Enabled, 0-close,1-open
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 599, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void Init()
+            {
+                struEtherNet = new NET_DVR_ETHERNET_V30[MAX_ETHERNET];
+                struRes1 = new NET_DVR_IPADDR[2];
+                struAlarmHostIpAddr = new NET_DVR_IPADDR();
+                struAlarmHost2IpAddr = new NET_DVR_IPADDR();
+                struDnsServer1IpAddr = new NET_DVR_IPADDR();
+                struDnsServer2IpAddr = new NET_DVR_IPADDR();
+                byIpResolver = new byte[MAX_DOMAIN_NAME];
+                struMulticastIpAddr = new NET_DVR_IPADDR();
+                struGatewayIpAddr = new NET_DVR_IPADDR();
+                struPPPoE = new NET_DVR_PPPOECFG();
+                byRes = new byte[599];
+            }
+        }
+
+        public const int MAX_CENTERNUM = 4;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_NETCFG
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CENTERNUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_ALARMHOST_NETPARAM[] struNetCenter;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_ABILITY
+        {
+            public uint dwSize;                      // 结构体大小
+            public ushort wTotalAlarmInNum;         // 报警输入口总数(防区),包括级联
+            public ushort wLocalAlarmInNum;         // 本地报警输入口
+            public ushort wExpandAlarmInNum;        // 可扩展的报警输入口
+            public ushort wTotalAlarmOutNum;        // 报警输出口总数 （设备支持的总数）
+            public ushort wLocalAlarmOutNum;        // 本地报警输出口个数
+            public ushort wExpandAlarmOutNum;       // 可扩展的报警输出口
+            public ushort wTotalRs485Num;           // 报警输出口总数 （设备支持的总数）
+            public ushort wLocalRs485Num;           // 本地485口数
+            public ushort wExpandRs485Num;          // 可扩展的485口数
+            public ushort wFullDuplexRs485Num;    // 全双工的485口数
+            public ushort wTotalSensorNum;          // 模拟量最大个数 (设备支持的总数)
+            public ushort wLocalSensorNum;        // 本地模拟量个数
+            public ushort wExpandSensorNum;         // 可扩展的模拟量个数
+            public ushort wAudioOutNum;                //语音输出个数
+            public ushort wGatewayNum;            //门禁个数
+            public ushort wElectroLockNum;            //电锁个数
+            public ushort wSirenNum;                 // 主机警号数目
+            public ushort wSubSystemNum;            // 可划分子系统数目
+            public ushort wNetUserNum;            // 网络用户数
+            public ushort wKeyboardNum;           // 键盘数
+            public ushort wOperatorUserNum;           // 操作用户数
+            public byte bySupportDetector;//是否支持常开、常闭探测器，1-支持，0-不支持
+            public byte bySupportSensitivity;//是否支持防区灵敏度，1-支持，0-不支持
+            public byte bySupportArrayBypass;//是否支持组旁路，1-支持，0-不支持
+            public byte bySupportAlarmInDelay;//是否支持防区延迟,1-支持，0-不支持
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] bySupportAlarmInType;//支持的防区类型,数组0:即时防区,1-24小时防区,2-延时防区 ,3-内部防区，4-钥匙防区 5-火警防区 6-周界防区 7-24小时无声防区 8-24小时辅助防区，9-24小时震动防区,10-门禁紧急开门防区，11-门禁紧急关门防区15-无
+            public byte byTelNum;        //支持电话个数
+            public byte byCenterGroupNum;    //中心组个数
+            public byte byGPRSNum;        //GPRS中心数，最多4个
+            public byte byNetNum;        //网络中心数，最多4个
+            public byte byAudioNum;        //音频个数
+            public byte by3GNum;        //3G模块个数
+            public byte byAnalogVideoChanNum;        //模拟视频通道个数
+            public byte byDigitalVideoChanNum;        //数字视频通道个数
+            public byte bySubSystemArmType;        //子系统布防类型，0-表示不支持，1-表示支持。bit0-普通布防（注：网络小主机只支持普通布防，在能力集中加这个字段的时候网络小主机已经发布，所以网络小主机中该字段为0，所以用0表示支持，1表示不支持。对外接口中SDK内部会做兼容），bit1-即时布防，bit2-留守布防。
+            public byte byPublicSubSystemNum;    //公共子系统个数
+
+            public uint dwSupport1;    //按位表示，结果非0表示支持，0表示不支持
+            public uint dwSubSystemEvent;        //子系统事件，按位表示，0表示不支持，非0表示支持,bit0-进入延时，bit1-退出延时，bit2-布防，bit3-撤防，bit4-报警，bit5-消除报警记忆
+            public uint dwOverallEvent;            //全局事件，按位表示，0表示不支持，非0表示支持，bit0-交流电掉电，bit1-电池电压低，bit2-电话线掉线，bit3-有线网络异常，bit4-无线网络异常，bit5-硬盘故障,bit6-3G/4G信号异常, bit7-（模块链接）第三方主机掉线,bit8-WIFI通信故障，bit9-RF信号干扰故障
+            public uint dwFaultType;            //设备支持的故障类型，bit0-交流电断电，bit1-蓄电池欠压，bit2-主机防拆开，bit3-电话线掉线，bit4-主键盘掉线，bit5-网络故障，bit6-无线异常，bit7-扩展总线异常，bit8-硬盘异常
+
+            public byte byPublicSubsystemAssociateSubsystemNum;    //公共子系统可关联的子系统个数
+            public byte byOverallKeyboard;    //全局键盘个数
+            public ushort wSafetyCabinSupport; //防护舱控制器能力，按位表示，结果非0表示支持，0表示不支持
+
+            public byte by485SlotNum;        //485虚拟槽位号
+            public byte bySubSystemAttributeAbility;  // 值恒为1，禁止1号子系统关闭使能
+
+            public ushort wKeyboardAddrNum;      // 键盘地址数
+            public byte byAlarmLampNum;         //警灯数目
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 117, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;            //  保留字节
+            public void Init()
+            {
+                bySupportAlarmInType = new byte[16];
+                byRes = new byte[117];
+            }
+        }
+
+        public const int ALARMHOST_ABILITY = 0x500;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_NETCFG_V50
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CENTERNUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_ALARMHOST_NETPARAM_V50[] struNetCenter;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public void Init()
+            {
+                struNetCenter = new NET_DVR_ALARMHOST_NETPARAM_V50[MAX_CENTERNUM];
+                byRes1 = new byte[128];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_NETPARAM_V50
+        {
+            public uint dwSize;
+            public NET_DVR_IPADDR struIP;
+            public ushort wPort;
+            public byte byAddressType;    //0 - 无意义, 1 - ipv4/ipv6地址，2 - 域名
+            public byte byEnable; //使能，0-不启用，1-启用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOMAIN_NAME, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDomainName; //域名，GPRS参数配置、网络参数配置时该字段均有效
+            public byte byReportProtocol;        //1-private 2-NAL2300, 3-Ehome
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACCOUNTNUM_LEN_32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDevID; //协议为NAL2300时有效
+            public byte byProtocolVersion;            //EHome协议版本，0-无意义,1–v2.0，2–v4.0，3-v5.0
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_EHOME_KEY_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byEHomeKey;            //EHome Key（用于EHome 5.0版本）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 28, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //GPRS的域名解析是在固定的服务器上进行的，所以不需要给解析服务器的信息预留一些字段
+            public void Init()
+            {
+                struIP = new NET_DVR_IPADDR();
+                byDomainName = new byte[MAX_DOMAIN_NAME];
+                byDevID = new byte[ACCOUNTNUM_LEN_32];
+                byRes1 = new byte[3];
+                byEHomeKey = new byte[NET_SDK_EHOME_KEY_LEN];
+                byRes2 = new byte[28];
+            }
+        }
+
+        public const int NET_DVR_SET_ALARMHOST_NETCFG_V50 = 2225;    //Set Net info V50
+        public const int NET_DVR_GET_ALARMHOST_NETCFG_V50 = 2224;    //Get Net infoV50
+
+        public const int MAX_AUDIO_V40 = 8;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_SIMPLE_DAYTIME
+        {
+            public byte byHour; //hour
+            public byte byMinute; //minute
+            public byte bySecond; //second
+            public byte byRes;
+        }
+
+
+        public const int NET_DVR_GET_NETCFG_V50 = 1015;    //Get network parameter configuration (V50)
+        public const int NET_DVR_SET_NETCFG_V50 = 1016;    //Set network parameter configuration (V50)
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_INDEX
+        {
+            public uint iIndex;
+            public void Init()
+            {
+                iIndex = 1;
+            }
+        }
+
+        public struct NET_DVR_INBUFF
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.U4)]
+            public uint[] StatusList;
+            public void Init()
+            {
+                StatusList = new uint[16];
+            }
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_REPORT_CENTER_CFG_V40
+        {
+            public uint dwSize;
+            public byte byValid;
+            public byte byDataType;            //1-All alarm data 2-not alarm data 3-all data,4-zone report,5-not zone report
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byChanAlarmMode;//alarm channels, 1-T1,2-T2, 3-N1, 4-N2,5-G1, 6-G2 ,7-N3, 8-N4
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byDealFailCenter; //send to these centers while send fail 0-not choose,1-choose
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 512, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byZoneReport;    //zone report type,0-not upload,1-upload
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byNonZoneReport; //not zone report, 0-not upload,1-upload byNonZoneReport[0]-soft zone report byNonZoneReport[1]-system status report byNonZoneReport[2]-cancel report byNonZoneReport[3]-test report byNonZoneReport[4]-arm report byNonZoneReport[5]-disarm report byNonZoneReport[6]-duress report byNonZoneReport[7]-alarm recovery report byNonZoneReport[8]-bypass report byNonZoneReport[9]-bypass restore report,byNonZoneReport[10]-detector connect status report(online/offline),byNonZoneReport[11]-detector power status report(normal/low);bit12-video alarm report
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byAlarmNetCard;    //network card center,0-primary card_1,1-primary card_2,2-extend card_1,3-extend card_2
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 252, ArraySubType = UnmanagedType.Struct)]
+            public byte[] byRes2;
+            public void Init()
+            {
+                byRes = new byte[2];
+                byChanAlarmMode = new byte[4];
+                byDealFailCenter = new byte[16];
+                byZoneReport = new byte[512];
+                byNonZoneReport = new byte[32];
+                byAlarmNetCard = new byte[4];
+                byRes2 = new byte[252];
+            }
+        }
+
+        public const int DOOR_NAME_LEN = 32;//door name len
+        public const int STRESS_PASSWORD_LEN = 8;//stress password len
+        public const int SUPER_PASSWORD_LEN = 8;//super password len
+        public const int UNLOCK_PASSWORD_LEN = 8;
+        public const int MAX_DOOR_NUM = 32;
+        public const int MAX_GROUP_NUM = 32;
+        public const int LOCAL_CONTROLLER_NAME_LEN = 32;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_DOOR_CFG
+        {
+            public uint dwSize;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = DOOR_NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDoorName;//door name
+            public byte byMagneticType;//magnetic type, 0-always close 1-always open
+            public byte byOpenButtonType;//open button type,  0-always close 1-always open
+            public byte byOpenDuration;//open duration time, 1-255s(ladder control relay action time)
+            public byte byDisabledOpenDuration;//disable open duration , 1-255s
+            public byte byMagneticAlarmTimeout;//magnetic alarm time out , 0-255s,0 means not to alarm
+            public byte byEnableDoorLock;//whether to enable door lock, 0-disable, 1-enable
+            public byte byEnableLeaderCard;//whether to enable leader card , 0-disable, 1-enable
+            public byte byLeaderCardMode;//First card mode, 0 - first card function is not enabled, and 1 - the first card normally open mode, 2 - the first card authorization mode (using this field, the byEnableLeaderCard is invalid )
+            public uint dwLeaderCardOpenDuration;//leader card open duration 1-1440min
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = STRESS_PASSWORD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byStressPassword;//stress ppassword
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = SUPER_PASSWORD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] bySuperPassword; //super password
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = UNLOCK_PASSWORD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byUnlockPassword;
+            public byte byUseLocalController; //Read-only, whether the connection on the local controller, 0 - no, 1 - yes
+            public byte byRes1;
+            public ushort wLocalControllerID; //Read-only, on-site controller serial number, 1-64, 0 on behalf of unregistered
+            public ushort wLocalControllerDoorNumber; //Read-only, on-site controller door number, 1-4, 0 represents the unregistered
+            public ushort wLocalControllerStatus; //Read-only, on-site controller online status: 0 - offline, 1 - online, 2 - loop of RS485 serial port 1 on 1, 3 - loop of RS485 serial port 2 on 2, 4 - loop of RS485 serial port 1, 5 - loop of RS485 serial port 2, 6 - loop 3 of RS485 serial port 1, 7 - the loop on the RS485 serial port on the 3 4 2, 8 - loop on the RS485 serial port 1, 9 - loop 4 of RS485 serial port 2 (read-only)
+            public byte byLockInputCheck; //Whether to enable the door input detection (1 public byte, 0 is not enabled, 1 is enabled, is not enabled by default)
+            public byte byLockInputType; //Door lock input type
+            public byte byDoorTerminalMode; //Gate terminal working mode
+            public byte byOpenButton; //Whether to enable the open button
+            public byte byLadderControlDelayTime; //ladder control delay time,1-255min
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 43, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+
+            public void Init()
+            {
+                byDoorName = new byte[DOOR_NAME_LEN];
+                byStressPassword = new byte[STRESS_PASSWORD_LEN];
+                bySuperPassword = new byte[SUPER_PASSWORD_LEN];
+                byUnlockPassword = new byte[UNLOCK_PASSWORD_LEN];
+                byRes2 = new byte[43];
+            }
+        }
+
+        public const int NET_DVR_GET_DOOR_CFG = 2108; //get door parameter
+        public const int NET_DVR_SET_DOOR_CFG = 2109; //set door parameter
+
+
+        public const int NET_DVR_SET_ALARMHOST_REPORT_CENTER_V40 = 2065;   // set data report mode v30
+
+
+
+
+
+
+
+
+
+
 
 
         /*************操作异常类型(消息方式, 回调方式(保留))****************/
@@ -1157,6 +1835,327 @@ namespace HikVisionNetSDK.Common
         public const int DS91XX_HD_S = 92; /*91XXHD-S(MD)*/
         /**********************设备类型 end***********************/
 
+        /**********************能力集类型 begin***********************/
+        public const int DEVICE_SOFTHARDWARE_ABILITY = 0x001;
+        public const int DEVICE_NETWORK_ABILITY = 0x002;
+        public const int DEVICE_ENCODE_ALL_ABILITY_V20 = 0x008;
+        public const int IPC_FRONT_PARAMETER_V20 = 0x009;
+        public const int DEVICE_RAID_ABILITY = 0x007;
+        public const int DEVICE_ALARM_ABILITY = 0x00a;
+        public const int DEVICE_DYNCHAN_ABILITY = 0x00b;
+        public const int DEVICE_USER_ABILITY = 0x00c;
+        public const int DEVICE_NETAPP_ABILITY = 0x00d;
+        public const int DEVICE_VIDEOPIC_ABILITY = 0x00e;
+        public const int DEVICE_JPEG_CAP_ABILITY = 0x00f;
+        public const int DEVICE_SERIAL_ABILITY = 0x010;
+        public const int DEVICE_ABILITY_INFO = 0x011;
+        /**********************能力集类型 end***********************/
+
+        /*************************************************
+        门禁事件类型
+        **************************************************/
+        #region acs event upload
+
+        /* Alarm */
+        // Main Type
+        //public const int MAJOR_ALARM = 0x1;
+        // Hypo- Type
+        public const int MINOR_ALARMIN_SHORT_CIRCUIT = 0x400; // region short circuit
+        public const int MINOR_ALARMIN_BROKEN_CIRCUIT = 0x401; // region broken circuit
+        public const int MINOR_ALARMIN_EXCEPTION = 0x402; // region exception
+        public const int MINOR_ALARMIN_RESUME = 0x403; // region resume
+        public const int MINOR_HOST_DESMANTLE_ALARM = 0x404; // host desmantle alarm
+        public const int MINOR_HOST_DESMANTLE_RESUME = 0x405; //  host desmantle resume
+        public const int MINOR_CARD_READER_DESMANTLE_ALARM = 0x406; // card reader desmantle alarm
+        public const int MINOR_CARD_READER_DESMANTLE_RESUME = 0x407; // card reader desmantle resume
+        public const int MINOR_CASE_SENSOR_ALARM = 0x408; // case sensor alarm
+        public const int MINOR_CASE_SENSOR_RESUME = 0x409; // case sensor resume
+        public const int MINOR_STRESS_ALARM = 0x40a; // stress alarm
+        public const int MINOR_OFFLINE_ECENT_NEARLY_FULL = 0x40b; // offline ecent nearly full
+        public const int MINOR_CARD_MAX_AUTHENTICATE_FAIL = 0x40c; // card max authenticate fall
+        public const int MINOR_SD_CARD_FULL = 0x40d; // SD card is full
+        public const int MINOR_LINKAGE_CAPTURE_PIC = 0x40e; // lingage capture picture
+        public const int MINOR_SECURITY_MODULE_DESMANTLE_ALARM = 0x40f;  //Door control security module desmantle alarm
+        public const int MINOR_SECURITY_MODULE_DESMANTLE_RESUME = 0x410;  //Door control security module desmantle resume
+        public const int MINOR_POS_START_ALARM = 0x411; // POS Start
+        public const int MINOR_POS_END_ALARM = 0x412; // POS end
+        public const int MINOR_FACE_IMAGE_QUALITY_LOW = 0x413; // face image quality low
+        public const int MINOR_FINGE_RPRINT_QUALITY_LOW = 0x414; // finger print quality low
+        public const int MINOR_FIRE_IMPORT_SHORT_CIRCUIT = 0x415; // Fire import short circuit
+        public const int MINOR_FIRE_IMPORT_BROKEN_CIRCUIT = 0x416; // Fire import broken circuit
+        public const int MINOR_FIRE_IMPORT_RESUME = 0x417; // Fire import resume
+        public const int MINOR_FIRE_BUTTON_TRIGGER = 0x418; // fire button trigger
+        public const int MINOR_FIRE_BUTTON_RESUME = 0x419; // fire button resume
+        public const int MINOR_MAINTENANCE_BUTTON_TRIGGER = 0x41a; // maintenance button trigger
+        public const int MINOR_MAINTENANCE_BUTTON_RESUME = 0x41b; // maintenance button resume
+        public const int MINOR_EMERGENCY_BUTTON_TRIGGER = 0x41c; // emergency button trigger
+        public const int MINOR_EMERGENCY_BUTTON_RESUME = 0x41d; // emergency button resume
+        public const int MINOR_DISTRACT_CONTROLLER_ALARM = 0x41e; // distract controller alarm
+        public const int MINOR_DISTRACT_CONTROLLER_RESUME = 0x41f; // distract controller resume
+        public const int MINOR_CHANNEL_CONTROLLER_DESMANTLE_ALARM = 0x422; //channel controller desmantle alarm
+        public const int MINOR_CHANNEL_CONTROLLER_DESMANTLE_RESUME = 0x423; //channel controller desmantle resume
+        public const int MINOR_CHANNEL_CONTROLLER_FIRE_IMPORT_ALARM = 0x424; //channel controller fire import alarm
+        public const int MINOR_CHANNEL_CONTROLLER_FIRE_IMPORT_RESUME = 0x425;  //channel controller fire import resume
+        public const int MINOR_PRINTER_OUT_OF_PAPER = 0x440;  //printer no paper
+        public const int MINOR_LEGAL_EVENT_NEARLY_FULL = 0x442;  //Legal event nearly full
+
+        /* Exception*/
+        // Main Type
+        //public const int MAJOR_EXCEPTION = 0x2;
+        // Hypo- Type
+
+        //public const int MINOR_NET_BROKEN = 0x27; // Network disconnected
+        public const int MINOR_RS485_DEVICE_ABNORMAL = 0x3a; // RS485 connect status exception
+        public const int MINOR_RS485_DEVICE_REVERT = 0x3b; // RS485 connect status exception recovery
+
+        public const int MINOR_DEV_POWER_ON = 0x400; // device power on
+        public const int MINOR_DEV_POWER_OFF = 0x401; // device power off
+        public const int MINOR_WATCH_DOG_RESET = 0x402; // watch dog reset
+        public const int MINOR_LOW_BATTERY = 0x403; // low battery
+        public const int MINOR_BATTERY_RESUME = 0x404; // battery resume
+        public const int MINOR_AC_OFF = 0x405; // AC off
+        public const int MINOR_AC_RESUME = 0x406; // AC resume
+        public const int MINOR_NET_RESUME = 0x407; // Net resume
+        public const int MINOR_FLASH_ABNORMAL = 0x408; // FLASH abnormal
+        public const int MINOR_CARD_READER_OFFLINE = 0x409; // card reader offline
+        public const int MINOR_CARD_READER_RESUME = 0x40a; // card reader resume
+        public const int MINOR_INDICATOR_LIGHT_OFF = 0x40b; // Indicator Light Off
+        public const int MINOR_INDICATOR_LIGHT_RESUME = 0x40c; // Indicator Light Resume
+        public const int MINOR_CHANNEL_CONTROLLER_OFF = 0x40d; // channel controller off
+        public const int MINOR_CHANNEL_CONTROLLER_RESUME = 0x40e; // channel controller resume
+        public const int MINOR_SECURITY_MODULE_OFF = 0x40f; // Door control security module off
+        public const int MINOR_SECURITY_MODULE_RESUME = 0x410; // Door control security module resume
+        public const int MINOR_BATTERY_ELECTRIC_LOW = 0x411; // battery electric low
+        public const int MINOR_BATTERY_ELECTRIC_RESUME = 0x412; // battery electric resume
+        public const int MINOR_LOCAL_CONTROL_NET_BROKEN = 0x413; // Local control net broken
+        public const int MINOR_LOCAL_CONTROL_NET_RSUME = 0x414; // Local control net resume
+        public const int MINOR_MASTER_RS485_LOOPNODE_BROKEN = 0x415; // Master RS485 loop node broken
+        public const int MINOR_MASTER_RS485_LOOPNODE_RESUME = 0x416; // Master RS485 loop node resume
+        public const int MINOR_LOCAL_CONTROL_OFFLINE = 0x417; // Local control offline
+        public const int MINOR_LOCAL_CONTROL_RESUME = 0x418; // Local control resume
+        public const int MINOR_LOCAL_DOWNSIDE_RS485_LOOPNODE_BROKEN = 0x419; // Local downside RS485 loop node broken
+        public const int MINOR_LOCAL_DOWNSIDE_RS485_LOOPNODE_RESUME = 0x41a; // Local downside RS485 loop node resume
+        public const int MINOR_DISTRACT_CONTROLLER_ONLINE = 0x41b; // distract controller online
+        public const int MINOR_DISTRACT_CONTROLLER_OFFLINE = 0x41c; // distract controller offline
+        public const int MINOR_ID_CARD_READER_NOT_CONNECT = 0x41d; // Id card reader not connected(intelligent dedicated)
+        public const int MINOR_ID_CARD_READER_RESUME = 0x41e; //Id card reader connection restored(intelligent dedicated)
+        public const int MINOR_FINGER_PRINT_MODULE_NOT_CONNECT = 0x41f; // fingerprint module is not connected(intelligent dedicated)
+        public const int MINOR_FINGER_PRINT_MODULE_RESUME = 0x420; // The fingerprint module connection restored(intelligent dedicated)
+        public const int MINOR_CAMERA_NOT_CONNECT = 0x421; // Camera not connected
+        public const int MINOR_CAMERA_RESUME = 0x422; // Camera connection restored
+        public const int MINOR_COM_NOT_CONNECT = 0x423; // COM not connected
+        public const int MINOR_COM_RESUME = 0x424;// COM connection restored
+        public const int MINOR_DEVICE_NOT_AUTHORIZE = 0x425; // device are not authorized
+        public const int MINOR_PEOPLE_AND_ID_CARD_DEVICE_ONLINE = 0x426; // people and ID card device online
+        public const int MINOR_PEOPLE_AND_ID_CARD_DEVICE_OFFLINE = 0x427;// people and ID card device offline
+        public const int MINOR_LOCAL_LOGIN_LOCK = 0x428; // local login lock
+        public const int MINOR_LOCAL_LOGIN_UNLOCK = 0x429; //local login unlock
+        public const int MINOR_SUBMARINEBACK_COMM_BREAK = 0x42a;  //submarineback communicate break
+        public const int MINOR_SUBMARINEBACK_COMM_RESUME = 0x42b;  //submarineback communicate resume
+        public const int MINOR_MOTOR_SENSOR_EXCEPTION = 0x42c;  //motor sensor exception
+        public const int MINOR_CAN_BUS_EXCEPTION = 0x42d;  //can bus exception
+        public const int MINOR_CAN_BUS_RESUME = 0x42e;  //can bus resume
+        public const int MINOR_GATE_TEMPERATURE_OVERRUN = 0x42f; //gate temperature over run
+        public const int MINOR_IR_EMITTER_EXCEPTION = 0x430; //IR emitter exception
+        public const int MINOR_IR_EMITTER_RESUME = 0x431;  //IR emitter resume
+        public const int MINOR_LAMP_BOARD_COMM_EXCEPTION = 0x432;  //lamp board communicate exception
+        public const int MINOR_LAMP_BOARD_COMM_RESUME = 0x433;  //lamp board communicate resume
+        public const int MINOR_IR_ADAPTOR_COMM_EXCEPTION = 0x434; //IR adaptor communicate exception
+        public const int MINOR_IR_ADAPTOR_COMM_RESUME = 0x435;  //IR adaptor communicate resume
+        public const int MINOR_PRINTER_ONLINE = 0x436; //printer online
+        public const int MINOR_PRINTER_OFFLINE = 0x437; //printer offline
+        public const int MINOR_4G_MOUDLE_ONLINE = 0x438; //4G module online
+        public const int MINOR_4G_MOUDLE_OFFLINE = 0x439; //4G module offline
+
+
+        /* Operation  */
+        // Main Type
+        //public const int MAJOR_OPERATION = 0x3;
+
+        // Hypo- Type
+        //public const int MINOR_LOCAL_UPGRADE = 0x5a; // Upgrade  (local)
+        //public const int MINOR_REMOTE_LOGIN = 0x70; // Login  (remote)
+        //public const int MINOR_REMOTE_LOGOUT = 0x71; // Logout   (remote)
+        //public const int MINOR_REMOTE_ARM = 0x79; // On guard   (remote)
+        //public const int MINOR_REMOTE_DISARM = 0x7a; // Disarm   (remote)
+        //public const int MINOR_REMOTE_REBOOT = 0x7b; // Reboot   (remote)
+        //public const int MINOR_REMOTE_UPGRADE = 0x7e; // upgrade  (remote)
+        //public const int MINOR_REMOTE_CFGFILE_OUTPUT = 0x86; // Export Configuration   (remote)
+        //public const int MINOR_REMOTE_CFGFILE_INTPUT = 0x87; // Import Configuration  (remote)
+        //public const int MINOR_REMOTE_ALARMOUT_OPEN_MAN = 0xd6; // remote mamual open alarmout
+        //public const int MINOR_REMOTE_ALARMOUT_CLOSE_MAN = 0xd7; // remote mamual close alarmout
+
+        public const int MINOR_REMOTE_OPEN_DOOR = 0x400; // remote open door
+        public const int MINOR_REMOTE_CLOSE_DOOR = 0x401; // remote close door (controlled)
+        public const int MINOR_REMOTE_ALWAYS_OPEN = 0x402; // remote always open door (free)
+        public const int MINOR_REMOTE_ALWAYS_CLOSE = 0x403; // remote always close door (forbiden)
+        public const int MINOR_REMOTE_CHECK_TIME = 0x404; // remote check time
+        public const int MINOR_NTP_CHECK_TIME = 0x405; // ntp check time
+        public const int MINOR_REMOTE_CLEAR_CARD = 0x406; // remote clear card
+        public const int MINOR_REMOTE_RESTORE_CFG = 0x407; // remote restore configure
+        public const int MINOR_ALARMIN_ARM = 0x408; // alarm in arm
+        public const int MINOR_ALARMIN_DISARM = 0x409; // alarm in disarm
+        public const int MINOR_LOCAL_RESTORE_CFG = 0x40a; // local configure restore
+        public const int MINOR_REMOTE_CAPTURE_PIC = 0x40b; // remote capture picture
+        public const int MINOR_MOD_NET_REPORT_CFG = 0x40c; // modify net report cfg
+        public const int MINOR_MOD_GPRS_REPORT_PARAM = 0x40d; // modify GPRS report param
+        public const int MINOR_MOD_REPORT_GROUP_PARAM = 0x40e; // modify report group param
+        public const int MINOR_UNLOCK_PASSWORD_OPEN_DOOR = 0x40f; // unlock password open door
+        public const int MINOR_AUTO_RENUMBER = 0x410; // auto renumber
+        public const int MINOR_AUTO_COMPLEMENT_NUMBER = 0x411; // auto complement number
+        public const int MINOR_NORMAL_CFGFILE_INPUT = 0x412; // normal cfg file input
+        public const int MINOR_NORMAL_CFGFILE_OUTTPUT = 0x413; // normal cfg file output
+        public const int MINOR_CARD_RIGHT_INPUT = 0x414; // card right input
+        public const int MINOR_CARD_RIGHT_OUTTPUT = 0x415; // card right output
+        public const int MINOR_LOCAL_USB_UPGRADE = 0x416; // local USB upgrade
+        public const int MINOR_REMOTE_VISITOR_CALL_LADDER = 0x417; // visitor call ladder
+        public const int MINOR_REMOTE_HOUSEHOLD_CALL_LADDER = 0x418; // household call ladder
+        public const int MINOR_REMOTE_ACTUAL_GUARD = 0x419;  //remote actual guard
+        public const int MINOR_REMOTE_ACTUAL_UNGUARD = 0x41a;  //remote actual unguard
+        public const int MINOR_REMOTE_CONTROL_NOT_CODE_OPER_FAILED = 0x41b; //remote control not code operate failed
+        public const int MINOR_REMOTE_CONTROL_CLOSE_DOOR = 0x41c; //remote control close door
+        public const int MINOR_REMOTE_CONTROL_OPEN_DOOR = 0x41d; //remote control open door
+        public const int MINOR_REMOTE_CONTROL_ALWAYS_OPEN_DOOR = 0x41e; //remote control always open door
+
+        /* Additional Log Info*/
+        // Main Type
+        public const int MAJOR_EVENT = 0x5;/*event*/
+        // Hypo- Type
+        public const int MINOR_LEGAL_CARD_PASS = 0x01; // legal card pass
+        public const int MINOR_CARD_AND_PSW_PASS = 0x02; // swipe and password pass
+        public const int MINOR_CARD_AND_PSW_FAIL = 0x03; // swipe and password fail
+        public const int MINOR_CARD_AND_PSW_TIMEOUT = 0x04; // swipe and password timeout
+        public const int MINOR_CARD_AND_PSW_OVER_TIME = 0x05; // swipe and password over time
+        public const int MINOR_CARD_NO_RIGHT = 0x06; // card no right
+        public const int MINOR_CARD_INVALID_PERIOD = 0x07; // invalid period
+        public const int MINOR_CARD_OUT_OF_DATE = 0x08; // card out of date
+        public const int MINOR_INVALID_CARD = 0x09; // invalid card
+        public const int MINOR_ANTI_SNEAK_FAIL = 0x0a; // anti sneak fail
+        public const int MINOR_INTERLOCK_DOOR_NOT_CLOSE = 0x0b; // interlock door doesn't close
+        public const int MINOR_NOT_BELONG_MULTI_GROUP = 0x0c; // card no belong multi group
+        public const int MINOR_INVALID_MULTI_VERIFY_PERIOD = 0x0d; // invalid multi verify period
+        public const int MINOR_MULTI_VERIFY_SUPER_RIGHT_FAIL = 0x0e; // have no super right in multi verify mode
+        public const int MINOR_MULTI_VERIFY_REMOTE_RIGHT_FAIL = 0x0f; // have no remote right in multi verify mode
+        public const int MINOR_MULTI_VERIFY_SUCCESS = 0x10; // success in multi verify mode
+        public const int MINOR_LEADER_CARD_OPEN_BEGIN = 0x11; // leader card begin to open
+        public const int MINOR_LEADER_CARD_OPEN_END = 0x12; // leader card end to open
+        public const int MINOR_ALWAYS_OPEN_BEGIN = 0x13; // always open begin
+        public const int MINOR_ALWAYS_OPEN_END = 0x14; // always open end
+        public const int MINOR_LOCK_OPEN = 0x15; // lock open
+        public const int MINOR_LOCK_CLOSE = 0x16; // lock close
+        public const int MINOR_DOOR_BUTTON_PRESS = 0x17; // press door open button
+        public const int MINOR_DOOR_BUTTON_RELEASE = 0x18; // release door open button
+        public const int MINOR_DOOR_OPEN_NORMAL = 0x19; // door open normal
+        public const int MINOR_DOOR_CLOSE_NORMAL = 0x1a; // door close normal
+        public const int MINOR_DOOR_OPEN_ABNORMAL = 0x1b; // open door abnormal
+        public const int MINOR_DOOR_OPEN_TIMEOUT = 0x1c; // open door timeout
+        public const int MINOR_ALARMOUT_ON = 0x1d; // alarm out turn on
+        public const int MINOR_ALARMOUT_OFF = 0x1e; // alarm out turn off
+        public const int MINOR_ALWAYS_CLOSE_BEGIN = 0x1f; // always close begin
+        public const int MINOR_ALWAYS_CLOSE_END = 0x20; // always close end
+        public const int MINOR_MULTI_VERIFY_NEED_REMOTE_OPEN = 0x21; // need remote open in multi verify mode
+        public const int MINOR_MULTI_VERIFY_SUPERPASSWD_VERIFY_SUCCESS = 0x22; // superpasswd verify success in multi verify mode
+        public const int MINOR_MULTI_VERIFY_REPEAT_VERIFY = 0x23; // repeat verify in multi verify mode
+        public const int MINOR_MULTI_VERIFY_TIMEOUT = 0x24; // timeout in multi verify mode
+        public const int MINOR_DOORBELL_RINGING = 0x25; // doorbell ringing
+        public const int MINOR_FINGERPRINT_COMPARE_PASS = 0x26; // fingerprint compare pass
+        public const int MINOR_FINGERPRINT_COMPARE_FAIL = 0x27; // fingerprint compare fail
+        public const int MINOR_CARD_FINGERPRINT_VERIFY_PASS = 0x28; // card and fingerprint verify pass
+        public const int MINOR_CARD_FINGERPRINT_VERIFY_FAIL = 0x29; // card and fingerprint verify fail
+        public const int MINOR_CARD_FINGERPRINT_VERIFY_TIMEOUT = 0x2a; // card and fingerprint verify timeout
+        public const int MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_PASS = 0x2b; // card and fingerprint and passwd verify pass
+        public const int MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_FAIL = 0x2c; // card and fingerprint and passwd verify fail
+        public const int MINOR_CARD_FINGERPRINT_PASSWD_VERIFY_TIMEOUT = 0x2d; // card and fingerprint and passwd verify timeout
+        public const int MINOR_FINGERPRINT_PASSWD_VERIFY_PASS = 0x2e; // fingerprint and passwd verify pass
+        public const int MINOR_FINGERPRINT_PASSWD_VERIFY_FAIL = 0x2f; // fingerprint and passwd verify fail
+        public const int MINOR_FINGERPRINT_PASSWD_VERIFY_TIMEOUT = 0x30; // fingerprint and passwd verify timeout
+        public const int MINOR_FINGERPRINT_INEXISTENCE = 0x31; // fingerprint inexistence
+        public const int MINOR_CARD_PLATFORM_VERIFY = 0x32; // card platform verify
+        public const int MINOR_CALL_CENTER = 0x33; // call center
+        public const int MINOR_FIRE_RELAY_TURN_ON_DOOR_ALWAYS_OPEN = 0x34; // fire relay turn on door always open
+        public const int MINOR_FIRE_RELAY_RECOVER_DOOR_RECOVER_NORMAL = 0x35; // fire relay recover door recover normal
+        public const int MINOR_FACE_AND_FP_VERIFY_PASS = 0x36; // face and finger print verify pass
+        public const int MINOR_FACE_AND_FP_VERIFY_FAIL = 0x37; // face and finger print verify fail
+        public const int MINOR_FACE_AND_FP_VERIFY_TIMEOUT = 0x38; // face and finger print verify timeout
+        public const int MINOR_FACE_AND_PW_VERIFY_PASS = 0x39; // face and password verify pass
+        public const int MINOR_FACE_AND_PW_VERIFY_FAIL = 0x3a; // face and password verify fail
+        public const int MINOR_FACE_AND_PW_VERIFY_TIMEOUT = 0x3b; // face and password verify timeout
+        public const int MINOR_FACE_AND_CARD_VERIFY_PASS = 0x3c; // face and card verify pass
+        public const int MINOR_FACE_AND_CARD_VERIFY_FAIL = 0x3d; // face and card verify fail
+        public const int MINOR_FACE_AND_CARD_VERIFY_TIMEOUT = 0x3e; // face and card verify timeout
+        public const int MINOR_FACE_AND_PW_AND_FP_VERIFY_PASS = 0x3f; // face and password and finger print verify pass
+        public const int MINOR_FACE_AND_PW_AND_FP_VERIFY_FAIL = 0x40; // face and password and finger print verify fail
+        public const int MINOR_FACE_AND_PW_AND_FP_VERIFY_TIMEOUT = 0x41; // face and password and finger print verify timeout
+        public const int MINOR_FACE_CARD_AND_FP_VERIFY_PASS = 0x42; // face and card and finger print verify pass
+        public const int MINOR_FACE_CARD_AND_FP_VERIFY_FAIL = 0x43; // face and card and finger print verify fail
+        public const int MINOR_FACE_CARD_AND_FP_VERIFY_TIMEOUT = 0x44; // face and card and finger print verify timeout
+        public const int MINOR_EMPLOYEENO_AND_FP_VERIFY_PASS = 0x45; // employee and finger print verify pass
+        public const int MINOR_EMPLOYEENO_AND_FP_VERIFY_FAIL = 0x46; // employee and finger print verify fail
+        public const int MINOR_EMPLOYEENO_AND_FP_VERIFY_TIMEOUT = 0x47; // employee and finger print verify timeout
+        public const int MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_PASS = 0x48; // employee and finger print and password verify pass
+        public const int MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_FAIL = 0x49; // employee and finger print and password verify fail
+        public const int MINOR_EMPLOYEENO_AND_FP_AND_PW_VERIFY_TIMEOUT = 0x4a; // employee and finger print and password verify timeout
+        public const int MINOR_FACE_VERIFY_PASS = 0x4b; // face verify pass
+        public const int MINOR_FACE_VERIFY_FAIL = 0x4c; // face verify fail
+        public const int MINOR_EMPLOYEENO_AND_FACE_VERIFY_PASS = 0x4d; // employee no and face verify pass
+        public const int MINOR_EMPLOYEENO_AND_FACE_VERIFY_FAIL = 0x4e; // employee no and face verify fail
+        public const int MINOR_EMPLOYEENO_AND_FACE_VERIFY_TIMEOUT = 0x4f; // employee no and face verify time out
+        public const int MINOR_FACE_RECOGNIZE_FAIL = 0x50; // face recognize fail
+        public const int MINOR_FIRSTCARD_AUTHORIZE_BEGIN = 0x51; // first card authorize begin
+        public const int MINOR_FIRSTCARD_AUTHORIZE_END = 0x52; // first card authorize end
+        public const int MINOR_DOORLOCK_INPUT_SHORT_CIRCUIT = 0x53; // door lock input short circuit
+        public const int MINOR_DOORLOCK_INPUT_BROKEN_CIRCUIT = 0x54; // door lock input broken circuit
+        public const int MINOR_DOORLOCK_INPUT_EXCEPTION = 0x55; // door lock input exception
+        public const int MINOR_DOORCONTACT_INPUT_SHORT_CIRCUIT = 0x56; // door contact input short circuit
+        public const int MINOR_DOORCONTACT_INPUT_BROKEN_CIRCUIT = 0x57; // door contact input broken circuit
+        public const int MINOR_DOORCONTACT_INPUT_EXCEPTION = 0x58; // door contact input exception
+        public const int MINOR_OPENBUTTON_INPUT_SHORT_CIRCUIT = 0x59; // open button input short circuit
+        public const int MINOR_OPENBUTTON_INPUT_BROKEN_CIRCUIT = 0x5a; // open button input broken circuit
+        public const int MINOR_OPENBUTTON_INPUT_EXCEPTION = 0x5b; // open button input exception
+        public const int MINOR_DOORLOCK_OPEN_EXCEPTION = 0x5c; // door lock open exception
+        public const int MINOR_DOORLOCK_OPEN_TIMEOUT = 0x5d; // door lock open timeout
+        public const int MINOR_FIRSTCARD_OPEN_WITHOUT_AUTHORIZE = 0x5e; // first card open without authorize
+        public const int MINOR_CALL_LADDER_RELAY_BREAK = 0x5f; // call ladder relay break
+        public const int MINOR_CALL_LADDER_RELAY_CLOSE = 0x60; // call ladder relay close
+        public const int MINOR_AUTO_KEY_RELAY_BREAK = 0x61; // auto key relay break
+        public const int MINOR_AUTO_KEY_RELAY_CLOSE = 0x62; // auto key relay close
+        public const int MINOR_KEY_CONTROL_RELAY_BREAK = 0x63; // key control relay break
+        public const int MINOR_KEY_CONTROL_RELAY_CLOSE = 0x64; // key control relay close
+        public const int MINOR_EMPLOYEENO_AND_PW_PASS = 0x65; // minor employee no and password pass
+        public const int MINOR_EMPLOYEENO_AND_PW_FAIL = 0x66; // minor employee no and password fail
+        public const int MINOR_EMPLOYEENO_AND_PW_TIMEOUT = 0x67; // minor employee no and password timeout
+        public const int MINOR_HUMAN_DETECT_FAIL = 0x68; // human detect fail
+        public const int MINOR_PEOPLE_AND_ID_CARD_COMPARE_PASS = 0x69; // the comparison with people and id card success
+        public const int MINOR_PEOPLE_AND_ID_CARD_COMPARE_FAIL = 0x70; // the comparison with people and id card failed
+        public const int MINOR_CERTIFICATE_BLOCKLIST = 0x71; // block list
+        public const int MINOR_LEGAL_MESSAGE = 0x72; // legal message
+        public const int MINOR_ILLEGAL_MESSAGE = 0x73; // illegal messag
+        public const int MINOR_MAC_DETECT = 0x74; // mac detect
+        public const int MINOR_DOOR_OPEN_OR_DORMANT_FAIL = 0x75; //door open or dormant fail
+        public const int MINOR_AUTH_PLAN_DORMANT_FAIL = 0x76;  //auth plan dormant fail
+        public const int MINOR_CARD_ENCRYPT_VERIFY_FAIL = 0x77; //card encrypt verify fail
+        public const int MINOR_SUBMARINEBACK_REPLY_FAIL = 0x78;  //submarineback reply fail
+        public const int MINOR_DOOR_OPEN_OR_DORMANT_OPEN_FAIL = 0x82;  //door open or dormant open fail
+        public const int MINOR_DOOR_OPEN_OR_DORMANT_LINKAGE_OPEN_FAIL = 0x84; //door open or dormant linkage open fail
+        public const int MINOR_TRAILING = 0x85;  //trailing
+        public const int MINOR_HEART_BEAT = 0x83;  //heart beat event
+        public const int MINOR_REVERSE_ACCESS = 0x86; //reverse access
+        public const int MINOR_FORCE_ACCESS = 0x87; //force access
+        public const int MINOR_CLIMBING_OVER_GATE = 0x88; //climbing over gate
+        public const int MINOR_PASSING_TIMEOUT = 0x89;  //passing timeout
+        public const int MINOR_INTRUSION_ALARM = 0x8a;  //intrusion alarm
+        public const int MINOR_FREE_GATE_PASS_NOT_AUTH = 0x8b; //free gate pass not auth
+        public const int MINOR_DROP_ARM_BLOCK = 0x8c; //drop arm block
+        public const int MINOR_DROP_ARM_BLOCK_RESUME = 0x8d;  //drop arm block resume
+        public const int MINOR_LOCAL_FACE_MODELING_FAIL = 0x8e;  //device upgrade with module failed
+        public const int MINOR_STAY_EVENT = 0x8f;  //stay event
+        public const int MINOR_PASSWORD_MISMATCH = 0x97;  //password mismatch
+        public const int MINOR_EMPLOYEE_NO_NOT_EXIST = 0x98;  //employee no not exist
+        public const int MINOR_COMBINED_VERIFY_PASS = 0x99;  //combined verify pass
+        public const int MINOR_COMBINED_VERIFY_TIMEOUT = 0x9a;  //combined verify timeout
+        public const int MINOR_VERIFY_MODE_MISMATCH = 0x9b;  //verify mode mismatch
+        #endregion
+
         /*************************************************
         参数配置结构、参数(其中_V30为9000新增)
         **************************************************/
@@ -1164,12 +2163,12 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_TIME
         {
-            public uint dwYear;
-            public uint dwMonth;
-            public uint dwDay;
-            public uint dwHour;
-            public uint dwMinute;
-            public uint dwSecond;
+            public int dwYear;
+            public int dwMonth;
+            public int dwDay;
+            public int dwHour;
+            public int dwMinute;
+            public int dwSecond;
         }
 
         //时间参数
@@ -1212,7 +2211,7 @@ namespace HikVisionNetSDK.Common
 
         /*设备报警和异常处理方式*/
         public const int NOACTION = 0x0;/*无响应*/
-        public const int WARNONMONITOR = 0x1;/*监视器上警告*/
+        public const int WARNONMONITOR = 0x1;/*显示器上警告*/
         public const int WARNONAUDIOOUT = 0x2;/*声音警告*/
         public const int UPTOCENTER = 0x4;/*上传中心*/
         public const int TRIGGERALARMOUT = 0x8;/*触发报警输出*/
@@ -1232,7 +2231,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1242,7 +2241,7 @@ namespace HikVisionNetSDK.Common
             /*0x200: 抓图并上传FTP*/
             public uint dwMaxRelAlarmOutChanNum; //触发的报警输出通道数（只读）最大支持数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ALARMOUT_V40, ArraySubType = UnmanagedType.U4)]
-            public uint[] dwRelAlarmOut; //触发报警通道      
+            public uint[] dwRelAlarmOut; //触发报警通道
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;           //保留
         }
@@ -1252,7 +2251,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1263,7 +2262,7 @@ namespace HikVisionNetSDK.Common
             public uint dwMaxRelAlarmOutChanNum; //触发的报警输出通道数（只读）最大支持数
             public uint dwRelAlarmOutChanNum; //触发的报警输出通道数 实际支持数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.U4)]
-            public uint[] dwRelAlarmOut; //触发报警通道      
+            public uint[] dwRelAlarmOut; //触发报警通道
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;           //保留
         }
@@ -1274,7 +2273,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1292,7 +2291,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHandleType;/*处理方式,处理方式的"或"结果*/
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1348,11 +2347,12 @@ namespace HikVisionNetSDK.Common
 
             /// BYTE[128]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;
+            public byte[] byIPv6;
 
             public void Init()
             {
-                byRes = new byte[128];
+                sIpV4 = new byte[16];
+                byIPv6 = new byte[128];
             }
         }
 
@@ -1370,6 +2370,26 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ALARMHOST_NETPARAM
+        {
+            public uint dwSize;
+            public NET_DVR_IPADDR struIP;
+            public ushort wPort;
+            public byte byAddressType;    //0 - 无意义, 1 - ipv4/ipv6地址，2 - 域名
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOMAIN_NAME, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDomainName;
+            public byte byReportProtocol;        //1-private 2-NAL2300, 3-Ehome
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACCOUNTNUM_LEN_32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDevID; //协议为NAL2300时有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //GPRS的域名解析是在固定的服务器上进行的，所以不需要给解析服务器的信息预留一些字段
+        }
+
+
 
         /*网络数据结构(子结构)*/
         [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -1541,7 +2561,7 @@ namespace HikVisionNetSDK.Common
             public byte byDefaultRing; //默认铃音，范围1-6
             public byte byRingVolume;  //铃音音量，范围0-9
             public byte byInputVolume; //输入音量值，范围0-6
-            public byte byOutputVolume; //输出音量值，范围0-9	
+            public byte byOutputVolume; //输出音量值，范围0-9
             public ushort wRtpPort;  //Rtp端口
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
@@ -1780,7 +2800,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_MOTION_MODE_PARAM
         {
             public NET_DVR_MOTION_SINGLE_AREA struMotionSingleArea; //普通模式下的单区域设
-            public NET_DVR_MOTION_MULTI_AREA struMotionMultiArea; //专家模式下的多区域设置	
+            public NET_DVR_MOTION_MULTI_AREA struMotionMultiArea; //专家模式下的多区域设置
         }
 
         //移动侦测
@@ -1793,9 +2813,9 @@ namespace HikVisionNetSDK.Common
             public byte byConfigurationMode; //0~普通,1~专家(5.1.0新增)
             public byte byRes1; //保留字节
             /* 异常处理方式 */
-            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果  
+            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1826,9 +2846,9 @@ namespace HikVisionNetSDK.Common
             public ushort wHideAlarmAreaWidth;				/* 遮挡区域的宽 */
             public ushort wHideAlarmAreaHeight;             /*遮挡区域的高*/
             /* 信号丢失触发报警输出 */
-            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果  
+            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -1851,9 +2871,9 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwEnableVILostAlarm;                /* 是否启动信号丢失报警 ,0-否,1-是*/
             /* 信号丢失触发报警输出 */
-            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果     
+            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -2206,14 +3226,14 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_RECORDSCHED_V40
         {
             public NET_DVR_SCHEDTIME struRecordTime;
-            /*录像类型，0:定时录像，1:移动侦测，2:报警录像，3:动测|报警，4:动测&报警 5:命令触发, 
-            6-智能报警录像，10-PIR报警，11-无线报警，12-呼救报警，13-全部事件,14-智能交通事件, 
+            /*录像类型，0:定时录像，1:移动侦测，2:报警录像，3:动测|报警，4:动测&报警 5:命令触发,
+            6-智能报警录像，10-PIR报警，11-无线报警，12-呼救报警，13-全部事件,14-智能交通事件,
             15-越界侦测,16-区域入侵,17-声音异常,18-场景变更侦测,
             19-智能侦测(越界侦测|区域入侵|人脸侦测|声音异常|场景变更侦测),20－人脸侦测,21-POS录像,
             22-进入区域侦测, 23-离开区域侦测,24-徘徊侦测,25-人员聚集侦测,26-快速运动侦测,27-停车侦测,
             28-物品遗留侦测,29-物品拿取侦测,30-火点检测，31-防破坏检测,32-打架斗殴事件(司法),33-起身事件(司法), 34-瞌睡事件(司法)
-            35-船只检测, 36-测温预警，37-测温报警，38-温差报警，39-离线测温报警,40-防区报警，41-紧急求助,42-业务咨询,43-起身检测,44-折线攀高,45-如厕超时，46-人脸抓拍，47-非法摆摊,48-目标抓拍,
-            49-剧烈运动，50离岗检测，51-起立，52人数变化 */
+            35-船只检测, 36-测温预警，37-测温报警，38-温差报警，39-离线测温报警,40-防区报警，41-紧急求助,42-业务咨询,43-起身检测,44-折线攀高,45-目标区域滞留超时，46-人脸抓拍，47-非法摆摊,48-目标抓拍,
+            49-剧烈运动，50高危目标岗位检测-离岗检测，51-起立，52人数变化 */
             public byte byRecordType;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
@@ -2224,14 +3244,14 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_RECORDDAY_V40
         {
             public byte byAllDayRecord; /* 是否全天录像 0-否 1-是*/
-            /*录像类型，0:定时录像，1:移动侦测，2:报警录像，3:动测|报警，4:动测&报警 5:命令触发, 
-            6-智能报警录像，10-PIR报警，11-无线报警，12-呼救报警，13-全部事件,14-智能交通事件, 
+            /*录像类型，0:定时录像，1:移动侦测，2:报警录像，3:动测|报警，4:动测&报警 5:命令触发,
+            6-智能报警录像，10-PIR报警，11-无线报警，12-呼救报警，13-全部事件,14-智能交通事件,
             15-越界侦测,16-区域入侵,17-声音异常,18-场景变更侦测,
             19-智能侦测(越界侦测|区域入侵|人脸侦测|声音异常|场景变更侦测),20－人脸侦测,21-POS录像,
             22-进入区域侦测, 23-离开区域侦测,24-徘徊侦测,25-人员聚集侦测,26-快速运动侦测,27-停车侦测,
             28-物品遗留侦测,29-物品拿取侦测,30-火点检测，31-防破坏检测,32-打架斗殴事件(司法),33-起身事件(司法), 34-瞌睡事件(司法)
-            35-船只检测, 36-测温预警，37-测温报警，38-温差报警，39-离线测温报警,40-防区报警，41-紧急求助,42-业务咨询,43-起身检测,44-折线攀高,45-如厕超时,46-人脸抓拍,47-非法摆摊,48-目标抓拍,
-            49-剧烈运动，50离岗检测，51-起立，52人数变化*/
+            35-船只检测, 36-测温预警，37-测温报警，38-温差报警，39-离线测温报警,40-防区报警，41-紧急求助,42-业务咨询,43-起身检测,44-折线攀高,45-目标区域滞留超时,46-人脸抓拍,47-非法摆摊,48-目标抓拍,
+            49-剧烈运动，50高危目标岗位检测-离岗检测，51-起立，52人数变化*/
             public byte byRecordType;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 62, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
@@ -2340,7 +3360,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CRUISE_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] bySetCruise;/* 巡航是否设置: 0-没有设置,1-设置 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_TRACK_V30, ArraySubType = UnmanagedType.I1)]
-            public byte[] bySetTrack;/* 轨迹是否设置,0-没有设置,1-设置*/
+            public byte[] bySetTrack;/* 是否设置,0-没有设置,1-设置*/
         }
 
         //通道解码器(云台)参数配置
@@ -2360,7 +3380,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CRUISE, ArraySubType = UnmanagedType.I1)]
             public byte[] bySetCruise;/* 巡航是否设置: 0-没有设置,1-设置 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_TRACK, ArraySubType = UnmanagedType.I1)]
-            public byte[] bySetTrack;/* 轨迹是否设置,0-没有设置,1-设置*/
+            public byte[] bySetTrack;/* 是否设置,0-没有设置,1-设置*/
         }
 
         //ppp参数配置(子结构)
@@ -2461,8 +3481,8 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_PTZTRACKCHAN_INFO
         {
-            public uint dwEnablePtzTrackChan;	/*启用云台轨迹的通道*/
-            public uint dwPtzTrackNo;		/*云台轨迹通道对应的编号, 0xfffffff表示无效*/
+            public uint dwEnablePtzTrackChan;	/*启用花样扫描的通道*/
+            public uint dwPtzTrackNo;		/*花样扫描通道对应的编号, 0xfffffff表示无效*/
         }
 
         //报警输入参数配置(256路NVR扩展)
@@ -2475,10 +3495,10 @@ namespace HikVisionNetSDK.Common
             public byte byAlarmType;	            //报警器类型,0：常开,1：常闭
             public byte byAlarmInHandle;	        /* 是否处理 0-不处理 1-处理*/
             public byte byChannel;                 // 报警输入触发智能识别通道
-            public byte byRes1;                    //保留			
-            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果   
+            public byte byRes1;                    //保留
+            public uint dwHandleType;        //异常处理,异常处理方式的"或"结果
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出*/
@@ -2508,7 +3528,7 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_CRUISECHAN_INFO[] struCruiseChanInfo; //启用巡航功能通道的信息
             public uint dwEnablePtzTrackChanNum;  //当前已启用巡航的通道数目
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_PTZTRACKCHAN_INFO[] struPtzTrackInfo; //调用云台轨迹的通道信息
+            public NET_DVR_PTZTRACKCHAN_INFO[] struPtzTrackInfo; //调用花样扫描的通道信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 256, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -2540,9 +3560,9 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byCruiseNo;/* 巡航 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
-            public byte[] byEnablePtzTrack;/* 是否调用轨迹 0-否,1-是*/
+            public byte[] byEnablePtzTrack;/* 是否调用 0-否,1-是*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
-            public byte[] byPTZTrack;/* 调用的云台的轨迹序号 */
+            public byte[] byPTZTrack;/* 调用的云台的序号 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes3;
         }
@@ -2621,9 +3641,9 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM, ArraySubType = UnmanagedType.I1)]
             public byte[] byCruiseNo;/* 巡航 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM, ArraySubType = UnmanagedType.I1)]
-            public byte[] byEnablePtzTrack;/* 是否调用轨迹 0-否,1-是*/
+            public byte[] byEnablePtzTrack;/* 是否调用 0-否,1-是*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM, ArraySubType = UnmanagedType.I1)]
-            public byte[] byPTZTrack;/* 调用的云台的轨迹序号 */
+            public byte[] byPTZTrack;/* 调用的云台的序号 */
         }
 
         //模拟报警输入参数配置
@@ -2637,7 +3657,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byAlarmInName; //模拟报警输入名称
             public ushort wAlarmInUpper; //模拟输入电压上限，实际值乘10，范围0~360
-            public ushort wAlarmInLower; //模拟输入电压下限，实际值乘10，范围0~360 
+            public ushort wAlarmInLower; //模拟输入电压下限，实际值乘10，范围0~360
             public NET_DVR_HANDLEEXCEPTION_V30 struAlarmHandleType; /* 处理方式 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
@@ -2967,9 +3987,9 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOMAIN_NAME, ArraySubType = UnmanagedType.I1)]
             public byte[] byDomain;	//设备域名
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sUserName;	//监控主机登陆帐号
+            public byte[] sUserName;	//布防主机登陆帐号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sPassword;	//监控主机密码
+            public byte[] sPassword;	//布防主机密码
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -3091,31 +4111,6 @@ namespace HikVisionNetSDK.Common
             public byte byFactoryType;			/*前端设备厂家类型,通过接口获取*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 241, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_DVR_MRD_SEARCH_PARAM
-        {
-            public UInt32 dwSize;
-            public NET_DVR_STREAM_INFO struStreamInfo;
-            public UInt32 wYear;
-            public byte byMonth;
-            public byte byDrawFrame;
-            public byte byStreamType;
-            public byte byLocalOrUTC;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 30, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_DVR_MRD_SEARCH_RESULT
-        {
-            public UInt32 dwSize;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRecordDistribution;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
-            public byte[] byHasEventRecode;
-            public byte byRes;
         }
 
         [StructLayout(LayoutKind.Explicit)]
@@ -3350,14 +4345,14 @@ namespace HikVisionNetSDK.Common
             public uint dwHdStatus;/*硬盘状态(不可设置) HD_STAT*/
             public byte byHDAttr;/*0-默认, 1-冗余; 2-只读*/
             public byte byHDType;/*0-本地硬盘,1-ESATA硬盘,2-NAS硬盘*/
-            public byte byDiskDriver;   // 值 代表其ASCII字符 
+            public byte byDiskDriver;   // 值 代表其ASCII字符
             public byte byRes1;
             public uint dwHdGroup; /*属于哪个盘组 1-MAX_HD_GROUP*/
             public byte byRecycling;   // 是否循环利用 0：不循环利用，1：循环利用
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
             public uint dwStorageType;    //按位表示 0-不支持 非0-支持
-                                          // dwStorageType & 0x1 表示是否是普通录像专用存储盘     
+                                          // dwStorageType & 0x1 表示是否是普通录像专用存储盘
                                           // dwStorageType & 0x2  表示是否是抽帧录像专用存储盘
                                           // dwStorageType & 0x4 表示是否是图片录像专用存储盘
 
@@ -3382,7 +4377,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHDGroupNo;       /*盘组号(不可设置) 1-MAX_HD_GROUP*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
-            public uint[] dwRelRecordChan;  //触发的录像通道，按值表示，遇到0xffffffff时后续视为无效    
+            public uint[] dwRelRecordChan;  //触发的录像通道，按值表示，遇到0xffffffff时后续视为无效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;				/* 保留 */
         }
@@ -3499,7 +4494,7 @@ namespace HikVisionNetSDK.Common
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ANALOG_CHANNUM, ArraySubType = UnmanagedType.U2)]
             public ushort[] wOrder;/* 预览顺序, 0xff表示相应的窗口不预览 */
-            public ushort wSwitchTime;// 预览切换时间 
+            public ushort wSwitchTime;// 预览切换时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 14, ArraySubType = UnmanagedType.I1)]
             public byte[] res;
         }
@@ -3612,7 +4607,7 @@ namespace HikVisionNetSDK.Common
             高……管理员 */
             public byte byAlarmOnRight;         // 报警输入口布防权限 1-有权限，0-无权限
             public byte byAlarmOffRight;         // 报警输入口撤防权限 1-有权限，0-无权限
-            public byte byBypassRight;           // 报警输入口旁路权限 1-有权限，0-无权限 
+            public byte byBypassRight;           // 报警输入口旁路权限 1-有权限，0-无权限
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 118, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -3758,6 +4753,68 @@ namespace HikVisionNetSDK.Common
             public string sUserIP;/* 用户IP地址(为0时表示允许任何地址) */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MACADDR_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byMACAddr;/* 物理地址 */
+        }
+
+        //单用户参数(子结构)(扩展)
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_USER_INFO_V51
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sUserName;            /* 用户名只能用16字节 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sPassword;            /* 密码 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RIGHT, ArraySubType = UnmanagedType.I1)]
+            public byte[] byLocalRight;    /* 本地权限 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RIGHT, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRemoteRight;/* 远程权限 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwNetPreviewRight;            /* 远程可以预览的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwLocalRecordRight;            /* 本地可以录像的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwNetRecordRight;            /* 远程可以录像的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwLocalPlaybackRight;            /* 本地可以回放的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwNetPlaybackRight;            /* 远程可以回放的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwLocalPTZRight;                /* 本地可以PTZ的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwNetPTZRight;                /* 远程可以PTZ的通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwLocalBackupRight;            /* 本地备份权限通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwLocalPreviewRight;		/* 本地预览权限通道，从前往后顺序排列，遇到0xffffffff后续均为无效*/
+            public NET_DVR_IPADDR struUserIP;                /* 用户IP地址(为0时表示允许任何地址) */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MACADDR_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byMACAddr;    /* 物理地址 */
+            public byte byPriority;                /* 优先级，0xff-无，0--低，1--中，2--高 */
+            public byte byAlarmOnRight;         // 报警输入口布防权限 1-有权限，0-无权限
+            public byte byAlarmOffRight;         // 报警输入口撤防权限 1-有权限，0-无权限
+            public byte byBypassRight;           // 报警输入口旁路权限 1-有权限，0-无权限
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;               //四字节对齐
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RIGHT, ArraySubType = UnmanagedType.I1)]
+            public byte[] byPublishRight;  //信息发布专有权限
+            public uint dwPasswordValidity;   //密码有效期,仅管理员用户可以修改,单位：天，填0表示永久生效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byKeypadPassword;    //键盘密码
+            public byte byUserOperateType;    //用户操作类型，1-网络用户，2-键盘用户，3-网络用户+键盘用户
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1007, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_USER_V51
+        {
+            public uint dwSize;  //结构体大小
+            public uint dwMaxUserNum; //设备支持的最大用户数-只读
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_USERNUM_V30, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_USER_INFO_V51[] struUser;  /* 用户参数 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sloginPassword;          /* 登陆密码确认 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 240, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes; //保留
         }
 
         //DVR用户参数(扩展)
@@ -3910,7 +4967,7 @@ namespace HikVisionNetSDK.Common
             public byte byFindHardByCond; /*0-查找全部磁盘(但一次最多只能查找33个)，此时dwFindHardStatusNum无效*/
             public byte byFindChanByCond;  /*0-查找全部通道，此时dwFindChanNum无效*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;//保留	
+            public byte[] byRes1;//保留
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DISKNUM_V30, ArraySubType = UnmanagedType.U4)]
             public uint[] dwFindHardStatus; /*要查找的硬盘号，按值表示，该值采用顺序排列， 遇到0xffffffff则认为后续无效 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V40, ArraySubType = UnmanagedType.U4)]
@@ -4024,8 +5081,8 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_ALARMHOST_SEARCH_LOG_PARAM
         {
             public ushort wMajorType;		// 主类型
-            public ushort wMinorType;		// 次类型 
-            public NET_DVR_TIME struStartTime;	// 开始时间 
+            public ushort wMinorType;		// 次类型
+            public NET_DVR_TIME struStartTime;	// 开始时间
             public NET_DVR_TIME struEndTime;	// 结束时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;		// 保留字节
@@ -4038,7 +5095,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] sUserName;     // 操作用户
             public NET_DVR_IPADDR struIPAddr;                 // 操作IP地址
-            public ushort wMajorType;                 // 主类型 
+            public ushort wMajorType;                 // 主类型
             public ushort wMinorType;                 // 次类型
             public ushort wParam;	                    // 操作参数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 10, ArraySubType = UnmanagedType.I1)]
@@ -4156,7 +5213,7 @@ namespace HikVisionNetSDK.Common
         {
             public byte byEnable;/*0,不启用;1,启用*/
             public byte byMode;/*0,ASCII;1,HEX*/
-            public byte byFrameBeginPos;// 报文标志位的起始位置     
+            public byte byFrameBeginPos;// 报文标志位的起始位置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
@@ -4348,7 +5405,7 @@ namespace HikVisionNetSDK.Common
             public byte byEnable;				/*是否启用0,不启用;1,启用*/
             public byte byInputMode;			/**输入方式:0-网络监听、1网络协议、2-串口监听、3-串口协议*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 34, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;              //保留字节 
+            public byte[] byRes1;              //保留字节
             public NET_DVR_IPADDR struAtmIp;				/*ATM 机IP 网络监听时使用 */
             public ushort wAtmPort;				/* 网络协议方式时是使用*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
@@ -4384,7 +5441,7 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_ATM_PROTO_LIST struSerialListenList; //串口监听协议描述
             public NET_DVR_ATM_PROTO_LIST struNetProtoList;     //网络协议描述
             public NET_DVR_ATM_PROTO_LIST struSerialProtoList;   //串口协议描述
-            public NET_DVR_ATM_PROTO_TYPE struCustomProto;      //自定义协议            
+            public NET_DVR_ATM_PROTO_TYPE struCustomProto;      //自定义协议
         }
 
         /*****************************DS-6001D/F(begin)***************************/
@@ -4517,7 +5574,7 @@ namespace HikVisionNetSDK.Common
                 public byte[] byRes;
 
                 /*[FieldOffsetAttribute(0)]
-                [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 100, ArraySubType = UnmanagedType.I1)]             
+                [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 100, ArraySubType = UnmanagedType.I1)]
                 public byte[] byFile;/* 回放的文件名 */
                 /*[FieldOffsetAttribute(0)]
                 public bytime bytime;
@@ -4664,7 +5721,7 @@ namespace HikVisionNetSDK.Common
             public byte bySmtpServerVerify;/* 发送服务器要求身份验证 */
             public byte byMailInterval;/* mail interval */
             public byte byEnableSSL;//ssl是否启用9000_1.1
-            public ushort wSmtpPort;//gmail的465，普通的为25  
+            public ushort wSmtpPort;//gmail的465，普通的为25
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 74, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留
         }
@@ -4893,7 +5950,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;                 // 保留字节
             public NET_DVR_IPADDR struVrmAddr;          // VRM ip地址 16位
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 64)]
-            public string chNvtIndexCode;        //nvt index Code 
+            public string chNvtIndexCode;        //nvt index Code
         }
 
         //巡航点配置(HIK IP快球专用)
@@ -4955,9 +6012,9 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sUserName;/* 监控主机登陆帐号 */
+            public byte[] sUserName;/* 布防主机登陆帐号 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sPassword;/* 监控主机密码 */
+            public byte[] sPassword;/* 布防主机密码 */
         }
 
         //启动/停止动态解码
@@ -5107,9 +6164,9 @@ namespace HikVisionNetSDK.Common
         {
             public ushort wTransProtol;//传输协议，0-TCP, 1-UDP, 2-MCAST
             public ushort wPassivePort;//UDP端口, TCP时默认
-            // char	sMcastIP[16];		//TCP,UDP时无效, MCAST时为多播地址
             public NET_DVR_IPADDR struMcastIP;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte byStreamType;/* 数据播放模式:REAL_TIME_STREAM(1)实时流,RECORD_STREAM(2)文件流 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
             public byte[] res;
         }
 
@@ -5191,6 +6248,126 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
+        /*流媒体服务器基本配置*/
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_STREAM_MEDIA_SERVER
+        {
+            public byte byValid;/*是否启用流媒体服务器取流,0表示无效，非0表示有效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_DOMAIN_NAME)]
+            public string byAddress;/* 设备IP地址或者域名 */
+            public ushort wDevPort;/*流媒体服务器端口*/
+            public byte byTransmitType;/*传输协议类型 0-TCP，1-UDP*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //设备通道信息
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_DEV_CHAN_INFO_EX
+        {
+            public byte byChanType;		        //通道类型：0-普通通道，1-零通道，2-流ID，3-本地输入源
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = STREAM_ID_LEN)]
+            public string byStreamId;/* 流ID，通道类型 byChanType 为 2 时有效 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwChannel;//通道类型 byChanType为 0、1、3 时有效（如果通道类型为本地输入源，该参数值表示本地输入源索引）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_DOMAIN_NAME)]
+            public string byAddress;/* 设备IP地址或者域名 */
+            public ushort wDVRPort;			 	//端口号
+            public byte byChannel;				//该参数无效，通道号见dwChannel
+            public byte byTransProtocol;		//传输协议类型0-TCP，1-UDP
+            public byte byTransMode;			//传输码流模式 0－主码流 1－子码流
+            public byte byFactoryType;			/*前端设备厂家类型,通过接口获取*/
+            public byte byDeviceType; //设备类型(视频综合平台智能板使用)，1-解码器（此时根据视频综合平台能力集中byVcaSupportChanMode字段来决定是使用解码通道还是显示通道），2-编码器
+            public byte byDispChan;//显示通道号,智能配置使用
+            public byte bySubDispChan;//显示通道子通道号，智能配置时使用
+            public byte byResolution;	//; 1-CIF 2-4CIF 3-720P 4-1080P 5-500w大屏控制器使用，大屏控制器会根据该参数分配解码资源
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NAME_LEN)]
+            public string sUserName;  	        //布防主机登陆帐号
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = PASSWD_LEN)]
+            public string sPassword;  	        //布防主机密码
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_DEC_STREAM_DEV_EX
+        {
+            public NET_DVR_STREAM_MEDIA_SERVER struStreamMediaSvrCfg;/*流媒体服务器配置*/
+            public NET_DVR_DEV_CHAN_INFO_EX struDevChanInfo;/* 解码通道信息 */
+        }
+
+        //动态域名参数配置
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_DEV_DDNS_INFO
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_DOMAIN_NAME)]
+            public string byDevAddress;         //设备域名(IPServer或hiDDNS时可填设备序列号或者别名)
+            public byte byTransProtocol;		//传输协议类型：0- TCP，1- UDP，2- 多播
+            public byte byTransMode;			//传输码流模式 0－主码流 1－子码流
+            public byte byDdnsType;			    //域名服务器类型：0- IPServer，1- Dyndns，2- PeanutHull(花生壳)，3- NO-IP，4- hiDDNS
+            public byte byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_DOMAIN_NAME)]
+            public string byDdnsAddress;        //DDNS服务器地址
+            public ushort wDdnsPort;			//DDNS服务器端口号
+            public byte byChanType;		        //通道类型：0-普通通道，1-零通道，2-流ID
+            public byte byFactoryType;			//前端设备厂家类型,通过接口NET_DVR_GetIPCProtoList获取
+            public uint dwChannel;				//通道号
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = STREAM_ID_LEN)]
+            public string byStreamId;           // 流ID，通道类型 byChanType 为 2 时有效
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NAME_LEN)]
+            public string sUserName;  	        //布防主机登陆帐号
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = PASSWD_LEN)]
+            public string sPassword;  	        //布防主机密码
+            public ushort wDevPort;			 	//设备端口号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //动态域名取流配置
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_DEC_DDNS_DEV
+        {
+            public NET_DVR_DEV_DDNS_INFO struDdnsInfo;/*流媒体服务器配置*/
+            public NET_DVR_STREAM_MEDIA_SERVER struMediaServer;/* 解码通道信息 */
+        }
+
+        //取流模式配置联合体
+        [StructLayout(LayoutKind.Explicit)]
+        public struct NET_DVR_DEC_STREAM_MODE
+        {
+            [FieldOffsetAttribute(0)]
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 300, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes; //联合体大小
+            public void Init()
+            {
+                byRes = new byte[300];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_MATRIX_DEC_CHAN_INFO_V41
+        {
+            public uint dwSize;
+            public byte byStreamMode;/*取流模式：0- 无效，1- 通过IP或域名取流，2- 通过URL取流，3- 通过动态域名解析向设备取流*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_DEC_STREAM_MODE uDecStreamMode;/*取流信息*/
+            public uint dwPlayMode;/*解码状态：0-动态解码，1－循环解码，2－按时间回放，3－按文件回放*/
+            public NET_DVR_TIME StartTime;/* 按时间回放开始时间 */
+            public NET_DVR_TIME StopTime;/* 按时间回放停止时间 */
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
+            public string sFileName;/* 按文件回放文件名 */
+            public uint dwGetStreamMode;/*取流模式:1-主动，2-被动*/
+            public NET_DVR_MATRIX_PASSIVEMODE struPassiveMode;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
         public const int MAX_RESOLUTIONNUM = 64; //支持的最大分辨率数目
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -5235,6 +6412,61 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;//保留
             public uint dwLogoSize;//LOGO大小，包括BMP的文件头
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_PICTURECFG
+        {
+            public uint dwSize;        //大小
+            public byte byUseType;    //1-底图，2-GIF图片，3-CAD图片 4-输出口图片
+            public byte bySequence;//序号
+            public byte byOverlayEnabled; //图片叠加使能，是否在上传图片包含图片叠加参数 1-包含叠加参数，0-不包含
+            public byte byRes;
+            public NET_DVR_BASEMAP_CFG struBasemapCfg;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sPicName;//图片名称
+            public uint dwVideoWall;       //墙号（1字节墙号+1字节通道输出+2字节窗口号）
+            public byte byFlash; //图片闪烁使能，1-闪烁，0-不闪烁
+            public byte byTranslucent; //图片半透明使能，1-半透明，0-不半透明
+            public byte byShowEnabled; //图片显示使能，1-显示，0-隐藏
+            public byte byPictureType; //图片类型，1-bmp，2-jpg，3-png，……
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_OUTPUT_PIC_CFG
+        {
+            public uint dwSize;
+            public uint dwOutputPicNo;  //图片序号
+            public byte byEnable; //logo是否显示，1-显示，0-隐藏
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_RECTCFG_EX struRect;//logo位置，输出口范围总大小为1920*1920
+            public byte byFlash;  //是否闪烁1-闪烁，0-不闪烁
+            public byte byTranslucent; //是否半透明1-半透明，0-不半透明
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;                //保留
+            public uint dwOutputPicWinNo; //输出口图片窗口号（1字节设备号+1字节输出口号+2字节输出口图片窗口号）,获取全部时有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 28, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes3;
+        }
+
+        public const int MAX_OSD_LEN = 64;  //输出口OSD长度
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_OUTPUT_OSD_CFG
+        {
+            public uint dwSize;
+            public byte byEnable; //OSD是否显示，0-不显示，1-显示
+            public byte byFontSize; //字体大小，1-大，2-中，3-小
+            public byte byOSDColor; //OSD颜色配置，0-默认， 1-黑，2-白，3-红，4-绿，5-蓝
+            public byte byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_OSD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byOsdContent; //OSD内容
+            public NET_DVR_RECTCFG_EX struRect;//OSD位置，输出口范围总大小为1920*1920
+            public uint dwOsdWinNo; //输出口OSD窗口号（1字节设备号+1字节输出口号+2字节OSD窗口号），获取所有时有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;                //保留
         }
 
         /*编码类型*/
@@ -5300,10 +6532,10 @@ namespace HikVisionNetSDK.Common
             HDMI_SII9134_MODE_XGA_60HZ,	   //(1024*768)
             HDMI_SII9134_MODE_SXGA_60HZ,   //(1280*1024)
             HDMI_SII9134_MODE_SXGA2_60HZ,  //(1280*960)
-            HDMI_SII9134_MODE_720P_60HZ,   //(1280*720)	
-            HDMI_SII9134_MODE_720P_50HZ,   //(1280*720)		
+            HDMI_SII9134_MODE_720P_60HZ,   //(1280*720)
+            HDMI_SII9134_MODE_720P_50HZ,   //(1280*720)
             HDMI_SII9134_MODE_1080I_60HZ,  //(1920*1080)
-            HDMI_SII9134_MODE_1080I_50HZ,  //(1920*1080)	
+            HDMI_SII9134_MODE_1080I_50HZ,  //(1920*1080)
             HDMI_SII9134_MODE_1080P_25HZ,  //(1920*1080)
             HDMI_SII9134_MODE_1080P_30HZ,  //(1920*1080)
             HDMI_SII9134_MODE_1080P_50HZ,  //(1920*1080)
@@ -5313,8 +6545,8 @@ namespace HikVisionNetSDK.Common
             DVI_SII9134_MODE_XGA_60HZ,	   //(1024*768)
             DVI_SII9134_MODE_SXGA_60HZ,	   //(1280*1024)
             DVI_SII9134_MODE_SXGA2_60HZ,   //(1280*960)
-            DVI_SII9134_MODE_720P_60HZ,	   //(1280*720)	
-            DVI_SII9134_MODE_720P_50HZ,    //(1280*720)		
+            DVI_SII9134_MODE_720P_60HZ,	   //(1280*720)
+            DVI_SII9134_MODE_720P_50HZ,    //(1280*720)
             DVI_SII9134_MODE_1080I_60HZ,   //(1920*1080)
             DVI_SII9134_MODE_1080I_50HZ,   //(1920*1080)
             DVI_SII9134_MODE_1080P_25HZ,   //(1920*1080)
@@ -5446,7 +6678,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public byte byDecChanScaleStatus;/*解码通道显示缩放控制,1表示缩放显示，0表示真实显示*/
-            public byte byDecodeDelay;//解码延时，0-默认，1-实时性好，2-实时性较好，3-实时性中，流畅性中，4-流畅性较好，5-流畅性好，0xff-自动调整   
+            public byte byDecodeDelay;//解码延时，0-默认，1-实时性好，2-实时性较好，3-实时性中，流畅性中，4-流畅性较好，5-流畅性好，0xff-自动调整
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 66, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -5470,8 +6702,6 @@ namespace HikVisionNetSDK.Common
 
         public const int VIDEOPLATFORM_ABILITY = 0x210; //视频综合平台能力集
         public const int MATRIXDECODER_ABILITY_V41 = 0x260; //解码器能力集
-
-        public const int NET_DVR_MATRIX_BIGSCREENCFG_GET = 1140;//获取大屏拼接参数        
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_SUBSYSTEMINFO
@@ -5524,8 +6754,8 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_ALARMMODECFG
         {
             public uint dwSize;
-            public byte byAlarmMode;//报警触发类型，1-轮询，2-保持 
-            public ushort wLoopTime;//轮询时间, 单位：秒 
+            public byte byAlarmMode;//报警触发类型，1-轮询，2-保持
+            public ushort wLoopTime;//轮询时间, 单位：秒
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 9, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -5543,7 +6773,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] sPassword;/*密码 */
             public byte byChan;//码分器485号
-            public byte by485Port;//485口地址      
+            public byte by485Port;//485口地址
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 14, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
@@ -5608,7 +6838,7 @@ namespace HikVisionNetSDK.Common
             public byte bySubSystemType;
             public byte byChanNum;//子系统通道数
             public byte byStartChan;//子系统起始通道数
-            public byte bySlotNum;//槽位号 
+            public byte bySlotNum;//槽位号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
             public struDecoderSystemAbility _struAbility;
@@ -5628,7 +6858,7 @@ namespace HikVisionNetSDK.Common
             public byte byOutputSwitch;//是否支持HDMI/DVI互相切换，0-不支持，1-支持
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 39, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
-            public byte byDecoderType; //解码板类型  0-普通解码板 1-万能解码板
+            public byte byDecoderType; //解码板类型  0-普通解码板 1-解码板
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 152, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
@@ -5675,7 +6905,7 @@ namespace HikVisionNetSDK.Common
             public byte bySupportBaseMapNums;//所支持的底图数，底图号从1开始
             public ushort wBaseLengthX;//每个屏大小的基准值，B20使用
             public ushort wBaseLengthY;
-            public byte bySupportPictureTrans;  //是否支持图片回显，0-不支持，1-支持	
+            public byte bySupportPictureTrans;  //是否支持图片回显，0-不支持，1-支持
             public byte bySupportPreAllocDec;   //是否支持智能解码资源预分配，0-不支持，1-支持
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 628, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
@@ -5828,8 +7058,8 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DEVICEINFO_V30
         {
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = SERIALNO_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sSerialNumber;  //序列号
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = SERIALNO_LEN)]
+            public string sSerialNumber;  //序列号
             public byte byAlarmInPortNum;		        //报警输入个数
             public byte byAlarmOutPortNum;		        //报警输出个数
             public byte byDiskNum;				    //硬盘个数
@@ -5837,7 +7067,7 @@ namespace HikVisionNetSDK.Common
             public byte byChanNum;				    //模拟通道个数
             public byte byStartChan;			        //起始通道号,例如DVS-1,DVR - 1
             public byte byAudioChanNum;                //语音通道数
-            public byte byIPChanNum;					//最大数字通道个数，低位  
+            public byte byIPChanNum;					//最大数字通道个数，低位
             public byte byZeroChanNum;			//零通道编码个数 //2010-01-16
             public byte byMainProto;			//主码流传输协议类型 0-private, 1-rtsp,2-同时支持private和rtsp
             public byte bySubProto;				//子码流传输协议类型0-private, 1-rtsp,2-同时支持private和rtsp
@@ -5853,12 +7083,12 @@ namespace HikVisionNetSDK.Common
             public byte bySupport1;        // 能力集扩充，位与结果为0表示不支持，1表示支持
                                            //bySupport1 & 0x1, 表示是否支持snmp v30
                                            //bySupport1 & 0x2, 支持区分回放和下载
-                                           //bySupport1 & 0x4, 是否支持布防优先级	
+                                           //bySupport1 & 0x4, 是否支持布防优先级
                                            //bySupport1 & 0x8, 智能设备是否支持布防时间段扩展
                                            //bySupport1 & 0x10, 表示是否支持多磁盘数（超过33个）
-                                           //bySupport1 & 0x20, 表示是否支持rtsp over http	
+                                           //bySupport1 & 0x20, 表示是否支持rtsp over http
                                            //bySupport1 & 0x80, 表示是否支持车牌新报警信息2012-9-28, 且还表示是否支持NET_DVR_IPPARACFG_V40结构体
-            public byte bySupport2; /*能力，位与结果为0表示不支持，非0表示支持							
+            public byte bySupport2; /*能力，位与结果为0表示不支持，非0表示支持
 							bySupport2 & 0x1, 表示解码器是否支持通过URL取流解码
 							bySupport2 & 0x2,  表示支持FTPV40
 							bySupport2 & 0x4,  表示支持ANR
@@ -5870,7 +7100,7 @@ namespace HikVisionNetSDK.Common
             public byte bySupport3; //能力集扩展，位与结果为0表示不支持，1表示支持
                                     //bySupport3 & 0x1, 表示是否多码流
                                     // bySupport3 & 0x4 表示支持按组配置， 具体包含 通道图像参数、报警输入参数、IP报警输入、输出接入参数、
-                                    // 用户参数、设备工作状态、JPEG抓图、定时和时间抓图、硬盘盘组管理 
+                                    // 用户参数、设备工作状态、JPEG抓图、定时和时间抓图、硬盘盘组管理
                                     //bySupport3 & 0x8为1 表示支持使用TCP预览、UDP预览、多播预览中的"延时预览"字段来请求延时预览（后续都将使用这种方式请求延时预览）。而当bySupport3 & 0x8为0时，将使用 "私有延时预览"协议。
                                     //bySupport3 & 0x10 表示支持"获取报警主机主要状态（V40）"。
                                     //bySupport3 & 0x20 表示是否支持通过DDNS域名解析取流
@@ -5880,7 +7110,7 @@ namespace HikVisionNetSDK.Common
             public byte byStartDTalkChan;	//起始数字对讲通道号，区别于模拟对讲通道号，0表示无效
             public byte byHighDChanNum;		//数字通道个数，高位
             public byte bySupport4;
-            public byte byLanguageType;// 支持语种能力,按位表示,每一位0-不支持,1-支持  
+            public byte byLanguageType;// 支持语种能力,按位表示,每一位0-不支持,1-支持
                                        //  byLanguageType 等于0 表示 老设备
                                        //  byLanguageType & 0x1表示支持中文
                                        //  byLanguageType & 0x2表示支持英文
@@ -5894,10 +7124,10 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_DEVICEINFO_V30 struDeviceV30;
             public byte bySupportLock;        //设备支持锁定功能，该字段由SDK根据设备返回值来赋值的。bySupportLock为1时，dwSurplusLockTime和byRetryLoginTime有效
             public byte byRetryLoginTime;	    //剩余可尝试登陆的次数，用户名，密码错误时，此参数有效
-            public byte byPasswordLevel;      //admin密码安全等级0-无效，1-默认密码，2-有效密码,3-风险较高的密码。当用户的密码为出厂默认密码（12345）或者风险较高的密码时，上层客户端需要提示用户更改密码。      
+            public byte byPasswordLevel;      //admin密码安全等级0-无效，1-默认密码，2-有效密码,3-风险较高的密码。当用户的密码为出厂默认密码（12345）或者风险较高的密码时，上层客户端需要提示用户更改密码。
             public byte byProxyType;//代理类型，0-不使用代理, 1-使用socks5代理, 2-使用EHome代理
             public uint dwSurplusLockTime;	//剩余时间，单位秒，用户锁定时，此参数有效
-            public byte byCharEncodeType;     //字符编码类型
+            public byte byCharEncodeType;     //字符编码类型（SDK所有接口返回的字符串编码类型，透传接口除外）：0- 无字符编码信息(老设备)，1- GB2312(简体中文)，2- GBK，3- BIG5(繁体中文)，4- Shift_JIS(日文)，5- EUC-KR(韩文)，6- UTF-8，7- ISO8859-1，8- ISO8859-2，9- ISO8859-3，…，依次类推，21- ISO8859-15(西欧)
             public byte bySupportDev5;//支持v50版本的设备参数获取，设备名称和设备类型名称长度扩展为64字节
             public byte bySupport;  //能力集扩展，位与结果：0- 不支持，1- 支持
             // bySupport & 0x1:  保留
@@ -5919,14 +7149,14 @@ namespace HikVisionNetSDK.Common
         [StructLayout(LayoutKind.Sequential)]
         public struct NET_DVR_USER_LOGIN_INFO
         {
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_DVR_DEV_ADDRESS_MAX_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sDeviceAddress;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NET_DVR_DEV_ADDRESS_MAX_LEN)]
+            public string sDeviceAddress;
             public byte byUseTransport;
             public ushort wPort;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_DVR_LOGIN_USERNAME_MAX_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sUserName;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_DVR_LOGIN_PASSWD_MAX_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sPassword;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NET_DVR_LOGIN_USERNAME_MAX_LEN)]
+            public string sUserName;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NET_DVR_LOGIN_PASSWD_MAX_LEN)]
+            public string sPassword;
             public LOGINRESULTCALLBACK cbLoginResult;
             public IntPtr pUser;
             public bool bUseAsynLogin;
@@ -5935,7 +7165,7 @@ namespace HikVisionNetSDK.Common
             public byte byLoginMode; //0-Private, 1-ISAPI, 2-自适应
             public byte byHttps;    //0-不适用tls，1-使用tls 2-自适应
             public int iProxyID;    //代理服务器序号，添加代理服务器信息时，相对应的服务器数组下表值
-            public byte byVerifyMode;  //认证方式，0-不认证，1-双向认证，2-单向认证；认证仅在使用TLS的时候生效;    
+            public byte byVerifyMode;  //认证方式，0-不认证，1-双向认证，2-单向认证；认证仅在使用TLS的时候生效;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 119, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes3;
         }
@@ -5968,7 +7198,7 @@ namespace HikVisionNetSDK.Common
         public enum CAPTURE_MODE
         {
             BMP_MODE = 0,		//BMP模式
-            JPEG_MODE = 1		//JPEG模式 
+            JPEG_MODE = 1		//JPEG模式
         }
 
         //实时声音模式
@@ -6145,26 +7375,6 @@ namespace HikVisionNetSDK.Common
             public string sCardNum;
         }
 
-        /// <summary>
-        /// 按时间锁流
-        /// </summary>
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_DVR_STREAM_TIME_LOCK
-        {
-            public uint dwSize;
-            public NET_DVR_TIME strBeginTime;
-            public NET_DVR_TIME strEndTime;
-            public NET_DVR_STREAM_INFO struStreamInfo;
-            public uint dwRecordType;
-            public uint dwLockDuration;
-            public NET_DVR_TIME_EX strUnlockTimePoint;
-            public byte byISO8601;
-            public byte cTimeDifferenceH;
-            public byte cTimeDifferenceM;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;
-        }
-
         //录象文件查找条件结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_FILECOND
@@ -6197,7 +7407,29 @@ namespace HikVisionNetSDK.Common
         {
             public byte byAudioEncType;//音频编码类型 0-G722; 1-G711
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
-            public byte[] byres;//这里保留音频的压缩参数 
+            public byte[] byres;//这里保留音频的压缩参数
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_AUDIOENC_INFO
+        {
+            public uint in_frame_size;                /* 输入一帧数据大小(BYTES)，由GetInfoParam函数返回         */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.U4)]
+            public int[] reserved;                 /* 保留 */
+        }
+
+        // 音频编码
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_AUDIOENC_PROCESS_PARAM
+        {
+            public IntPtr in_buf;                      /* 输入buf */
+            public IntPtr out_buf;                     /* 输出buf */
+            public uint out_frame_size;               /* 编码一帧后的BYTE数 */
+            public int g726enc_reset;                /* 重置开关 */
+            public int g711_type;                    /* g711编码类型,0 - U law, 1- A law */
+            public int enc_mode;                     /* 音频编码模式，AMR编码配置 */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.U4)]
+            public int[] reserved;                 /* 保留 */
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
@@ -6390,13 +7622,13 @@ namespace HikVisionNetSDK.Common
         public struct NET_VCA_CTRLINFO
         {
             public byte byVCAEnable;//是否开启智能
-            public byte byVCAType;//智能能力类型，VCA_CHAN_ABILITY_TYPE 
+            public byte byVCAType;//智能能力类型，VCA_CHAN_ABILITY_TYPE
             public byte byStreamWithVCA;//码流中是否带智能信息
             public byte byMode;//模式，VCA_CHAN_MODE_TYPE ,atm能力的时候需要配置
             public byte byControlType;   //控制类型，按位表示，0-否，1-是
             // byControlType &1 是否启用抓拍功能
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//保留，设置为0 
+            public byte[] byRes;//保留，设置为0
         }
 
         //智能控制信息结构
@@ -6428,18 +7660,18 @@ namespace HikVisionNetSDK.Common
             public byte byFSnapRecogChanNum;  //人脸抓拍和识别通道个数
             public byte byFRetrievalChanNum;  //人脸后检索个数
             public byte bySupport;            //能力，位与结果为0表示不支持，1表示支持
-            //bySupport & 0x1，表示是否支持智能跟踪 2012-3-22
+            //bySupport & 0x1，表示是否支持智能 2012-3-22
             //bySupport & 0x2，表示是否支持128路取流扩展2012-12-27
             public byte byFRecogChanNum;      //人脸识别通道个数
             public byte byBPPerimeterChanNum; //行为监狱版(周界)通道个数
             public byte byTPSChanNum;         //交通诱导通道个数
             public byte byTFSChanNum;         //道路违章取证通道个数
-            public byte byFSnapBFullChanNum;  //人脸抓拍和行为分析通道个数
+            public byte byFSnapBFullChanNum;  //人脸抓拍和异常行为识别通道个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 22, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
-        //行为分析能力类型
+        //异常行为识别能力类型
         public enum VCA_ABILITY_TYPE : uint
         {
             TRAVERSE_PLANE_ABILITY = 0x01,       //穿越警戒面
@@ -6451,19 +7683,19 @@ namespace HikVisionNetSDK.Common
             PARKING_ABILITY = 0x40,       //停车
             RUN_ABILITY = 0x80,       //快速移动
             HIGH_DENSITY_ABILITY = 0x100,      //人员聚集
-            LF_TRACK_ABILITY = 0x200,      //球机跟踪
+            LF_TRACK_ABILITY = 0x200,      //球机
             VIOLENT_MOTION_ABILITY = 0x400,      //剧烈运动检测
             REACH_HIGHT_ABILITY = 0x800,      //攀高检测
             GET_UP_ABILITY = 0x1000,     //起身检测
             LEFT_ABILITY = 0x2000,     //物品遗留
             TAKE_ABILITY = 0x4000,     //物品拿取
-            LEAVE_POSITION = 0x8000,     //离岗
-            TRAIL_ABILITY = 0x10000,    //尾随 
-            KEY_PERSON_GET_UP_ABILITY = 0x20000,    //重点人员起身检测
+            LEAVE_POSITION = 0x8000,     //高危目标岗位检测-离岗
+            TRAIL_ABILITY = 0x10000,    //尾随
+            KEY_PERSON_GET_UP_ABILITY = 0x20000,    //重点目标起身检测
             FALL_DOWN_ABILITY = 0x80000,    //倒地
             AUDIO_ABNORMAL_ABILITY = 0x100000,   //声强突变
             ADV_REACH_HEIGHT_ABILITY = 0x200000,   //折线攀高
-            TOILET_TARRY_ABILITY = 0x400000,   //如厕超时
+            TOILET_TARRY_ABILITY = 0x400000,   //目标区域滞留超时
             YARD_TARRY_ABILITY = 0x800000,   //放风场滞留
             ADV_TRAVERSE_PLANE_ABILITY = 0x1000000,  //折线警戒面
             HUMAN_ENTER_ABILITY = 0x10000000, //人靠近ATM ,只在ATM_PANEL模式下支持
@@ -6475,22 +7707,22 @@ namespace HikVisionNetSDK.Common
         //智能通道类型
         public enum VCA_CHAN_ABILITY_TYPE
         {
-            VCA_BEHAVIOR_BASE = 1,          //行为分析基本版
-            VCA_BEHAVIOR_ADVANCE = 2,          //行为分析高级版
-            VCA_BEHAVIOR_FULL = 3,          //行为分析完整版
+            VCA_BEHAVIOR_BASE = 1,          //异常行为识别基本版
+            VCA_BEHAVIOR_ADVANCE = 2,          //异常行为识别高级版
+            VCA_BEHAVIOR_FULL = 3,          //异常行为识别完整版
             VCA_PLATE = 4,          //车牌能力
             VCA_ATM = 5,          //ATM能力
             VCA_PDC = 6,          //人流量统计
             VCA_ITS = 7,          //智能 交通事件
-            VCA_BEHAVIOR_PRISON = 8,          //行为分析监狱版(监舍) 
+            VCA_BEHAVIOR_PRISON = 8,          //异常行为识别监狱版(监舍)
             VCA_FACE_SNAP = 9,           //人脸抓拍能力
             VCA_FACE_SNAPRECOG = 10,          //人脸抓拍和识别能力
             VCA_FACE_RETRIEVAL = 11,          //人脸后检索能力
             VCA_FACE_RECOG = 12,          //人脸识别能力
-            VCA_BEHAVIOR_PRISON_PERIMETER = 13, // 行为分析监狱版 (周界)
+            VCA_BEHAVIOR_PRISON_PERIMETER = 13, // 异常行为识别监狱版 (周界)
             VCA_TPS = 14,          //交通诱导
             VCA_TFS = 15,          //道路违章取证
-            VCA_BEHAVIOR_FACESNAP = 16           //人脸抓拍和行为分析能力
+            VCA_BEHAVIOR_FACESNAP = 16           //人脸抓拍和异常行为识别能力
         }
 
         //智能ATM模式类型(ATM能力特有)
@@ -6506,7 +7738,7 @@ namespace HikVisionNetSDK.Common
             TFS_FREEWAY = 1   //TFS 高速道路
         }
 
-        //行为分析场景模式
+        //异常行为识别场景模式
         public enum BEHAVIOR_SCENE_MODE_TYPE
         {
             BEHAVIOR_SCENE_DEFAULT = 0, //系统默认
@@ -6521,7 +7753,7 @@ namespace HikVisionNetSDK.Common
             public byte byVCAType;//VCA_CHAN_ABILITY_TYPE枚举值
             public byte byMode;//模式，VCA_CHAN_MODE_TYPE ,atm能力的时候需要配置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//保留，设置为0 
+            public byte[] byRes;//保留，设置为0
         }
 
         //行为能力集结构
@@ -6532,7 +7764,7 @@ namespace HikVisionNetSDK.Common
             public uint dwAbilityType;//支持的能力类型，按位表示，见VCA_ABILITY_TYPE定义
             public byte byMaxRuleNum;//最大规则数
             public byte byMaxTargetNum;//最大目标数
-            public byte bySupport;		// 支持的功能类型   按位表示  
+            public byte bySupport;		// 支持的功能类型   按位表示
             // bySupport & 0x01 支持标定功能
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 9, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes; //保留，设置为0
@@ -6572,7 +7804,7 @@ namespace HikVisionNetSDK.Common
             public float fHeight;//边界框的高度, 0.001~1
         }
 
-        //行为分析事件类型
+        //异常行为识别事件类型
         public enum VCA_EVENT_TYPE : uint
         {
             VCA_TRAVERSE_PLANE = 0x1,        //穿越警戒面
@@ -6589,13 +7821,13 @@ namespace HikVisionNetSDK.Common
             VCA_GET_UP = 0x800,	     //起身检测
             VCA_LEFT = 0x1000,     //物品遗留
             VCA_TAKE = 0x2000,     //物品拿取
-            VCA_LEAVE_POSITION = 0x4000,     //离岗
+            VCA_LEAVE_POSITION = 0x4000,     //高危目标岗位检测-离岗
             VCA_TRAIL = 0x8000,     //尾随
-            VCA_KEY_PERSON_GET_UP = 0x10000,    //重点人员起身检测
+            VCA_KEY_PERSON_GET_UP = 0x10000,    //重点目标起身检测
             VCA_FALL_DOWN = 0x80000,    //倒地检测
             VCA_AUDIO_ABNORMAL = 0x100000,   //声强突变检测
             VCA_ADV_REACH_HEIGHT = 0x200000,   //折线攀高
-            VCA_TOILET_TARRY = 0x400000,   //如厕超时
+            VCA_TOILET_TARRY = 0x400000,   //目标区域滞留超时
             VCA_YARD_TARRY = 0x800000,   //放风场滞留
             VCA_ADV_TRAVERSE_PLANE = 0x1000000,  //折线警戒面
             VCA_HUMAN_ENTER = 0x10000000, //人靠近ATM           只在ATM_PANEL模式下支持
@@ -6604,7 +7836,7 @@ namespace HikVisionNetSDK.Common
             VCA_INSTALL_SCANNER = 0x80000000  //安装读卡器,支持区域规则
         }
 
-        //行为分析事件类型扩展
+        //异常行为识别事件类型扩展
         public enum VCA_RULE_EVENT_TYPE_EX : ushort
         {
             ENUM_VCA_EVENT_TRAVERSE_PLANE = 1,   //穿越警戒面
@@ -6621,16 +7853,16 @@ namespace HikVisionNetSDK.Common
             ENUM_VCA_EVENT_GET_UP = 12,  //起身检测
             ENUM_VCA_EVENT_LEFT = 13,  //物品遗留
             ENUM_VCA_EVENT_TAKE = 14,  //物品拿取
-            ENUM_VCA_EVENT_LEAVE_POSITION = 15,  //离岗
+            ENUM_VCA_EVENT_LEAVE_POSITION = 15,  //高危目标岗位检测-离岗
             ENUM_VCA_EVENT_TRAIL = 16,  //尾随
-            ENUM_VCA_EVENT_KEY_PERSON_GET_UP = 17,  //重点人员起身检测
+            ENUM_VCA_EVENT_KEY_PERSON_GET_UP = 17,  //重点目标起身检测
             ENUM_VCA_EVENT_FALL_DOWN = 20,  //倒地检测
             ENUM_VCA_EVENT_AUDIO_ABNORMAL = 21,  //声强突变检测
             ENUM_VCA_EVENT_ADV_REACH_HEIGHT = 22,  //折线攀高
-            ENUM_VCA_EVENT_TOILET_TARRY = 23,  //如厕超时
+            ENUM_VCA_EVENT_TOILET_TARRY = 23,  //目标区域滞留超时
             ENUM_VCA_EVENT_YARD_TARRY = 24,  //放风场滞留
             ENUM_VCA_EVENT_ADV_TRAVERSE_PLANE = 25,  //折线警戒面
-            ENUM_VCA_EVENT_HUMAN_ENTER = 29,  //人靠近ATM,只在ATM_PANEL模式下支持   
+            ENUM_VCA_EVENT_HUMAN_ENTER = 29,  //人靠近ATM,只在ATM_PANEL模式下支持
             ENUM_VCA_EVENT_OVER_TIME = 30,  //操作超时,只在ATM_PANEL模式下支持
             ENUM_VCA_EVENT_STICK_UP = 31,  //贴纸条,支持区域规则
             ENUM_VCA_EVENT_INSTALL_SCANNER = 32   //安装读卡器,支持区域规则
@@ -6639,16 +7871,16 @@ namespace HikVisionNetSDK.Common
         //警戒面穿越方向类型
         public enum VCA_CROSS_DIRECTION
         {
-            VCA_BOTH_DIRECTION,// 双向 
-            VCA_LEFT_GO_RIGHT,// 由左至右 
-            VCA_RIGHT_GO_LEFT,// 由右至左 
+            VCA_BOTH_DIRECTION,// 双向
+            VCA_LEFT_GO_RIGHT,// 由左至右
+            VCA_RIGHT_GO_LEFT,// 由右至左
         }
 
         //线结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_LINE
         {
-            public NET_VCA_POINT struStart;//起点 
+            public NET_VCA_POINT struStart;//起点
             public NET_VCA_POINT struEnd; //终点
 
             //             public void init()
@@ -6658,7 +7890,7 @@ namespace HikVisionNetSDK.Common
             //             }
         }
 
-        //该结构会导致xaml界面出不来！！！！！！！！！？？问题暂时还没有找到  
+        //该结构会导致xaml界面出不来！！！！！！！！！？？问题暂时还没有找到
         //暂时屏蔽结构先
         //多边型结构体
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -6675,7 +7907,7 @@ namespace HikVisionNetSDK.Common
         {
             public NET_VCA_LINE struPlaneBottom;//警戒面底边
             public uint dwCrossDirection;//穿越方向: 0-双向，1-从左到右，2-从右到左
-            public byte bySensitivity;//灵敏度，取值范围：[1,5] （对于Smart IPC，取值范围为[1,100]） 
+            public byte bySensitivity;//灵敏度，取值范围：[1,5] （对于Smart IPC，取值范围为[1,100]）
             public byte byPlaneHeight;//警戒面高度
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 38, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
@@ -6803,7 +8035,7 @@ namespace HikVisionNetSDK.Common
         {
             public NET_VCA_POLYGON struRegion; // 区域范围
             public ushort wDuration;       // 触发物品遗留报警阈值 10-100秒
-            public byte bySensitivity;   // 灵敏度参数，范围[1,5] 
+            public byte bySensitivity;   // 灵敏度参数，范围[1,5]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;        // 保留字节
         }
@@ -6814,7 +8046,7 @@ namespace HikVisionNetSDK.Common
         {
             public NET_VCA_POLYGON struRegion;     // 区域范围
             public ushort wDuration;      // 触发物品拿取报警阈值10-100秒
-            public byte bySensitivity;  // 灵敏度参数，范围[1,5] 
+            public byte bySensitivity;  // 灵敏度参数，范围[1,5]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;       // 保留字节
         }
@@ -6857,14 +8089,14 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //离岗事件
+        //高危目标岗位检测-离岗事件
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_LEAVE_POSITION
         {
             public NET_VCA_POLYGON struRegion; //区域范围
             public ushort wLeaveDelay;  //无人报警时间，单位：s，取值1-1800
             public ushort wStaticDelay; //睡觉报警时间，单位：s，取值1-1800
-            public byte byMode;       //模式，0-离岗事件，1-睡岗事件，2-离岗睡岗事件
+            public byte byMode;       //模式，0-高危目标岗位检测-离岗事件，1-高危目标岗位检测-睡岗事件，2-高危目标岗位检测-离岗睡岗事件
             public byte byPersonType; //值岗人数类型，0-单人值岗，1-双人值岗
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;     //保留
@@ -6897,12 +8129,12 @@ namespace HikVisionNetSDK.Common
         public struct NET_VCA_AUDIO_ABNORMAL
         {
             public ushort wDecibel;       //声音强度
-            public byte bySensitivity;  //灵敏度参数，范围[1,5] 
-            public byte byAudioMode;    //声音检测模式，0-灵敏度检测，1-分贝阈值检测，2-灵敏度与分贝阈值检测 
+            public byte bySensitivity;  //灵敏度参数，范围[1,5]
+            public byte byAudioMode;    //声音检测模式，0-灵敏度检测，1-分贝阈值检测，2-灵敏度与分贝阈值检测
             public byte byEnable;       //使能，是否开启
             public byte byThreshold;    //声音阈值[0,100]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 54, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;      //保留   
+            public byte[] byRes;      //保留
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -6928,7 +8160,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_VCA_TOILET_TARRY
         {
             public NET_VCA_POLYGON struRegion;//区域范围
-            public ushort wDelay;        //如厕超时时间[1,3600]，单位：秒
+            public ushort wDelay;        //目标区域滞留超时时间[1,3600]，单位：秒
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -6956,7 +8188,7 @@ namespace HikVisionNetSDK.Common
         {
             public NET_VCA_POLYGON struRegion; //警戒面折线
             public uint dwCrossDirection;   //跨越方向(详见VCA_CROSS_DIRECTION): 0-双向，1-从左到右2-从右到左
-            public byte bySensitivity;      //灵敏度参数，范围[1,5] 
+            public byte bySensitivity;      //灵敏度参数，范围[1,5]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;		    //保留字节
         }
@@ -6970,7 +8202,7 @@ namespace HikVisionNetSDK.Common
             public uint[] uLen;//参数
 
             //[FieldOffsetAttribute(0)]
-            //public NET_VCA_TRAVERSE_PLANE struTraversePlane;//穿越警戒面参数 
+            //public NET_VCA_TRAVERSE_PLANE struTraversePlane;//穿越警戒面参数
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_AREA struArea;//进入/离开区域参数
             //[FieldOffsetAttribute(0)]
@@ -6984,7 +8216,7 @@ namespace HikVisionNetSDK.Common
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_RUN struRun;//奔跑参数
             //[FieldOffsetAttribute(0)]
-            //public NET_VCA_HIGH_DENSITY struHighDensity;//人员聚集参数  
+            //public NET_VCA_HIGH_DENSITY struHighDensity;//人员聚集参数
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_VIOLENT_MOTION struViolentMotion;	//剧烈运动
             //[FieldOffsetAttribute(0)]
@@ -7004,7 +8236,7 @@ namespace HikVisionNetSDK.Common
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_SCANNER struScanner;//读卡器参数
             //[FieldOffsetAttribute(0)]
-            //public NET_VCA_LEAVE_POSITION struLeavePos;        //离岗参数
+            //public NET_VCA_LEAVE_POSITION struLeavePos;        //高危目标岗位检测-离岗参数
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_TRAIL struTrail;           //尾随参数
             //[FieldOffsetAttribute(0)]
@@ -7014,11 +8246,11 @@ namespace HikVisionNetSDK.Common
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_ADV_REACH_HEIGHT struReachHeight;     //折线攀高参数
             //[FieldOffsetAttribute(0)]
-            //public NET_VCA_TOILET_TARRY struToiletTarry;     //如厕超时参数
+            //public NET_VCA_TOILET_TARRY struToiletTarry;     //目标区域滞留超时参数
             //[FieldOffsetAttribute(0)]
             //public NET_VCA_YARD_TARRY struYardTarry;       //放风场滞留参数
             //[FieldOffsetAttribute(0)]
-            //public NET_VCA_ADV_TRAVERSE_PLANE struAdvTraversePlane;//折线警戒面参数            
+            //public NET_VCA_ADV_TRAVERSE_PLANE struAdvTraversePlane;//折线警戒面参数
         }
 
         // 尺寸过滤器类型
@@ -7050,17 +8282,17 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;//保留，设置为0字段
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName;//规则名称
-            public VCA_EVENT_TYPE dwEventType;//行为分析事件类型
-            public NET_VCA_EVENT_UNION uEventParam;//行为分析事件参数
+            public VCA_EVENT_TYPE dwEventType;//异常行为识别事件类型
+            public NET_VCA_EVENT_UNION uEventParam;//异常行为识别事件参数
             public NET_VCA_SIZE_FILTER struSizeFilter;//尺寸过滤器
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_2, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;//处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;//处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byRelRecordChan;//报警触发的录象通道,为1表示触发该通道
         }
 
-        //行为分析配置结构体
+        //异常行为识别配置结构体
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_RULECFG
         {
@@ -7086,8 +8318,8 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_RULE_TRIGGER_PARAM
         {
-            public byte byTriggerMode;   //规则的触发方式，0- 不启用，1- 轨迹点 2- 目标面积 
-            public byte byTriggerPoint;  //触发点，触发方式为轨迹点时有效 0- 中,1-上,2-下
+            public byte byTriggerMode;   //规则的触发方式，0- 不启用，1- 点 2- 目标面积
+            public byte byTriggerPoint;  //触发点，触发方式为点时有效 0- 中,1-上,2-下
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;       //保留
             public float fTriggerArea;    //触发目标面积百分比 [0,100]，触发方式为目标面积时有效
@@ -7106,11 +8338,11 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName; //规则名称
             public uint dwEventType;	//行为事件类型，保留是为了兼容，后续建议使用wEventTypeEx获取事件类型
-            public NET_VCA_EVENT_UNION uEventParam; //行为分析事件参数
+            public NET_VCA_EVENT_UNION uEventParam; //异常行为识别事件参数
             public NET_VCA_SIZE_FILTER struSizeFilter;  //尺寸过滤器
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	//处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	//处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byRelRecordChan; //报警触发的录象通道,为1表示触发该通道
             public ushort wAlarmDelay; //智能报警延时，0-5s,1-10,2-30s,3-60s,4-120s,5-300s,6-600s
@@ -7122,7 +8354,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //行为分析配置结构体
+        //异常行为识别配置结构体
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_RULECFG_V41
         {
@@ -7131,7 +8363,7 @@ namespace HikVisionNetSDK.Common
             public byte byUpLastAlarm; //2011-04-06 是否先上传最近一次的报警
             public byte byPicRecordEnable;  /*2012-3-1是否启用图片存储, 0-不启用, 1-启用*/
             public byte byRes1;
-            public NET_DVR_JPEGPARA struPictureParam; 		//图片规格结构	
+            public NET_DVR_JPEGPARA struPictureParam; 		//图片规格结构
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RULE_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_VCA_ONE_RULE_V41[] struRule;  //规则数组
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
@@ -7143,7 +8375,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_VCA_TARGET_INFO
         {
             public uint dwID;//目标ID ,人员密度过高报警时为0
-            public NET_VCA_RECT struRect; //目标边界框 
+            public NET_VCA_RECT struRect; //目标边界框
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留
         }
@@ -7166,12 +8398,12 @@ namespace HikVisionNetSDK.Common
         public struct NET_VCA_DEV_INFO
         {
             public NET_DVR_IPADDR struDevIP;//前端设备地址，
-            public ushort wPort;//前端设备端口号， 
+            public ushort wPort;//前端设备端口号，
             public byte byChannel;//前端设备通道，
             public byte byIvmsChannel;// 保留字节
         }
 
-        //行为分析结果上报结构
+        //异常行为识别结果上报结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_RULE_ALARM
         {
@@ -7182,13 +8414,13 @@ namespace HikVisionNetSDK.Common
             public NET_VCA_TARGET_INFO struTargetInfo;//报警目标信息
             public NET_VCA_DEV_INFO struDevInfo;//前端设备信息
             public uint dwPicDataLen;//返回图片的长度 为0表示没有图片，大于0表示该结构后面紧跟图片数据*/
-            public byte byPicType; //0-普通图片 1-对比图片            
+            public byte byPicType; //0-普通图片 1-对比图片
             public byte byRelAlarmPicNum; //关联通道报警图片数量
             public byte bySmart;//IDS设备返回0(默认值)，Smart Functiom Return 1
             public byte byPicTransType;        //图片数据传输方式: 0-二进制；1-url
             public uint dwAlarmID;     //报警ID，用以标识通道间关联产生的组合报警，0表示无效
             public ushort wDevInfoIvmsChannelEx;     //与NET_VCA_DEV_INFO里的byIvmsChannel含义相同，能表示更大的值。老客户端用byIvmsChannel能继续兼容，但是最大到255。新客户端版本请使用wDevInfoIvmsChannelEx。
-            public byte byRelativeTimeFlag;      //dwRelativeTime字段是否有效  0-无效， 1-有效，dwRelativeTime表示UTC时间 
+            public byte byRelativeTimeFlag;      //dwRelativeTime字段是否有效  0-无效， 1-有效，dwRelativeTime表示UTC时间
             public byte byAppendInfoUploadEnabled; //附加信息上传使能 0-不上传 1-上传
             public IntPtr pAppendInfo;     //指向附加信息NET_VCA_APPEND_INFO的指针，byAppendInfoUploadEnabled为1时或者byTimeDiffFlag为1时有效
             public IntPtr pImage;//指向图片的指针
@@ -7249,7 +8481,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_AIOP_POLLING_VIDEO_HEAD
         {
-            public uint dwSize;			//dwSize = sizeof(NET_AIOP_POLLING_VIDEO_HEAD)		
+            public uint dwSize;			//dwSize = sizeof(NET_AIOP_POLLING_VIDEO_HEAD)
             public uint dwChannel;      //设备分析通道的通道号(走SDK协议)；
             public NET_DVR_SYSTEM_TIME struTime; 	//时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
@@ -7267,7 +8499,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_AIOP_POLLING_SNAP_HEAD
         {
-            public uint dwSize;			//dwSize = sizeof(NET_AIOP_POLLING_SNAP_HEAD)		
+            public uint dwSize;			//dwSize = sizeof(NET_AIOP_POLLING_SNAP_HEAD)
             public uint dwChannel;      //设备分析通道的通道号(走SDK协议)；
             public NET_DVR_SYSTEM_TIME struTime; 	//时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
@@ -7282,7 +8514,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //行为分析规则DSP信息叠加结构
+        //异常行为识别规则DSP信息叠加结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_DRAW_MODE
         {
@@ -7431,7 +8663,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_SLAVE_CHANNEL_PARAM
         {
-            public byte byChanType;   //从通道类型，1-本机通道，2-远程通道 
+            public byte byChanType;   //从通道类型，1-本机通道，2-远程通道
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;    //保留
             public NET_DVR_SLAVE_CHANNEL_UNION uSlaveChannel; //从通道联合体，取值依赖于byChanType
@@ -7494,7 +8726,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_VQD_EVENT_RULE
         {
-            public uint dwSize;       //结构体大小 
+            public uint dwSize;       //结构体大小
             public byte byEnable;     //0-不启用，1-启用
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;    //保留
@@ -7536,11 +8768,11 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;                //结构体大小
             public uint dwRelativeTime;        //相对时标
             public uint dwAbsTime;	          //绝对时标
-            public NET_VCA_DEV_INFO struDevInfo; //前端设备信息 
+            public NET_VCA_DEV_INFO struDevInfo; //前端设备信息
             public uint dwEventType;           //事件类型，参考VQD_EVENT_ENUM
             public float fThreshold;            //报警阈值[0.000,1.000]
             public uint dwPicDataLen;          //图片长度，为0表示没有图片
-            public IntPtr pImage;               //指向图片的指针 
+            public IntPtr pImage;               //指向图片的指针
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;            //保留
         }
@@ -7570,19 +8802,19 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_TRACK_CFG
         {
-            public uint dwSize;				//结构长度	
+            public uint dwSize;				//结构长度
             public byte byEnable;				//标定使能
             public byte byFollowChan;          // 被控制的从通道
-            public byte byDomeCalibrate;			//设置智能跟踪球机标定，1设置 0不设置 
+            public byte byDomeCalibrate;			//设置智能球机标定，1设置 0不设置
             public byte byRes;					// 保留字节
             public NET_DVR_TRACK_CALIBRATION_PARAM struCalParam; //标定点组
         }
 
-        //跟踪模式
+        //模式
         public enum TRACK_MODE
         {
-            MANUAL_CTRL = 0,  //手动跟踪
-            ALARM_TRACK    //报警触发跟踪
+            MANUAL_CTRL = 0,  //手动
+            ALARM_TRACK    //报警触发
         }
 
         //手动控制结构
@@ -7594,13 +8826,13 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //跟踪模式结构
+        //模式结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_TRACK_MODE
         {
             public uint dwSize;		//结构长度
-            public byte byTrackMode;   //跟踪模式
-            public byte byRuleConfMode;   //规则配置跟踪模式0-本地配置跟踪，1-远程配置跟踪
+            public byte byTrackMode;   //模式
+            public byte byRuleConfMode;   //规则配置模式0-本地配置，1-远程配置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;   //保留，置0
             [StructLayout(LayoutKind.Explicit)]
@@ -7621,7 +8853,7 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_JPEGPARA struPicParam; 				/*图片规格结构*/
         }
 
-        //分析仪行为分析规则结构
+        //分析仪异常行为识别规则结构
         //警戒规则结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_IVMS_ONE_RULE
@@ -7631,8 +8863,8 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes1;//保留，设置为0字段
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName;//规则名称
-            public VCA_EVENT_TYPE dwEventType;//行为分析事件类型
-            public NET_VCA_EVENT_UNION uEventParam;//行为分析事件参数
+            public VCA_EVENT_TYPE dwEventType;//异常行为识别事件类型
+            public NET_VCA_EVENT_UNION uEventParam;//异常行为识别事件参数
             public NET_VCA_SIZE_FILTER struSizeFilter;//尺寸过滤器
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 68, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;/*保留，设置为0*/
@@ -7646,7 +8878,7 @@ namespace HikVisionNetSDK.Common
             public NET_IVMS_ONE_RULE[] struRule; //规则数组
         }
 
-        // IVMS行为分析配置结构
+        // IVMS异常行为识别配置结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_IVMS_BEHAVIORCFG
         {
@@ -7783,7 +9015,7 @@ namespace HikVisionNetSDK.Common
         {
             [FieldOffsetAttribute(0)]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 56, ArraySubType = UnmanagedType.I1)]
-            public byte[] uLen; //联合体结构大小   
+            public byte[] uLen; //联合体结构大小
         }
 
         //网络硬盘结构配置
@@ -7815,7 +9047,7 @@ namespace HikVisionNetSDK.Common
         {
             EVENT_MOT_DET = 0,//移动侦测
             EVENT_ALARM_IN = 1,//报警输入
-            EVENT_VCA_BEHAVIOR = 2,//行为分析
+            EVENT_VCA_BEHAVIOR = 2,//异常行为识别
             EVENT_INQUEST = 3,       //审讯事件
             EVENT_VCA_DETECTION = 4, //智能侦测
             EVENT_STREAM_INFO = 100  //流ID信息
@@ -7838,7 +9070,7 @@ namespace HikVisionNetSDK.Common
             EVENT_ALL = 0xffffffff				//表示全部
         }
 
-        //行为分析主类型对应的此类型， 0xffff表示全部
+        //异常行为识别主类型对应的此类型， 0xffff表示全部
         public enum BEHAVIOR_MINOR_TYPE
         {
             EVENT_TRAVERSE_PLANE = 0,// 穿越警戒面,
@@ -7856,7 +9088,7 @@ namespace HikVisionNetSDK.Common
             EVENT_FACE_DETECT,              // 异常人脸
             EVENT_LEFT,                     // 物品遗留
             EVENT_TAKE,                      // 物品拿取
-            EVENT_LEAVE_POSITION,         //离岗事件
+            EVENT_LEAVE_POSITION,         //高危目标岗位检测-离岗事件
             EVENT_TRAIL_INFO = 16,            //尾随
             EVENT_FALL_DOWN_INFO = 19,                 //倒地
             EVENT_OBJECT_PASTE = 20,		// 异物粘贴区域
@@ -7970,7 +9202,7 @@ namespace HikVisionNetSDK.Common
             }
         }
 
-        //行为分析
+        //异常行为识别
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct EVENT_VCA_BYBIT
         {
@@ -7987,13 +9219,13 @@ namespace HikVisionNetSDK.Common
             }
         }
 
-        //行为分析--按值方式查找 
+        //异常行为识别--按值方式查找
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct EVENT_VCA_BYVALUE
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.U2)]
-            public ushort[] wChanNo;	//触发事件的通道			
-            public byte byRuleID;      //行为分析类型，规则0xff表示全部，从0开始
+            public ushort[] wChanNo;	//触发事件的通道
+            public byte byRuleID;      //异常行为识别类型，规则0xff表示全部，从0开始
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 171, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;	 /*保留*/
             public void init()
@@ -8021,7 +9253,7 @@ namespace HikVisionNetSDK.Common
         public struct EVENT_VCADETECT_BYBIT
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 256, ArraySubType = UnmanagedType.I1)]
-            public byte[] byChan;//触发智能侦测的通道号，按数组下标表示，byChan[0]若置1则表示查找由通道1发生移动侦测触发的事件 
+            public byte[] byChan;//触发智能侦测的通道号，按数组下标表示，byChan[0]若置1则表示查找由通道1发生移动侦测触发的事件
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 44, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;     //保留
             public void init()
@@ -8131,7 +9363,7 @@ namespace HikVisionNetSDK.Common
                 byRes = new byte[SEARCH_EVENT_INFO_LEN];
             }
         }
-        //行为分析结果 
+        //异常行为识别结果
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct EVENT_VCA_RET
         {
@@ -8150,16 +9382,16 @@ namespace HikVisionNetSDK.Common
             }
         }
 
-        //审讯事件查询结果 
+        //审讯事件查询结果
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct EVENT_INQUEST_RET
         {
             public byte byRoomIndex;  //审讯室编号,从1开始
             public byte byDriveIndex; //刻录机编号,从1开始
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;  //保留            
-            public uint dwSegmentNo;     //本片断在本次审讯中的序号,从1开始 
-            public ushort wSegmetSize;     //本片断的大小, 单位M 
+            public byte[] byRes1;  //保留
+            public uint dwSegmentNo;     //本片断在本次审讯中的序号,从1开始
+            public ushort wSegmetSize;     //本片断的大小, 单位M
             public ushort wSegmentState;   //本片断状态 0 刻录正常，1 刻录异常，2 不刻录审讯
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 288, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;     //保留
@@ -8241,8 +9473,8 @@ namespace HikVisionNetSDK.Common
         public enum tagCALIBRATE_TYPE
         {
             PDC_CALIBRATE = 0x01,  // PDC 标定
-            BEHAVIOR_OUT_CALIBRATE = 0x02, //行为室外场景标定  
-            BEHAVIOR_IN_CALIBRATE = 0x03,    // 行为室内场景标定 
+            BEHAVIOR_OUT_CALIBRATE = 0x02, //行为室外场景标定
+            BEHAVIOR_IN_CALIBRATE = 0x03,    // 行为室内场景标定
             ITS_CALBIRETE = 0x04      //  交通事件标定
         }
 
@@ -8252,9 +9484,9 @@ namespace HikVisionNetSDK.Common
         {
             public byte byRectNum;    // 矩形框的个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 11, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;  //保留字节 
+            public byte[] byRes1;  //保留字节
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RECT_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_VCA_RECT[] struVcaRect; // 最大为6个Rect 
+            public NET_VCA_RECT[] struVcaRect; // 最大为6个Rect
         }
 
         // PDC 标定参数
@@ -8263,7 +9495,7 @@ namespace HikVisionNetSDK.Common
         {
             public NET_DVR_RECT_LIST struRectList;       // 标定矩形框列表
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 120, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;       // 保留字节 
+            public byte[] byRes;       // 保留字节
         }
 
         // 标定线的属性类别，用来表示当前标定线在实际表示的是高度线还是长度线。
@@ -8280,7 +9512,7 @@ namespace HikVisionNetSDK.Common
             public byte byEnableAngle;      // 是否使能设置摄像机俯仰角度
             public byte byEnableHorizon;    // 是否使能设置摄像机地平线
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;   // 保留字节 
+            public byte[] byRes;   // 保留字节
             public float fCameraHeight;    // 摄像机高度
             public float fCameraAngle;     // 摄像机俯仰角度
             public float fHorizon;         // 场景中的地平线
@@ -8294,7 +9526,7 @@ namespace HikVisionNetSDK.Common
         {
             public byte byLineMode;     // 参照 LINE_MODE
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;       // 保留字节 
+            public byte[] byRes;       // 保留字节
             public NET_VCA_POINT struStartPoint;
             public NET_VCA_POINT struEndPoint;
             public float fValue;
@@ -8362,7 +9594,7 @@ namespace HikVisionNetSDK.Common
             [FieldOffsetAttribute(0)]
             public NET_DVR_BEHAVIOR_OUT_CALIBRATION  struBehaviorOutCalibration;  //  行为室外场景标定  主要应用于IVS等
             [FieldOffsetAttribute(0)]
-            public NET_DVR_BEHAVIOR_IN_CALIBRATION  struBehaviorInCalibration;     // 行为室内场景标定，主要应用IAS等 
+            public NET_DVR_BEHAVIOR_IN_CALIBRATION  struBehaviorInCalibration;     // 行为室内场景标定，主要应用IAS等
             [FieldOffsetAttribute(0)]
             public NET_DVR_ITS_CALIBRATION struITSCalibration;
              * */
@@ -8387,7 +9619,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_PDC_ENTER_DIRECTION
         {
             public NET_VCA_POINT struStartPoint; //流量统计方向起始点
-            public NET_VCA_POINT struEndPoint;    // 流量统计方向结束点 
+            public NET_VCA_POINT struEndPoint;    // 流量统计方向结束点
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -8396,7 +9628,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;              //结构大小
             public byte byEnable;             // 是否激活规则;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 23, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;       // 保留字节 
+            public byte[] byRes1;       // 保留字节
             public NET_VCA_POLYGON struPolygon;            // 多边形
             public NET_DVR_PDC_ENTER_DIRECTION struEnterDirection;    // 流量进入方向
         }
@@ -8407,7 +9639,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;              //结构大小
             public byte byEnable;             // 是否激活规则;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 23, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;       // 保留字节 
+            public byte[] byRes1;       // 保留字节
             public NET_VCA_POLYGON struPolygon;            // 多边形
             public NET_DVR_PDC_ENTER_DIRECTION struEnterDirection;    // 流量进入方向
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
@@ -8437,6 +9669,231 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_TIME_SEGMENT
+        {
+            public NET_DVR_SIMPLE_DAYTIME struBeginTime;  //begin time
+            public NET_DVR_SIMPLE_DAYTIME struEndTime;    //end time
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_SINGLE_PLAN_SEGMENT
+        {
+            public byte byEnable; //whether to enable, 1-enable, 0-disable
+            public byte byDoorStatus; //door status(control ladder status),0-invaild, 1-always open(free), 2-always close(forbidden), 3-ordinary status(used by door plan)
+            public byte byVerifyMode;  //verify method, 0-invaild, 1-swipe card, 2-swipe card +password(used by card verify ) 3-swipe card(used by card verify) 4-swipe card or password(used by card verify)
+            //5-fingerprint, 6-fingerprint and passwd, 7-fingerprint or swipe card, 8-fingerprint and swipe card, 9-fingerprint and passwd and swipe card,
+            //10-face or finger print or swipe card or password,11-face and finger print,12-face and password,13-face and swipe card,14-face,15-employee no and password,
+            //16-finger print or password,17-employee no and finger print,18-employee no and finger print and password,
+            //19-face and finger print and swipe card,20-face and password and finger print,21-employee no and face,22-face or face and swipe card
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public NET_DVR_TIME_SEGMENT struTimeSegment;  //time segment parameter
+
+            public void Init()
+            {
+                byRes = new byte[5];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_WEEK_PLAN_CFG
+        {
+            public uint dwSize;
+            public byte byEnable;  //whether to enable, 1-enable, 0-disable
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_SINGLE_PLAN_SEGMENT[] struPlanCfg; //week plan parameter
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+
+            public void Init()
+            {
+                struPlanCfg = new NET_DVR_SINGLE_PLAN_SEGMENT[MAX_DAYS * MAX_TIMESEGMENT_V30];
+                foreach (NET_DVR_SINGLE_PLAN_SEGMENT singlStruPlanCfg in struPlanCfg)
+                {
+                    singlStruPlanCfg.Init();
+                }
+                byRes1 = new byte[3];
+                byRes2 = new byte[16];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_HOLIDAY_PLAN_CFG
+        {
+            public uint dwSize;
+            public byte byEnable;  //whether to enable, 1-enable, 0-disable
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_DATE struBeginDate;  //holiday begin date
+            public NET_DVR_DATE struEndDate;  //holiday end date
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_SINGLE_PLAN_SEGMENT[] struPlanCfg;  //time segment parameter
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+            public byte[] byRes2;
+
+            public void Init()
+            {
+                struPlanCfg = new NET_DVR_SINGLE_PLAN_SEGMENT[MAX_TIMESEGMENT_V30];
+                foreach (NET_DVR_SINGLE_PLAN_SEGMENT singlStruPlanCfg in struPlanCfg)
+                {
+                    singlStruPlanCfg.Init();
+                }
+                byRes1 = new byte[3];
+                byRes2 = new byte[16];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_HOLIDAY_GROUP_CFG
+        {
+            public uint dwSize;
+            public byte byEnable; //whether to enable, 1-enable, 0-disable
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = HOLIDAY_GROUP_NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byGroupName; //holiday group name
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = MAX_HOLIDAY_PLAN_NUM, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwHolidayPlanNo; //holiday plan No. fill in from the front side, invalid when meet zero.
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+
+            public void Init()
+            {
+                byGroupName = new byte[HOLIDAY_GROUP_NAME_LEN];
+                dwHolidayPlanNo = new uint[MAX_HOLIDAY_PLAN_NUM];
+                byRes1 = new byte[3];
+                byRes2 = new byte[32];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_PLAN_TEMPLATE
+        {
+            public uint dwSize;
+            public byte byEnable; //whether to enable, 1-enable, 0-disable
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = TEMPLATE_NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byTemplateName; //template name
+            public uint dwWeekPlanNo; //week plan no. 0 invalid
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = MAX_HOLIDAY_GROUP_NUM, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwHolidayGroupNo; //holiday group. fill in from the front side, invalid when meet zero.
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+
+            public void Init()
+            {
+                byTemplateName = new byte[TEMPLATE_NAME_LEN];
+                dwHolidayGroupNo = new uint[MAX_HOLIDAY_GROUP_NUM];
+                byRes1 = new byte[3];
+                byRes2 = new byte[32];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_HOLIDAY_PLAN_COND
+        {
+            public uint dwSize;
+            public uint dwHolidayPlanNumber; //Holiday plan number
+            public ushort wLocalControllerID; //On the controller serial number [1, 64]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 106, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void Init()
+            {
+                byRes = new byte[106];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_WEEK_PLAN_COND
+        {
+            public uint dwSize;
+            public uint dwWeekPlanNumber; //Week plan number
+            public ushort wLocalControllerID; //On the controller serial number [1, 64]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 106, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes = new byte[106];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_HOLIDAY_GROUP_COND
+        {
+            public uint dwSize;
+            public uint dwHolidayGroupNumber; //Holiday group number
+            public ushort wLocalControllerID; //On the controller serial number [1, 64]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 106, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes = new byte[106];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_PLAN_TEMPLATE_COND
+        {
+            public uint dwSize;
+            public uint dwPlanTemplateNumber; //Plan template number, starting from 1, the maximum value from the entrance guard capability sets
+            public ushort wLocalControllerID; //On the controller serial number[1,64], 0 is invalid
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 106, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes = new byte[106];
+            }
+        }
+
+
+        public const int MAX_TIMESEGMENT_V30 = 8; //Maximum number of time segments in 9000 DVR's guard schedule
+        public const int HOLIDAY_GROUP_NAME_LEN = 32;  //holiday group name len
+        public const int MAX_HOLIDAY_PLAN_NUM = 16;  //holiday max plan number
+        public const int TEMPLATE_NAME_LEN = 32; //plan template name len
+        public const int MAX_HOLIDAY_GROUP_NUM = 16;   //plan template max group number
+
+        public const int NET_DVR_GET_WEEK_PLAN_CFG = 2100; //get door status week plan config
+        public const int NET_DVR_SET_WEEK_PLAN_CFG = 2101; //set door status week plan config
+        public const int NET_DVR_GET_DOOR_STATUS_HOLIDAY_PLAN = 2102; //get door status holiday week plan config
+        public const int NET_DVR_SET_DOOR_STATUS_HOLIDAY_PLAN = 2103; //set door status holiday week plan config
+        public const int NET_DVR_GET_DOOR_STATUS_HOLIDAY_GROUP = 2104; //get door holiday group parameter
+        public const int NET_DVR_SET_DOOR_STATUS_HOLIDAY_GROUP = 2105; //set door holiday group parameter
+        public const int NET_DVR_GET_DOOR_STATUS_PLAN_TEMPLATE = 2106; //get door status plan template parameter
+        public const int NET_DVR_SET_DOOR_STATUS_PLAN_TEMPLATE = 2107; //set door status plan template parameter
+        public const int NET_DVR_GET_VERIFY_WEEK_PLAN = 2124; //get reader card verfy week plan
+        public const int NET_DVR_SET_VERIFY_WEEK_PLAN = 2125; //set reader card verfy week plan
+        public const int NET_DVR_GET_CARD_RIGHT_WEEK_PLAN = 2126;  //get card right week plan
+        public const int NET_DVR_SET_CARD_RIGHT_WEEK_PLAN = 2127; //set card right week plan
+        public const int NET_DVR_GET_VERIFY_HOLIDAY_PLAN = 2128; //get card reader verify holiday plan
+        public const int NET_DVR_SET_VERIFY_HOLIDAY_PLAN = 2129; //set card reader verify holiday plan
+        public const int NET_DVR_GET_CARD_RIGHT_HOLIDAY_PLAN = 2130; //get card right holiday plan
+        public const int NET_DVR_SET_CARD_RIGHT_HOLIDAY_PLAN = 2131; //set card right holiday plan
+        public const int NET_DVR_GET_VERIFY_HOLIDAY_GROUP = 2132; //get card reader verify holiday group
+        public const int NET_DVR_SET_VERIFY_HOLIDAY_GROUP = 2133; //set card reader verify holiday group
+        public const int NET_DVR_GET_CARD_RIGHT_HOLIDAY_GROUP = 2134; //get card right holiday group
+        public const int NET_DVR_SET_CARD_RIGHT_HOLIDAY_GROUP = 2135; //set card right holiday group
+        public const int NET_DVR_GET_VERIFY_PLAN_TEMPLATE = 2136; //get card reader verify plan template
+        public const int NET_DVR_SET_VERIFY_PLAN_TEMPLATE = 2137; //set card reader verify plan template
+        public const int NET_DVR_GET_CARD_RIGHT_PLAN_TEMPLATE = 2138; //get card right plan template
+        public const int NET_DVR_SET_CARD_RIGHT_PLAN_TEMPLATE = 2139; //set card right plan template
+        // V50
+        public const int NET_DVR_GET_CARD_RIGHT_WEEK_PLAN_V50 = 2304;  //Access card right V50 weeks plan parameters
+        public const int NET_DVR_SET_CARD_RIGHT_WEEK_PLAN_V50 = 2305;  //Set card right V50 weeks plan parameters
+        public const int NET_DVR_GET_CARD_RIGHT_HOLIDAY_PLAN_V50 = 2310;  //Access card right parameters V50 holiday plan
+        public const int NET_DVR_SET_CARD_RIGHT_HOLIDAY_PLAN_V50 = 2311;  //Set card right parameters V50 holiday plan
+        public const int NET_DVR_GET_CARD_RIGHT_HOLIDAY_GROUP_V50 = 2316; //Access card right parameters V50 holiday group
+        public const int NET_DVR_SET_CARD_RIGHT_HOLIDAY_GROUP_V50 = 2317; //Set card right parameters V50 holiday group
+        public const int NET_DVR_GET_CARD_RIGHT_PLAN_TEMPLATE_V50 = 2322; //Access card right parameters V50 plan template
+        public const int NET_DVR_SET_CARD_RIGHT_PLAN_TEMPLATE_V50 = 2323; //Set card right parameters V50 plan template
+
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_RESET_COUNTER_CFG
         {
@@ -8464,9 +9921,9 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public byte byVCAEnable;     //是否开启智能
-            public byte byVCAType;       //智能能力类型，VCA_CHAN_ABILITY_TYPE 
+            public byte byVCAType;       //智能能力类型，VCA_CHAN_ABILITY_TYPE
             public byte byStreamWithVCA; //码流中是否带智能信息
-            public byte byMode;			//模式，ATM 能力时参照VCA_CHAN_MODE_TYPE ,TFS 能力时参照 TFS_CHAN_MODE_TYPE，行为分析完整版时参照BEHAVIOR_SCENE_MODE_TYPE
+            public byte byMode;			//模式，ATM 能力时参照VCA_CHAN_MODE_TYPE ,TFS 能力时参照 TFS_CHAN_MODE_TYPE，异常行为识别完整版时参照BEHAVIOR_SCENE_MODE_TYPE
             public byte byControlType;   //控制类型，按位表示，0-否，1-是
                                          //byControlType &1 是否启用抓拍功能
                                          //byControlType &2 是否启用联动前端设备
@@ -8487,18 +9944,18 @@ namespace HikVisionNetSDK.Common
          * 当输入视频光照条件较差，对比度较低时，应提高检测灵敏度， 避免目标的漏检；
          * 当输入视频中对比度较高时，应该降低检测灵敏度，以减少误检。
          * 对应参数共有5级，级别1灵敏度最低，5级最高，默认级别为3。
-         * 
+         *
          * TRAJECTORY_LEN
-         * 轨迹生成长度控制参数，表示生成轨迹时要求目标的最大位移像素。
-         * 对应参数共有5级，级别1，生成长度最长，轨迹生成最慢，5级生成长度最短，轨迹生成最快，默认级别为3。
-         * 
+         * 生成长度控制参数，表示生成时要求目标的最大位移像素。
+         * 对应参数共有5级，级别1，生成长度最长，生成最慢，5级生成长度最短，生成最快，默认级别为3。
+         *
          * TRAJECT_CNT_LEN
-         * 轨迹计数长度控制参数，表示轨迹计数时要求目标的最大位移像素。
-         * 对应参数共有5级，级别1，计数要求长度最长，轨迹计数最慢，5级计数要求长度最短，轨迹计数最快，默认级别为3。
-         * 
+         * 计数长度控制参数，表示计数时要求目标的最大位移像素。
+         * 对应参数共有5级，级别1，计数要求长度最长，计数最慢，5级计数要求长度最短，计数最快，默认级别为3。
+         *
          * PREPROCESS
          * 图像预处理控制参数，0 - 不处理；1 - 处理。默认为0；
-         * 
+         *
          * CAMERA_ANGLE
          * 摄像机角度输入参数， 0 - 倾斜； 1 - 垂直。默认为0；
          */
@@ -8512,7 +9969,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_PDC_TARGET_INFO
         {
-            public uint dwTargetID;                 // 目标id 
+            public uint dwTargetID;                 // 目标id
             public NET_VCA_RECT struTargetRect;    // 目标框
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;      // 保留字节
@@ -8543,8 +10000,8 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct UNION_STATTIME
         {
-            public NET_DVR_TIME tmStart; // 统计起始时间 
-            public NET_DVR_TIME tmEnd;  //  统计结束时间 
+            public NET_DVR_TIME tmStart; // 统计起始时间
+            public NET_DVR_TIME tmEnd;  //  统计结束时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 92, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -8560,15 +10017,24 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_PDC_ALRAM_INFO
         {
             public uint dwSize;           // PDC人流量报警上传结构体大小
-            public byte byMode;            // 0 单帧统计结果 1最小时间段统计结果  
+            public byte byMode;            // 0 单帧统计结果 1最小时间段统计结果
             public byte byChannel;           // 报警上传通道号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;         // 保留字节   
+            public byte[] byRes1;         // 保留字节
             public NET_VCA_DEV_INFO struDevInfo;		        //前端设备信息
             public UNION_PDCPARAM uStatModeParam;
             public uint dwLeaveNum;        // 离开人数
             public uint dwEnterNum;        // 进入人数
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 40, ArraySubType = UnmanagedType.I1)]
+            public byte byBrokenNetHttp;     //断网续传标志位，0-不是重传数据，1-重传数据
+            public byte byRes3;
+            public ushort wDevInfoIvmsChannelEx;     //与NET_VCA_DEV_INFO里的byIvmsChannel含义相同，能表示更大的值。老客户端用byIvmsChannel能继续兼容，但是最大到255。新客户端版本请使用wDevInfoIvmsChannelEx
+            public uint dwPassingNum;        // 经过人数（进入区域后徘徊没有触发进入、离开的人数）
+            public uint dwChildLeaveNum;        // 小孩离开人数
+            public uint dwChildEnterNum;        // 小孩进入人数
+            public uint dwDuplicatePeople;        // 重复人数
+            public uint dwXmlLen;//XML透传数据长度, 即EventNotificationAlert XML Block的数据长度
+            public IntPtr pXmlBuf; // XML报警信息指针,其XML对应到EventNotificationAlert XML Block
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;           // 保留字节
         }
 
@@ -8601,7 +10067,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_POSITION_RULE_CFG
         {
-            public uint dwSize;             // 结构大小 
+            public uint dwSize;             // 结构大小
             public NET_DVR_PTZ_POSITION struPtzPosition;    // 场景位置信息
             public NET_VCA_RULECFG struVcaRuleCfg;     //行为规则配置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 80, ArraySubType = UnmanagedType.I1)]
@@ -8611,12 +10077,12 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_POSITION_RULE_CFG_V41
         {
-            public uint dwSize;             // 结构大小 
+            public uint dwSize;             // 结构大小
             public NET_DVR_PTZ_POSITION struPtzPosition;    // 场景位置信息
             public NET_VCA_RULECFG_V41 struVcaRuleCfg;     //行为规则配置
-            public byte byTrackEnable; //是否启用跟踪
+            public byte byTrackEnable; //是否启用
             public byte byRes1;
-            public ushort wTrackDuration; //跟踪持续时间，单位s
+            public ushort wTrackDuration; //持续时间，单位s
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 76, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;         // 保留字节
         }
@@ -8640,7 +10106,7 @@ namespace HikVisionNetSDK.Common
         {
             public byte byIndex;    // 场景索引
             public byte byRes1;
-            public ushort wDwell;	// 停留时间 
+            public ushort wDwell;	// 停留时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;   // 保留字节
         }
@@ -8669,7 +10135,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //场景巡航跟踪配置信息
+        //场景巡航配置信息
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_PATROL_TRACKCFG
         {
@@ -8686,16 +10152,16 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;             // 结构大小
             public ushort wAlarmDelayTime;    // 报警延时时间，目前球机只支持全局入侵 范围1-120秒
-            public ushort wTrackHoldTime;     // 报警跟踪持续时间  范围0-300秒
+            public ushort wTrackHoldTime;     // 报警持续时间  范围0-300秒
             public byte byTrackMode;        //  参照 IPDOME_TRACK_MODE
-            public byte byPreDirection;	// 跟踪方向预判 0-不启用 1-启用
-            public byte byTrackSmooth;	    // 跟踪连续  0-不启用 1-启用
+            public byte byPreDirection;	// 方向预判 0-不启用 1-启用
+            public byte byTrackSmooth;	    // 连续  0-不启用 1-启用
             public byte byZoomAdjust;	// 倍率系数调整 参见下表
-            public byte byMaxTrackZoom;	//最大跟踪倍率系数,0-表示默认倍率系数,等级6-标定值*1.0(默认),1-5为缩小标定值，值越小，缩小的比例越大,7-15为放大，值越大，放大的比例越大
-            public byte byStopTrackWhenFindFace;  //人脸检测到后是否停止跟踪 0-否 1-是
-            public byte byStopTrackThreshold;   //跟踪终止评分阈值
+            public byte byMaxTrackZoom;	//最大倍率系数,0-表示默认倍率系数,等级6-标定值*1.0(默认),1-5为缩小标定值，值越小，缩小的比例越大,7-15为放大，值越大，放大的比例越大
+            public byte byStopTrackWhenFindFace;  //人脸检测到后是否停止 0-否 1-是
+            public byte byStopTrackThreshold;   //终止评分阈值
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 9, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;          //  保留字节                
+            public byte[] byRes;          //  保留字节
         }
 
         //球机机芯参数
@@ -8717,13 +10183,13 @@ namespace HikVisionNetSDK.Common
         public enum TRAFFIC_AID_TYPE
         {
             CONGESTION = 0x01,    //拥堵
-            PARKING = 0x02,    //停车  
+            PARKING = 0x02,    //停车
             INVERSE = 0x04,    //逆行
-            PEDESTRIAN = 0x08,    //行人                      
-            DEBRIS = 0x10,    //遗留物 抛洒物碎片 
-            SMOKE = 0x20,    //烟雾  
+            PEDESTRIAN = 0x08,    //行人
+            DEBRIS = 0x10,    //遗留物 抛洒物碎片
+            SMOKE = 0x20,    //烟雾
             OVERLINE = 0x40,     //压线
-            VEHICLE_CONTROL_LIST = 0x80,  //黑名单数据
+            VEHICLE_CONTROL_LIST = 0x80,  //禁止名单数据
             SPEED = 0x100  //超速
         }
 
@@ -8737,14 +10203,14 @@ namespace HikVisionNetSDK.Common
         public enum ITS_ABILITY_TYPE
         {
             ITS_CONGESTION_ABILITY = 0x01,      //拥堵
-            ITS_PARKING_ABILITY = 0x02,      //停车  
+            ITS_PARKING_ABILITY = 0x02,      //停车
             ITS_INVERSE_ABILITY = 0x04,      //逆行
-            ITS_PEDESTRIAN_ABILITY = 0x08,      //行人                      
+            ITS_PEDESTRIAN_ABILITY = 0x08,      //行人
             ITS_DEBRIS_ABILITY = 0x10,      //遗留物 抛洒物碎片
             ITS_SMOKE_ABILITY = 0x20,      //烟雾-隧道
             ITS_OVERLINE_ABILITY = 0x40,      //压线
-            ITS_VEHICLE_CONTROL_LIST_ABILITY = 0x80,        //黑名单数据
-            ITS_SPEED_ABILITY = 0x100,	    //超速	
+            ITS_VEHICLE_CONTROL_LIST_ABILITY = 0x80,        //禁止名单数据
+            ITS_SPEED_ABILITY = 0x100,	    //超速
             ITS_LANE_VOLUME_ABILITY = 0x010000,  //车道流量
             ITS_LANE_VELOCITY_ABILITY = 0x020000,  //车道平均速度
             ITS_TIME_HEADWAY_ABILITY = 0x040000,  //车头时距
@@ -8788,7 +10254,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_DIRECTION
         {
             public NET_VCA_POINT struStartPoint;   // 方向起始点
-            public NET_VCA_POINT struEndPoint;     // 方向结束点 
+            public NET_VCA_POINT struEndPoint;     // 方向结束点
         }
 
         //单个车道
@@ -8842,7 +10308,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                  // 保留字节
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRuleName;       // 规则名称 
+            public byte[] byRuleName;       // 规则名称
             public uint dwEventType;                // 交通事件检测类型 TRAFFIC_AID_TYPE
             public NET_VCA_SIZE_FILTER struSizeFilter; // 尺寸过滤器
             public NET_VCA_POLYGON struPolygon;    // 规则区域
@@ -8860,7 +10326,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_AID_RULECFG
         {
-            public uint dwSize;                    // 结构体大小 
+            public uint dwSize;                    // 结构体大小
             public byte byPicProType;              //报警时图片处理方式 0-不处理 非0-上传
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                 // 保留字节
@@ -8879,14 +10345,14 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                // 保留字节
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRuleName;     // 规则名称 
+            public byte[] byRuleName;     // 规则名称
             public uint dwEventType;              // 交通事件检测类型 TRAFFIC_AID_TYPE
             public NET_VCA_SIZE_FILTER struSizeFilter;           // 尺寸过滤器
             public NET_VCA_POLYGON struPolygon;              // 规则区域
             public NET_DVR_AID_PARAM struAIDParam;             // 事件参数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;// 布防时间段
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	          //处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	          //处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IVMS_IP_CHANNEL, ArraySubType = UnmanagedType.I1)]
             public byte[] byRelRecordChan; //报警触发的录象通道：1表示触发该通道；0表示不触发
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 60, ArraySubType = UnmanagedType.I1)]
@@ -8897,7 +10363,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_AID_RULECFG_V41
         {
-            public uint dwSize;                     // 结构体大小 
+            public uint dwSize;                     // 结构体大小
             public byte byPicProType;               // 报警时图片处理方式 0-不处理 非0-上传
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                  // 保留字节
@@ -8917,7 +10383,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
             public uint dwCalcType;                 //统计参数类型ITS_TPS_TYPE
-            public NET_VCA_SIZE_FILTER struSizeFilter; //尺寸过滤器 
+            public NET_VCA_SIZE_FILTER struSizeFilter; //尺寸过滤器
             public NET_VCA_POLYGON struVitrualLoop;    //虚拟线圈
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_2, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
@@ -8946,11 +10412,11 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                    //保留
             public uint dwCalcType;                   // 统计参数类型ITS_TPS_TYPE
-            public NET_VCA_SIZE_FILTER struSizeFilter;  //尺寸过滤器 
+            public NET_VCA_SIZE_FILTER struSizeFilter;  //尺寸过滤器
             public NET_VCA_POLYGON struVitrualLoop; //虚拟线圈
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	   //处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	   //处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 60, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;                   // 保留字节
         }
@@ -9104,7 +10570,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName; //  规则名称
             public uint dwAIDType;  // 报警事件类型
-            public NET_DVR_DIRECTION struDirect; // 报警指向区域  
+            public NET_DVR_DIRECTION struDirect; // 报警指向区域
             public byte bySpeedLimit; //限速值，单位km/h[0,255]
             public byte byCurrentSpeed; //当前速度值，单位km/h[0,255]
             public byte byVehicleEnterState;//车辆出入状态 0-无效 1-驶入 2-驶出
@@ -9112,10 +10578,10 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byParkingID; //停车位编号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;  // 保留字节 
+            public byte[] byRes2;  // 保留字节
         }
 
-        //交通事件报警 
+        //交通事件报警
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_AID_ALARM
         {
@@ -9127,10 +10593,67 @@ namespace HikVisionNetSDK.Common
             public uint dwPicDataLen;   // 返回图片的长度 为0表示没有图片，大于0表示该结构后面紧跟图片数据
             public IntPtr pImage;        // 指向图片的指针
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 40, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;      // 保留字节  
+            public byte[] byRes;      // 保留字节
         }
 
-        //车道队列结构体 
+        //交通取证报警
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_TFS_ALARM
+        {
+            public uint dwSize;                //结构体大小
+            public uint dwRelativeTime;        //相对时标
+            public uint dwAbsTime;               //绝对时标
+            public uint dwIllegalType;         //违章类型，采用国标定义，当dwIllegalType值为0xffffffff时使用byIllegalCode
+            public uint dwIllegalDuration;     //违法持续时间（单位：秒） = 抓拍最后一张图片的时间 - 抓拍第一张图片的时间
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MONITORSITE_ID_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byMonitoringSiteID;//显示点编号（路口编号、内部编号）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DEVICE_ID_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDeviceID;             //设备编号
+            public NET_VCA_DEV_INFO struDevInfo;           //前端设备信息
+            public NET_DVR_SCENE_INFO struSceneInfo;         //场景信息
+            public NET_DVR_TIME_EX struBeginRecTime;      //录像开始时间
+            public NET_DVR_TIME_EX struEndRecTime;        //录像结束时间
+            public NET_DVR_AID_INFO struAIDInfo;           //交通事件信息
+            public NET_DVR_PLATE_INFO struPlateInfo;         //车牌信息
+            public NET_DVR_VEHICLE_INFO struVehicleInfo;       //车辆信息
+            public uint dwPicNum;              //图片数量
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITS_PICTURE_INFO[] struPicInfo;        //图片信息，最多8张
+            public byte bySpecificVehicleType;     //具体车辆种类  参考识别结果类型VTR_RESULT
+            public byte byLaneNo;  //关联车道号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1; //保留
+            public NET_DVR_TIME_V30 struTime;//手动定位，当前时间。
+            public uint dwSerialNo;//序号；
+            public byte byVehicleAttribute;//车辆属性，按位表示，0- 无附加属性(普通车)，bit1- 黄标车(类似年检的标志)，bit2- 危险品车辆，值：0- 否，1- 是
+            public byte byPilotSafebelt;//0-表示未知,1-系安全带,2-不系安全带
+            public byte byCopilotSafebelt;//0-表示未知,1-系安全带,2-不系安全带
+            public byte byPilotSunVisor;//0-表示未知,1-不打开遮阳板,2-打开遮阳板
+            public byte byCopilotSunVisor;//0-表示未知, 1-不打开遮阳板,2-打开遮阳板
+            public byte byPilotCall;// 0-表示未知, 1-不打电话,2-打电话
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //保留
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ILLEGAL_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byIllegalCode;//违法代码扩展，当dwIllegalType值为0xffffffff；使用这个值
+            public ushort wCountry; // 国家索引值,参照枚举COUNTRY_INDEX
+            public byte byRegion; //区域索引值,0-保留，1-欧洲(Europe Region)，2-俄语区域(Russian Region)，3-欧洲&俄罗斯(EU&CIS) , 4-中东（Middle East），0xff-所有
+            public byte byCrossLine;//是否压线停车（侧方停车），0-表示未知，1-不压线，2-压线
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = SERIAL_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byParkingSerialNO;//泊车位编号
+            public byte byCrossSpaces;//是否跨泊车位停车（侧方停车），0-表示未知，1-未跨泊车位停车，2-跨泊车位停车
+            public byte byAngledParking;//是否倾斜停车（侧方停车）, 0-表示未知，1-未倾斜停车，2-倾斜停车
+            public byte byAlarmValidity;//报警置信度，可以输出驶入驶出的置信度，范围0-100；置信度越高，事件真实性越高
+            public byte byDoorsStatus;//车门状态 0-车门关闭 1-车门开启
+            public uint dwXmlLen;//XML报警信息长度
+            public IntPtr pXmlBuf; // XML报警信息指针,其XML对应到EventNotificationAlert XML Block
+            //[MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
+            //public byte[] byRes3; //32位SDK需要保留字节对齐
+            public byte byVehicleHeadTailStatus;//车头车尾状态 0-保留 1-车头 2-车尾
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes; //保留
+        }
+
+        //车道队列结构体
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_LANE_QUEUE
         {
@@ -9141,18 +10664,46 @@ namespace HikVisionNetSDK.Common
 
         public enum TRAFFIC_DATA_VARY_TYPE
         {
-            NO_VARY,         //无变化 
+            NO_VARY,         //无变化
             VEHICLE_ENTER,   //车辆进入虚拟线圈
-            VEHICLE_LEAVE,   //车辆离开虚拟线圈 
-            UEUE_VARY        //队列变化             
+            VEHICLE_LEAVE,   //车辆离开虚拟线圈
+            UEUE_VARY        //队列变化
         }
+        /*************************************************
+        参数配置结构、参数(其中_V30为9000新增)
+        **************************************************/
 
+        public const int NET_DVR_SET_FOCUSMODECFG = 3306;
+        public const int NET_DVR_GET_FOCUSMODECFG = 3305;
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FOCUSMODE_CFG
+        {
+            public uint dwSize;
+            public byte byFocusMode;
+            public byte byAutoFocusMode;
+            public ushort wMinFocusDistance;
+            public byte byZoomSpeedLevel;
+            public byte byFocusSpeedLevel;
+            public byte byOpticalZoom;
+            public byte byDigtitalZoom;
+            public float fOpticalZoomLevel;
+            public uint dwFocusPos;
+            public byte byFocusDefinitionDisplay;
+            public byte byFocusSensitivity;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwRelativeFocusPos;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 48, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+        }
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_LANE_PARAM
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRuleName;  //车道规则名称 
-            public byte byRuleID;              //规则序号，为规则配置结构下标，0-7 
+            public byte[] byRuleName;  //车道规则名称
+            public byte byRuleID;              //规则序号，为规则配置结构下标，0-7
             public byte byVaryType;            //车道交通参数变化类型 参照 TRAFFIC_DATA_VARY_TYPE
             public byte byLaneType;			   //车道上行或下行
             public byte byRes1;
@@ -9193,7 +10744,7 @@ namespace HikVisionNetSDK.Common
             ENUM_TRAFFIC_VARY_VEHICLE_ENTER = 0x01,   //车辆进入虚拟线圈
             ENUM_TRAFFIC_VARY_VEHICLE_LEAVE = 0x02,   //车辆离开虚拟线圈
             ENUM_TRAFFIC_VARY_QUEUE = 0x04,   //队列变化
-            ENUM_TRAFFIC_VARY_STATISTIC = 0x08,   //统计数据变化（每分钟变化一次包括平均速度，车道空间/时间占有率，交通状态）        
+            ENUM_TRAFFIC_VARY_STATISTIC = 0x08,   //统计数据变化（每分钟变化一次包括平均速度，车道空间/时间占有率，交通状态）
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -9201,7 +10752,7 @@ namespace HikVisionNetSDK.Common
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName; // 车道规则名称
-            public byte byRuleID;             // 规则序号，为规则配置结构下标，0-7 
+            public byte byRuleID;             // 规则序号，为规则配置结构下标，0-7
             public byte byLaneType;		     // 车道上行或下行
             public byte byTrafficState;       // 车道的交通状态，0-无效，1-畅通，2-拥挤，3-堵塞
             public byte byRes1;               // 保留
@@ -9232,7 +10783,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;         //保留
         }
 
-        //人脸规则配置 
+        //人脸规则配置
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_FACEDETECT_RULECFG
         {
@@ -9240,7 +10791,7 @@ namespace HikVisionNetSDK.Common
             public byte byEnable;            // 是否启用
             public byte byEventType;			//警戒事件类型， 0-异常人脸; 1-正常人脸;2-异常人脸&正常人脸;
             public byte byUpLastAlarm;       //2011-04-06 是否先上传最近一次的报警
-            public byte byUpFacePic; //是否上传人脸子图，0-否，1-是	
+            public byte byUpFacePic; //是否上传人脸子图，0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName;
             public NET_VCA_POLYGON struVcaPolygon;    // 人脸检测规则区域
@@ -9251,7 +10802,7 @@ namespace HikVisionNetSDK.Common
             public NET_VCA_SIZE_FILTER struSizeFilter;         //尺寸过滤器
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_2, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	  //处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	  //处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byRelRecordChan;			//报警触发的录象通道,为1表示触发该通道
             public byte byPicRecordEnable;  /*2012-3-1是否启用图片存储, 0-不启用, 1-启用*/
@@ -9277,7 +10828,7 @@ namespace HikVisionNetSDK.Common
             public byte byEnable;            // 是否启用
             public byte byEventType;			//警戒事件类型， 0-异常人脸; 1-正常人脸;2-异常人脸&正常人脸;
             public byte byUpLastAlarm;       //2011-04-06 是否先上传最近一次的报警
-            public byte byUpFacePic; //是否上传人脸子图，0-否，1-是	
+            public byte byUpFacePic; //是否上传人脸子图，0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName;
             public NET_VCA_POLYGON struVcaPolygon;    // 人脸检测规则区域
@@ -9288,7 +10839,7 @@ namespace HikVisionNetSDK.Common
             public NET_VCA_SIZE_FILTER struSizeFilter;         //尺寸过滤器
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCHEDTIME[] struAlarmTime;//布防时间
-            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	  //处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V30 struHandleType;	  //处理方式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byRelRecordChan;			//报警触发的录象通道,为1表示触发该通道
             public byte byPicRecordEnable;  /*2012-10-22是否启用图片存储, 0-不启用, 1-启用*/
@@ -9310,7 +10861,7 @@ namespace HikVisionNetSDK.Common
             public NET_VCA_TARGET_INFO struTargetInfo;	//报警目标信息
             public NET_VCA_DEV_INFO struDevInfo;		//前端设备信息
             public uint dwPicDataLen;						//返回图片的长度 为0表示没有图片，大于0表示该结构后面紧跟图片数据*/
-            public byte byAlarmPicType;			// 0-异常人脸报警图片 1- 人脸图片,2-多张人脸 
+            public byte byAlarmPicType;			// 0-异常人脸报警图片 1- 人脸图片,2-多张人脸
             public byte byPanelChan;        /*2012-3-1人脸通道关联的面板通道*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
@@ -9326,7 +10877,7 @@ namespace HikVisionNetSDK.Common
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.U4)]
             public uint[] uLen;        	// 联合体大小为12字节
-            public uint dwHumanIn;  	//有无人接近 0 - 无人 1- 有人  
+            public uint dwHumanIn;  	//有无人接近 0 - 无人 1- 有人
             public float fCrowdDensity;  // 人员聚集值
         }
 
@@ -9340,7 +10891,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byRuleName;	// 规则名称
             public uint dwEventType;    		// 参照VCA_EVENT_TYPE
-            public NET_DVR_EVENT_PARAM_UNION uEventParam;  // 
+            public NET_DVR_EVENT_PARAM_UNION uEventParam;  //
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -9394,14 +10945,14 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_ONE_SCENE_CFG
         {
             public byte byEnable;                 //是否启用该场景,0-不启用 1- 启用
-            public byte byDirection;              //监测方向 1-上行，2-下行，3-双向，4-由东向西，5-由南向北，6-由西向东，7-由北向南，8-其它
+            public byte byDirection;              //显示方向 1-上行，2-下行，3-双向，4-由东向西，5-由南向北，6-由西向东，7-由北向南，8-其它
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;                //保留
             public uint dwSceneID;                //场景ID(只读), 0 - 表示该场景无效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] bySceneName;    //场景名称
             public NET_DVR_PTZPOS struPtzPos;       //ptz 坐标
-            public uint dwTrackTime;              //球机跟踪时间[5,300] 秒，TFS(交通取证)模式下有效
+            public uint dwTrackTime;              //球机时间[5,300] 秒，TFS(交通取证)模式下有效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;               //保留
         }
@@ -9445,7 +10996,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSceneID;              //场景ID, 0 - 表示该场景无效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] bySceneName;  //场景名称
-            public byte byDirection;            //监测方向 1-上行，2-下行，3-双向，4-由东向西，5-由南向北，6-由西向东，7-由北向南，8-其它
+            public byte byDirection;            //显示方向 1-上行，2-下行，3-双向，4-由东向西，5-由南向北，6-由西向东，7-由北向南，8-其它
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;              //保留
             public NET_DVR_PTZPOS struPtzPos;             //Ptz 坐标
@@ -9467,9 +11018,9 @@ namespace HikVisionNetSDK.Common
             public IntPtr pImage;             //指向图片的指针
             // 0-数据直接上传; 1-云存储服务器URL(3.7Ver)原先的图片数据变成URL数据，图片长度变成URL长度
             public byte byDataType;
-            public byte byLaneNo;  //关联车道号 
+            public byte byLaneNo;  //关联车道号
             public ushort wMilliSecond;        //时标毫秒
-            //监测点编号（路口编号、内部编号）
+            //显示点编号（路口编号、内部编号）
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MONITORSITE_ID_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byMonitoringSiteID;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DEVICE_ID_LEN, ArraySubType = UnmanagedType.I1)]
@@ -9478,7 +11029,7 @@ namespace HikVisionNetSDK.Common
             public IntPtr pXmlBuf;// XML报警信息指针,其XML对应到EventNotificationAlert XML Block
             public byte byTargetType;// 检测的目标类型，0~未知，1~行人、2~二轮车、3~三轮车(行人检测中返回)
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 19, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes; // 保留字节   
+            public byte[] byRes; // 保留字节
         }
 
         //交通统计信息报警(扩展)
@@ -9489,7 +11040,7 @@ namespace HikVisionNetSDK.Common
             public uint dwRelativeTime;  // 相对时标
             public uint dwAbsTime;       // 绝对时标
             public NET_VCA_DEV_INFO struDevInfo;     // 前端设备信息
-            public NET_DVR_TPS_INFO_V41 struTPSInfo;     // 交通参数统计信息 
+            public NET_DVR_TPS_INFO_V41 struTPSInfo;     // 交通参数统计信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;      // 保留
         }
@@ -9514,7 +11065,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_PLATE_PARAM
         {
             public byte byPlateRecoMode;    //车牌识别的模式,默认为1(视频触发模式)
-            public byte byBelive;	/*整牌置信度阈值, 只用于视频识别方式, 根据背景复杂程度设置, 误触发率高就设高, 漏车率高就设低, 
+            public byte byBelive;	/*整牌置信度阈值, 只用于视频识别方式, 根据背景复杂程度设置, 误触发率高就设高, 漏车率高就设低,
                                      * 建议在80-90范围内*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 22, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;          //保留字节
@@ -9560,7 +11111,7 @@ namespace HikVisionNetSDK.Common
             public IntPtr pXmlBuf;                      // XML报警信息指针,报警类型为 COMM_ITS_PLATE_RESUL时有效，其XML对应到EventNotificationAlert XML Block
             public NET_VCA_RECT struPlateRect;	//车牌位置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LICENSE_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sLicense;	//车牌号码 
+            public byte[] sLicense;	//车牌号码
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LICENSE_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byBelieve; //各个识别字符的置信度，如检测到车牌"浙A12345", 置信度为,20,30,40,50,60,70，则表示"浙"字正确的可能性只有%，"A"字的正确的可能性是%
         }
@@ -9596,7 +11147,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_IO_OUTCFG
         {
             public uint dwSize;
-            public byte byDefaultStatus;//IO默认状态：0-低电平，1-高电平 
+            public byte byDefaultStatus;//IO默认状态：0-低电平，1-高电平
             public byte byIoOutStatus;//IO起效时状态：0-低电平，1-高电平，2-脉冲
             public ushort wAheadTime;//输出IO提前时间，单位us
             public uint dwTimePluse;//脉冲间隔时间，单位us
@@ -9635,8 +11186,8 @@ namespace HikVisionNetSDK.Common
             public byte byTrigIoIn;//触发的IO号
             public byte byRelatedDriveWay;//触发IO关联的车道号
             public byte byTrafficLight; //0-高电平红灯，低电平绿灯；1-高电平绿灯，低电平红灯
-            public byte bySnapTimes1; //红灯抓拍次数1，0-不抓拍，非0-连拍次数，最大5次 
-            public byte bySnapTimes2; //绿灯抓拍次数2，0-不抓拍，非0-连拍次数，最大5次 
+            public byte bySnapTimes1; //红灯抓拍次数1，0-不抓拍，非0-连拍次数，最大5次
+            public byte bySnapTimes2; //绿灯抓拍次数2，0-不抓拍，非0-连拍次数，最大5次
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INTERVAL_NUM, ArraySubType = UnmanagedType.U2)]
@@ -9663,8 +11214,8 @@ namespace HikVisionNetSDK.Common
             public uint dwDistance;//线圈距离,cm
             public byte byCapSpeed;//测速模式起拍速度，单位km/h
             public byte bySpeedLimit;//限速值，单位km/h
-            public byte bySnapTimes1; //线圈1抓拍次数，0-不抓拍，非0-连拍次数，最大5次 
-            public byte bySnapTimes2; //线圈2抓拍次数，0-不抓拍，非0-连拍次数，最大5次 
+            public byte bySnapTimes1; //线圈1抓拍次数，0-不抓拍，非0-连拍次数，最大5次
+            public byte bySnapTimes2; //线圈2抓拍次数，0-不抓拍，非0-连拍次数，最大5次
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INTERVAL_NUM, ArraySubType = UnmanagedType.U2)]
             public ushort[] wIntervalTime1;//线圈1连拍间隔时间，ms
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INTERVAL_NUM, ArraySubType = UnmanagedType.U2)]
@@ -9704,7 +11255,7 @@ namespace HikVisionNetSDK.Common
         {
             public byte byWhiteBalanceMode; /*0-手动白平衡（MWB）,1-自动白平衡1（AWB1）,2-自动白平衡2 (AWB2),3-自动控制改名为锁定白平衡(Locked WB)，
 	                         4-室外(Indoor)，5-室内(Outdoor)6-日光灯(Fluorescent Lamp)，7-钠灯(Sodium Lamp)，
-	                         8-自动跟踪(Auto-Track)9-一次白平衡(One Push)，10-室外自动(Auto-Outdoor)，
+	                         8-自动(Auto-Track)9-一次白平衡(One Push)，10-室外自动(Auto-Outdoor)，
 	                         11-钠灯自动 (Auto-Sodiumlight)，12-水银灯(Mercury Lamp)，13-自动白平衡(Auto)，
 	                         14-白炽灯 (IncandescentLamp)，15-暖光灯(Warm Light Lamp)，16-自然光(Natural Light) */
             public byte byWhiteBalanceModeRGain; /*手动白平衡时有效，手动白平衡 R增益*/
@@ -9835,7 +11386,7 @@ namespace HikVisionNetSDK.Common
             public byte byDeadPixelDetect;   /*坏点检测,0 dsibale  1 enable*/
             public byte byBlackPwl;/*黑电平补偿 ,  0-255*/
             public byte byEptzGate;// EPTZ开关变量:0-不启用电子云台，1-启用电子云台
-            public byte byLocalOutputGate;//本地输出开关变量0-本地输出关闭1-本地BNC输出打开 2-HDMI输出关闭  
+            public byte byLocalOutputGate;//本地输出开关变量0-本地输出关闭1-本地BNC输出打开 2-HDMI输出关闭
                                           //20-HDMI_720P50输出开
                                           //21-HDMI_720P60输出开
                                           //22-HDMI_1080I60输出开
@@ -9939,7 +11490,7 @@ namespace HikVisionNetSDK.Common
             public byte byDeadPixelDetect;   /*坏点检测,0 dsibale  1 enable*/
             public byte byBlackPwl;/*黑电平补偿 ,  0-255*/
             public byte byEptzGate;// EPTZ开关变量:0-不启用电子云台，1-启用电子云台
-            public byte byLocalOutputGate;//本地输出开关变量0-本地输出关闭1-本地BNC输出打开 2-HDMI输出关闭  
+            public byte byLocalOutputGate;//本地输出开关变量0-本地输出关闭1-本地BNC输出打开 2-HDMI输出关闭
                                           //20-HDMI_720P50输出开
                                           //21-HDMI_720P60输出开
                                           //22-HDMI_1080I60输出开
@@ -9996,9 +11547,9 @@ namespace HikVisionNetSDK.Common
         //车牌类型
         public enum VCA_PLATE_TYPE
         {
-            VCA_STANDARD92_PLATE = 0,//标准民用车与军车
-            VCA_STANDARD02_PLATE,//02式民用车牌 
-            VCA_WJPOLICE_PLATE,//武警车 
+            VCA_STANDARD92_PLATE = 0,//标准民用车与特种车
+            VCA_STANDARD02_PLATE,//02式民用车牌
+            VCA_WJPOLICE_PLATE,//武警车
             VCA_JINGCHE_PLATE,//警车
             STANDARD92_BACK_PLATE,//民用车双行尾牌
             VCA_SHIGUAN_PLATE,          //使馆车牌
@@ -10082,7 +11633,9 @@ namespace HikVisionNetSDK.Common
             public IntPtr pBuffer3;
             public IntPtr pBuffer4;
             public IntPtr pBuffer5;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte byRelaLaneDirectionType;
+            public byte byCarDirectionType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes3;
             public NET_DVR_PLATE_INFO struPlateInfo;
             public NET_DVR_VEHICLE_INFO struVehicleInfo;
@@ -10092,7 +11645,7 @@ namespace HikVisionNetSDK.Common
             public void Init()
             {
                 byAbsTime = new byte[32];
-                byRes3 = new byte[8];
+                byRes3 = new byte[6];
             }
         }
 
@@ -10102,7 +11655,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public byte byOverlayInfo;//叠加使能开关，0-不叠加，1-叠加
-            public byte byOverlayMonitorInfo;//是否叠加监测点信息，0-不叠加，1-叠加
+            public byte byOverlayMonitorInfo;//是否叠加显示点信息，0-不叠加，1-叠加
             public byte byOverlayTime;//是否叠加时间，0-不叠加，1-叠加
             public byte byOverlaySpeed;//是否叠加速度，0-不叠加，1-叠加
             public byte byOverlaySpeeding;//是否叠加超速比例，0-不叠加，1-叠加
@@ -10121,11 +11674,37 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;    //保留
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byMonitorInfo1;    //监测点信息1
+            public byte[] byMonitorInfo1;    //显示点信息1
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 44, ArraySubType = UnmanagedType.I1)]
             public byte[] byMonitorInfo2; //检测点信息2
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 52, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2; //保留
+        }
+
+
+
+        public struct NET_DVR_FACELIB_GUARD_COND
+        {
+            public uint dwSize;
+            public uint dwChannel;  //通道号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 68, ArraySubType = UnmanagedType.I1)]
+            public byte[] szFDID;//人脸库的ID
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+
+        public struct NET_DVR_EVENT_SCHEDULE
+        {
+            public uint dwSize;//结构体大小
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_SCHEDTIME[] struAlarmTime; /*布防时间*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_SCHEDTIME[] struHolidayAlarmTime; /*假日布防时间*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.I1)]
+            public byte[] bySceneID;//场景号,目前支持1~4场景，0为无效。该场景号与布防时间中每个时间段一一对应。
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 72, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -10137,7 +11716,9 @@ namespace HikVisionNetSDK.Common
             public ushort wSnapWaitTime;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INTERVAL_NUM, ArraySubType = UnmanagedType.U2)]
             public ushort[] wIntervalTime;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public uint dwSnapVehicleNum; //抓拍车辆序号。
+            public NET_DVR_JPEGPARA struJpegPara;//抓拍图片参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
 
@@ -10251,7 +11832,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_ITC_ICRCFG
         {
             public uint dwSize;
-            public byte bySwitchType;//1~自动切换，2~手动切换 ,3~定时切换 
+            public byte bySwitchType;//1~自动切换，2~手动切换 ,3~定时切换
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
             public NET_ITC_ICR_PARAM_UNION uICRParam;
@@ -10263,7 +11844,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwHandleType; //异常处理,异常处理方式的"或"结果
             /*0x00: 无响应*/
-            /*0x01: 监视器上警告*/
+            /*0x01: 显示器上警告*/
             /*0x02: 声音警告*/
             /*0x04: 上传中心*/
             /*0x08: 触发报警输出（继电器输出）*/
@@ -10301,7 +11882,7 @@ namespace HikVisionNetSDK.Common
         public enum PROVINCE_CITY_IDX
         {
             ANHUI_PROVINCE = 0,              //安徽
-            AOMEN_PROVINCE = 1,              //澳门
+            AOMEN_CHINA_PROVINCE = 1,              //澳门（中国）
             BEIJING_PROVINCE = 2,              //北京
             CHONGQING_PROVINCE = 3,              //重庆
             FUJIAN_PROVINCE = 4,              //福建
@@ -10327,10 +11908,10 @@ namespace HikVisionNetSDK.Common
             SHANXI_SHAN_PROVINCE = 24,             //陕西
             SHANGHAI_PROVINCE = 25,             //上海
             SICHUAN_PROVINCE = 26,             //四川
-            TAIWAN_PROVINCE = 27,             //台湾
+            TAIWAN_CHINA_PROVINCE = 27,             //台湾（中国）
             TIANJIN_PROVINCE = 28,             //天津
             XIZANG_PROVINCE = 29,             //西藏
-            XIANGGANG_PROVINCE = 30,             //香港
+            XIANGGANG_CHINA_PROVINCE = 30,             //香港（中国）
             XINJIANG_PROVINCE = 31,             //新疆
             YUNNAN_PROVINCE = 32,             //云南
             ZHEJIANG_PROVINCE = 33              //浙江
@@ -10417,6 +11998,8 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes; //保留
         }
 
+
+
         /*ftp上传参数*/
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_FTPCFG
@@ -10431,7 +12014,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] sPassword;	/*密码*/
             public uint dwDirLevel;	/*0 = 不使用目录结构，直接保存在根目录,1 = 使用1级目录,2=使用2级目录*/
-            public ushort wTopDirMode;	/* 一级目录，0x1 = 使用设备名,0x2 = 使用设备号,0x3 = 使用设备ip地址，0x4=使用监测点,0x5=使用时间(年月),0x=6自定义,0x7=违规类型,0x8=方向,0x9=地点*/
+            public ushort wTopDirMode;	/* 一级目录，0x1 = 使用设备名,0x2 = 使用设备号,0x3 = 使用设备ip地址，0x4=使用显示点,0x5=使用时间(年月),0x=6自定义,0x7=违规类型,0x8=方向,0x9=地点*/
             public ushort wSubDirMode;	/* 二级目录，0x1 = 使用通道名,0x2 = 使用通道号，,0x3=使用时间(年月日),0x4=使用车道号,0x=5自定义,0x6=违规类型,0x7=方向,0x8=地点*/
             public byte byEnableAnony; //启用匿名，0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 23, ArraySubType = UnmanagedType.I1)]
@@ -10450,7 +12033,7 @@ namespace HikVisionNetSDK.Common
         public const int PICNAME_ITEM_PLATE_COLOR = 9;   /*车牌颜色*/
         public const int PICNAME_ITEM_CAR_CHAN = 10;  /*车道号*/
         public const int PICNAME_ITEM_CAR_SPEED = 11;  /*车辆速度*/
-        public const int PICNAME_ITEM_CARCHAN = 12;  /*监测点*/
+        public const int PICNAME_ITEM_CARCHAN = 12;  /*显示点*/
         public const int PICNAME_ITEM_PIC_NUMBER = 13;  //图片序号
         public const int PICNAME_ITEM_CAR_NUMBER = 14;  //车辆序号
 
@@ -10522,13 +12105,479 @@ namespace HikVisionNetSDK.Common
             public uint[] dwAlarmInPicChanTriggered; /*报警触发抓拍通道,按位设置，从第1位开始*/
         }
 
-        //抓拍触发请求结构(保留)
-        [StructLayoutAttribute(LayoutKind.Sequential)]
+        //手动触发参数
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct NET_DVR_MANUALSNAP
         {
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes; //保留
+            public byte byOSDEnable;
+            public byte byLaneNo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 22, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
         }
+
+        public const int NET_ITC_GET_TRIGGERCFG = 3003; //获取触发参数
+        public const int NET_ITC_SET_TRIGGERCFG = 3004; //设置触发参数
+        public const int NET_DVR_GET_CURTRIGGERMODE = 3130; //获取设备当前触发模式
+        public const int NET_ITC_GET_VIDEO_TRIGGERCFG = 3017;  //获取视频电警触发参数
+        public const int NET_ITC_SET_VIDEO_TRIGGERCFG = 3018;  //设置视频电警触发参数
+
+        public const int MAX_ITC_LANE_NUM = 6;
+        public const int MAX_IOOUT_NUM = 4;
+        public const int MAX_LANEAREA_NUM = 2;
+        public const int MAX_IOIN_NUMEX = 10;
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_SERIAL_INFO
+        {
+            public byte bySerialProtocol;
+            public byte byIntervalType;
+            public ushort wInterval;
+            public byte byNormalPassProtocol;
+            public byte byInverseProtocol;
+            public byte bySpeedProtocol;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 9, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_EPOLICE_LANE_PARAM
+        {
+            public byte byEnable;
+            public byte byRelatedDriveWay;
+            public ushort wDistance;
+            public byte byRecordEnable;
+            public byte byRecordType;
+            public byte byPreRecordTime;
+            public byte byRecordDelayTime;
+            public byte byRecordTimeOut;
+            public byte bySignSpeed;
+            public byte bySpeedLimit;
+            public byte byOverlayDriveWay;
+            public NET_ITC_SERIAL_INFO struSerialInfo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IOOUT_NUM, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRelatedIOOut;
+            public byte byFlashMode;
+            public byte bySerialType;
+            public byte byRelatedIOOutEx;
+            public byte bySnapPicPreRecord;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LANEAREA_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_PLATE_RECOG_REGION_PARAM[] struPlateRecog;
+            public byte byBigCarSignSpeed;
+            public byte byBigCarSpeedLimit;
+            public byte byRedTrafficLightChan;
+            public byte byYellowTrafficLightChan;
+            public byte byRelaLaneDirectionType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 11, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes3;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_EPOLICE_RS485_PARAM
+        {
+            public byte byRelatedLaneNum;
+            public byte byTrafficLightSignalSrc;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_ITC_PLATE_RECOG_PARAM struPlateRecog;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ITC_LANE_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_EPOLICE_LANE_PARAM[] struLane;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_SINGLEIO_PARAM
+        {
+            public byte byDefaultStatus;
+            public byte byRelatedDriveWay;
+            public byte bySnapTimes;
+            public byte byRelatedIOOutEx;
+            public NET_ITC_INTERVAL_PARAM struInterval;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IOOUT_NUM, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRelatedIOOut;
+            public byte byFlashMode;
+            public byte byEnable;
+            public byte byUseageType;
+            public byte byRes2;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LANEAREA_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_PLATE_RECOG_REGION_PARAM[] struPlateRecog;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_POST_SINGLEIO_PARAM
+        {
+            public NET_ITC_PLATE_RECOG_PARAM struPlateRecog;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IOIN_NUMEX, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_SINGLEIO_PARAM[] struSingleIO;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_CURTRIGGERMODE
+        {
+            public uint dwSize;
+            public uint dwTriggerType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_PLATE_RECOG_PARAM
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 3)]
+            public string byDefaultCHN;
+            public byte byEnable;
+            public uint dwRecogMode;
+            public byte byVehicleLogoRecog;
+            public byte byProvince;
+            public byte byRegion;
+            public byte byRes1;
+            public ushort wPlatePixelWidthMin;
+            public ushort wPlatePixelWidthMax;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_INTERVAL_PARAM
+        {
+            public byte byIntervalType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INTERVAL_NUM, ArraySubType = UnmanagedType.U2)]
+            public ushort[] wInterval;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct UNION_REGION
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 164, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_PLATE_RECOG_REGION_PARAM
+        {
+            public byte byMode;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public UNION_REGION uRegion;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_LANE_PARAM
+        {
+            public byte byEnable;
+            public byte byRelatedDriveWay;
+            public ushort wDistance;
+            public ushort wTrigDelayTime;
+            public byte byTrigDelayDistance;
+            public byte bySpeedCapEn;
+            public byte bySignSpeed;
+            public byte bySpeedLimit;
+            public byte bySnapTimes;
+            public byte byOverlayDriveWay;
+            public NET_ITC_INTERVAL_PARAM struInterval;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IOOUT_NUM, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRelatedIOOut;
+            public byte byFlashMode;
+            public byte byCartSignSpeed;
+            public byte byCartSpeedLimit;
+            public byte byRelatedIOOutEx;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LANEAREA_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_PLATE_RECOG_REGION_PARAM[] struPlateRecog;
+            public byte byLaneType;
+            public byte byUseageType;
+            public byte byRelaLaneDirectionType;
+            public byte byLowSpeedLimit;
+            public byte byBigCarLowSpeedLimit;
+            public byte byLowSpeedCapEn;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 10, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_RADAR_PARAM
+        {
+            public byte byRadarType;
+            public byte byLevelAngle;
+            public ushort wRadarSensitivity;
+            public ushort wRadarSpeedValidTime;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public float fLineCorrectParam;
+            public int iConstCorrectParam;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_POST_RS485_RADAR_PARAM
+        {
+            public byte byRelatedLaneNum;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_ITC_PLATE_RECOG_PARAM struPlateRecog;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ITC_LANE_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_LANE_PARAM[] struLane;
+            public NET_ITC_RADAR_PARAM struRadar;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_TRIGGER_PARAM_UNION
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4280, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_SINGLE_TRIGGERCFG
+        {
+            public byte byEnable;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwTriggerType;
+            public NET_ITC_TRIGGER_PARAM_UNION uTriggerParam;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_TRIGGERCFG
+        {
+            public uint dwSize;
+            public NET_ITC_SINGLE_TRIGGERCFG struTriggerParam;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIDEO_TRIGGER_COND
+        {
+            public uint dwSize;
+            public uint dwChannel;
+            public uint dwTriggerMode;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIDEO_TRIGGER_PARAM_UNION
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1150, ArraySubType = UnmanagedType.U4)]
+            public uint[] uLen;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_LIGHT_ACCESSPARAM_UNION
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 122, ArraySubType = UnmanagedType.U4)]
+            public uint[] uLen;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_TRAFFIC_LIGHT_PARAM
+        {
+            public byte bySource; //交通信号灯接入源，0-IO接入，1-RS485接入
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_ITC_LIGHT_ACCESSPARAM_UNION struLightAccess;//信号灯接入参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //车道属性参数结构
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_LANE_LOGIC_PARAM
+        {
+            public byte byUseageType;     //车道用途类型，详见ITC_LANE_USEAGE_TYPE
+            public byte byDirectionType;  //车道方向类型，详见ITC_LANE_DIRECTION_TYPE
+            public byte byCarDriveDirect; //车辆行驶方向，详见ITC_LANE_CAR_DRIVE_DIRECT
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 33, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;        //保留
+        }
+
+        //违规检测参数结构
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIOLATION_DETECT_PARAM
+        {
+            public uint dwVioDetectType; //违规检测类型, 按位表示, 详见ITC_VIOLATION_DETECT_TYPE ,0-不启用,1-启用
+            public byte byDriveLineSnapTimes; //压车道线抓拍张数,2-3
+            public byte byReverseSnapTimes; //逆行抓拍,2-3
+            public ushort wStayTime; //机占非停留时间（该时间后抓拍），单位s
+            public byte byNonDriveSnapTimes;//机占非抓拍张数2-3
+            public byte byChangeLaneTimes;//违法变道抓拍张数 2-3
+            public byte bybanTimes;//违法禁令抓拍张数2-3
+            public byte byDriveLineSnapSen;// 压线灵敏度(0~100)(3.7Ver)
+            public ushort wSnapPosFixPixel; //第2,3张抓拍位置最小偏移(违反信号灯时起效)（单位：像素） 命名需改进
+            public byte bySpeedTimes;//违法超速抓拍张数2-3(3.8Ver)
+            public byte byTurnAroundEnable;//违章掉头使能 0~关闭 1~开启
+            public byte byThirdPlateRecogTime;//第三张牌识时间 0~180s
+            public byte byPostSnapTimes;//卡口抓拍张数,1-2张
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 18, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public ushort wStopLineDis;  //电警第2张违规图片与停止线的最短距离，[0,300]单位(像素)
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 14, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIDEO_TRIGGER_PARAM
+        {
+            public uint dwSize;
+            public uint dwMode;
+            public NET_ITC_VIDEO_TRIGGER_PARAM_UNION uVideoTrigger;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_LAMP_EXTERNAL_CFG
+        {
+            public uint dwSize;
+            public byte byEnable; //外控使能 0～不启用 1～启用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_LAMP_STATE struLampStateCtrl;//指示灯外控
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //指示灯外控
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_LAMP_STATE
+        {
+            public byte byFlicker;//0~不闪烁 1 ～闪烁
+            public byte byParkingIndex;//车位号1～3
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwIONo;//1~IO1;2~IO2;4~IO3;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        public const int MAX_LED_INFO_LEN = 512;
+        public const int MAX_VOICE_INFO_LEN = 128;
+
+        public const int NET_DVR_GET_LEDDISPLAY_CFG = 3673;
+        public const int NET_DVR_SET_LEDDISPLAY_CFG = 3672;
+        public const int NET_DVR_SET_VOICEBROADCAST_CFG = 3675;
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_LEDDISPLAY_CFG
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LED_INFO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sDisplayInfo;
+            public byte byDisplayMode;
+            public byte bySpeedType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwShowTime;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_VOICEBROADCAST_CFG
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_VOICE_INFO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sInfo; //语音播报内容
+            public byte byBroadcastNum;// 语音播报次数， 1~10次
+            public byte byIntervalTime;// 语音播报间隔时间,1~5s
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 126, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIDEO_EPOLICE_PARAM
+        {
+            public byte byEnable;    //是否启用，0-不启用，1-启用
+            public byte byLaneNum; //识别的车道个数
+            public byte byLogicJudge;//闯红灯违规判断逻辑，设置值为：0-按方向，1-按车道
+            public byte byRes1;
+            public NET_ITC_PLATE_RECOG_PARAM struPlateRecog; //牌识参数
+            public NET_ITC_TRAFFIC_LIGHT_PARAM struTrafficLight; //交通信号灯参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ITC_LANE_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_LANE_VIDEO_EPOLICE_PARAM[] struLaneParam; //单车道参数
+            public NET_ITC_LINE struLaneBoundaryLine; //车道边界线（最右边车道的边界线）
+            public NET_ITC_LINE struLeftLine; //左转弯分界线
+            public NET_ITC_LINE struRightLine; //右转弯分界线
+            public NET_ITC_LINE struTopZebraLine; //上部斑马线
+            public NET_ITC_LINE struBotZebraLine; //下部斑马线
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //视频电警线结构
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_LINE
+        {
+            public NET_VCA_LINE struLine; //线参数
+            public byte byLineType; //线类型，详见ITC_LINE_TYPE
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //多边型结构体
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_POLYGON
+        {
+            public uint dwPointNum; //有效点 大于等于3，若是3点在一条线上认为是无效区域，线交叉认为是无效区域
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.Struct)]
+            public NET_VCA_POINT[] struPos; //多边形边界点,最多20个
+        }
+
+        //违规检测线参数结构
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_VIOLATION_DETECT_LINE
+        {
+            public NET_ITC_LINE struLaneLine; //车道线参数
+            public NET_ITC_LINE struStopLine; //停止线参数
+            public NET_ITC_LINE struRedLightLine; //闯红灯触发线参数
+            public NET_ITC_LINE struCancelLine; //直行触发位置取消线
+            public NET_ITC_LINE struWaitLine; //待行区停止线参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.Struct)]
+            public NET_ITC_LINE[] struRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_ITC_LANE_VIDEO_EPOLICE_PARAM
+        {
+            public byte byLaneNO; //关联的车道号
+            public byte bySensitivity; //线圈灵敏度，[1,100]
+            public byte byEnableRadar;//启用雷达测试0-不启用，1-启用
+            //关联车道方向类型，参考ITC_RELA_LANE_DIRECTION_TYPE
+            //该参数为车道方向参数，与关联车道号对应，确保车道唯一性。
+            public byte byRelaLaneDirectionType;
+            public NET_ITC_LANE_LOGIC_PARAM struLane; //车道参数
+            public NET_ITC_VIOLATION_DETECT_PARAM struVioDetect; //违规检测参数
+            public NET_ITC_VIOLATION_DETECT_LINE struLine; //违规检测线
+            public NET_ITC_POLYGON struPlateRecog; //牌识区域参数
+            public byte byRecordEnable;//闯红灯周期录像标志，0-不录像，1-录像
+            public byte byRecordType;//闯红灯录像类型，0-预录，1-延时录像
+            public byte byPreRecordTime;//闯红灯录像片段预录时间（默认0），单位：秒
+            public byte byRecordDelayTime;//闯红灯录像片段延时时间（默认0），单位：秒
+            public byte byRecordTimeOut;//闯红灯周期录像超时时间（秒）
+            public byte byCarSpeedLimit; //车速限制值，单位km/h
+            public byte byCarSignSpeed;//标志限速，单位km/h
+            public byte bySnapPicPreRecord; //抓拍图片预录时间点；0-默认值（第二张图片），1-第一张图片，2-第二张图片，3-第三张图片
+            public NET_ITC_INTERVAL_PARAM struInterval;//抓拍间隔参数（20byte）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 36, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_SPRCFG
@@ -10546,16 +12595,16 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LANERECT_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_VCA_RECT[] struLaneRect;  /*车道识别区域*/
             public uint dwRecogMode;  /*识别的类型，
-	        bit0-背向识别：0-正向车牌识别，1-背向识别(尾牌识别) ； 
+	        bit0-背向识别：0-正向车牌识别，1-背向识别(尾牌识别) ；
 		    bit1-大车牌识别或小车牌识别：0-小车牌识别，1-大车牌识别 ；
 		    bit2-车身颜色识别：0-不采用车身颜色识别，在背向识别或小车牌识别时禁止启用，1-车身颜色识别；
-		    bit3-农用车识别：0-不采用农用车识别，1-农用车识别； 
+		    bit3-农用车识别：0-不采用农用车识别，1-农用车识别；
 		    bit4-模糊识别：0-不采用模糊识别，1-模糊识别；
 		    bit5-帧定位或场定位：0-帧定位，1-场定位；
-		    bit6-帧识别或场识别：0-帧识别，1-场识别； 
+		    bit6-帧识别或场识别：0-帧识别，1-场识别；
 		    bit7-晚上或白天：0-白天，1-晚上 */
-            public byte bySendPRRaw;       	//是否发送原图：0-不发送，1-发送 
-            public byte bySendBinImage;  	//是否发送车牌二值图：0-不发送，1-发送 
+            public byte bySendPRRaw;       	//是否发送原图：0-不发送，1-发送
+            public byte bySendBinImage;  	//是否发送车牌二值图：0-不发送，1-发送
             public byte byDelayCapture;  //延时抓拍控制,单位：帧
             public byte byUseLED;    //使用LED控制，0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 68, ArraySubType = UnmanagedType.I1)]
@@ -10566,11 +12615,11 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_PLCCFG
         {
             public uint dwSize;
-            public byte byPlcEnable;	//是否启用车牌亮度补偿（默认启用）：0-关闭，1-启用 
+            public byte byPlcEnable;	//是否启用车牌亮度补偿（默认启用）：0-关闭，1-启用
             public byte byPlateExpectedBright;	//车牌的预期亮度（默认值50）, 范围[0, 100]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;	//保留 
-            public byte byTradeoffFlash;     //是否考虑闪光灯的影响: 0 - 否;  1 - 是(默认); 
+            public byte[] byRes1;	//保留
+            public byte byTradeoffFlash;     //是否考虑闪光灯的影响: 0 - 否;  1 - 是(默认);
                                              //使用闪光灯补光时, 如果考虑减弱闪光灯的亮度增强效应, 则需要设为1;否则为0
             public byte byCorrectFactor;     //纠正系数, 范围[0, 100], 默认值50 (在tradeoff_flash切换时,恢复默认值）
             public ushort wLoopStatsEn;  //是否该线圈的亮度，按位表示，0-不统计，1-统计
@@ -10652,14 +12701,14 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public uint dwProtoNum;  //有效的ipc协议数目
-            public IntPtr pBuffer;    //协议列表缓冲区, dwProtoNum 个NET_DVR_PROTO_TYPE结构  
+            public IntPtr pBuffer;    //协议列表缓冲区, dwProtoNum 个NET_DVR_PROTO_TYPE结构
             public uint dwBufferLen; //缓冲区长度
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
 
-        public const int MAX_ALERTLINE_NUM = 8; //最大警戒线条数	
+        public const int MAX_ALERTLINE_NUM = 8; //最大警戒线条数
 
         //越界侦测查询条件
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -10694,7 +12743,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byLen;  //结构体长度
             /*[FieldOffsetAttribute(0)]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64 * 96, ArraySubType = UnmanagedType.I1)]
-            public byte[] byMotionScope; //侦测区域 0-96位表示64行，共有96*64个小宏块，1-是移动侦测区域，0-非移动侦测区域 
+            public byte[] byMotionScope; //侦测区域 0-96位表示64行，共有96*64个小宏块，1-是移动侦测区域，0-非移动侦测区域
             [FieldOffsetAttribute(0)]
             public NET_DVR_TRAVERSE_PLANE_SEARCHCOND struTraversPlaneCond; //越界侦测
             [FieldOffsetAttribute(0)]
@@ -10707,7 +12756,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_SMART_SEARCH_PARAM
         {
             public byte byChan;					//通道号
-            public byte bySearchCondType; //智能查找联合体NET_DVR_AREA_SMARTSEARCH_COND_UNION的索引     
+            public byte bySearchCondType; //智能查找联合体NET_DVR_AREA_SMARTSEARCH_COND_UNION的索引
             /*0-移动侦测区域 ，1-越界侦测， 2-区域入侵*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
@@ -10768,7 +12817,7 @@ namespace HikVisionNetSDK.Common
             public byte byAlarmInPortNum;		//DVR报警输入个数
             public byte byAlarmOutPortNum;		//DVR报警输出个数
             public byte byRS232Num;			//DVR 232串口个数
-            public byte byRS485Num;			//DVR 485串口个数 
+            public byte byRS485Num;			//DVR 485串口个数
             public byte byNetworkPortNum;		//网络口个数
             public byte byDiskCtrlNum;			//DVR 硬盘控制器个数
             public byte byDiskNum;				//DVR 硬盘个数
@@ -10776,11 +12825,11 @@ namespace HikVisionNetSDK.Common
             public byte byChanNum;				//DVR 通道个数
             public byte byStartChan;			//起始通道号,例如DVS-1,DVR - 1
             public byte byDecordChans;			//DVR 解码路数
-            public byte byVGANum;				//VGA口的个数 
+            public byte byVGANum;				//VGA口的个数
             public byte byUSBNum;				//USB口的个数
             public byte byAuxoutNum;			//辅口的个数
             public byte byAudioNum;			//语音口的个数
-            public byte byIPChanNum;			//最大数字通道数 低8位，高8位见byHighIPChanNum 
+            public byte byIPChanNum;			//最大数字通道数 低8位，高8位见byHighIPChanNum
             public byte byZeroChanNum;			//零通道编码个数
             public byte bySupport;        //能力，位与结果为0表示不支持，1表示支持，
                                           //bySupport & 0x1, 表示是否支持智能搜索
@@ -10797,13 +12846,13 @@ namespace HikVisionNetSDK.Common
             public byte bySupport1;     //能力，位与结果为0表示不支持，1表示支持
                                         //bySupport1 & 0x1, 表示是否支持snmp v30
                                         //bySupport1 & 0x2, 支持区分回放和下载
-                                        //bySupport1 & 0x4, 是否支持布防优先级	
+                                        //bySupport1 & 0x4, 是否支持布防优先级
                                         //bySupport1 & 0x8, 智能设备是否支持布防时间段扩展
                                         //bySupport1 & 0x10, 表示是否支持多磁盘数（超过33个）
-                                        //bySupport1 & 0x20, 表示是否支持rtsp over http	
+                                        //bySupport1 & 0x20, 表示是否支持rtsp over http
             public ushort wDevType;//设备型号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DEV_TYPE_NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byDevTypeName;//设备型号名称 
+            public byte[] byDevTypeName;//设备型号名称
             public byte bySupport2; //能力集扩展，位与结果为0表示不支持，1表示支持
                                     //bySupport2 & 0x1, 表示是否支持扩展的OSD字符叠加(终端和抓拍机扩展区分)
             public byte byAnalogAlarmInPortNum; //模拟报警输入个数
@@ -10811,7 +12860,7 @@ namespace HikVisionNetSDK.Common
             public byte byStartAlarmOutNo;  //模拟报警输出起始号
             public byte byStartIPAlarmInNo;  //IP报警输入起始号  0-无效
             public byte byStartIPAlarmOutNo; //IP报警输出起始号 0-无效
-            public byte byHighIPChanNum;     //数字通道个数，高8位 
+            public byte byHighIPChanNum;     //数字通道个数，高8位
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 9, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;			//保留
         }
@@ -10825,11 +12874,11 @@ namespace HikVisionNetSDK.Common
             public byte byEnable;			//0-停止零通道编码，1-表示启用零通道编码
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;			//保留
-            public uint dwVideoBitrate; 	/*视频码率 0-保留 1-16K(保留) 2-32K 3-48k 4-64K 5-80K 6-96K 7-128K 8-160k 9-192K 10-224K 11-256K 
+            public uint dwVideoBitrate; 	/*视频码率 0-保留 1-16K(保留) 2-32K 3-48k 4-64K 5-80K 6-96K 7-128K 8-160k 9-192K 10-224K 11-256K
                                              * 12-320K 13-384K 14-448K 15-512K 16-640K 17-768K 18-896K 19-1024K 20-1280K 21-1536K 22-1792K
                                              * 23-2048K
                                              * 最高位(31位)置成1表示是自定义码流, 0-30位表示码流值(MIN-32K MAX-8192K) */
-            public uint dwVideoFrameRate;   //帧率 0-全部; 1-1/16; 2-1/8; 3-1/4; 4-1/2; 5-1; 6-2; 7-4; 8-6; 9-8; 10-10; 11-12; 12-16; 13-20, 
+            public uint dwVideoFrameRate;   //帧率 0-全部; 1-1/16; 2-1/8; 3-1/4; 4-1/2; 5-1; 6-2; 7-4; 8-6; 9-8; 10-10; 11-12; 12-16; 13-20,
                                             //V2.0增加14-15, 15-18, 16-22;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;        //保留
@@ -10841,12 +12890,12 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;			    //结构长度
             public NET_VCA_POINT struPoint;	//画面中的坐标点
-            public byte byState;		 //现在的状态，0-缩小，1-放大  
+            public byte byState;		 //现在的状态，0-缩小，1-放大
             public byte byPreviewNumber;       //预览数目,0-1画面,1-4画面,2-9画面,3-16画面 该参数只读
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_WINDOW_V30, ArraySubType = UnmanagedType.I1)]
             public byte[] byPreviewSeq;//画面通道信息 该参数只读
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 30, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;				//保留 
+            public byte[] byRes;				//保留
         }
 
         public const int DESC_LEN_64 = 64;
@@ -10864,7 +12913,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byWriteCommunity;//写共同体,最多31 字节,默认 "private"
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DESC_LEN_64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byTrapHostIP;	//自陷主机ip地址描述，支持IPV4 IPV6和域名描述    
+            public byte[] byTrapHostIP;	//自陷主机ip地址描述，支持IPV4 IPV6和域名描述
             public ushort wTrapHostPort;   //trap主机端口
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byTrapName;
@@ -10876,7 +12925,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_SNMPv3_USER
         {
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byUserName;			// 用户名				
+            public byte[] byUserName;			// 用户名
             public byte bySecLevel;	//安全级别 1-无校验 2-无授权校验 3-授权校验
             public byte byAuthtype;	//认证类型 0-MD5认证 1-SHA认证 2: none
             public byte byPrivtype;	//0: DES; 1: AES; 2: none;
@@ -10904,7 +12953,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byWriteCommunity;		//写共同体,最多31 字节,默认 "private"
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DESC_LEN_64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byTrapHostIP;		//自陷主机ip地址描述，支持IPV4 IPV6和域名描述    
+            public byte[] byTrapHostIP;		//自陷主机ip地址描述，支持IPV4 IPV6和域名描述
             public ushort wTrapHostPort;					// trap主机端口
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
@@ -11068,16 +13117,34 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes2; //保留
         }
 
+        public struct NET_DVR_CONTROL_GATEWAY
+        {
+            public uint dwSize; //结构体大小
+            public uint dwGatewayIndex; //门禁序号，从1开始
+            public byte byCommand; //操作命令，0-关闭，1-打开，2-常开（通道状态），3-恢复（普通状态）
+            public byte byLockType; //锁类型，0-普通（以前默认都为0）,1-智能锁
+            public ushort wLockID; //锁ID，从1开始（远程开门口机锁时，0表示门口机本机控制器上接的锁、1表示外接控制器上接的锁）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byControlSrc; //操作发起源信息
+            public byte byControlType; //开锁类型，1-显示，2-通话
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes3;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byPassword;       //锁密码，当byLockType为智能锁时有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 108, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //保留
+        }
+
         //XML透传接口
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_XML_CONFIG_INPUT
         {
-            public uint dwSize;//结构体大小 
-            public IntPtr lpRequestUrl;//请求信令，字符串格式 
+            public uint dwSize;//结构体大小
+            public IntPtr lpRequestUrl;//请求信令，字符串格式
             public uint dwRequestUrlLen;
-            public IntPtr lpInBuffer;//输入参数缓冲区，XML格式 
+            public IntPtr lpInBuffer;//输入参数缓冲区，XML格式
             public uint dwInBufferSize;
-            public uint dwRecvTimeOut;//接收超时时间，单位：ms，填0则使用默认超时5s 
+            public uint dwRecvTimeOut;//接收超时时间，单位：ms，填0则使用默认超时5s
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -11085,12 +13152,12 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_XML_CONFIG_OUTPUT
         {
-            public uint dwSize;//结构体大小 
-            public IntPtr lpOutBuffer;//输出参数缓冲区，XML格式 
+            public uint dwSize;//结构体大小
+            public IntPtr lpOutBuffer;//输出参数缓冲区，XML格式
             public uint dwOutBufferSize;
-            public uint dwReturnedXMLSize;//实际输出的XML内容大小 
-            public IntPtr lpStatusBuffer;//返回的状态参数(XML格式：ResponseStatus)，获取命令成功时不会赋值，如果不需要，可以置NULL 
-            public uint dwStatusSize;//状态缓冲区大小(内存大小) 
+            public uint dwReturnedXMLSize;//实际输出的XML内容大小
+            public IntPtr lpStatusBuffer;//返回的状态参数(XML格式：ResponseStatus)，获取命令成功时不会赋值，如果不需要，可以置NULL
+            public uint dwStatusSize;//状态缓冲区大小(内存大小)
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -11098,13 +13165,13 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_CHANNEL_GROUP
         {
-            public uint dwSize;//结构体大小 
-            public uint dwChannel;//通道号 
-            public uint dwGroup; //组号，从0开始，即0表示第1组，1表示第2组，依次类推 
-            public byte byID;//设备区域设置ID 
+            public uint dwSize;//结构体大小
+            public uint dwChannel;//通道号
+            public uint dwGroup; //组号，从0开始，即0表示第1组，1表示第2组，依次类推
+            public byte byID;//设备区域设置ID
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
-            public uint dwPositionNo;//场景位置索引号，IPC为0，IPD从1开始  
+            public uint dwPositionNo;//场景位置索引号，IPC为0，IPD从1开始
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 56, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
@@ -11112,9 +13179,9 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_TRAVERSE_PLANE_DETECTION
         {
-            public uint dwSize;//结构体大小 
-            public byte byEnable;//使能越界侦测功能：0- 否，1- 是  
-            public byte byEnableDualVca; //启用支持智能后检索：0- 不启用，1- 启用 
+            public uint dwSize;//结构体大小
+            public byte byEnable;//使能越界侦测功能：0- 否，1- 是
+            public byte byEnableDualVca; //启用支持智能后检索：0- 不启用，1- 启用
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
 
@@ -11122,9 +13189,9 @@ namespace HikVisionNetSDK.Common
             public NET_VCA_TRAVERSE_PLANE[] struAlertParam;//警戒线参数
 
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_SCHEDTIME[] struAlarmSched;//布防时间，每周7天，每天最多设置8个时间段 
+            public NET_DVR_SCHEDTIME[] struAlarmSched;//布防时间，每周7天，每天最多设置8个时间段
 
-            public NET_DVR_HANDLEEXCEPTION_V40 struHandleException;//异常处理方式 
+            public NET_DVR_HANDLEEXCEPTION_V40 struHandleException;//异常处理方式
 
             public uint dwMaxRelRecordChanNum;
             public uint dwRelRecordChanNum;
@@ -11133,7 +13200,7 @@ namespace HikVisionNetSDK.Common
             public uint[] byRelRecordChan;
 
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_SCHEDTIME[] struHolidayTime; //假日布防时间，最多设置8个时间段 
+            public NET_DVR_SCHEDTIME[] struHolidayTime; //假日布防时间，最多设置8个时间段
 
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 100, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
@@ -11220,6 +13287,47 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes1;
         }
 
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_THERMOMETRY_ALARM
+        {
+            public uint dwSize;
+            public uint dwChannel;//通道号
+            public byte byRuleID;//规则ID
+            public byte byThermometryUnit;//测温单位: 0-摄氏度（℃），1-华氏度（℉），2-开尔文(K)
+            public ushort wPresetNo; //预置点号
+            public NET_PTZ_INFO struPtzInfo;//ptz坐标信息
+            public byte byAlarmLevel;//0-预警 1-报警
+            public byte byAlarmType;/*报警类型 0-最高温度 1-最低温度 2-平均温度 3-温差 4-温度突升 5-温度突降*/
+            public byte byAlarmRule;//0-大于，1-小于
+            public byte byRuleCalibType;//规则标定类型 0-点，1-框，2线
+            public NET_VCA_POINT struPoint;//点测温坐标（当规则标定类型为点的时候生效）
+            public NET_VCA_POLYGON struRegion;//区域（当规则标定类型为框的时候生效）
+            public float fRuleTemperature;/*配置规则温度,精确到小数点后一位(-40-1000),（浮点数+100） */
+            public float fCurrTemperature;/*当前温度,精确到小数点后一位(-40-1000),（浮点数+100） */
+            public uint dwPicLen;//可见光图片长度
+            public uint dwThermalPicLen;//热成像图片长度
+            public uint dwThermalInfoLen;//热成像附加信息长度
+            public IntPtr pPicBuff; ///可见光图片指针
+            public IntPtr pThermalPicBuff;// 热成像图片指针
+            public IntPtr pThermalInfoBuff; //热成像附加信息指针
+            public NET_VCA_POINT struHighestPoint;//线、框测温最高温度位置坐标（当规则标定类型为线、框的时候生效）
+            public float fToleranceTemperature;/* 容差温度,精确到小数点后一位(-40-1000),（浮点数+100） */
+            public uint dwAlertFilteringTime;//温度预警等待时间 单位秒 范围为0-200秒，默认为0秒
+            public uint dwAlarmFilteringTime;//温度报警等待时间 单位秒 范围为0-200秒，默认为0秒
+            public uint dwTemperatureSuddenChangeCycle;//温度突变记录周期，单位秒
+            public float fTemperatureSuddenChangeValue;//温度突变值,精确到小数点后一位(大于0)
+            public byte byPicTransType;        //图片数据传输方式: 0-二进制；1-url
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwVisibleChannel; //可见光通道通道号
+            public uint dwRelativeTime;     // 相对时标
+            public uint dwAbsTime;          // 绝对时标
+            public float fAlarmRuleTemperature;/* TMA测温配置规则温度,精确到小数点后一位(-40-1000),（浮点数+100） */
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_SDK_MANUALTHERM_BASICPARAM
         {
@@ -11287,6 +13395,79 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 512, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
+
+        //实时温度检测条件结构
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_REALTIME_THERMOMETRY_COND
+        {
+            public uint dwSize;
+            public uint dwChan;//通道号，从1开始，0xffffffff代表获取全部通道
+            public byte byRuleID; //规则ID 0-代表获取全部规则，具体规则ID从1开始
+            /*
+             * 1-定时模式：设备每隔一秒上传各个规则测温数据的最高温、最低温和平均温度值、温差
+             * 2-温差模式：若上一秒与下一秒的最高温或者最低温或者平均温或者温差值的温差大于等于2摄氏度，则上传最高温、最低温和平均温度值。若大于等于一个小时温差值均小于2摄氏度，则上传最高温、最低温、平均温和温差值
+             */
+            public byte byMode; //长连接模式， 0-保留（为兼容老设备），1-定时模式，2-温差模式
+            public ushort wInterval; //上传间隔，仅温差模式支持，1~3600S，填0则默认3600S上传一次
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 60, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes; //保留
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_POINT_THERM_CFG
+        {
+            public float fTemperature;//当前温度
+            public NET_VCA_POINT struPoint;//点测温坐标（当规则标定类型为点的时候生效）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 120, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_LINEPOLYGON_THERM_CFG
+        {
+            public float fMaxTemperature;//最高温
+            public float fMinTemperature;//最低温
+            public float fAverageTemperature;//平均温
+            public float fTemperatureDiff;//温差
+            public NET_VCA_POLYGON struRegion;//区域（当规则标定类型为框/线的时候生效）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_THERMOMETRY_UPLOAD
+        {
+            public uint dwSize;
+            public uint dwRelativeTime;     // 相对时标
+            public uint dwAbsTime;            // 绝对时标
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] szRuleName;//规则名称
+            public byte byRuleID;//规则ID号
+            public byte byRuleCalibType;//规则标定类型 0-点，1-框，2-线
+            public ushort wPresetNo; //预置点号
+            public NET_DVR_POINT_THERM_CFG struPointThermCfg;
+            public NET_DVR_LINEPOLYGON_THERM_CFG struLinePolygonThermCfg;
+            public byte byThermometryUnit;//测温单位: 0-摄氏度（℃），1-华氏度（℉），2-开尔文(K)
+            public byte byDataType;//数据状态类型:0-检测中，1-开始，2-结束
+            public byte byRes1;
+            /*
+                bit0-中心点测温：0-不支持，1-支持；
+                bit1-最高点测温：0-不支持，1-支持；
+                bit2-最低点测温：0-不支持，1-支持；
+            */
+            public byte bySpecialPointThermType;// 是否支持特殊点测温
+            public float fCenterPointTemperature;//中心点温度,精确到小数点后一位(-40-1500),（浮点数+100）*10 （由bySpecialPointThermType判断是否支持中心点）
+            public float fHighestPointTemperature;//最高点温度,精确到小数点后一位(-40-1500),（浮点数+100）*10（由bySpecialPointThermType判断是否支持最高点）
+            public float fLowestPointTemperature;//最低点温度,精确到小数点后一位(-40-1500),（浮点数+100）*10（由bySpecialPointThermType判断是否支持最低点）
+            public NET_VCA_POINT struHighestPoint;//线、框测温最高温度位置坐标（当规则标定类型为线、框的时候生效）
+            public NET_VCA_POINT struLowestPoint;//线、框测温最低温度位置坐标（当规则标定类型为线、框的时候生效）
+            public byte yIsFreezedata;//是否数据冻结 0-否 1-是
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+            public uint dwChan; //通道号，查询条件中通道号为0xffffffff时该字段生效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 88, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
         /***************************** end *********************************************/
 
         /*******************************备份结构 begin********************************/
@@ -11299,10 +13480,10 @@ namespace HikVisionNetSDK.Common
         {
             public int iValue;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = DESC_LEN_32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byDescribe; //描述字段 
+            public byte[] byDescribe; //描述字段
             public uint dwFreeSpace; //获取磁盘列表专用,单位为M
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 12, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;			  //保留  
+            public byte[] byRes;			  //保留
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -11311,7 +13492,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;            //结构长度
             public uint dwNodeNum;		 //能力结点个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_NODE_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_DESC_NODE[] struDescNode;  //描述参数  
+            public NET_DVR_DESC_NODE[] struDescNode;  //描述参数
         }
 
         //备份进度列表
@@ -11363,7 +13544,7 @@ namespace HikVisionNetSDK.Common
             public byte byContinue;                 //是否继续备份 0不继续 1继续
             public byte byDrawFrame;			     //0 不抽帧  1 抽帧
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 33, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;					 // 保留字节 
+            public byte[] byRes;					 // 保留字节
         }
         /********************************* end *******************************************/
         public enum COMPRESSION_ABILITY_TYPE
@@ -11394,7 +13575,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;        //保留字节
             public uint dwNodeNum;		//能力结点个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_NODE_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_DESC_NODE[] struDescNode;  //描述参数  
+            public NET_DVR_DESC_NODE[] struDescNode;  //描述参数
         }
 
         public const int MAX_ABILITYTYPE_NUM = 12;   //最大能力项
@@ -11406,16 +13587,16 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;            //结构长度
             public uint dwAbilityNum;		//能力类型个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ABILITYTYPE_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_DVR_ABILITY_LIST[] struAbilityNode; //描述参数  
+            public NET_DVR_ABILITY_LIST[] struAbilityNode; //描述参数
         }
 
-        //模式A 
+        //模式A
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_HOLIDATE_MODEA
         {
             public byte byStartMonth;	// 开始月 从1开始
             public byte byStartDay;		// 开始日 从1开始
-            public byte byEndMonth;		// 结束月 
+            public byte byEndMonth;		// 结束月
             public byte byEndDay;		// 结束日
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;		// 保留字节
@@ -11425,13 +13606,13 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_HOLIDATE_MODEB
         {
             public byte byStartMonth;	// 从1开始
-            public byte byStartWeekNum;	// 第几个星期 从1开始 
+            public byte byStartWeekNum;	// 第几个星期 从1开始
             public byte byStartWeekday;	// 星期几
             public byte byEndMonth;		// 从1开始
-            public byte byEndWeekNum;	// 第几个星期 从1开始 
+            public byte byEndWeekNum;	// 第几个星期 从1开始
             public byte byEndWeekday;	// 星期几
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;		// 保留字节 
+            public byte[] byRes;		// 保留字节
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -11578,7 +13759,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DISK_QUOTA
         {
-            public byte byQuotaType;	 // 磁盘配额类型,1 - 按容量 
+            public byte byQuotaType;	 // 磁盘配额类型,1 - 按容量
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;       // 保留字节
             public uint dwHCapacity;     // 分配的磁盘容量高32位 单位MB
@@ -11604,7 +13785,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_TIMING_CAPTURE
         {
             public NET_DVR_JPEGPARA struJpegPara;   // 定时抓图图片质量
-            public uint dwPicInterval; //定时抓图时间间隔,单位s   1-1s 2-2s 3-3s 4-4s 5-5s 
+            public uint dwPicInterval; //定时抓图时间间隔,单位s   1-1s 2-2s 3-3s 4-4s 5-5s
                                        //6-10m 7-30m 8-1h 9-12h 10-24h
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 12, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;      // 保留字节
@@ -11636,7 +13817,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_EVENT_CAPTURE_V40
         {
             public NET_DVR_JPEGPARA struJpegPara;   // 事件抓图图片质量
-            public uint dwPicInterval;   // 事件抓图时间间隔  单位为秒 
+            public uint dwPicInterval;   // 事件抓图时间间隔  单位为秒
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_PIC_EVENT_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_REL_CAPTURE_CHAN_V40[] struRelCaptureChan;   // 数组下标 0 移动侦测触发抓图 1 视频遮挡触发抓图 2 视频丢失触发抓图,数组3表示PIR报警抓图，数组4表示无线报警抓图，数组5表示呼救报警抓图,数组6表示智能抓图
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_ALARMIN_CAPTURE, ArraySubType = UnmanagedType.Struct)]
@@ -11651,7 +13832,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_EVENT_CAPTURE
         {
             public NET_DVR_JPEGPARA struJpegPara;   // 事件抓图图片质量
-            public uint dwPicInterval;  /*事件抓图时间间隔  单位为秒  1-1s 2-2s 3-3s 4-4s 5-5s 
+            public uint dwPicInterval;  /*事件抓图时间间隔  单位为秒  1-1s 2-2s 3-3s 4-4s 5-5s
                                              * 6-10m 7-30m 8-1h 9-12h 10-24h*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_PIC_EVENT_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_REL_CAPTURE_CHAN[] struRelCaptureChan; /* 数组下标 0 移动侦测触发抓图 1 视频遮挡触发抓图,
@@ -11717,7 +13898,7 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_CAPTURE_DAY struCaptureHoliday;	//假日抓图计划
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_TIMESEGMENT_V30, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_CAPTURE_SCHED[] struHolidaySched;	//时间段假日抓图布防计划
-            public uint dwRecorderDuration;	//抓图保存最长时间 0xffffffff表示该值无效 
+            public uint dwRecorderDuration;	//抓图保存最长时间 0xffffffff表示该值无效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 40, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;			//保留字节
         }
@@ -11739,7 +13920,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSendFlowSize;     //发送流量大小,单位kbps
             public uint dwRecvFlowSize;     //接收流量大小,单位kbps
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;          //保留 
+            public byte[] byRes;          //保留
         }
 
         //录像标签
@@ -11748,12 +13929,12 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_RECORD_LABEL
         {
             public uint dwSize;					// 结构体大小
-            public NET_DVR_TIME struTimeLabel;			// 标签的时间 
+            public NET_DVR_TIME struTimeLabel;			// 标签的时间
             public byte byQuickAdd;				// 是否快速添加 快速添加时标签名称无效
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;				// 保留字节
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = LABEL_NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sLabelName;	// 标签的名称 长度为40字节  
+            public byte[] sLabelName;	// 标签的名称 长度为40字节
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 40, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;				// 保留字节
         }
@@ -11777,11 +13958,11 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;       // 结构体大小
             public byte byMode;   // 按位表示,0x01表示按标识删除
             public byte byRes1;
-            public ushort wLabelNum;      // 标签数目   
+            public ushort wLabelNum;      // 标签数目
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DEL_LABEL_IDENTIFY, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_LABEL_IDENTIFY[] struIndentify; // 标签标识
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 160, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;   //保留字节    
+            public byte[] byRes2;   //保留字节
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -11842,7 +14023,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_FIND_PICTURE_PARAM
         {
-            public uint dwSize;         // 结构体大小 
+            public uint dwSize;         // 结构体大小
             public int lChannel;       // 通道号
             public byte byFileType;
             public byte byNeedCard;     // 是否需要卡号
@@ -11853,7 +14034,7 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_TIME struStartTime;//查找图片的开始时间
             public NET_DVR_TIME struStopTime;// 查找图片的结束时间
             //ITC3.7 新增
-            public uint dwTrafficType; //图片检索生效项 参考 VCA_OPERATE _TYPE 
+            public uint dwTrafficType; //图片检索生效项 参考 VCA_OPERATE _TYPE
             public uint dwVehicleType; //车辆类型 参考 VCA_VEHICLE_TYPE
             //违规检测类型参考 VCA_ILLEGAL_TYPE 当前不支持复选
             public uint dwIllegalType;
@@ -11864,21 +14045,74 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LICENSE_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] sLicense;    //车牌号码
             public byte byRegion;     // 区域索引值 0-保留，1-欧洲(Europe Region)，2-俄语区域(Russian Region)，3-欧洲&俄罗斯(EU&CIS), 4-中东(Middle East),0xff-所有
-            public byte byCountry;     // 国家索引值，参照：COUNTRY_INDEX 
+            public byte byCountry;     // 国家索引值，参照：COUNTRY_INDEX
             public byte byArea;  //地区
-            public byte byISO8601;  //是否是8601的时间格式，即时差字段是否有效0-时差无效，年月日时分秒为设备本地时间 1-时差有效 
+            public byte byISO8601;  //是否是8601的时间格式，即时差字段是否有效0-时差无效，年月日时分秒为设备本地时间 1-时差有效
             public byte cStartTimeDifferenceH;   //开始时间与UTC的时差（小时），-12 ... +14， 正数表示东时区
             public byte cStartTimeDifferenceM;   //开始时间与UTC的时差（分钟），-30, 0, 30, 45，正数表示东时区
             public byte cStopTimeDifferenceH;    //结束时间与UTC的时差（小时），-12 ... +14，正数表示东时区
             public byte cStopTimeDifferenceM;    //结束时间与UTC的时差（分钟），-30, 0, 30, 45，正数表示东时区
         }
 
-        public const int MAX_RECORD_PICTURE_NUM = 50;   //最大备份图片张数  
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ADDRESS
+        {
+            public NET_DVR_IPADDR struIP; //IP地址
+            public ushort wPort;    //端口号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Explicit)]
+        public struct NET_DVR_PIC_EXTRA_INFO_UNION
+        {
+            [FieldOffsetAttribute(0)]
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 544, ArraySubType = UnmanagedType.I1)]
+            public byte[] byUnionLen;   //联合体长度，无实际意义
+        }
+
+        public const int MAX_FACE_PIC_NUM = 30;      /*人脸子图个数*/
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_EXTRA_INFO
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_FACE_PIC_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_VCA_RECT[] struVcaRect;  //人脸子图坐标信息
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FIND_PICTURE_V50
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PICTURE_NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sFileName;//图片名
+            public NET_DVR_TIME struTime;//图片的时间
+            public uint dwFileSize;//图片的大小
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CARDNUM_LEN_V30, ArraySubType = UnmanagedType.I1)]
+            public byte[] sCardNum;    //卡号
+            public byte byPlateColor;//参考结构 VCA_PLATE_COLOR
+            public byte byVehicleLogo;//参考结构 VLR_VEHICLE_CLASS
+            public byte byFileType;  //文件类型， :0定时抓图1 移动侦测抓图 2 报警抓图3  报警 | 移动侦测抓图 4 报警 & 移动侦测抓图     6 手动抓图 ,9-智能图片,10- PIR报警，11- 无线报警，12- 呼救报警,    0xa 预览时截图，0xd 人脸侦测, 0xe 越界侦测，0xf 入侵区域侦测，0x10 场景变更侦测, 0x11-设备本地回放时截图, 0x12-智能侦测
+            public byte byRecogResult;//识别结果参考结构VTR_RESULT
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LICENSE_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sLicense;    //车牌号码
+            public byte byEventSearchStatus; //连续图片表示同一查找结果的时候，0-表示后面没有图片信息，1-表示后面还有图片信息。总共图片信息包括最后一张状态为0的图片。
+            public NET_DVR_ADDRESS struAddr;		//图片所在的地址信息，图片下载时用到
+            public byte byISO8601;  //是否是8601的时间格式，即时差字段是否有效0-时差无效，年月日时分秒为设备本地时间 1-时差有效
+            public byte cTimeDifferenceH;   //与UTC的时差（小时），-12 ... +14
+            public byte cTimeDifferenceM;   //与UTC的时差（分钟），-30,0, 30, 45
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 253, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;        //  保留字节
+            public NET_DVR_PIC_EXTRA_INFO_UNION uPicExtraInfo; //图片附件信息
+        }
+
+        public const int MAX_RECORD_PICTURE_NUM = 50;   //最大备份图片张数
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_BACKUP_PICTURE_PARAM
         {
-            public uint dwSize;         // 结构体大小   
+            public uint dwSize;         // 结构体大小
             public uint dwPicNum;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RECORD_PICTURE_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_FIND_PICTURE[] struPicture;
@@ -12106,6 +14340,73 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;       //保留
         }
 
+        public const int MAX_INQUEST_CDRW_NUM = 4;     //最大刻录机数目
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_INQUEST_CDRW_STATUS
+        {
+            /*运行状态：0-审讯开始，
+             * 1-审讯过程中刻录，2-审讯停止，
+             * 3-刻录审讯文件,
+             * 4-备份(事后备份和本地备份)
+             * 5-空闲
+             * 6-初始化硬盘
+             * 7-恢复审讯*/
+            public uint dwType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_INQUEST_CDRW_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_INQUEST_CDRW[] strCDRWNum;   //数组0表示刻录机1
+            public NET_DVR_TIME_EX struInquestStartTime;        //审讯开始的时间点
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;             //保留
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_INQUEST_CDRW
+        {
+            public uint dwEnable;            //刻录机状态是否有效,0-无效,1-有效
+            public uint dwStatus;            /* 当dwType=0时，
+                                                            0-光盘正常，1-无光盘或光盘异常,
+                                                            当dwType=1或2时，
+                                                            0-刻录正常，1-无光盘或光盘异常，
+                                                            2-光盘已封盘(81不支持)，3-光盘空间不足，
+                                                            4-异常导致审讯终止(81不支持)
+                                                            当dwType=3时，
+                                                            0-刻录正常，1-无光盘或光盘异常，
+                                                            2-光盘已封盘(81不支持)，3-光盘空间不足
+                                                            当dwType=4时，
+                                                            0-刻录正常，1-无光盘或光盘异常，
+                                                            2-光盘已封盘(81不支持)，3-光盘空间不足
+                                                            当dwType=5时,
+                                                            0-光盘正常， 1-无光盘或光盘异常,
+                                                            2-光盘已封盘(81不支持)
+                                                            当dwType=6或7时,
+                                                            0-刻录正常, 1-无光盘或光盘异常,
+                                2-光盘已封盘(81不支持), 3-光盘空间不足*/
+            public uint dwVolumn;      //光盘容量,单位M
+            public uint dwFreeSpace;   //光盘剩余容量,单位M
+            public uint dwTimeLeft;     // 光盘剩余时间，单位秒
+            public byte byCDType;         // 光盘类型
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;      //保留字节
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_INQUEST_CDRW_CFG
+        {
+            public uint dwSize;
+            public uint dwNum;                       //刻录机的数量
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_CHANNUM_V30, ArraySubType = UnmanagedType.U4)]
+            public uint[] dwRwSelectPara;// 是否选中该光驱
+            public uint dwModeSelect;                //0表示循环刻录模式  1表示并行刻录模式(默认模式)
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;                   //保留
+            public uint dwStartCDRW;                 //DVR 本地已经开始刻录
+            public uint dwHdExcp;                    //硬盘有异 常
+            public uint dwInterval;                  //时间间隔，10分钟(0)、20分钟(1)、30分钟(2)
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] sLable;                  //光盘名称
+        }
+
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_INQUEST_MESSAGE
         {
@@ -12119,7 +14420,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_INQUEST_SENSOR_DEVICE
         {
             public ushort wDeviceType;	//数据采集设备型号:0-无 1-米乐 2-镭彩 3-优力 4-佳盟 5-永控、6-垅上、7-维纳斯达
-            public ushort wDeviceAddr;	//数据采集设备地址	
+            public ushort wDeviceAddr;	//数据采集设备地址
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 28, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;	    //保留
         }
@@ -12180,8 +14481,8 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_TIME struStopTime;  //事件终止时间
             public byte byRoomIndex;         //审讯室编号,从1开始
             public byte byDriveIndex;        //刻录机编号,从1开始
-            public ushort wSegmetSize;         //本片断的大小, 单位M 
-            public uint dwSegmentNo;         //本片断在本次审讯中的序号,从1开始 
+            public ushort wSegmetSize;         //本片断的大小, 单位M
+            public uint dwSegmentNo;         //本片断在本次审讯中的序号,从1开始
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;           //保留
         }
@@ -12203,11 +14504,11 @@ namespace HikVisionNetSDK.Common
 								   0 : 未知
 								   1 : 8000审讯DVR
 								       次版本: 1 : 8000HD-S
-								   2 : 8100审讯DVR 
+								   2 : 8100审讯DVR
 									   次版本: 1 : 审讯81SNL
 											   2 : 审讯81SH
 											   3 : 审讯81SFH
-								   3 : 8608高清审讯机NVR 
+								   3 : 8608高清审讯机NVR
 									   次版本: 1 : DS-8608SN-SP
 											   2 : DS-8608SN-ST
 									  */
@@ -12293,9 +14594,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;      //结构体大小
             public NET_DVR_TIME strBeginTime;
             public NET_DVR_TIME strEndTime;
-            public byte cTimeDifferenceH;
-            public byte cTimeDifferenceM;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 17, ArraySubType = UnmanagedType.I1)]
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
@@ -12324,7 +14623,7 @@ namespace HikVisionNetSDK.Common
             NET_SDK_DOWNLOAD_STATUS_SUCCESS = 1,    //下载成功
             NET_SDK_DOWNLOAD_STATUS_PROCESSING,     //正在下载
             NET_SDK_DOWNLOAD_STATUS_FAILED,         //下载失败
-            NET_SDK_DOWNLOAD_STATUS_UNKOWN_ERROR    //未知错误 
+            NET_SDK_DOWNLOAD_STATUS_UNKOWN_ERROR    //未知错误
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -12446,7 +14745,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_CHANS_RECORD_STATUS
         {
             public byte byValid;       //是否有效
-            public byte byRecord;      /*(只读)录像类型, 按位表示:0: 不在录像；1：在录像 2-空闲 
+            public byte byRecord;      /*(只读)录像类型, 按位表示:0: 不在录像；1：在录像 2-空闲
 						3-无连接 4-无输入视频 5-未加载 6-存档中
 							7-回传中 8-用户名或密码错 9-未验证
 							10-存档中和录像中 11-录像回传中和录像中*/
@@ -12495,7 +14794,7 @@ namespace HikVisionNetSDK.Common
             public byte byVaild;
             public byte byInputIdx;          /*输入源索引*/
             public byte byLayerIdx;          /*图层，0为最底层*/
-            public byte byTransparency; //透明度，0～100 
+            public byte byTransparency; //透明度，0～100
             public NET_DVR_RECTCFG struWin;//目的窗口(相对显示墙)
             public ushort wScreenHeight;//大屏高
             public ushort wScreenWidth;//大屏宽
@@ -12536,8 +14835,8 @@ namespace HikVisionNetSDK.Common
             public uint dwLocCamId;         /*cam对应矩阵的内部编号*/
             public byte byValid;    /*是否有效，0-否，1-是*/
             public byte byPtzCtrl; /* 是否可控，0-否，1-是*/
-            public byte byUseType; //*使用类型，0-不作为干线使用，1-BNC，2-SP3,3-V6光纤，4-其他光纤*/ 
-            public byte byUsedByTrunk;//当前使用状态，0-没有被使用，1-被干线使用 
+            public byte byUseType; //*使用类型，0-不作为干线使用，1-BNC，2-SP3,3-V6光纤，4-其他光纤*/
+            public byte byUsedByTrunk;//当前使用状态，0-没有被使用，1-被干线使用
             public byte byTrunkReq; /*摄像机分辨率,以D1为单位：1 - 1个D1，2- 2个D1，作为干线使用时，指的是干线的带宽*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
@@ -12548,7 +14847,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes2;
         }
 
-        /*监视器信息，最多2048个*/
+        /*显示器信息，最多2048个*/
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_MATRIX_MONITORINFO
         {
@@ -12559,7 +14858,7 @@ namespace HikVisionNetSDK.Common
             public uint dwLocalMonId; /*mon的内部编号*/
             public byte byValid;    /*是否有效，0-否，1-是*/
             public byte byTrunkType; /*使用类型，0-不作为干线使用，1-BNC，2-SP3,3-V6光纤，4-其他光纤*/
-            public byte byUsedByTrunk;//当前使用状态，0-没有被使用，1-被干线使用 
+            public byte byUsedByTrunk;//当前使用状态，0-没有被使用，1-被干线使用
             public byte byTrunkReq; /*分辨率, 以D1为单位：1- 1个D1，2- 2个D1，作为干线使用时，指的是干线的带宽*/
             public NET_DVR_TIME struInstallTime;//安装时间
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
@@ -12600,6 +14899,7 @@ namespace HikVisionNetSDK.Common
             public IntPtr pBuffer;//矩阵信息缓冲区
             public uint dwBufLen;//所分配指针长度，输入参数
         }
+
 
         /*串口配置信息*/
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -12643,7 +14943,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byGroupName;
-            public byte byGroupType;/*0-摄像机CAM组，1-监视器MON组*/
+            public byte byGroupType;/*0-摄像机CAM组，1-显示器MON组*/
             public byte byRes1;
             public ushort wMemNum;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 512, ArraySubType = UnmanagedType.U4)]
@@ -12715,7 +15015,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public uint dwMaxCameraNum;//最大Camera数量
-            public uint dwMaxMonitorNum;//最大监视器数量
+            public uint dwMaxMonitorNum;//最大显示器数量
             public ushort wMaxMatrixNum;//最大矩阵数量
             public ushort wMaxSerialNum;//串口数量
             public ushort wMaxUser;//最大用户数
@@ -12733,6 +15033,231 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MATRIX_PROTOCOL_NUM, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_PROTO_TYPE_EX[] struKeyBoardProto;/*最大协议列表长度*/
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_SINGLEWALLPARAM
+        {
+            public uint dwSize;
+            public byte byEnable;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwWallNum;//电视墙输出号
+            //坐标须为基准坐标的整数倍（128×128），宽度和高度值不用设置，即为基准值
+            public NET_DVR_RECTCFG struRectCfg;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 36, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        /*窗口信息*/
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_WALLWINCFG
+        {
+            public uint dwSize;
+            public byte byEnable;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwWinNum;//窗口号
+            public uint dwLayerIndex;//窗口相对应的图层号
+            public NET_DVR_RECTCFG struWinPosition;//目的窗口(相对显示墙)
+            public uint dwDeviceIndex;//分布式大屏控制器设备序号
+            public ushort wInputIndex;//输入信号源
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 14, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //窗口相关参数
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_WALLWINPARAM
+        {
+            public uint dwSize;
+            public byte byTransparency; //使能透明度，0-关，非0-开
+            public byte byWinMode;//窗口分屏模式，能力集获取
+            public byte byEnableSpartan;//畅显使能，0-关，1-开
+            public byte byDecResource;  //为窗口分配的解码资源，1-D1,2-720P,3-1080P
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_RECTCFG_EX
+        {
+            public uint dwXCoordinate;
+            public uint dwYCoordinate;
+            public uint dwWidth;
+            public uint dwHeight;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //电视墙输出位置配置
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_VIDEOWALLDISPLAYPOSITION
+        {
+            public uint dwSize;
+            public byte byEnable; //使能：0- 禁用，1- 启用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwVideoWallNo;//电视墙号(组合)
+            public uint dwDisplayNo;  //显示输出号(组合)，批量获取全部时有效
+            public NET_DVR_RECTCFG_EX struRectCfg;//位置坐标，须为基准坐标（通过能力集获取）的整数倍，宽度和高度值不用设置，即为基准值
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //显示输出参数
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_DISPLAYPARAM
+        {
+            public uint dwDisplayNo;//显示输出号
+            public byte byDispChanType;/*输出连接模式,1-BNC，2-VGA，3-HDMI，4-DVI，5-SDI, 6-FIBER, \
+                                    7-RGB, 8-YPrPb, 9-VGA/HDMI/DVI自适应，10-3GSDI,11-VGA/DVI自适应，12-HDBaseT, 0xff-无效*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 11, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //显示输出参数配置
+        public const int MAX_DISPLAY_NUM = 512; //最大显示输出个数
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_DISPLAYCFG
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DISPLAY_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_DISPLAYPARAM[] struDisplayParam;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //窗口信息
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_VIDEOWALLWINDOWPOSITION
+        {
+            public uint dwSize;
+            public byte byEnable;  //窗口使能,0-不使能，1-使能
+            public byte byWndOperateMode;  //窗口操作模式，0-统一坐标，1-分辨率坐标
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwWindowNo;//窗口号
+            public uint dwLayerIndex;//窗口相对应的图层号，图层号到最大即置顶，置顶操作
+            public NET_DVR_RECTCFG_EX struRect; //目的窗口统一坐标(相对显示墙)，获取或按统一坐标设置时有效
+            public NET_DVR_RECTCFG_EX struResolution; //目的窗口分辨率坐标，获取或按分辨率坐标设置有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 44, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CHAN_RELATION_RESOURCE
+        {
+            public uint dwSize;
+            public uint dwDisplayChan; //显示通道号（1字节设备号+1字节保留+2字节显示通道号）
+            public byte byRelateAudio; //是否关联子窗口音频
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwSubWinNo; //关联音频的子窗口号（1字节电视墙号+1字节子窗口号+2字节窗口号）
+            public uint dwChannel; //编码通道号，获取全部时有效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_PU_STREAM_CFG_V41
+        {
+            public uint dwSize;
+            public byte byStreamMode;//取流模式：0- 无效，1- 通过IP或域名取流，2- 通过URL取流，3- 通过动态域名解析向设备取流
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_DEC_STREAM_MODE uDecStreamMode;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_VIDEO_WALL_INFO
+        {
+            public uint dwSize;
+            public uint dwWindowNo;
+            public uint dwSceneNo;
+            public uint dwDestWallNo; //目的墙号
+            public uint dwDestSceneNo;//目的场景号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 12, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_SCENE_CONTROL_INFO
+        {
+            public uint dwSize;
+            public NET_DVR_VIDEO_WALL_INFO struVideoWallInfo;
+            public uint dwCmd;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_WALLSCENECFG
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sSceneName;    //场景名称
+            public byte byEnable;                //场景是否有效，0-无效，1-有效
+            public byte bySceneIndex;            //场景号，只能获取。获取所有场景时使用该参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 78, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_BUF_INFO
+        {
+            public IntPtr pBuf;
+            public uint nLen;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_IN_PARAM
+        {
+            public NET_DVR_BUF_INFO struCondBuf;
+            public NET_DVR_BUF_INFO struInParamBuf;
+            public uint dwRecvTimeOut;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_OUT_PARAM
+        {
+            public NET_DVR_BUF_INFO struOutBuf;
+            public IntPtr lpStatusList;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_INPUTSTREAMCFG_V40
+        {
+            public uint dwSize;
+            public byte byValid;     //
+            public byte byCamMode;//见NET_DVR_CAM_MODE
+            public ushort wInputNo; //信号源序号
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NAME_LEN)]
+            public string sCamName;
+            public NET_DVR_VIDEOEFFECT struVideoEffect;//视频参数
+            public NET_DVR_PU_STREAM_CFG struPuStream;    //ip输入时使用
+            public ushort wBoardNum;      //信号源所在的板卡号，只能获取
+            public ushort wInputIdxOnBoard; //信号源在板卡上的位置，只能获取
+            public uint dwResolution;//分辨率
+            public byte byVideoFormat;//视频制式，见VIDEO_STANDARD
+            public byte byStatus;    //信号源状态，0-字段无效 1-有信号 2-无信号 3-异常
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = NAME_LEN)]
+            public string sGroupName;    //网络信号源分组 组名
+            public byte byJointMatrix;            //关联矩阵，0-不关联  1-关联，当输入信号源为NET_DVR_CAM_BNC，NET_DVR_CAM_VGA，NET_DVR_CAM_DVI，NET_DVR_CAM_HDMI,中的一种时，该参数有效。
+            public byte byJointNo;         //拼接信号源的拼接编号(只能获取)
+            public byte byColorMode;      //色彩模式， 0-自定义 1-锐利 2-普通 3-柔和，当为自定义时，使用struVideoEffect设置
+            public byte byScreenServer; //关联屏幕服务器，0-不联，1-关联
+            public byte byDevNo; //设备号
+            public byte byRes1;
+            public uint dwInputSignalNo; //输入信号源编号（新）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 120, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
@@ -12755,7 +15280,7 @@ namespace HikVisionNetSDK.Common
             public byte bySnapTime;					//单个目标人脸的抓拍次数0-10
             public byte bySnapInterval;                 //抓拍间隔，单位：帧
             public byte bySnapThreshold;               //抓拍阈值，0-100
-            public byte byGenerateRate; 		//目标生成速度,范围[1, 5]	
+            public byte byGenerateRate; 		//目标生成速度,范围[1, 5]
             public byte bySensitive;			//目标检测灵敏度，范围[1, 5]
             public byte byReferenceBright; //2012-3-27参考亮度[0,100]
             public byte byMatchType;         //2012-5-3比对报警模式，0-目标消失后报警，1-实时报警
@@ -12771,21 +15296,40 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_HUMAN_FEATURE
         {
-            public byte byAgeGroup;    //年龄段,参见 HUMAN_AGE_GROUP_ENUM
+            public byte byRes3;
             public byte bySex;         //性别, 0-表示“未知”（算法不支持）,1 – 男 , 2 – 女, 0xff-算法支持，但是没有识别出来
-            public byte byEyeGlass;    //是否戴眼镜 0-表示“未知”（算法不支持）,1 – 不戴, 2 – 戴,0xff-算法支持，但是没有识别出来
-            //抓拍图片人脸年龄的使用方式，如byAge为15,byAgeDeviation为1,表示，实际人脸图片年龄的为14-16之间
-            public byte byAge;//年龄 0-表示“未知”（算法不支持）,0xff-算法支持，但是没有识别出来
-            public byte byAgeDeviation;//年龄误差值
+            public byte byEyeGlass;    //是否戴眼镜 0-表示“未知”（算法不支持）,1 – 不戴, 2 – 戴,0xff-算法支持，public byte byRes4;
+            public byte byDeviation;//误差值
             public byte byEthnic;   //字段预留,暂不开放
             public byte byMask;       //是否戴口罩 0-表示“未知”（算法不支持）,1 – 不戴, 2 –戴普通眼镜, 3 –戴墨镜,0xff-算法支持，但是没有识别出来
             public byte bySmile;      //是否微笑 0-表示“未知”（算法不支持）,1 – 不微笑, 2 – 微笑, 0xff-算法支持，但是没有识别出来
-            public byte byFaceExpression;    /*表情,参见FACE_EXPRESSION_GROUP_ENUM*/
-            public byte byBeard;  //胡子, 0-不支持，1-没有胡子，2-有胡子，0xff-unknow表示未知,算法支持未检出
-            public byte byRace;  //人种, 0-不支持，1-亚洲人，2-黑人，3-白人,0xff-unknow表示未知,算法支持未检出
+            public byte byFaceExpression;
+            public byte byBeard;
+            public byte byRes2;
             public byte byHat;   //帽子, 0-不支持,1-不戴帽子,2-戴帽子,0xff-unknow表示未知,算法支持未检出
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes; //保留
+        }
+
+        //人脸抓拍附加信息结构体
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_VCA_FACESNAP_ADDINFO
+        {
+            //人脸矩形框,该坐标为人脸小图(头肩照)中人脸的坐标
+            public NET_VCA_RECT struFacePicRect;
+            public int iSwingAngle;//旋转角, -90~90度
+            public int iTiltAngle;//俯仰角, -90~90度
+            public uint dwPupilDistance;//瞳距,范围为：最小值为10像素,最大值为当前分辨率宽度/1.6
+            public byte byBlockingState;//目标遮挡状态， 0-表示“未知”（算法不支持）,1~无遮挡,2~瞬时轻度遮挡，3~持续轻度遮挡，4~严重遮挡
+            public byte byFaceSnapThermometryEnabled;//人脸抓拍测温使能 1-开启 0-关闭
+            public byte byIsAbnomalTemperature;//人脸抓拍测温是否温度异常 1-是 0-否
+            public byte byThermometryUnit;//测温单位: 0-摄氏度（℃），1-华氏度（℉），2-开尔文(K)
+            public NET_DVR_TIME_EX struEnterTime;   // 最佳抓拍下进入时间
+            public NET_DVR_TIME_EX struExitTime;    // 最佳抓拍下离开时间
+            public float fFaceTemperature; // 人脸温度（ - 20.0℃~150.0℃，精确到小数点后1位）
+            public float fAlarmTemperature;// 测温报警警阈值（精确到小数点后1位）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 472, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;// 保留字节
         }
 
         //人脸抓拍结果报警上传
@@ -12814,11 +15358,14 @@ namespace HikVisionNetSDK.Common
             public ushort wDevInfoIvmsChannelEx;     //与NET_VCA_DEV_INFO里的byIvmsChannel含义相同，能表示更大的值。老客户端用byIvmsChannel能继续兼容，但是最大到255。新客户端版本请使用wDevInfoIvmsChannelEx。
             public byte byFacePicQuality;
             public byte byUIDLen;     // 上传报警的标识长度
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;     // 保留字节
+            public byte byLivenessDetectionStatus;// 活体检测状态：0-保留，1-未知(检测失败)，2-非真人人脸，3-真人人脸，4-未开启活体检测
+            /*附加信息标识位（即是否有NET_VCA_FACESNAP_ADDINFO结构体）,0-无附加信息, 1-有附加信息。*/
+            public byte byAddInfo;
             public IntPtr pUIDBuffer;  //标识指针
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 7, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;              // 保留字节
+            public IntPtr pAddInfoBuffer;
+            public byte byTimeDiffFlag;      /*时差字段是否有效  0-时差无效， 1-时差有效 */
+            public byte cTimeDifferenceH;         /*与UTC的时差（小时），-12 ... +14， +表示东区,，byTimeDiffFlag为1时有效*/
+            public byte cTimeDifferenceM;      	/*与UTC的时差（分钟），-30, 30, 45， +表示东区，byTimeDiffFlag为1时有效*/
             public byte byBrokenNetHttp;     //断网续传标志位，0-不是重传数据，1-重传数据
             public IntPtr pBuffer1;//指向人脸子图的图片数据
             public IntPtr pBuffer2;//背景图的图片数据（保留，通过查找背景图接口可以获取背景图）
@@ -12890,7 +15437,7 @@ namespace HikVisionNetSDK.Common
             public byte byEnable;         //是否激活规则;
             public byte bySensitivity;      //检测灵敏度，[0,5]
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 22, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes1;       //保留字节 
+            public byte[] byRes1;       //保留字节
             public NET_VCA_SIZE_FILTER struSizeFilter;  //尺寸过滤器
             public NET_VCA_POLYGON struPolygon;    //多边形
             public NET_VCA_FD_IMAGE_CFG struFDImage;  //图片信息
@@ -12950,8 +15497,7 @@ namespace HikVisionNetSDK.Common
             public ushort wProvinceID;//省
             public ushort wCityID;//市
             public ushort wCountyID;//县
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//保留
+            public uint dwCode;//保留
         }
 
         //人员信息结构体
@@ -12969,7 +15515,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byCertificateNumber; //证件号
             public uint dwPersonInfoExtendLen;// 人员标签信息扩展长度
             public IntPtr pPersonInfoExtend;  //人员标签信息扩展信息
-            public byte byAgeGroup;//年龄段，详见HUMAN_AGE_GROUP_ENUM，如传入0xff表示未知
+            public byte byGroup;//
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 11, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;//保留
         }
@@ -12992,15 +15538,15 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //黑名单信息
+        //禁止名单信息
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_INFO
+        public struct NET_VCA_BLOCKLIST_INFO
         {
             public uint dwSize;//结构大小
             public uint dwRegisterID;//名单注册ID号（只读）
             public uint dwGroupNo;//分组号
-            public byte byType;//黑白名单标志：0-全部，1-白名单，2-黑名单
-            public byte byLevel;//黑名单等级，0-全部，1-低，2-中，3-高
+            public byte byType;//名单标志：0-全部，1-允许名单，2-禁止名单
+            public byte byLevel;//禁止名单等级，0-全部，1-低，2-中，3-高
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;//保留
             public NET_VCA_HUMAN_ATTRIBUTE struAttribute;//人员信息
@@ -13015,24 +15561,24 @@ namespace HikVisionNetSDK.Common
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_PARA
+        public struct NET_VCA_BLOCKLIST_PARA
         {
             public uint dwSize;   //结构大小
-            public NET_VCA_BLACKLIST_INFO struBlackListInfo;  //黑名单基本参数
-            public uint dwRegisterPicNum;  //黑名单图个数
+            public NET_VCA_BLOCKLIST_INFO struBlockListInfo;  //禁止名单基本参数
+            public uint dwRegisterPicNum;  //禁止名单图个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_HUMAN_PICTURE_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_VCA_PICMODEL_RESULT[] struRegisterPic;  //黑名单图片信息
+            public NET_VCA_PICMODEL_RESULT[] struRegisterPic;  //禁止名单图片信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 40, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes; //保留
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_COND
+        public struct NET_VCA_BLOCKLIST_COND
         {
             public Int32 lChannel; //通道号
             public uint dwGroupNo; //分组号
-            public byte byType; //黑白名单标志：0-全部，1-白名单，2-黑名单
-            public byte byLevel; //黑名单等级，0-全部，1-低，2-中，3-高
+            public byte byType; //名单标志：0-全部，1-允许名单，2-禁止名单
+            public byte byLevel; //禁止名单等级，0-全部，1-低，2-中，3-高
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;  //保留
             public NET_VCA_HUMAN_ATTRIBUTE struAttribute; //人员信息
@@ -13041,14 +15587,14 @@ namespace HikVisionNetSDK.Common
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_PIC
+        public struct NET_VCA_BLOCKLIST_PIC
         {
             public uint dwSize;   //结构大小
             public uint dwFacePicNum;  //人脸图个数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes; //保留
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_HUMAN_PICTURE_NUM, ArraySubType = UnmanagedType.Struct)]
-            public NET_VCA_PICMODEL_RESULT[] struBlackListPic;  //单张照片信息
+            public NET_VCA_PICMODEL_RESULT[] struBlockListPic;  //单张照片信息
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -13140,12 +15686,10 @@ namespace HikVisionNetSDK.Common
             public byte byFaceScore;        //人脸评分，指人脸子图的质量的评分,0-100
             public byte bySex;//性别，0-未知，1-男，2-女
             public byte byGlasses;//是否带眼镜，0-未知，1-是，2-否
-            /*
-             * 识别人脸的年龄段范围[byAge-byAgeDeviation,byAge+byAgeDeviation]
-             */
-            public byte byAge;//年龄
-            public byte byAgeDeviation;//年龄误差值
-            public byte byAgeGroup;//年龄段，详见HUMAN_AGE_GROUP_ENUM，若传入0xff表示未知
+
+            public byte byRes1;
+            public byte byDeviation;//误差值
+            public byte byGroup;
             /*人脸子图图片质量评估等级，0-低等质量,1-中等质量,2-高等质量,
             该质量评估算法仅针对人脸子图单张图片,具体是通过姿态、清晰度、遮挡情况、光照情况等可影响人脸识别性能的因素综合评估的结果*/
             public byte byFacePicQuality;
@@ -13157,30 +15701,30 @@ namespace HikVisionNetSDK.Common
         }
 
 
-        //黑名单报警信息
+        //禁止名单报警信息
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_INFO_ALARM
+        public struct NET_VCA_BLOCKLIST_INFO_ALARM
         {
-            public NET_VCA_BLACKLIST_INFO struBlackListInfo;
-            public uint dwBlackListPicLen;       //黑名单人脸子图的长度，为0表示没有图片，大于0表示有图片
+            public NET_VCA_BLOCKLIST_INFO struBlockListInfo;
+            public uint dwBlockListPicLen;       //禁止名单人脸子图的长度，为0表示没有图片，大于0表示有图片
             public uint dwFDIDLen;// 人脸库ID长度
             public IntPtr pFDID;  //人脸库Id指针
             public uint dwPIDLen;// 人脸库图片ID长度
             public IntPtr pPID;  //人脸库图片ID指针
             public ushort wThresholdValue; //人脸库阈值[0,100]
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//保留
+            public byte byIsNoSaveFDPicture;//0-保存人脸库图片,1-不保存人脸库图片, 若开启了导入图片或者建模时不保存原图功能时,该字段返回1,此时人脸库图片将不再返回
+            public byte byRealTimeContrast;//是否实时报警 0-实时 1-非实时
             public IntPtr pBuffer1;//指向图片的指针
         }
 
-        //黑名单比对结果报警上传
+        //禁止名单比对结果报警上传
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_FACESNAP_MATCH_ALARM
         {
             public uint dwSize;             // 结构大小
             public float fSimilarity; //相似度，[0.001,1]
             public NET_VCA_FACESNAP_INFO_ALARM struSnapInfo; //抓拍信息
-            public NET_VCA_BLACKLIST_INFO_ALARM struBlackListInfo; //黑名单信息
+            public NET_VCA_BLOCKLIST_INFO_ALARM struBlockListInfo; //禁止名单信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] sStorageIP;        //存储服务IP地址
             public ushort wStoragePort;            //存储服务端口号
@@ -13202,10 +15746,10 @@ namespace HikVisionNetSDK.Common
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_INFO_ALARM_LOG
+        public struct NET_VCA_BLOCKLIST_INFO_ALARM_LOG
         {
-            public NET_VCA_BLACKLIST_INFO struBlackListInfo; //黑名单基本信息
-            public uint dwBlackListPicID;       //黑名单人脸子图ID，用于查找图片
+            public NET_VCA_BLOCKLIST_INFO struBlockListInfo; //禁止名单基本信息
+            public uint dwBlockListPicID;       //禁止名单人脸子图ID，用于查找图片
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;              // 保留字节
         }
@@ -13227,7 +15771,7 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;     		// 结构大小
             public float fSimilarity; //相似度，[0.001,1]
             public NET_VCA_FACESNAP_INFO_ALARM_LOG struSnapInfoLog; //抓拍信息
-            public NET_VCA_BLACKLIST_INFO_ALARM_LOG struBlackListInfoLog; //黑名单信息
+            public NET_VCA_BLOCKLIST_INFO_ALARM_LOG struBlockListInfoLog; //禁止名单信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 60, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;              // 保留字节
         }
@@ -13237,8 +15781,8 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;     		// 结构大小
             public uint dwSnapFaceID; //抓拍人脸子图ID
-            public uint dwBlackListID; //匹配的黑名单ID
-            public uint dwBlackListFaceID; //比对的黑名单人脸子图ID
+            public uint dwBlockListID; //匹配的禁止名单ID
+            public uint dwBlockListFaceID; //比对的禁止名单人脸子图ID
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;              // 保留字节
         }
@@ -13248,18 +15792,18 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;     		// 结构大小
             public uint dwSnapFaceLen; //抓拍人脸子图长度
-            public uint dwBlackListFaceLen; //比对的黑名单人脸子图长度
+            public uint dwBlockListFaceLen; //比对的禁止名单人脸子图长度
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 20, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;              //保留字节
             public IntPtr pSnapFace;  //抓拍人脸子图的图片数据
-            public IntPtr pBlackListFace;  //比对的黑名单人脸子图数据
+            public IntPtr pBlockListFace;  //比对的禁止名单人脸子图数据
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct NET_VCA_BLACKLIST_FASTREGISTER_PARA
+        public struct NET_VCA_BLOCKLIST_FASTREGISTER_PARA
         {
             public uint dwSize;   //结构大小
-            public NET_VCA_BLACKLIST_INFO struBlackListInfo;  //黑名单基本参数
+            public NET_VCA_BLOCKLIST_INFO struBlockListInfo;  //禁止名单基本参数
             public uint dwImageLen;  //图像数据长度
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 124, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;  //保留
@@ -13270,8 +15814,8 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_VCA_SINGLE_PATH
         {
-            public byte byActive;  // 是否可用,0-否,1-是 
-            public byte byType;   //0-存储抓拍，1-存储黑名单比对报警，2-存储抓拍和黑名单比对报警，0xff-无效
+            public byte byActive;  // 是否可用,0-否,1-是
+            public byte byType;   //0-存储抓拍，1-存储禁止名单比对报警，2-存储抓拍和禁止名单比对报警，0xff-无效
             public byte bySaveAlarmPic; //是否用于保存断网的报警图片，0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1; //保留
@@ -13373,7 +15917,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_MATRIX_ABILITY_V41
         {
             public uint dwSize;
-            public byte byDspNums;//DSP个数  
+            public byte byDspNums;//DSP个数
             public byte byDecChanNums;//解码通道数
             public byte byStartChan;//起始解码通道
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
@@ -13540,7 +16084,7 @@ namespace HikVisionNetSDK.Common
             public byte byVedioFormat;          /*1:NTSC,2:PAL，0-NULL*/
             public byte byWindowMode;			/*画面模式，从能力集获取*/
             public byte byEnlargeStatus;         /*是否处于放大状态，0：不放大，1：放大*/
-            public byte byEnlargeSubWindowIndex;//放大的子窗口号    
+            public byte byEnlargeSubWindowIndex;//放大的子窗口号
             public byte byScale; /*显示模式，0-真实显示，1-缩放显示( 针对BNC )*/
             public uint dwResolution;//分辨率
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_WINDOWS_V41, ArraySubType = UnmanagedType.I1)]
@@ -13570,9 +16114,9 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 5, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sUserName;	/* 监控主机登陆帐号 */
+            public byte[] sUserName;	/* 布防主机登陆帐号 */
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = PASSWD_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] sPassword;	/* 监控主机密码 */
+            public byte[] sPassword;	/* 布防主机密码 */
         }
 
         /*流媒体服务器基本配置*/
@@ -13716,7 +16260,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byLayoutName;			//布局名称			
+            public byte[] byLayoutName;			//布局名称
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_WIN_COUNT, ArraySubType = UnmanagedType.Struct)]
             public NET_DVR_SCREEN_WINCFG[] struWinCfg;	//布局内窗口参数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
@@ -13924,11 +16468,11 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public byte byAlarmType;	//报警类型，1-子板拔出，2-子板插入，3-子系统状态异常，4-子系统恢复恢复 5-输入源异常   6-温度报警 7-FPGA版本不匹配 8-预案开始 9-预案结束 10-解码板断网 11-解码板IP地址冲突，12-风扇异常
-            public byte byBoardType;	// 1-输入板 2-输出板 ，3-主板，4-背板，报警类型为1，2，3，6的时候使用 
-            public byte bySubException;	//输入异常时具体子异常 1- 分辨率正常改变 2-输入端口类型改变3-分辨率错误4-分辨率改变导致解码资源不足，关闭该输入源对应窗口。5-分辨率改变，导致已开窗的缩放比例不在1/8到8倍范围。6-分辨率恢复正常,7-分辨率改变导致输出板数据量超限,设备关闭窗口 
+            public byte byBoardType;	// 1-输入板 2-输出板 ，3-主板，4-背板，报警类型为1，2，3，6的时候使用
+            public byte bySubException;	//输入异常时具体子异常 1- 分辨率正常改变 2-输入端口类型改变3-分辨率错误4-分辨率改变导致解码资源不足，关闭该输入源对应窗口。5-分辨率改变，导致已开窗的缩放比例不在1/8到8倍范围。6-分辨率恢复正常,7-分辨率改变导致输出板数据量超限,设备关闭窗口
             public byte byRes1;
-            public ushort wStartInputNum; // 异常输入源（异常起点） 
-            public ushort wEndInputNum;	// 异常输入源（异常终点） 
+            public ushort wStartInputNum; // 异常输入源（异常起点）
+            public ushort wEndInputNum;	// 异常输入源（异常终点）
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
@@ -13938,7 +16482,7 @@ namespace HikVisionNetSDK.Common
         {
             public byte byValid;				//判断是否是模拟矩阵（是否有效）
             public byte byCommandProtocol;	//模拟矩阵的指令（4种）
-            public byte byScreenType;			//保留	
+            public byte byScreenType;			//保留
             public byte byRes1;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byScreenToMatrix;	//模拟矩阵的输出与屏幕的对应关系
@@ -14135,7 +16679,7 @@ namespace HikVisionNetSDK.Common
             public byte bySerialNo;		//串口号
             public byte byBeginAddress;	//左上角屏幕号，从1开始
             public byte byEndAddress;	//右下角屏幕号，从1开始
-            public byte byProtocol;      	   // 串口协议类型  1-LCD-S1 , 2-LCD-S2 , 3-LCD-L1 ， 4-LCD-DLP， 5-LCD-S3 , 6-LCD-H1 
+            public byte byProtocol;      	   // 串口协议类型  1-LCD-S1 , 2-LCD-S2 , 3-LCD-L1 ， 4-LCD-DLP， 5-LCD-S3 , 6-LCD-H1
             public uint dwCommand;      /* 控制方法 1-开 2-关 3-屏幕输入源选择 4-显示单元颜色控制 5-显示单元位置控制*/
             public NET_DVR_SCREEN_CONTROL_PARAM struControlParam;
             public byte byWallNo;		// 电视墙号
@@ -14228,8 +16772,14 @@ namespace HikVisionNetSDK.Common
             public byte byIndex;			 //控制索引，根据命令确定具体表示什么索引
             public byte byRes1;
             public uint dwControlParam;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;
+            public byte byMandatoryAlarm;    //1-使能  0-不使能
+            public byte byRes2;
+            public ushort wZoneIndex;  //防区号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byOperatorCode;//回控码
+            public uint dwPlanNo; //4字节预案号，客户端统一使用4字节的预案号，单字节的预案号不再使用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes3;
         }
 
         /*******************************获取设备状态*******************************/
@@ -14296,7 +16846,7 @@ namespace HikVisionNetSDK.Common
         public const int PULL_DISK_SUCCESS = 1;     // 安全拔盘成功
         public const int PULL_DISK_FAIL = 2;        // 安全拔盘失败
         public const int PULL_DISK_PROCESSING = 3;  // 正在停止阵列
-        public const int PULL_DISK_NO_ARRAY = 4;	// 阵列不存在 
+        public const int PULL_DISK_NO_ARRAY = 4;	// 阵列不存在
         public const int PULL_DISK_NOT_SUPPORT = 5; // 不支持安全拔盘
 
         //扫描阵列状态
@@ -14428,7 +16978,7 @@ namespace HikVisionNetSDK.Common
             public IntPtr hWnd;//回放窗口
             public byte byDrawFrame;//是否抽帧：0- 不抽帧，1- 抽帧
             public byte byVolumeType;//0-普通录像卷，1-存档卷，适用于CVR设备，普通卷用于通道录像，存档卷用于备份录像
-            public byte byVolumeNum;//存档卷号 
+            public byte byVolumeNum;//存档卷号
             public byte byRes1;//保留
             public uint dwFileIndex;//存档卷上的录像文件索引，搜索存档卷录像时返回的值
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
@@ -14469,7 +17019,7 @@ namespace HikVisionNetSDK.Common
             public byte byDrawFrame; //0:不抽帧，1：抽帧
             public byte byFindType; //0:查询普通卷，1：查询存档卷
             public byte byQuickSearch; //0:普通查询，1：快速（日历）查询
-            public byte bySpecialFindInfoType;    //专有查询条件类型 0-无效， 1-带ATM查询条件  
+            public byte bySpecialFindInfoType;    //专有查询条件类型 0-无效， 1-带ATM查询条件
             public uint dwVolumeNum;  //存档卷号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = GUID_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byWorkingDeviceGUID;    //工作机GUID，通过获取N+1得到
@@ -14631,17 +17181,17 @@ namespace HikVisionNetSDK.Common
             public string sProtocalName;   //自定义协议名称, 16位
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;          //保留,用于协议名称扩展
-            public uint dwEnableSubStream;   //子码流是否启用0 不启用 1 启用	
+            public uint dwEnableSubStream;   //子码流是否启用0 不启用 1 启用
             public byte byMainProType;        //主码流协议类型 1 RTSP
             public byte byMainTransType;		//主码流传输类型 0：Auto 1：udp 2：rtp over rtsp
-            public ushort wMainPort;           //主码流端口	
+            public ushort wMainPort;           //主码流端口
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_PRO_PATH)]
-            public string sMainPath;  //主码流路径	
+            public string sMainPath;  //主码流路径
             public byte bySubProType;         //子码流协议类型 1 RTSP
             public byte bySubTransType;		//子码流传输类型 0：Auto 1：udp 2：rtp over rtsp
             public ushort wSubPort;   //子码流端口
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_PRO_PATH)]
-            public string sSubPath;   //子码流路径 	
+            public string sSubPath;   //子码流路径
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 200, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;          //保留
         }
@@ -14652,7 +17202,7 @@ namespace HikVisionNetSDK.Common
         {
             public Int32 lChannel;//通道号
             public uint dwStreamType;	// 码流类型，0-主码流，1-子码流，2-码流3，3-码流4 等以此类推
-            public uint dwLinkMode;// 0：TCP方式,1：UDP方式,2：多播方式,3 - RTP方式，4-RTP/RTSP,5-RSTP/HTTP 
+            public uint dwLinkMode;// 0：TCP方式,1：UDP方式,2：多播方式,3 - RTP方式，4-RTP/RTSP,5-RSTP/HTTP
             public IntPtr hPlayWnd;//播放窗口的句柄,为NULL表示不播放图象
             public bool bBlocked;  //0-非阻塞取流, 1-阻塞取流, 如果阻塞SDK内部connect失败将会有5s的超时才能够返回,不适合于轮询取流操作.
             public bool bPassbackRecord; //0-不启用录像回传,1启用录像回传
@@ -14662,7 +17212,7 @@ namespace HikVisionNetSDK.Common
             public byte byProtoType; //应用层取流协议，0-私有协议，1-RTSP协议
             public byte byRes1;
             public byte byVideoCodingType; //码流数据编解码类型 0-通用编码数据 1-热成像探测器产生的原始数据（温度数据的加密信息，通过去加密运算，将原始数据算出真实的温度值）
-            public uint dwDisplayBufNum; //播放库播放缓冲区最大缓冲帧数，范围1-50，置0时默认为1 
+            public uint dwDisplayBufNum; //播放库播放缓冲区最大缓冲帧数，范围1-50，置0时默认为1
             public byte byNPQMode;	//NPQ是直连模式，还是过流媒体 0-直连 1-过流媒体
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 215, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
@@ -14673,13 +17223,14 @@ namespace HikVisionNetSDK.Common
         public const int MAX_OVERLAP_ITEM_NUM = 50;       //最大字符叠加种数
         public const int NET_ITS_GET_OVERLAP_CFG = 5072;//获取字符叠加参数配置（相机或ITS终端）
         public const int NET_ITS_SET_OVERLAP_CFG = 5073;//设置字符叠加参数配置（相机或ITS终端）
+        public const int NET_ITS_SET_LAMP_EXTERNAL_CFG = 5095;  //设置外控配置参数
 
         //字符叠加配置条件参数结构体
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_ITS_OVERLAPCFG_COND
         {
             public uint dwSize;
-            public uint dwChannel;//通道号 
+            public uint dwChannel;//通道号
             public uint dwConfigMode;//配置模式：0- 终端，1- 前端(直连前端或终端接前端)
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留
@@ -14692,7 +17243,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;//保留
             public byte byItemType;//类型
-            public byte byChangeLineNum;//叠加项后的换行数，取值范围：[0,10]，默认：0 
+            public byte byChangeLineNum;//叠加项后的换行数，取值范围：[0,10]，默认：0
             public byte bySpaceNum;//叠加项后的空格数，取值范围：[0-255]，默认：0
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 15, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留
@@ -14714,7 +17265,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;//保留
             public uint dwForeClorRGB;//前景色的RGB值，bit0~bit7: B，bit8~bit15: G，bit16~bit23: R，默认：x00FFFFFF-白
-            public uint dwBackClorRGB;//背景色的RGB值，只对图片外叠加有效，bit0~bit7: B，bit8~bit15: G，bit16~bit23: R，默认：x00000000-黑 
+            public uint dwBackClorRGB;//背景色的RGB值，只对图片外叠加有效，bit0~bit7: B，bit8~bit15: G，bit16~bit23: R，默认：x00000000-黑
             public byte byColorAdapt;//颜色是否自适应：0-否，1-是
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留
@@ -14743,7 +17294,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
             public byte[] byMonitoringSite2;//这里保留音频的压缩参数
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//这里保留音频的压缩参数 
+            public byte[] byRes;//这里保留音频的压缩参数
         }
 
         //字符叠加配置条件参数结构体
@@ -14757,7 +17308,7 @@ namespace HikVisionNetSDK.Common
             public NET_ITS_OVERLAP_ITEM_PARAM struOverLapItem;//字符串参数
             public NET_ITS_OVERLAP_INFO_PARAM struOverLapInfo;//字符串内容信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//这里保留音频的压缩参数 
+            public byte[] byRes;//这里保留音频的压缩参数
         }
 
         //报警布防参数结构体
@@ -14766,7 +17317,7 @@ namespace HikVisionNetSDK.Common
         {
             public uint dwSize;
             public byte byLevel;//布防优先级：0- 一等级（高），1- 二等级（中），2- 三等级（低，保留）
-            public byte byAlarmInfoType;//上传报警信息类型（智能交通摄像机支持）：0- 老报警信息（NET_DVR_PLATE_RESULT），1- 新报警信息(NET_ITS_PLATE_RESULT) 
+            public byte byAlarmInfoType;//上传报警信息类型（智能交通摄像机支持）：0- 老报警信息（NET_DVR_PLATE_RESULT），1- 新报警信息(NET_ITS_PLATE_RESULT)
             public byte byRetAlarmTypeV40;
             public byte byRetDevInfoVersion;
             public byte byRetVQDAlarmType;
@@ -14774,8 +17325,87 @@ namespace HikVisionNetSDK.Common
             public byte bySupport;
             public byte byBrokenNetHttp;
             public ushort wTaskNo;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes;//这里保留音频的压缩参数 
+            public byte byDeployType;    //布防类型：0-客户端布防，1-实时布防
+            public byte bySubScription;	//订阅，按位表示，未开启订阅不上报  //占位 //Bit7-移动侦测人车分类是否传图；0-不传图(V30上报)，1-传图(V40上报)
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public byte byAlarmTypeURL;
+            //bit0-表示人脸抓拍报警上传（INTER_FACESNAP_RESULT）；0-表示二进制传输，1-表示URL传输（设备支持的情况下，设备支持能力根据具体报警能力集判断,同时设备需要支持URL的相关服务，当前是”云存储“）
+            //bit1-表示EVENT_JSON中图片数据长传类型；0-表示二进制传输，1-表示URL传输（设备支持的情况下，设备支持能力根据具体报警能力集判断）
+            //bit2 - 人脸比对(报警类型为COMM_SNAP_MATCH_ALARM)中图片数据上传类型：0 - 二进制传输，1 - URL传输
+            //bit3 - 异常行为识别(报警类型为COMM_ALARM_RULE)中图片数据上传类型：0 - 二进制传输，1 - URL传输，本字段设备是否支持，对应软硬件能力集中<isSupportBehaviorUploadByCloudStorageURL>节点是否返回且为true
+            public byte byCustomCtrl;//Bit0- 表示支持副驾驶人脸子图上传: 0-不上传,1-上传
+        }
+
+        //道闸控制参数
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_BARRIERGATE_CFG
+        {
+            public uint dwSize;
+            public uint dwChannel;//通道号
+            public byte byLaneNo; //道闸号（0-表示无效值(设备需要做有效值判断),1-道闸1）
+            public byte byBarrierGateCtrl;//0-关闭道闸,1-开启道闸,2-停止道闸 3-锁定道闸,4~解锁道闸
+            public byte byEntranceNo;//出入口编号 [1,8]
+            public byte byUnlock;//启用解锁使能，0~为不启用，1~启用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 12, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        public const int MAX_RELAY_NUM = 12;
+        public const int MAX_IOIN_NUM = 8;
+        public const int MAX_VEHICLE_TYPE_NUM = 8;
+
+        public const int NET_DVR_GET_ENTRANCE_PARAMCFG = 3126; //获取出入口控制参数
+        public const int NET_DVR_SET_ENTRANCE_PARAMCFG = 3127; //设置出入口控制参数
+
+        //出入口控制条件
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_BARRIERGATE_COND
+        {
+            public byte byLaneNo;//车道号：0- 表示无效值(设备需要做有效值判断)，1- 车道1
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //继电器关联配置
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_RELAY_PARAM
+        {
+            public byte byAccessDevInfo;//0-不接入设备，1-开道闸、2-关道闸、3-停道闸、4-报警信号、5-常亮灯
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //车辆信息管控参数
+        [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+        public struct NET_DVR_VEHICLE_CONTROL
+        {
+            public byte byGateOperateType;//操作类型：0- 无操作，1- 开道闸
+            public byte byRes1;
+            public ushort wAlarmOperateType; //报警处理类型：0- 无操作，bit0- 继电器输出报警，bit1- 布防上传报警，bit3- 告警主机上传，值：0-表示关，1-表示开，可复选
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 8, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        //出入口控制参数
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ENTRANCE_CFG
+        {
+            public uint dwSize;
+            public byte byEnable;
+            public byte byBarrierGateCtrlMode;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;//保留
+            public uint dwRelateTriggerMode;
+            public uint dwMatchContent;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_RELAY_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_RELAY_PARAM[] struRelayRelateInfo;//继电器关联配置信息
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_IOIN_NUM, ArraySubType = UnmanagedType.I1)]
+            public byte[] byGateSingleIO;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_VEHICLE_TYPE_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_VEHICLE_CONTROL[] struVehicleCtrl;//车辆信息管控
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;//保留
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -14876,10 +17506,10 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_PLATE_INFO struPlateInfo;     //车牌信息结构
             public NET_DVR_VEHICLE_INFO struVehicleInfo;    //车辆信息
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 48, ArraySubType = UnmanagedType.I1)]
-            public byte[] byMonitoringSiteID;        //监测点编号
+            public byte[] byMonitoringSiteID;        //显示点编号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 48, ArraySubType = UnmanagedType.I1)]
             public byte[] byDeviceID;                //设备编号
-            public byte byDir;            //监测方向，1-上行（反向），2-下行(正向)，3-双向，4-由东向西，5-由南向北,6-由西向东，7-由北向南，8-其它
+            public byte byDir;            //显示方向，1-上行（反向），2-下行(正向)，3-双向，4-由东向西，5-由南向北,6-由西向东，7-由北向南，8-其它
             public byte byDetectType;    //检测方式,1-地感触发，2-视频触发，3-多帧识别，4-雷达触发
             //关联车道方向类型，参考ITC_RELA_LANE_DIRECTION_TYPE
             //该参数为车道方向参数，与关联车道号对应，确保车道唯一性。
@@ -14889,7 +17519,7 @@ namespace HikVisionNetSDK.Common
             public uint dwCustomIllegalType; //违章类型定义(用户自定义)
             /*为0~数字格式时，为老的违章类型，wIllegalType、dwCustomIllegalType参数生效，赋值国标违法代码。
              * 为1~字符格式时，pIllegalInfoBuf参数生效。老的违章类型，wIllegalType、dwCustomIllegalType参数依然赋值国标违法代码*/
-            public IntPtr pIllegalInfoBuf;    //违法代码字符信息结构体指针；指向NET_ITS_ILLEGAL_INFO 
+            public IntPtr pIllegalInfoBuf;    //违法代码字符信息结构体指针；指向NET_ITS_ILLEGAL_INFO
             public byte byIllegalFromatType; //违章信息格式类型； 0~数字格式， 1~字符格式
             public byte byPendant;// 0-表示未知,1-车窗有悬挂物，2-车窗无悬挂物
             public byte byDataAnalysis;            //0-数据未分析, 1-数据已分析
@@ -14901,12 +17531,12 @@ namespace HikVisionNetSDK.Common
             public byte byPilotSunVisor;//0-表示未知,1-不打开遮阳板,2-打开遮阳板
             public byte byCopilotSunVisor;//0-表示未知, 1-不打开遮阳板,2-打开遮阳板
             public byte byPilotCall;// 0-表示未知, 1-不打电话,2-打电话
-            //0-开闸，1-未开闸 (专用于历史数据中相机根据黑白名单匹配后，是否开闸成功的标志)
+                                    //0-开闸，1-未开闸 (专用于历史数据中相机根据名单匹配后，是否开闸成功的标志)；当byAlarmDataType为0-实时数据时 0-未开闸 1-开闸
             public byte byBarrierGateCtrlType;
             public byte byAlarmDataType;//0-实时数据，1-历史数据
             public NET_DVR_TIME_V30 struSnapFirstPicTime;//端点时间(ms)（抓拍第一张图片的时间）
             public uint dwIllegalTime;//违法持续时间（ms） = 抓拍最后一张图片的时间 - 抓拍第一张图片的时间
-            public uint dwPicNum;        //图片数量（与picGroupNum不同，代表本条信息附带的图片数量，图片信息由struVehicleInfoEx定义    
+            public uint dwPicNum;        //图片数量（与picGroupNum不同，代表本条信息附带的图片数量，图片信息由struVehicleInfoEx定义
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.Struct)]
             public NET_ITS_PICTURE_INFO[] struPicInfo;         //图片信息,单张回调，最多6张图，由序号区分
         }
@@ -14941,14 +17571,51 @@ namespace HikVisionNetSDK.Common
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct UNION_GATE_INFO
+        {
+            public UNION_GATE_VEHICLE struVehicleInfo; //当struAlarmType为(0x1车辆非法侵入报警)
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct UNION_GATE_VEHICLE
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_LICENSE_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sLicense;//车牌号码
+            /*车辆类型0-保留 1-固定车，2-临时车，3-预订车，4-联检车，5-授权车*/
+            public byte byVehicleType;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 111, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_GATE_ALARMINFO
+        {
+            public uint dwSize;
+            //0x1车辆非法侵入报警
+            //0x2道闸超时未关报警
+            //0x3车辆压线圈超时报警
+            //0x4发卡报警（无卡）
+            //0x5发卡报警（少卡）
+            //0x6发卡报警（发卡异常）
+            public byte byAlarmType;
+            public byte byExternalDevType;//外接设备类型(EXTERNAL_DEVICES_TYPE)
+            public byte byExternalDevStatus;//外接设备类型(EXTERNAL_DEVICES_STATUS)
+            public byte byRes;
+            public NET_DVR_TIME_V30 struAlarmTime;//报警时间
+            public UNION_GATE_INFO uAlarmInfo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //预留
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DIAGNOSIS_UPLOAD
         {
             public uint dwSize;
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = STREAM_ID_LEN)]
             public string sStreamID;	///< 流ID，长度小于32个字节
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 64)]
-            public string sMonitorIP;  ///< 监控点ip
-            public uint dwChanIndex;  ///< 监控点通道号  
+            public string sMonitorIP;  ///< 布防点ip
+            public uint dwChanIndex;  ///< 布防点通道号
             public uint dwWidth;  ///< 图像宽度
             public uint dwHeight;  ///< 图像高度
             public NET_DVR_TIME struCheckTime;  ///< 检测时间(合并日期和时间字段)，格式：2012-08-06 13:00:00
@@ -15036,7 +17703,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes1;
             public uint dwPicDataLen;//报警抓拍图片长度
             public IntPtr pBuffer;    //数据指针
-            public NET_VCA_RECT struRect;//火点框 
+            public NET_VCA_RECT struRect;//火点框
             public NET_VCA_POINT struPoint;//火点框内最高温度点坐标
             public ushort wFireMaxTemperature;//火点最高温度[300℃~4000℃]
             public ushort wTargetDistance;//目标距离[100m ~ 10000m]
@@ -15064,8 +17731,8 @@ namespace HikVisionNetSDK.Common
             public uint dwSize;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byCardNo; //卡号，为0无效
-            public byte byCardType; //卡类型，1-普通卡，2-残疾人卡，3-黑名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，为0无效
-            public byte byWhiteListNo; //白名单单号,1-8，为0无效
+            public byte byCardType; //卡类型，1-普通卡，3-禁止名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，为0无效
+            public byte byAllowListNo; //允许名单单号,1-8，为0无效
             public byte byReportChannel; //报告上传通道，1-布防上传，2-中心组1上传，3-中心组2上传，为0无效
             public byte byCardReaderKind; //读卡器属于哪一类，0-无效，1-IC读卡器，2-身份证读卡器，3-二维码读卡器,4-指纹头
             public uint dwCardReaderNo; //读卡器编号，为0无效
@@ -15086,13 +17753,57 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MACADDR_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byMACAddr; //物理地址，为0无效
             public byte bySwipeCardType;//刷卡类型，0-无效，1-二维码
-            public byte byRes2;
+            public byte byMask;//是否带口罩：0-保留，1-未知，2-不戴口罩，3-戴口罩
             public uint dwSerialNo; //事件流水号，为0无效
             public byte byChannelControllerID; //通道控制器ID，为0无效，1-主通道控制器，2-从通道控制器
             public byte byChannelControllerLampID; //通道控制器灯板ID，为0无效（有效范围1-255）
             public byte byChannelControllerIRAdaptorID; //通道控制器红外转接板ID，为0无效（有效范围1-255）
             public byte byChannelControllerIREmitterID; //通道控制器红外对射ID，为0无效（有效范围1-255）
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ACS_EVENT_INFO_EXTEND
+        {
+            public int dwFrontSerialNo; //事件流水号，为0无效（若该字段为0，平台根据dwSerialNo判断是否丢失事件；若该字段不为0，平台根据该字段和dwSerialNo字段共同判断是否丢失事件）（主要用于解决报警订阅后导致dwSerialNo不连续的情况）
+            public byte byUserType; //人员类型：0-无效，1-普通人（主人），2-来宾（访客），3-禁止名单人，4-管理员
+            public byte byCurrentVerifyMode; //读卡器当前验证方式：0-无效，1-休眠，2-刷卡+密码，3-刷卡，4-刷卡或密码，5-指纹，6-指纹+密码，7-指纹或刷卡，8-指纹+刷卡，9-指纹+刷卡+密码，10-人脸或指纹或刷卡或密码，11-人脸+指纹，12-人脸+密码，13-人脸+刷卡，14-人脸，15-工号+密码，16-指纹或密码，17-工号+指纹，18-工号+指纹+密码，19-人脸+指纹+刷卡，20-人脸+密码+指纹，21-工号+人脸，22-人脸或人脸+刷卡，23-指纹或人脸，24-刷卡或人脸或密码，25-刷卡或人脸，26-刷卡或人脸或指纹，27-刷卡或指纹或密码
+            public byte byCurrentEvent; //是否为实时事件：0-无效，1-是（实时事件），2-否（离线事件）
+            public byte byPurePwdVerifyEnable; //设备是否支持纯密码认证， 0-不支持，1-支持
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_EMPLOYEE_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byEmployeeNo; //工号（人员ID）（对于设备来说，如果使用了工号（人员ID）字段，byEmployeeNo一定要传递，如果byEmployeeNo可转换为dwEmployeeNo，那么该字段也要传递；对于上层平台或客户端来说，优先解析byEmployeeNo字段，如该字段为空，再考虑解析dwEmployeeNo字段）
+            public byte byAttendanceStatus; //考勤状态：0-未定义,1-上班，2-下班，3-开始休息，4-结束休息，5-开始加班，6-结束加班
+            public byte byStatusValue; //考勤状态值
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_UUID_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byUUID; //UUID（该字段仅在对接萤石平台过程中才会使用）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_DEV_NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDeviceName;   //设备序列号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //扩展结构体信息V20
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ACS_EVENT_INFO_EXTEND_V20
+        {
+            public byte byRemoteCheck; //是否需要远程核验（0-无效，1-不需要（默认），2-需要）
+            public byte byThermometryUnit; //测温单位（0-摄氏度（默认），1-华氏度，2-开尔文）
+            public byte byIsAbnomalTemperature; //人脸抓拍测温是否温度异常：1-是，0-否
+            public byte byRes2;
+            public float fCurrTemperature; //人脸温度（精确到小数点后一位）
+            public NET_VCA_POINT struRegionCoordinates; //人脸温度坐标
+            public ushort dwQRCodeInfoLen; //二维码信息长度，不为0是表示后面带数据
+            public ushort dwVisibleLightDataLen; //热成像相机可见光图片长度，不为0是表示后面带数据
+            public ushort dwThermalDataLen; //热成像图片长度，不为0是表示后面带数据
+            public IntPtr pQRCodeInfo; //二维码信息指针
+            public IntPtr pVisibleLightData; //热成像相机可见光图片指针
+            public IntPtr pThermalData; //热成像图片指针
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byAttendanceLabel; //考勤自定义名称
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 960, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
@@ -15109,16 +17820,119 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_ACS_EVENT_INFO struAcsEventInfo; //详细参数
             public uint dwPicDataLen;   //图片数据大小，不为0是表示后面带数据
             public IntPtr pPicData;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 24, ArraySubType = UnmanagedType.I1)]
+            public ushort wInductiveEventType; //归纳事件类型，0-无效，客户端判断该值为非0值后，报警类型通过归纳事件类型区分，否则通过原有报警主次类型（dwMajor、dwMinor）区分
+            public byte byPicTransType;        //图片数据传输方式: 0-二进制；1-url
+            public byte byRes1;             //保留字节
+            public uint dwIOTChannelNo;    //IOT通道号
+            public IntPtr pAcsEventInfoExtend;    //byAcsEventInfoExtend为1时，表示指向一个NET_DVR_ACS_EVENT_INFO_EXTEND结构体
+            public byte byAcsEventInfoExtend;    //pAcsEventInfoExtend是否有效：0-无效，1-有效
+            public byte byTimeType; //时间类型：0-设备本地时间，1-UTC时间（struTime的时间）
+            public byte byRes2;             //保留字节
+            public byte byAcsEventInfoExtendV20;    //pAcsEventInfoExtendV20是否有效：0-无效，1-有效
+            public IntPtr pAcsEventInfoExtendV20;    //byAcsEventInfoExtendV20为1时，表示指向一个NET_DVR_ACS_EVENT_INFO_EXTEND_V20结构体
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ACS_EVENT_DETAIL
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo; //卡号（mac地址），为0无效
+            public byte byCardType; //卡类型，1-普通卡，3-禁止名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，为0无效
+            public byte byAllowListNo; //允许名单单号,1-8，为0无效
+            public byte byReportChannel; //报告上传通道，1-布防上传，2-中心组1上传，3-中心组2上传，为0无效
+            public byte byCardReaderKind; //读卡器属于哪一类，0-无效，1-IC读卡器，2-身份证读卡器，3-二维码读卡器,4-指纹头
+            public uint dwCardReaderNo; //读卡器编号，为0无效
+            public uint dwDoorNo; //门编号（楼层编号），为0无效
+            public uint dwVerifyNo; //多重卡认证序号，为0无效
+            public uint dwAlarmInNo;  //报警输入号，为0无效
+            public uint dwAlarmOutNo; //报警输出号，为0无效
+            public uint dwCaseSensorNo; //事件触发器编号
+            public uint dwRs485No;    //RS485通道号，为0无效
+            public uint dwMultiCardGroupNo; //群组编号
+            public ushort wAccessChannel;    //人员通道号
+            public byte byDeviceNo; //设备编号，为0无效（有效范围1-255）
+            public byte byDistractControlNo;//分控器编号，为0无效
+            public uint dwEmployeeNo; //工号，为0无效
+            public ushort wLocalControllerID; //就地控制器编号，0-门禁主机，1-64代表就地控制器
+            public byte byInternetAccess; //网口ID：（1-上行网口1,2-上行网口2,3-下行网口1）
+            public byte byType;     //防区类型，0:即时防区,1-24小时防区,2-延时防区 ,3-内部防区，4-钥匙防区 5-火警防区 6-周界防区 7-24小时无声防区  8-24小时辅助防区，9-24小时震动防区,10-门禁紧急开门防区，11-门禁紧急关门防区 0xff-无
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MACADDR_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byMACAddr; //物理地址，为0无效
+            public byte bySwipeCardType;//刷卡类型，0-无效，1-二维码
+            public byte byEventAttribute; //事件属性：0-未定义，1-合法认证，2-其它
+            public uint dwSerialNo; //事件流水号，为0无效
+            public byte byChannelControllerID; //通道控制器ID，为0无效，1-主通道控制器，2-从通道控制器
+            public byte byChannelControllerLampID; //通道控制器灯板ID，为0无效（有效范围1-255）
+            public byte byChannelControllerIRAdaptorID; //通道控制器红外转接板ID，为0无效（有效范围1-255）
+            public byte byChannelControllerIREmitterID; //通道控制器红外对射ID，为0无效（有效范围1-255）
+            public uint dwRecordChannelNum; //录像通道数目
+            public IntPtr pRecordChannelData;//录像通道，大小为sizeof(DWORD)* dwRecordChannelNum
+            public byte byUserType; //人员类型：0-无效，1-普通人（主人），2-来宾（访客），3-禁止名单人，4-管理员
+            public byte byCurrentVerifyMode; //读卡器当前验证方式：0-无效，1-休眠，2-刷卡+密码，3-刷卡，4-刷卡或密码，5-指纹，6-指纹+密码，7-指纹或刷卡，8-指纹+刷卡，9-指纹+刷卡+密码，10-人脸或指纹或刷卡或密码，11-人脸+指纹，12-人脸+密码，
+            //13-人脸+刷卡，14-人脸，15-工号+密码，16-指纹或密码，17-工号+指纹，18-工号+指纹+密码，19-人脸+指纹+刷卡，20-人脸+密码+指纹，21-工号+人脸，22-人脸或人脸+刷卡，23-指纹或人脸，24-刷卡或人脸或密码，25-刷卡或人脸，26-刷卡或人脸或指纹，27-刷卡或指纹或密码
+            public byte byAttendanceStatus;  //考勤状态：0-未定义,1-上班，2-下班，3-开始休息，4-结束休息，5-开始加班，6-结束加班
+            public byte byStatusValue;  //考勤状态值
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_EMPLOYEE_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byEmployeeNo; //工号（人员ID）（对于设备来说，如果使用了工号（人员ID）字段，byEmployeeNo一定要传递，如果byEmployeeNo可转换为dwEmployeeNo，那么该字段也要传递；对于上层平台或客户端来说，优先解析byEmployeeNo字段，如该字段为空，再考虑解析dwEmployeeNo字段）
+            public byte byRes1; //保留
+            public byte byMask; //是否带口罩：0-保留，1-未知，2-不戴口罩，3-戴口罩
+            public byte byThermometryUnit; //测温单位（0-摄氏度（默认），1-华氏度，2-开尔文）
+            public byte byIsAbnomalTemperature; //人脸抓拍测温是否温度异常：1-是，0-否
+            public float fCurrTemperature; //人脸温度（精确到小数点后一位）
+            public NET_VCA_POINT struRegionCoordinates; //人脸温度坐标
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 48, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byMACAddr = new byte[CHCNetSDK.MACADDR_LEN];
+                byEmployeeNo = new byte[CHCNetSDK.NET_SDK_EMPLOYEE_NO_LEN];
+                byRes = new byte[48];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ACS_EVENT_CFG
+        {
+            public uint dwSize;
+            public uint dwMajor; //报警主类型，参考宏定义
+            public uint dwMinor; //报警次类型，参考宏定义
+            public NET_DVR_TIME struTime; //时间
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_NAMELEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sNetUser;//网络操作的用户名
+            public NET_DVR_IPADDR struRemoteHostAddr;//远程主机地址
+            public NET_DVR_ACS_EVENT_DETAIL struAcsEventInfo; //详细参数
+            public uint dwPicDataLen;   //图片数据大小，不为0是表示后面带数据
+            public IntPtr pPicData;
+            public ushort wInductiveEventType; //归纳事件类型，0-无效，其他值参见2.2章节，客户端判断该值为非0值后，报警类型通过归纳事件类型区分，否则通过原有报警主次类型（dwMajor、dwMinor）区分
+            public byte byTimeType; //时间类型：0-设备本地时间（默认），1-UTC时间（struTime的时间）
+            public byte byRes1;
+            public uint dwQRCodeInfoLen; //二维码信息长度，不为0是表示后面带数据
+            public uint dwVisibleLightDataLen; //热成像相机可见光图片长度，不为0是表示后面带数据
+            public uint dwThermalDataLen; //热成像图片长度，不为0是表示后面带数据
+            public IntPtr pQRCodeInfo; //二维码信息指针
+            public IntPtr pVisibleLightData; //热成像相机可见光图片指针
+            public IntPtr pThermalData; //热成像图片指针
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 36, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void init()
+            {
+                sNetUser = new byte[CHCNetSDK.MAX_NAMELEN];
+                struRemoteHostAddr.Init();
+                struAcsEventInfo.init();
+                byRes = new byte[36];
+            }
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_DATE
         {
             public ushort wYear;        //年
-            public byte byMonth;        //月    
-            public byte byDay;        //日                        
+            public byte byMonth;        //月
+            public byte byDay;        //日
         }
 
         //身份证信息
@@ -15139,13 +17953,28 @@ namespace HikVisionNetSDK.Common
             public NET_DVR_DATE struEndDate;  //有效截止日期
             public byte byTermOfValidity;  //是否长期有效， 0-否，1-是（有效截止日期无效）
             public byte bySex;  //性别，1-男，2-女
-            public byte byNation;    //民族，1-"汉"，2-"蒙古"，3-"回",4-"藏",5-"维吾尔",6-"苗",7-"彝",8-"壮",9-"布依",10-"朝鲜",
-            //11-"满",12-"侗",13-"瑶",14-"白",15-"土家",16-"哈尼",17-"哈萨克",18-"傣",19-"黎",20-"傈僳",
-            //21-"佤",22-"畲",23-"高山",24-"拉祜",25-"水",26-"东乡",27-"纳西",28-"景颇",29-"柯尔克孜",30-"土",
-            //31-"达斡尔",32-"仫佬",33-"羌",34-"布朗",35-"撒拉",36-"毛南",37-"仡佬",38-"锡伯",39-"阿昌",40-"普米",
-            //41-"塔吉克",42-"怒",43-"乌孜别克",44-"俄罗斯",45-"鄂温克",46-"德昂",47-"保安",48-"裕固",49-"京",50-"塔塔尔",
-            //51-"独龙",52-"鄂伦春",53-"赫哲",54-"门巴",55-"珞巴",56-"基诺"
+            public byte byNation;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 101, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //扩展结构体信息
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ID_CARD_INFO_EXTEND
+        {
+            public byte byRemoteCheck; //是否需要远程核验（0-无效，1-不需要（默认），2-需要）
+            public byte byThermometryUnit; //测温单位（0-摄氏度（默认），1-华氏度，2-开尔文）
+            public byte byIsAbnomalTemperature; //人脸抓拍测温是否温度异常：1-是，0-否
+            public byte byRes2;
+            public float fCurrTemperature; //人脸温度（精确到小数点后一位）
+            public NET_VCA_POINT struRegionCoordinates; //人脸温度坐标
+            public uint dwQRCodeInfoLen; //二维码信息长度，不为0是表示后面带数据
+            public uint dwVisibleLightDataLen; //热成像相机可见光图片长度，不为0是表示后面带数据
+            public uint dwThermalDataLen; //热成像图片长度，不为0是表示后面带数据
+            public IntPtr pQRCodeInfo; //二维码信息指针
+            public IntPtr pVisibleLightData; //热成像相机可见光图片指针
+            public IntPtr pThermalData; //热成像图片指针
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 1024, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
@@ -15165,15 +17994,23 @@ namespace HikVisionNetSDK.Common
             public uint dwDoorNo; //门编号，为0无效
             public uint dwPicDataLen;   //图片数据大小，不为0是表示后面带数据
             public IntPtr pPicData;
-            public byte byCardType; //卡类型，1-普通卡，2-残疾人卡，3-黑名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，为0无效
+            public byte byCardType; //卡类型，1-普通卡，3-禁止名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，为0无效
             public byte byDeviceNo;                             // 设备编号，为0时无效（有效范围1-255）
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
-            public byte[] byRes2;
+            public byte byMask; //是否带口罩：0-保留，1-未知，2-不戴口罩，3-戴口罩
+            public byte byCurrentEvent;//是否为实时事件：0-无效，1-是（实时事件），2-否（离线事件）
             public uint dwFingerPrintDataLen;                  // 指纹数据大小，不为0是表示后面带数据
             public IntPtr pFingerPrintData;
             public uint dwCapturePicDataLen;                   // 抓拍图片数据大小，不为0是表示后面带数据
             public IntPtr pCapturePicData;
-            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 188, ArraySubType = UnmanagedType.I1)]
+            public uint dwCertificatePicDataLen;   //证件抓拍图片数据大小，不为0是表示后面带数据
+            public IntPtr pCertificatePicData;
+            public byte byCardReaderKind; //读卡器属于哪一类，0-无效，1-IC读卡器，2-身份证读卡器，3-二维码读卡器,4-指纹头
+            public byte byHelmet;//可选，是否戴安全帽：0-保留，1-未知，2-不戴安全, 3-戴安全帽
+            public byte byRes3;
+            public byte byIDCardInfoExtend;    //pIDCardInfoExtend是否有效：0-无效，1-有效
+            public IntPtr pIDCardInfoExtend;    //byIDCardInfoExtend为1时，表示指向一个NET_DVR_ID_CARD_INFO_EXTEND结构体
+            public uint dwSerialNo; //事件流水号，为0无效
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 168, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }
 
@@ -15190,6 +18027,280 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes2;
         }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CARD_COND
+        {
+            public uint dwSize;
+            public uint dwCardNum; //card number, 0xffffffff means to get all card information when getting
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes = new byte[64];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CARD_RECORD
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo; //card No
+            public byte byCardType;
+            public byte byLeaderCard;
+            public byte byUserType;
+            public byte byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOOR_NUM_256, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDoorRight;
+            public NET_DVR_VALID_PERIOD_CFG struValid;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_GROUP_NUM_128, ArraySubType = UnmanagedType.I1)]
+            public byte[] byBelongGroup;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CARD_PASSWORD_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardPassword;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOOR_NUM_256, ArraySubType = UnmanagedType.I1)]
+            public ushort[] wCardRightPlan;
+            public uint dwMaxSwipeTimes;
+            public uint dwSwipeTimes;
+            public uint dwEmployeeNo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byName;
+            //按位表示，0-无权限，1-有权限
+            //第0位表示：弱电报警
+            //第1位表示：开门提示音
+            //第2位表示：限制客卡
+            //第3位表示：通道
+            //第4位表示：反锁开门
+            //第5位表示：巡更功能
+            public uint dwCardRight;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 256, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byCardNo = new byte[ACS_CARD_NO_LEN];
+                byDoorRight = new byte[MAX_DOOR_NUM_256];
+                byBelongGroup = new byte[MAX_GROUP_NUM_128];
+                byCardPassword = new byte[CARD_PASSWORD_LEN];
+                wCardRightPlan = new ushort[MAX_DOOR_NUM_256];
+                byName = new byte[NAME_LEN];
+                byRes = new byte[256];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CARD_STATUS
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo; //card No
+            public uint dwErrorCode;
+            public byte byStatus; //0-fail, 1-success
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 23, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byCardNo = new byte[ACS_CARD_NO_LEN];
+                byRes = new byte[23];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_CARD_SEND_DATA
+        {
+            public uint dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo; //card No
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byCardNo = new byte[ACS_CARD_NO_LEN];
+                byRes = new byte[16];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_PARAM_CTRL_ByCard
+        {
+            public int dwSize;
+            public byte byMode;//0 del by card,1 del by card reader
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_FACE_PARAM_BYCARD struProcessMode;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes1 = new byte[3];
+                byRes = new byte[64];
+                struProcessMode = new NET_DVR_FACE_PARAM_BYCARD();
+                struProcessMode.Init();
+            }
+        }
+
+        public const int MAX_FACE_NUM = 2;                       //max face number
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_PARAM_BYCARD
+        {
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_CARD_READER_NUM_512, ArraySubType = UnmanagedType.I1)]
+            public byte[] byEnableCardReader;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.MAX_FACE_NUM, ArraySubType = UnmanagedType.I1)]
+            public byte[] byFaceID;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 42, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+
+            public void Init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byEnableCardReader = new byte[CHCNetSDK.MAX_CARD_READER_NUM_512];
+                byFaceID = new byte[CHCNetSDK.MAX_FACE_NUM];
+                byRes1 = new byte[42];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_PARAM_CTRL_ByReader
+        {
+            public int dwSize;
+            public byte byMode;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_FACE_PARAM_BYREADER struProcessMode;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes1 = new byte[3];
+                byRes = new byte[64];
+                struProcessMode = new NET_DVR_FACE_PARAM_BYREADER();
+                struProcessMode.Init();
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_PARAM_BYREADER
+        {
+            public int dwCardReaderNo;
+            public byte byClearAllCard;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo;
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 548, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+
+            public void Init()
+            {
+                byRes1 = new byte[3];
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byRes = new byte[548];
+            }
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_STATUS
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ERROR_MSG_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byErrorMsg;//下发错误信息，当byCardReaderRecvStatus为4时，表示已存在人脸对应的卡号
+            public int dwReaderNo; //人脸读卡器编号，可用于下发错误返回
+            public byte byRecvStatus;  //人脸读卡器状态，按字节表示，0-失败，1-成功，2-重试或人脸质量差，3-内存已满(人脸数据满)，4-已存在该人脸，5-非法人脸ID
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 131, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byErrorMsg = new byte[CHCNetSDK.ERROR_MSG_LEN];
+                byRes = new byte[131];
+            }
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_RECORD
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo;
+            public int dwFaceLen;
+            public IntPtr pFaceBuffer;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 128)]
+            public byte[] byRes;
+
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byRes = new byte[128];
+            }
+        }
+
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_COND
+        {
+            public int dwSize;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo;//人脸关联的卡号（设置时该参数可不设置）
+            public int dwFaceNum;// 设置或获取人脸数量，获取时置为0xffffffff表示获取所有人脸信息
+            public int dwEnableReaderNo;// 人脸读卡器编号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 124)]
+            public byte[] byRes;
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byRes = new byte[124];
+            }
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACE_PARAM_CTRL_CARDNO
+        {
+            public int dwSize;
+            public byte byMode;//删除方式，0-按卡号方式删除，1-按读卡器删除
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public CHCNetSDK.NET_DVR_FACE_PARAM_BYCARD struByCard;//按卡号的方式删除,读卡器暂时不写
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public void Init()
+            {
+                byRes1 = new byte[3];
+                byRes = new byte[64];
+                struByCard.Init();
+            }
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FINGERPRINT_COND
+        {
+            public int dwSize;
+            public int dwFingerprintNum;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = CHCNetSDK.ACS_CARD_NO_LEN)]
+            public byte[] byCardNo;
+            public int dwEnableReaderNo;
+            public byte byFingerPrintID;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 131)]
+            public byte[] byRes;
+
+            public void init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byRes = new byte[131];
+            }
+        }
+
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_CARD_CFG_V50
@@ -15219,7 +18330,7 @@ namespace HikVisionNetSDK.Common
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
             public byte[] byCardNo; //卡号
             public byte byCardValid; //卡是否有效，0-无效，1-有效（用于删除卡，设置时置为0进行删除，获取时此字段始终为1）
-            public byte byCardType; //卡类型，1-普通卡，2-残疾人卡，3-黑名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，9-员工卡，10-应急卡，11-应急管理卡（用于授权临时卡权限，本身不能开门），默认普通卡
+            public byte byCardType; //卡类型，1-普通卡，3-禁止名单卡，4-巡更卡，5-胁迫卡，6-超级卡，7-来宾卡，8-解除卡，9-员工卡，10-应急卡，11-应急管理卡（用于授权临时卡权限，本身不能开门），默认普通卡
             public byte byLeaderCard; //是否为首卡，1-是，0-否
             public byte byUserType; // 0 – 普通用户1 - 管理员用户;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DOOR_NUM_256, ArraySubType = UnmanagedType.I1)]
@@ -15259,7 +18370,7 @@ namespace HikVisionNetSDK.Common
             public uint dwCardRight;      //卡权限
             public uint dwPlanTemplate;   //计划模板(每天)各时间段是否启用，按位表示，0--不启用，1-启用
             public uint dwCardUserId;    //持卡人ID
-            public byte byCardModelType;  //0-空，1- MIFARE S50，2- MIFARE S70，3- FM1208 CPU卡，4- FM1216 CPU卡，5-国密CPU卡，6-身份证，7- NFC
+            public byte byCardModelType;  //0-空，1- M1 CARD S50，2- M1 CARD S70，3- FM1208 CPU卡，4- FM1216 CPU卡，5-国密CPU卡，6-身份证，7- NFC
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 51, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes3;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
@@ -15275,6 +18386,84 @@ namespace HikVisionNetSDK.Common
             public byte byCheckTemplate; //0-校验图片是否合法（默认），1-校验图片和建模数据是否匹配
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 127, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
+        }
+
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_GROUP_COMBINATION_INFO_V50
+        {
+            public byte byEnable; //是否启用该群组组合
+            public byte byMemberNum; //刷卡成员数量
+            public byte bySequenceNo; //群组刷卡次序号
+            public byte byRes;
+            public uint dwGroupNo;  //群组编号,0xffffffff表示远程开门，0xfffffffe表示超级密码
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_MULTI_CARD_GROUP_CFG_V50
+        {
+            public byte byEnable; //是否启用该多重卡组参数，0-不启用，1-启用
+            public byte byEnableOfflineVerifyMode; //是否启用主机离线时验证方式（超级密码代替远程开门），1-启用，0-不启用
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwTemplateNo; //启用多重卡功能的计划模板编号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = GROUP_COMBINATION_NUM, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_GROUP_COMBINATION_INFO_V50[] struGroupCombination; //群组组合参数
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_MULTI_CARD_CFG_V50
+        {
+            public uint dwSize;
+            public byte byEnable; //是否启用多重卡功能，0-不启用，1-启用
+            public byte bySwipeIntervalTimeout; //刷卡间隔超时时间，1-255s，默认10s
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_MULTI_CARD_GROUP_NUM_20, ArraySubType = UnmanagedType.Struct)]
+            public NET_DVR_MULTI_CARD_GROUP_CFG_V50[] struGroupCfg; //群组刷卡参数
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2;
+        }
+
+        public const int NET_SDK_MONITOR_ID_LEN = 64; //布防点ID长度
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_ACS_EVENT_COND
+        {
+            public uint dwSize;
+            public uint dwMajor; //报警主类型，参考事件上传宏定义，0-全部
+            public uint dwMinor; //报警次类型，参考事件上传宏定义，0-全部
+            public NET_DVR_TIME struStartTime; //开始时间
+            public NET_DVR_TIME struEndTime; //结束时间
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = ACS_CARD_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byCardNo; //卡号
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byName; //持卡人姓名
+            public byte byPicEnable; //是否带图片，0-不带图片，1-带图片
+            public byte byTimeType; //时间类型：0-设备本地时间（默认），1-UTC时间（struStartTime和struEndTime的时间）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes2; //保留
+            public uint dwBeginSerialNo; //起始流水号（为0时默认全部）
+            public uint dwEndSerialNo; //结束流水号（为0时默认全部）
+            public uint dwIOTChannelNo; //IOT通道号，0-无效
+            public ushort wInductiveEventType; //归纳事件类型，0-无效，其他值参见2.2章节，客户端判断该值为非0值后，报警类型通过归纳事件类型区分，否则通过原有报警主次类型（dwMajor、dwMinor）区分
+            public byte bySearchType;      //搜索方式：0-保留，1-按事件源搜索（此时通道号为非视频通道号），2-按布防点ID搜索
+            public byte byEventAttribute; //事件属性：0-未定义，1-合法事件，2-其它
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_MONITOR_ID_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] szMonitorID;          //布防点ID（由设备序列号、通道类型、编号组成，例如门禁点：设备序列号+“DOOR”+门编号）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_EMPLOYEE_NO_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byEmployeeNo; //工号（人员ID）
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 140, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes; //保留
+
+            public void Init()
+            {
+                byCardNo = new byte[CHCNetSDK.ACS_CARD_NO_LEN];
+                byName = new byte[CHCNetSDK.NAME_LEN];
+                byRes2 = new byte[2];
+                byEmployeeNo = new byte[CHCNetSDK.NET_SDK_EMPLOYEE_NO_LEN];
+                byRes = new byte[140];
+            }
         }
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -15339,7 +18528,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_ALARMHOST_EXTERNAL_DEVICE_STATE
         {
             public uint dwSize;
-            public byte byDevType;    //1-UPS，2-开关电源，3-气体检测系统，4-温湿度传感器，5-空调，6-电量表，7-变电器状态, 8-水位传感器、9-扬尘噪声传感器、10-环境采集仪、11-风速传感器状态、12-通用扩展输出模块状态、13-浸水传感器状态、14-太阳能控制器状态、15-SF6报警主机状态、16-称重仪状态、17-气象采集系统状态、18-水质检测仪状态、19-燃气监测系统状态、20-消防主机状态
+            public byte byDevType;    //1-UPS，2-开关电源，3-气体检测系统，4-温湿度传感器，5-空调，6-电量表，7-变电器状态, 8-水位传感器、9-扬尘噪声传感器、10-环境采集仪、11-风速传感器状态、12-通用扩展输出模块状态、13-浸水传感器状态、14-太阳能控制器状态、15-SF6报警主机状态、16-称重仪状态、17-气象采集系统状态、18-水质检测仪状态、19-燃气显示系统状态、20-消防主机状态
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes1;
             public NET_DVR_EXTERNAL_DEVICE_STATE_UNION struDevState;
@@ -15401,12 +18590,12 @@ namespace HikVisionNetSDK.Common
             SUPPRESS_LAMP = 4,//是否抑制车头灯
             MIN_OBJECT_SIZE = 5,//能检测出的最小目标大小
             OBJECT_GENERATE_RATE = 6,//目标生成速度
-            MISSING_OBJECT_HOLD = 7,//目标消失后继续跟踪时间
-            MAX_MISSING_DISTANCE = 8,//目标消失后继续跟踪距离
+            MISSING_OBJECT_HOLD = 7,//目标消失后继续时间
+            MAX_MISSING_DISTANCE = 8,//目标消失后继续距离
             OBJECT_MERGE_SPEED = 9,//多个目标交错时，目标的融合速度
             REPEATED_MOTION_SUPPRESS = 10,//重复运动抑制
             ILLUMINATION_CHANGE = 11,//光影变化抑制开关
-            TRACK_OUTPUT_MODE = 12,//轨迹输出模式：0-输出目标的中心，1-输出目标的底部中心
+            TRACK_OUTPUT_MODE = 12,//输出模式：0-输出目标的中心，1-输出目标的底部中心
             ENTER_CHANGE_HOLD = 13,//检测区域变化阈值
             RESUME_DEFAULT_PARAM = 255,//恢复默认关键字参数
         }
@@ -15426,7 +18615,7 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_LF_CFG
         {
-            public uint dwSize;//结构长度	
+            public uint dwSize;//结构长度
             public byte byEnable;//标定使能
             public byte byFollowChan;// 被控制的从通道
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
@@ -15443,7 +18632,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byRes;
         }
 
-        //L/F目标跟踪结构
+        //L/F目标结构
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_LF_TRACK_TARGET_INFO
         {
@@ -15456,7 +18645,7 @@ namespace HikVisionNetSDK.Common
         public struct NET_DVR_LF_TRACK_MODE
         {
             public uint dwSize;//结构长度
-            public byte byTrackMode;//跟踪模式
+            public byte byTrackMode;//模式
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;//保留，置0
             [StructLayoutAttribute(LayoutKind.Explicit)]
@@ -15466,9 +18655,9 @@ namespace HikVisionNetSDK.Common
                 [FieldOffsetAttribute(0)]
                 public uint[] dwULen;
                 /*[FieldOffsetAttribute(0)]
-                public NET_DVR_LF_MANUAL_CTRL_INFO struManualCtrl;//手动跟踪结构
+                public NET_DVR_LF_MANUAL_CTRL_INFO struManualCtrl;//手动结构
                 [FieldOffsetAttribute(0)]
-                public NET_DVR_LF_TRACK_TARGET_INFO struTargetTrack;//目标跟踪结构
+                public NET_DVR_LF_TRACK_TARGET_INFO struTargetTrack;//目标结构
                  * */
             }
         }
@@ -15477,9 +18666,10 @@ namespace HikVisionNetSDK.Common
         public enum NET_SDK_CALLBACK_TYPE
         {
             NET_SDK_CALLBACK_TYPE_STATUS = 0, //回调状态值
-            NET_SDK_CALLBACK_TYPE_PROGRESS,   //回调进度值 
+            NET_SDK_CALLBACK_TYPE_PROGRESS,   //回调进度值
             NET_SDK_CALLBACK_TYPE_DATA        //回调数据内容
         }
+
 
         // Long config status value
         public enum NET_SDK_CALLBACK_STATUS_NORMAL
@@ -15492,6 +18682,166 @@ namespace HikVisionNetSDK.Common
             NET_SDK_CALLBACK_STATUS_DEV_TYPE_MISMATCH,     //设备类型不匹配
             NET_DVR_CALLBACK_STATUS_SEND_WAIT             //发送等待
         }
+
+        //Sensor信息
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_SENSOR_PARAM
+        {
+            public byte bySensorType;//SensorType:0-CCD,1-CMOS
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 31, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+            public float fHorWidth;//水平宽度 精确到小数点后两位 *10000
+            public float fVerWidth;//垂直宽度 精确到小数点后两位 *10000
+            public float fFold;//zoom=1没变时的焦距 精确到小数点后两位 *100
+        }
+
+
+        //球机位置信息
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_PTZPOS_PARAM
+        {
+            public float fPanPos;//水平参数，精确到小数点后1位
+            public float fTiltPos;//垂直参数，精确到小数点后1位
+            public float fZoomPos;//变倍参数，精确到小数点后1位
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //GIS信息上传
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_GIS_UPLOADINFO
+        {
+            public uint dwSize;//结构体大小
+            public uint dwRelativeTime; //相对时标
+            public uint dwAbsTime; //绝对时标
+            public NET_VCA_DEV_INFO struDevInfo;//前端设备
+            public float fAzimuth;//电子罗盘的方位信息；方位角[0.00°,360.00°)
+            public byte byLatitudeType;//纬度类型，0-北纬，1-南纬
+            public byte byLongitudeType;// 经度类型，0-东度，1-西度
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public NET_DVR_LLI_PARAM struLatitude;     /*纬度*/
+            public NET_DVR_LLI_PARAM struLongitude;   /*经度*/
+            public float fHorizontalValue;//水平视场角，精确到小数点后面两位
+            public float fVerticalValue;//垂直视场角，精确到小数点后面两位
+            public float fVisibleRadius;//当前可视半径，精确到小数点后面两位
+            public float fMaxViewRadius;//最大可视半径，精确到小数点后面0位（预留处理）
+            public NET_DVR_SENSOR_PARAM struSensorParam;//Sensor信息
+            public NET_DVR_PTZPOS_PARAM struPtzPos; //ptz坐标
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 256, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        public const int NET_SDK_MAX_FDID_LEN = 256;
+
+        //导入人脸数据(人脸图片+图片附件信息)到人脸库的条件参数结构体。
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_FACELIB_COND
+        {
+            public uint dwSize;     		// 结构大小
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NET_SDK_MAX_FDID_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] szFDID;
+            public byte byConcurrent;//设备并发处理：0- 不开启，1- 开始
+            public byte byCover;//是否覆盖式导入 0-否，1-是
+            public byte byCustomFaceLibID;//FDID是否是自定义，0-不是，1-是；
+            public byte byPictureSaveMode;//上传原图保存模式，0-保存，1-不保存;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 64, ArraySubType = UnmanagedType.I1)]
+            public byte[] byIdentityKey;//交互操作口令
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 60, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;//保留
+        }
+
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_SEND_PARAM_IN
+        {
+            public IntPtr pSendData;
+            public uint dwSendDataLen;
+            public NET_DVR_TIME_V30 struTime;
+            public byte byPicType;
+            public byte byPicURL;  //图片数据采用URL方式 0-二进制图片数据，1-图片数据走URL方式
+            public byte byUploadModeling;
+            public byte byRes1;
+            public uint dwPicMangeNo;
+            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 32)]
+            public string sPicName;
+            public uint dwPicDisplayTime;
+            public IntPtr pSendAppendData;
+            public uint dwSendAppendDataLen;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 192, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        public enum HKUploadType
+        {
+            IMPORT_DATA_TO_FACELIB = 39,// 导入人脸数据(人脸图片+图片附加信息)到人脸库
+        }
+
+        public const int MAX_UPLOADFILE_URL_LEN = 240;
+
+        //导入人脸图片数据到人脸库的结果参数结构体
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_UPLOAD_FILE_RET
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_UPLOADFILE_URL_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] sUrl;
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 260, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;//保留
+        }
+
+        //GPS报警信息结构体
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_GPSALARMINFO
+        {
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = NAME_LEN, ArraySubType = UnmanagedType.I1)]
+            public byte[] byDeviceID;/*设备的ID串*/
+            public NET_DVR_TIME_EX struGpsTime;    /*GPS上传的时间*/
+            public uint dwLongitude;    /* 经度*/
+            public uint dwLatitude;  /* 纬度*/
+            public int iTimeZone; /*时区，用分钟数表示，+60代表东1区，+480代表东8区，-60代表西区，-480代表西8区，该字段和GPSTime构成一个完整的时间描述*/
+            public uint dwDirection; /*车辆方向=实际方向（以度为单位，正北方向为，顺时针方向计算）*100*/
+            public ushort wSatellites; /*卫星数量*/
+            public ushort wPrecision; /*精度*/
+            public uint dwHeight; /*高度:厘米，预留*/
+            public uint dwGPSSeq; /*GPS序号，GPS补传时要用到*/
+            public ushort wSpeed;//速度，单位，km/h
+            /* direction[0]:'E'or'W'(东经/西经), direction[1]:'N'or'S'(北纬/南纬)*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] sDirection;
+            public byte byLocateMode;/*定位模式(初值0)，1,自主定位,2,差分3,估算,4,数据无效，65,有效定位，78，无效定位*/
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 3, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
+        //热度图报警上传
+        [StructLayoutAttribute(LayoutKind.Sequential)]
+        public struct NET_DVR_HEATMAP_RESULT
+        {
+            public uint dwSize;
+            public NET_VCA_DEV_INFO struDevInfo;/*设备信息*/
+            public NET_DVR_TIME_EX struStartTime;/*开始时间*/
+            public NET_DVR_TIME_EX struEndTime;/*结束时间*/
+            public uint dwMaxHeatMapValue;//最大热度值
+            public uint dwMinHeatMapValue;//最小热度值
+            public uint dwTimeHeatMapValue;// (时间热度值)平均热度值
+            public ushort wArrayLine;//图片像素点行值
+            public ushort wArrayColumn;//图片像素点列值 （当行列值为0的时候，像素点值内存信息不存在）
+            public IntPtr pBuffer;  //热度图片像素点数据信息
+            public byte byDetSceneID;//检测场景号[1],球机当前支持1个场景, IPC默认是0
+            public byte byBrokenNetHttp;     //断网续传标志位，0-不是重传数据，1-重传数据
+            public ushort wDevInfoIvmsChannelEx;     //与NET_VCA_DEV_INFO里的byIvmsChannel含义相同，能表示更大的值。老客户端用byIvmsChannel能继续兼容，但是最大到255。新客户端版本请使用wDevInfoIvmsChannelEx。
+            public byte byTimeDiffFlag;      /*时差字段是否有效  0-时差无效， 1-时差有效 */
+            public byte cStartTimeDifferenceH;      /*开始时间与UTC的时差（小时），-12 ... +14，+表示东区*/
+            public byte cStartTimeDifferenceM;      /*开始时间与UTC的时差（分钟），-30, 30, 45，+表示东区*/
+            public byte cStopTimeDifferenceH;        /*结束时间与UTC的时差（小时），-12 ... +14， +表示东区*/
+            public byte cStopTimeDifferenceM;       /*结束时间与UTC的时差（分钟），-30, 30, 45，+表示东区*/
+            public byte byArrayUnitType; //矩阵单元数据类型（矩阵信息中每个像素点数据的数据类型），1-byte，2-short,4-int
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 2, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes1;
+            public uint dwTotalTime;//停留时间总和，单位秒，按人员停留时间报警时上传
+            [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 112, ArraySubType = UnmanagedType.I1)]
+            public byte[] byRes;
+        }
+
         /********************************接口参数结构(end)*********************************/
 
 
@@ -15501,195 +18851,195 @@ namespace HikVisionNetSDK.Common
         /*********************************************************
         Function:	NET_DVR_Init
         Desc:		初始化SDK，调用其他SDK函数的前提。
-        Input:	
-        Output:	
+        Input:
+        Output:
         Return:	TRUE表示成功，FALSE表示失败。
         **********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_Init();
 
         /*********************************************************
         Function:	NET_DVR_Cleanup
         Desc:		释放SDK资源，在结束之前最后调用
-        Input:	
-        Output:	
+        Input:
+        Output:
         Return:	TRUE表示成功，FALSE表示失败
         **********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_Cleanup();
 
 
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessage(uint nMessage, IntPtr hWnd);
 
         /*********************************************************
         Function:	EXCEPYIONCALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void EXCEPYIONCALLBACK(uint dwType, int lUserID, int lHandle, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetExceptionCallBack_V30(uint nMessage, IntPtr hWnd, EXCEPYIONCALLBACK fExceptionCallBack, IntPtr pUser);
 
 
         /*********************************************************
         Function:	MESSCALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate int MESSCALLBACK(int lCommand, string sDVRIP, string pBuf, uint dwBufLen);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessCallBack(MESSCALLBACK fMessCallBack);
 
         /*********************************************************
         Function:	MESSCALLBACKEX
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate int MESSCALLBACKEX(int iCommand, int iUserID, string pBuf, uint dwBufLen);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessCallBack_EX(MESSCALLBACKEX fMessCallBack_EX);
 
         /*********************************************************
         Function:	MESSCALLBACKNEW
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate int MESSCALLBACKNEW(int lCommand, string sDVRIP, string pBuf, uint dwBufLen, ushort dwLinkDVRPort);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessCallBack_NEW(MESSCALLBACKNEW fMessCallBack_NEW);
 
         /*********************************************************
         Function:	MESSAGECALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate int MESSAGECALLBACK(int lCommand, System.IntPtr sDVRIP, System.IntPtr pBuf, uint dwBufLen, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessageCallBack(MESSAGECALLBACK fMessageCallBack, uint dwUser);
 
 
         /*********************************************************
         Function:	MSGCallBack
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void MSGCallBack(int lCommand, ref NET_DVR_ALARMER pAlarmer, IntPtr pAlarmInfo, uint dwBufLen, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessageCallBack_V30(MSGCallBack fMessageCallBack, IntPtr pUser);
 
         public delegate bool MSGCallBack_V31(int lCommand, ref NET_DVR_ALARMER pAlarmer, IntPtr pAlarmInfo, uint dwBufLen, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRMessageCallBack_V31(MSGCallBack_V31 fMessageCallBack, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetSDKLocalCfg(int enumType, IntPtr lpInBuff);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetSDKLocalCfg(int enumType, IntPtr lpOutBuff);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetConnectTime(uint dwWaitTime, uint dwTryTimes);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetReconnect(uint dwInterval, int bEnableRecon);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetLocalIP(byte[] strIP, ref uint pValidNum, ref Boolean pEnableBind);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetValidIP(uint dwIPIndex, Boolean bEnableBind);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern uint NET_DVR_GetSDKVersion();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern uint NET_DVR_GetSDKBuildVersion();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern Int32 NET_DVR_IsSupport();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StartListen(string sLocalIP, ushort wLocalPort);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopListen();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartListen_V30(String sLocalIP, ushort wLocalPort, MSGCallBack DataCallback, IntPtr pUserData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopListen_V30(Int32 lListenHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern Int32 NET_DVR_Login(string sDVRIP, ushort wDVRPort, string sUserName, string sPassword, ref NET_DVR_DEVICEINFO lpDeviceInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_Logout(int iUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern uint NET_DVR_GetLastError();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern IntPtr NET_DVR_GetErrorMsg(ref int pErrorNo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetShowMode(uint dwShowType, uint colorKey);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRIPByResolveSvr(string sServerIP, ushort wServerPort, string sDVRName, ushort wDVRNameLen, string sDVRSerialNumber, ushort wDVRSerialLen, IntPtr pGetIP);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRIPByResolveSvr_EX(string sServerIP, ushort wServerPort, byte[] sDVRName, ushort wDVRNameLen, byte[] sDVRSerialNumber, ushort wDVRSerialLen, byte[] sGetIP, ref uint dwPort);
         //预览相关接口
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern Int32 NET_DVR_RealPlay(int iUserID, ref NET_DVR_CLIENTINFO lpClientInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern Int32 NET_SDK_RealPlay(int iUserLogID, ref NET_DVR_CLIENTINFO lpDVRClientInfo);
         /*********************************************************
 		Function:	REALDATACALLBACK
 		Desc:		预览回调
-		Input:	lRealHandle 当前的预览句柄 
+		Input:	lRealHandle 当前的预览句柄
 				dwDataType 数据类型
-				pBuffer 存放数据的缓冲区指针 
-				dwBufSize 缓冲区大小 
-				pUser 用户数据 
-		Output:	
+				pBuffer 存放数据的缓冲区指针
+				dwBufSize 缓冲区大小
+				pUser 用户数据
+		Output:
 		Return:	void
 		**********************************************************/
         public delegate void REALDATACALLBACK(Int32 lRealHandle, UInt32 dwDataType, IntPtr pBuffer, UInt32 dwBufSize, IntPtr pUser);
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
 
         /*********************************************************
         Function:	NET_DVR_RealPlay_V30
         Desc:		实时预览。
-        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值 
-                lpClientInfo [in] 预览参数 
-                cbRealDataCallBack [in] 码流数据回调函数 
-                pUser [in] 用户数据 
-                bBlocked [in] 请求码流过程是否阻塞：0－否；1－是 
-        Output:	
+        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值
+                lpClientInfo [in] 预览参数
+                cbRealDataCallBack [in] 码流数据回调函数
+                pUser [in] 用户数据
+                bBlocked [in] 请求码流过程是否阻塞：0－否；1－是
+        Output:
         Return:	1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数
         **********************************************************/
         public static extern int NET_DVR_RealPlay_V30(int iUserID, ref NET_DVR_CLIENTINFO lpClientInfo, REALDATACALLBACK fRealDataCallBack_V30, IntPtr pUser, UInt32 bBlocked);
@@ -15697,420 +19047,425 @@ namespace HikVisionNetSDK.Common
         /*********************************************************
         Function:	NET_DVR_RealPlay_V40
         Desc:		实时预览扩展接口。
-        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值 
-                lpPreviewInfo [in] 预览参数 
-                fRealDataCallBack_V30 [in] 码流数据回调函数 
-                pUser [in] 用户数据 
-        Output:	
+        Input:	lUserID [in] NET_DVR_Login()或NET_DVR_Login_V30()的返回值
+                lpPreviewInfo [in] 预览参数
+                fRealDataCallBack_V30 [in] 码流数据回调函数
+                pUser [in] 用户数据
+        Output:
         Return:	1表示失败，其他值作为NET_DVR_StopRealPlay等函数的句柄参数
         **********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_V40(int iUserID, ref NET_DVR_PREVIEWINFO lpPreviewInfo, REALDATACALLBACK fRealDataCallBack_V30, IntPtr pUser);
 
-        // [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        // [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         // public static extern int NET_DVR_GetRealPlayerIndex(int lRealHandle);
         /*********************************************************
 		Function:	NET_DVR_StopRealPlay
 		Desc:		停止预览。
-		Input:	lRealHandle [in] 预览句柄，NET_DVR_RealPlay或者NET_DVR_RealPlay_V30的返回值 
-		Output:	
-		Return:	
+		Input:	lRealHandle [in] 预览句柄，NET_DVR_RealPlay或者NET_DVR_RealPlay_V30的返回值
+		Output:
+		Return:
 		**********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopRealPlay(int iRealHandle);
 
         /*********************************************************
         Function:	DRAWFUN
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void DRAWFUN(int lRealHandle, IntPtr hDc, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RigisterDrawFun(int lRealHandle, DRAWFUN fDrawFun, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetPlayerBufNumber(Int32 lRealHandle, uint dwBufNum);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ThrowBFrame(Int32 lRealHandle, uint dwNum);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetAudioMode(uint dwMode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_OpenSound(Int32 lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseSound();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_OpenSoundShare(Int32 lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseSoundShare(Int32 lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_Volume(Int32 lRealHandle, ushort wVolume);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SaveRealData(Int32 lRealHandle, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopSaveRealData(Int32 lRealHandle);
 
         /*********************************************************
         Function:	REALDATACALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void SETREALDATACALLBACK(int lRealHandle, uint dwDataType, IntPtr pBuffer, uint dwBufSize, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetRealDataCallBack(int lRealHandle, SETREALDATACALLBACK fRealDataCallBack, uint dwUser);
 
         /*********************************************************
         Function:	STDDATACALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void STDDATACALLBACK(int lRealHandle, uint dwDataType, ref byte pBuffer, uint dwBufSize, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetStandardDataCallBack(int lRealHandle, STDDATACALLBACK fStdDataCallBack, uint dwUser);
 
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CapturePicture(Int32 lRealHandle, string sPicFileName);
 
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_CapturePictureBlock(Int32 lRealHandle, string sPicFileName, int dwTimeOut);
+
         //动态生成I帧
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MakeKeyFrame(Int32 lUserID, Int32 lChannel);//主码流
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MakeKeyFrameSub(Int32 lUserID, Int32 lChannel);//子码流
 
         //云台控制相关接口
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCtrl(Int32 lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCtrl_Other(Int32 lUserID, int lChannel);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl(Int32 lRealHandle, uint dwPTZCommand, uint dwStop);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl_Other(Int32 lUserID, Int32 lChannel, uint dwPTZCommand, uint dwStop);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ(Int32 lRealHandle, string pPTZCodeBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ_Other(int lUserID, int lChannel, string pPTZCodeBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset(int lRealHandle, uint dwPTZPresetCmd, uint dwPresetIndex);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset_Other(int lUserID, int lChannel, uint dwPTZPresetCmd, uint dwPresetIndex);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_TransPTZ_EX(int lRealHandle, string pPTZCodeBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControl_EX(int lRealHandle, uint dwPTZCommand, uint dwStop);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZPreset_EX(int lRealHandle, uint dwPTZPresetCmd, uint dwPresetIndex);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise(int lRealHandle, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise_Other(int lUserID, int lChannel, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZCruise_EX(int lRealHandle, uint dwPTZCruiseCmd, byte byCruiseRoute, byte byCruisePoint, ushort wInput);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack(int lRealHandle, uint dwPTZTrackCmd);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack_Other(int lUserID, int lChannel, uint dwPTZTrackCmd);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZTrack_EX(int lRealHandle, uint dwPTZTrackCmd);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed(int lRealHandle, uint dwPTZCommand, uint dwStop, uint dwSpeed);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed_Other(int lUserID, int lChannel, uint dwPTZCommand, uint dwStop, uint dwSpeed);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZControlWithSpeed_EX(int lRealHandle, uint dwPTZCommand, uint dwStop, uint dwSpeed);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZCruise(int lUserID, int lChannel, int lCruiseRoute, ref NET_DVR_CRUISE_RET lpCruiseRet);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack(int lRealHandle, uint dwPTZTrackCmd, uint dwTrackIndex);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack_Other(int lUserID, int lChannel, uint dwPTZTrackCmd, uint dwTrackIndex);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZMltTrack_EX(int lRealHandle, uint dwPTZTrackCmd, uint dwTrackIndex);
 
         //文件查找与回放
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile(int lUserID, int lChannel, uint dwFileType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile(int lFindHandle, ref NET_DVR_FIND_DATA lpFindData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_FindClose(int lFindHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_V30(int lFindHandle, ref NET_DVR_FINDDATA_V30 lpFindData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_V40(int lFindHandle, ref NET_DVR_FINDDATA_V40 lpFindData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_V30(int lUserID, ref NET_DVR_FILECOND pFindCond);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_V40(int lUserID, ref NET_DVR_FILECOND_V40 pFindCond);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFileByEvent_V40(int lUserID, ref NET_DVR_SEARCH_EVENT_PARAM_V40 lpSearchEventParam);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextEvent_V40(int lSearchHandle, ref NET_DVR_SEARCH_EVENT_RET_V40 lpSearchEventRet);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_FindClose_V30(int lFindHandle);
 
         //2007-04-16增加查询结果带卡号的文件查找
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextFile_Card(int lFindHandle, ref NET_DVR_FINDDATA_CARD lpFindData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFile_Card(int lUserID, int lChannel, uint dwFileType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_LockFileByName(int lUserID, string sLockFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_LockFileByTime(int lUserID, ref NET_DVR_TIME_LOCK lpLockPara, ref NET_DVR_LOCK_RETURN lpLockReturn);
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_UnlockFileByName(int lUserID, string sUnlockFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_UnlockFileByTime(int lUserID, ref NET_DVR_TIME_LOCK lpLockPara, ref NET_DVR_LOCK_RETURN lpLockReturn);
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_LockStreamFileByTime(int lUserID, ref NET_DVR_STREAM_TIME_LOCK lpLockPara, ref NET_DVR_LOCK_RETURN lpLockReturn);
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_UnlockStreamFileByTime(int lUserID, ref NET_DVR_STREAM_TIME_LOCK lpLockPara, ref NET_DVR_LOCK_RETURN lpLockReturn);
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByName(int lUserID, string sPlayBackFileName, IntPtr hWnd);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByTime(int lUserID, int lChannel, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime, System.IntPtr hWnd);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_PlayBackByTime_V40(int lUserID, ref NET_DVR_VOD_PARA pVodPara);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_PlayBackReverseByName(int lUserID, string sPlayBackFileName, IntPtr hWnd);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_PlayBackReverseByTime_V40(int lUserID, IntPtr hWnd, ref NET_DVR_PLAYCOND pPlayCond);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackControl(int lPlayHandle, uint dwControlCode, uint dwInValue, ref uint LPOutValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackControl_V40(int lPlayHandle, uint dwControlCode, IntPtr lpInBuffer, uint dwInValue, IntPtr lpOutBuffer, ref uint LPOutValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopPlayBack(int lPlayHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_UpdateRecordIndex(int lUserID, int lChannel);
-
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_InquiryRecordTimeSpan(int lUserID, Int32 lChannel, ref NET_DVR_RECORD_TIME_SPAN_INQUIRY lpInquiry, ref NET_DVR_RECORD_TIME_SPAN lpResult);
 
         /*********************************************************
         Function:	PLAYDATACALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void PLAYDATACALLBACK(int lPlayHandle, uint dwDataType, IntPtr pBuffer, uint dwBufSize, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetPlayDataCallBack(int lPlayHandle, PLAYDATACALLBACK fPlayDataCallBack, uint dwUser);
 
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackSaveData(int lPlayHandle, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopPlayBackSave(int lPlayHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPlayBackOsdTime(int lPlayHandle, ref NET_DVR_TIME lpOsdTime);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PlayBackCaptureFile(int lPlayHandle, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetFileByName(int lUserID, string sDVRFileName, string sSavedFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetFileByTime(int lUserID, int lChannel, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime, string sSavedFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetFileByTime_V40(int lUserID, string sSavedFileName, ref NET_DVR_PLAYCOND pDownloadCond);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopGetFile(int lFileHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetDownloadPos(int lFileHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetPlayBackPos(int lPlayHandle);
 
+        //图片查找
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_FindPicture(int lUserID, ref NET_DVR_FIND_PICTURE_PARAM pFindParam);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_FindNextPicture_V50(int lFindHandle, ref NET_DVR_FIND_PICTURE_V50 lpFindData);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_CloseFindPicture(int lFindHandle);
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_GetPicture(int lUserID, String sDVRFileName, String sSavedFileName);
+
         //升级
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_Upgrade(int lUserID, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetUpgradeState(int lUpgradeHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetUpgradeProgress(int lUpgradeHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseUpgradeHandle(int lUpgradeHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetNetworkEnvironment(uint dwEnvironmentLevel);
 
         //远程格式化硬盘
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FormatDisk(int lUserID, int lDiskNumber);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetFormatProgress(int lFormatHandle, ref int pCurrentFormatDisk, ref int pCurrentDiskPos, ref int pFormatStatic);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseFormatHandle(int lFormatHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetIPCProtoList(int lUserID, ref NET_DVR_IPC_PROTO_LIST lpProtoList);
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetIPCProtoList_V41(int lUserID, ref NET_DVR_IPC_PROTO_LIST_V41 lpProtoList);
 
         //报警
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_SetupAlarmChan(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseAlarmChan(int lAlarmHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_SetupAlarmChan_V30(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_SetupAlarmChan_V41(int lUserID, ref NET_DVR_SETUPALARM_PARAM lpSetupParam);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseAlarmChan_V30(int lAlarmHandle);
 
         //语音对讲
         /*********************************************************
         Function:	VOICEDATACALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void VOICEDATACALLBACK(int lVoiceComHandle, string pRecvDataBuffer, uint dwBufSize, byte byAudioFlag, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartVoiceCom(int lUserID, VOICEDATACALLBACK fVoiceDataCallBack, uint dwUser);
 
         /*********************************************************
         Function:	VOICEDATACALLBACKV30
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void VOICEDATACALLBACKV30(int lVoiceComHandle, IntPtr pRecvDataBuffer, uint dwBufSize, byte byAudioFlag, System.IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartVoiceCom_V30(int lUserID, uint dwVoiceChan, bool bNeedCBNoEncData, VOICEDATACALLBACKV30 fVoiceDataCallBack, IntPtr pUser);
 
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetVoiceComClientVolume(int lVoiceComHandle, ushort wVolume);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopVoiceCom(int lVoiceComHandle);
 
         //语音转发
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartVoiceCom_MR(int lUserID, VOICEDATACALLBACK fVoiceDataCallBack, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartVoiceCom_MR_V30(int lUserID, uint dwVoiceChan, VOICEDATACALLBACKV30 fVoiceDataCallBack, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_VoiceComSendData(int lVoiceComHandle, string pSendBuf, uint dwBufSize);
 
         //语音广播
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientAudioStart();
 
         /*********************************************************
         Function:	VOICEAUDIOSTART
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void VOICEAUDIOSTART(string pRecvDataBuffer, uint dwBufSize, IntPtr pUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientAudioStart_V30(VOICEAUDIOSTART fVoiceAudioStart, IntPtr pUser);
 
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientAudioStop();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_AddDVR(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_AddDVR_V30(int lUserID, uint dwVoiceChan);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DelDVR(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DelDVR_V30(int lVoiceHandle);
 
 
@@ -16118,604 +19473,671 @@ namespace HikVisionNetSDK.Common
         /*********************************************************
         Function:	SERIALDATACALLBACK
         Desc:		(回调函数)
-        Input:	
-        Output:	
-        Return:	
+        Input:
+        Output:
+        Return:
         **********************************************************/
         public delegate void SERIALDATACALLBACK(int lSerialHandle, string pRecvDataBuffer, uint dwBufSize, uint dwUser);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SerialStart(int lUserID, int lSerialPort, SERIALDATACALLBACK fSerialDataCallBack, uint dwUser);
 
         //485作为透明通道时，需要指明通道号，因为不同通道号485的设置可以不同(比如波特率)
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SerialSend(int lSerialHandle, int lChannel, string pSendBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SerialStop(int lSerialHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SendTo232Port(int lUserID, string pSendBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SendToSerialPort(int lUserID, uint dwSerialPort, uint dwSerialIndex, string pSendBuf, uint dwBufSize);
 
         //解码 nBitrate = 16000
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern System.IntPtr NET_DVR_InitG722Decoder(int nBitrate);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern void NET_DVR_ReleaseG722Decoder(IntPtr pDecHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DecodeG722Frame(IntPtr pDecHandle, ref byte pInBuffer, ref byte pOutBuffer);
 
         //编码
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern IntPtr NET_DVR_InitG722Encoder();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_EncodeG722Frame(IntPtr pEncodeHandle, ref byte pInBuffer, ref byte pOutBuffer);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern void NET_DVR_ReleaseG722Encoder(IntPtr pEncodeHandle);
 
         //远程控制本地显示
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClickKey(int lUserID, int lKeyIndex);
 
         //远程控制设备端手动录像
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StartDVRRecord(int lUserID, int lChannel, int lRecordType);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopDVRRecord(int lUserID, int lChannel);
 
         //获取磁盘列表
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDiskList(int lUserID, ref NET_DVR_DISKABILITY_LIST lpDiskList);
         //按时间备份录像
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_BackupByTime(int lUserID, ref NET_DVR_BACKUP_TIME_PARAM lpBackupByTime);
         //按文件名备份录像
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_BackupByName(int lUserID, ref NET_DVR_BACKUP_NAME_PARAM lpBackupByName);
         //获取备份进度
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetBackupProgress(int lHandle, IntPtr pState);
         //停止备份
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopBackup(int lHandle);
 
-
         //解码卡
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_InitDevice_Card(ref int pDeviceTotalChan);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ReleaseDevice_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_InitDDraw_Card(IntPtr hParent, uint colorKey);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ReleaseDDraw_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_RealPlay_Card(int lUserID, ref NET_DVR_CARDINFO lpCardInfo, int lChannelNum);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ResetPara_Card(int lRealHandle, ref NET_DVR_DISPLAY_PARA lpDisplayPara);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RefreshSurface_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClearSurface_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RestoreSurface_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_OpenSound_Card(int lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CloseSound_Card(int lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetVolume_Card(int lRealHandle, ushort wVolume);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_AudioPreview_Card(int lRealHandle, int bEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetCardLastError_Card();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern System.IntPtr NET_DVR_GetChanHandle_Card(int lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CapturePicture_Card(int lRealHandle, string sPicFileName);
 
         //获取解码卡序列号此接口无效，改用GetBoardDetail接口获得(2005-12-08支持)
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetSerialNum_Card(int lChannelNum, ref uint pDeviceSerialNo);
 
         //日志
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindDVRLog(int lUserID, int lSelectMode, uint dwMajorType, uint dwMinorType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextLog(int lLogHandle, ref NET_DVR_LOG lpLogData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_FindLogClose(int lLogHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindDVRLog_V30(int lUserID, int lSelectMode, uint dwMajorType, uint dwMinorType, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime, bool bOnlySmart);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextLog_V30(int lLogHandle, ref NET_DVR_LOG_V30 lpLogData);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_FindLogClose_V30(int lLogHandle);
 
         //截止2004年8月5日,共113个接口
         //ATM DVR
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFileByCard(int lUserID, int lChannel, uint dwFileType, int nFindType, ref byte sCardNumber, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
 
 
         //2005-09-15
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CaptureJPEGPicture(int lUserID, int lChannel, ref NET_DVR_JPEGPARA lpJpegPara, string sPicFileName);
 
         //JPEG抓图到内存
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_CaptureJPEGPicture_NEW(int lUserID, int lChannel, ref NET_DVR_JPEGPARA lpJpegPara, byte[] sJpegPicBuffer, uint dwPicSize, ref uint lpSizeReturned);
 
         //2006-02-16
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetRealPlayerIndex(int lRealHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetPlayBackPlayerIndex(int lPlayHandle);
 
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        //人脸识别上传文件发送数据
+        public static extern Int32 NET_DVR_UploadSend(int lUploadHandle, ref NET_DVR_SEND_PARAM_IN pstruSendParamIN, IntPtr lpOutBuffer);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        //人脸识别上传文件
+        public static extern Int32 NET_DVR_UploadFile_V40(int lUserID, uint dwUploadType, IntPtr lpInBuffer, uint dwInBufferSize, string sFileName, IntPtr lpOutBuffer, uint dwOutBufferSize);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern Int32 NET_DVR_GetUploadState(int lUploadHandle, ref uint pProgress);
+
+        //获取当前上传的结果信息。
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_GetUploadResult(int lUploadHandle, IntPtr lpOutBuffer, uint dwOutBufferSize);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_UploadClose(int lUploadHandle);
+
+
+
         //2006-08-28 704-640 缩放配置
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetScaleCFG(int lUserID, uint dwScale);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetScaleCFG(int lUserID, ref uint lpOutScale);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetScaleCFG_V30(int lUserID, ref NET_DVR_SCALECFG pScalecfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetScaleCFG_V30(int lUserID, ref NET_DVR_SCALECFG pScalecfg);
 
         //2006-08-28 ATM机端口设置
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetATMPortCFG(int lUserID, ushort wATMPort);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetATMPortCFG(int lUserID, ref ushort LPOutATMPort);
 
         //2006-11-10 支持显卡辅助输出
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_InitDDrawDevice();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ReleaseDDrawDevice();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_GetDDrawDeviceTotalNums();
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDDrawDevice(int lPlayPort, uint nDeviceNum);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZSelZoomIn(int lRealHandle, ref NET_DVR_POINT_FRAME pStruPointFrame);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_PTZSelZoomIn_EX(int lUserID, int lChannel, ref NET_DVR_POINT_FRAME pStruPointFrame);
 
         //解码设备DS-6001D/DS-6001F
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StartDecode(int lUserID, int lChannel, ref NET_DVR_DECODERINFO lpDecoderinfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopDecode(int lUserID, int lChannel);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDecoderState(int lUserID, int lChannel, ref NET_DVR_DECODERSTATE lpDecoderState);
 
         //2005-08-01
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDecInfo(int lUserID, int lChannel, ref NET_DVR_DECCFG lpDecoderinfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDecInfo(int lUserID, int lChannel, ref NET_DVR_DECCFG lpDecoderinfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDecTransPort(int lUserID, ref NET_DVR_PORTCFG lpTransPort);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDecTransPort(int lUserID, ref NET_DVR_PORTCFG lpTransPort);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DecPlayBackCtrl(int lUserID, int lChannel, uint dwControlCode, uint dwInValue, ref uint LPOutValue, ref NET_DVR_PLAYREMOTEFILE lpRemoteFileInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StartDecSpecialCon(int lUserID, int lChannel, ref NET_DVR_DECCHANINFO lpDecChanInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopDecSpecialCon(int lUserID, int lChannel, ref NET_DVR_DECCHANINFO lpDecChanInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DecCtrlDec(int lUserID, int lChannel, uint dwControlCode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DecCtrlScreen(int lUserID, int lChannel, uint dwControl);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDecCurLinkStatus(int lUserID, int lChannel, ref NET_DVR_DECSTATUS lpDecStatus);
 
         //多路解码器
         //2007-11-30 V211支持以下接口 //11
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixStartDynamic(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DYNAMIC_DEC lpDynamicInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixStopDynamic(int lUserID, uint dwDecChanNum);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDecChanInfo(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_CHAN_INFO lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_MatrixGetDecChanInfo_V41(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_CHAN_INFO_V41 lpOuter);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetLoopDecChanInfo(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_LOOP_DECINFO lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetLoopDecChanInfo(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_LOOP_DECINFO lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetLoopDecChanEnable(int lUserID, uint dwDecChanNum, uint dwEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetLoopDecChanEnable(int lUserID, uint dwDecChanNum, ref uint lpdwEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetLoopDecEnable(int lUserID, ref uint lpdwEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetDecChanEnable(int lUserID, uint dwDecChanNum, uint dwEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDecChanEnable(int lUserID, uint dwDecChanNum, ref uint lpdwEnable);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDecChanStatus(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_CHAN_STATUS lpInter);
 
         //2007-12-22 增加支持接口 //18
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetTranInfo(int lUserID, ref NET_DVR_MATRIX_TRAN_CHAN_CONFIG lpTranInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetTranInfo(int lUserID, ref NET_DVR_MATRIX_TRAN_CHAN_CONFIG lpTranInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetRemotePlay(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_REMOTE_PLAY lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetRemotePlayControl(int lUserID, uint dwDecChanNum, uint dwControlCode, uint dwInValue, ref uint LPOutValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetRemotePlayStatus(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_REMOTE_PLAY_STATUS lpOuter);
 
         //2009-4-13 新增
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixStartDynamic_V30(int lUserID, uint dwDecChanNum, ref NET_DVR_PU_STREAM_CFG lpDynamicInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_MatrixStartDynamic_V41(int lUserID, uint dwDecChanNum, ref NET_DVR_PU_STREAM_CFG_V41 lpDynamicInfo);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetLoopDecChanInfo_V30(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_LOOP_DECINFO_V30 lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetLoopDecChanInfo_V30(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_LOOP_DECINFO_V30 lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDecChanInfo_V30(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_DEC_CHAN_INFO_V30 lpInter);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetTranInfo_V30(int lUserID, ref NET_DVR_MATRIX_TRAN_CHAN_CONFIG_V30 lpTranInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetTranInfo_V30(int lUserID, ref NET_DVR_MATRIX_TRAN_CHAN_CONFIG_V30 lpTranInfo);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDisplayCfg(int lUserID, uint dwDispChanNum, ref NET_DVR_VGA_DISP_CHAN_CFG lpDisplayCfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetDisplayCfg(int lUserID, uint dwDispChanNum, ref NET_DVR_VGA_DISP_CHAN_CFG lpDisplayCfg);
 
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_MatrixGetDisplayCfg_V41(int lUserID, uint dwDispChanNum, ref NET_DVR_MATRIX_VOUTCFG lpDisplayCfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_MatrixSetDisplayCfg_V41(int lUserID, uint dwDispChanNum, ref NET_DVR_MATRIX_VOUTCFG lpDisplayCfg);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_MatrixStartPassiveDecode(int lUserID, uint dwDecChanNum, ref NET_DVR_MATRIX_PASSIVEMODE lpPassiveMode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSendData(int lPassiveHandle, System.IntPtr pSendBuf, uint dwBufSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixStopPassiveDecode(int lPassiveHandle);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_UploadLogo(int lUserID, uint dwDispChanNum, ref NET_DVR_DISP_LOGOCFG lpDispLogoCfg, System.IntPtr sLogoBuffer);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_PicUpload(int lUserID, String sFileName, ref NET_DVR_PICTURECFG lpPictureCfg);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetPicUploadProgress(int lUploadHandle);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_CloseUploadHandle(int lUploadHandle);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetPicUploadState(int lUploadHandle);
 
         public const int NET_DVR_SHOWLOGO = 1;/*显示LOGO*/
         public const int NET_DVR_HIDELOGO = 2;/*隐藏LOGO*/
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_LogoSwitch(int lUserID, uint dwDecChan, uint dwLogoSwitch);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetDeviceStatus(int lUserID, ref NET_DVR_DECODER_WORK_STATUS lpDecoderCfg);
 
-        /*显示通道命令码定义*/
-        //上海世博 定制
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_RigisterPlayBackDrawFun(int lRealHandle, DRAWFUN fDrawFun, uint dwUser);
-
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_GetInputSignalList_V40(int lUserID, uint dwDevNum, ref NET_DVR_INPUT_SIGNAL_LIST lpInputSignalList);
 
         public const int DISP_CMD_ENLARGE_WINDOW = 1;	/*显示通道放大某个窗口*/
         public const int DISP_CMD_RENEW_WINDOW = 2;	/*显示通道窗口还原*/
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixDiaplayControl(int lUserID, uint dwDispChanNum, uint dwDispChanCmd, uint dwCmdParam);
 
         //end
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RefreshPlay(int lPlayHandle);
 
         //恢复默认值
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RestoreConfig(int lUserID);
 
         //保存参数
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SaveConfig(int lUserID);
 
-        //设备在线状态检测
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_RemoteControl(int lUserID, uint dwCommand, IntPtr lpInBuffer, uint dwInBufferSize);
-
         //重启
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_RebootDVR(int lUserID);
 
         //关闭DVR
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ShutDownDVR(int lUserID);
 
         //参数配置 begin
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRConfig(int lUserID, uint dwCommand, int lChannel, IntPtr lpOutBuffer, uint dwOutBufferSize, ref uint lpBytesReturned);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDVRConfig(int lUserID, uint dwCommand, int lChannel, System.IntPtr lpInBuffer, uint dwInBufferSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRWorkState_V30(int lUserID, IntPtr pWorkState);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDVRWorkState(int lUserID, ref NET_DVR_WORKSTATE lpWorkState);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetVideoEffect(int lUserID, int lChannel, uint dwBrightValue, uint dwContrastValue, uint dwSaturationValue, uint dwHueValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetVideoEffect(int lUserID, int lChannel, ref uint pBrightValue, ref uint pContrastValue, ref uint pSaturationValue, ref uint pHueValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientGetframeformat(int lUserID, ref NET_DVR_FRAMEFORMAT lpFrameFormat);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientSetframeformat(int lUserID, ref NET_DVR_FRAMEFORMAT lpFrameFormat);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetAtmProtocol(int lUserID, ref NET_DVR_ATM_PROTOCOL lpAtmProtocol);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetAlarmOut_V30(int lUserID, IntPtr lpAlarmOutState);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetAlarmOut(int lUserID, ref NET_DVR_ALARMOUTSTATUS lpAlarmOutState);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetAlarmOut(int lUserID, int lAlarmOutPort, int lAlarmOutStatic);
 
         //获取UPNP端口映射状态
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetUpnpNatState(int lUserID, ref NET_DVR_UPNP_NAT_STATE lpState);
 
         //视频参数调节
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientSetVideoEffect(int lRealHandle, uint dwBrightValue, uint dwContrastValue, uint dwSaturationValue, uint dwHueValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_ClientGetVideoEffect(int lRealHandle, ref uint pBrightValue, ref uint pContrastValue, ref uint pSaturationValue, ref uint pHueValue);
 
         //配置文件
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetConfigFile(int lUserID, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetConfigFile(int lUserID, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetConfigFile_V30(int lUserID, string sOutBuffer, uint dwOutSize, ref uint pReturnSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetConfigFile_EX(int lUserID, string sOutBuffer, uint dwOutSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetConfigFile_EX(int lUserID, string sInBuffer, uint dwInSize);
 
         //启用日志文件写入接口
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetLogToFile(int bLogEnable, string strLogDir, bool bAutoDel);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetSDKState(ref NET_DVR_SDKSTATE pSDKState);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetSDKAbility(ref NET_DVR_SDKABL pSDKAbl);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetPTZProtocol(int lUserID, ref NET_DVR_PTZCFG pPtzcfg);
 
         //前面板锁定
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_LockPanel(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_UnLockPanel(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetRtspConfig(int lUserID, uint dwCommand, ref NET_DVR_RTSPCFG lpInBuffer, uint dwInBufferSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetRtspConfig(int lUserID, uint dwCommand, ref NET_DVR_RTSPCFG lpOutBuffer, uint dwOutBufferSize);
 
         //视频综合平台
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixGetSceneCfg(int lUserID, uint dwSceneNum, ref NET_DVR_MATRIX_SCENECFG lpSceneCfg);
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_MatrixSetSceneCfg(int lUserID, uint dwSceneNum, ref NET_DVR_MATRIX_SCENECFG lpSceneCfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetRealHeight(int lUserID, int lChannel, ref NET_VCA_LINE lpLine, ref Single lpHeight);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetRealLength(int lUserID, int lChannel, ref NET_VCA_LINE lpLine, ref Single lpLength);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SaveRealData_V30(int lRealHandle, uint dwTransType, string sFileName);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
-        public static extern bool NET_DVR_EncodeG711Frame(uint iType, ref byte pInBuffer, ref byte pOutBuffer);
+        //Win32位定义
+        //[DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        //public static extern bool NET_DVR_EncodeG711Frame(uint iType, ref byte pInBuffer, ref byte pOutBuffer);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern IntPtr NET_DVR_InitG711Encoder(ref NET_DVR_AUDIOENC_INFO enc_info);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_EncodeG711Frame(IntPtr handle, ref NET_DVR_AUDIOENC_PROCESS_PARAM p_enc_proc_param);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_ReleaseG711Encoder(IntPtr pEncodeHandle);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_DecodeG711Frame(uint iType, ref byte pInBuffer, ref byte pOutBuffer);
 
-        //2009-7-22 end  
+        //2009-7-22 end
 
         //邮件服务测试 9000_1.1
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_EmailTest(int lUserID);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindFileByEvent(int lUserID, ref NET_DVR_SEARCH_EVENT_PARAM lpSearchEventParam);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextEvent(int lSearchHandle, ref NET_DVR_SEARCH_EVENT_RET lpSearchEventRet);
 
         /*********************************************************
         Function:	NET_DVR_Login_V30
-        Desc:		
-        Input:	sDVRIP [in] 设备IP地址 
-                wServerPort [in] 设备端口号 
-                sUserName [in] 登录的用户名 
-                sPassword [in] 用户密码 
-        Output:	lpDeviceInfo [out] 设备信息 
+        Desc:
+        Input:	sDVRIP [in] 设备IP地址
+                wServerPort [in] 设备端口号
+                sUserName [in] 登录的用户名
+                sPassword [in] 用户密码
+        Output:	lpDeviceInfo [out] 设备信息
         Return:	-1表示失败，其他值表示返回的用户ID值
         **********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern Int32 NET_DVR_Login_V30(string sDVRIP, Int32 wDVRPort, string sUserName, string sPassword, ref NET_DVR_DEVICEINFO_V30 lpDeviceInfo);
 
-        [DllImport(@"HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_Login_V40(ref NET_DVR_USER_LOGIN_INFO pLoginInfo, ref NET_DVR_DEVICEINFO_V40 lpDeviceInfo);
         /*********************************************************
         Function:	NET_DVR_Logout_V30
         Desc:		用户注册设备。
         Input:	lUserID [in] 用户ID号
-        Output:	
+        Output:
         Return:	TRUE表示成功，FALSE表示失败
         **********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_Logout_V30(Int32 lUserID);
 
-        [DllImportAttribute(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindNextLog_MATRIX(int iLogHandle, ref NET_DVR_LOG_MATRIX lpLogData);
 
 
-        [DllImportAttribute(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_FindDVRLog_Matrix(int iUserID, int lSelectMode, uint dwMajorType, uint dwMinorType, ref tagVEDIOPLATLOG lpVedioPlatLog, ref NET_DVR_TIME lpStartTime, ref NET_DVR_TIME lpStopTime);
 
-        [DllImportAttribute(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_STDXMLConfig(int iUserID, ref NET_DVR_XML_CONFIG_INPUT lpInputParam, ref NET_DVR_XML_CONFIG_OUTPUT lpOutputParam);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDeviceConfig(int lUserID, uint dwCommand, uint dwCount, IntPtr lpInBuffer, uint dwInBufferSize, IntPtr lpStatusList, IntPtr lpOutBuffer, uint dwOutBufferSize);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetDeviceConfig(int lUserID, uint dwCommand, uint dwCount, IntPtr lpInBuffer, uint dwInBufferSize, IntPtr lpStatusList, IntPtr lpInParamBuffer, uint dwInParamBufferSize);
 
-        [DllImportAttribute(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_SetDeviceConfigEx(Int32 lUserID, uint dwCommand, uint dwCount, ref NET_DVR_IN_PARAM lpInParam, ref NET_DVR_OUT_PARAM lpOutParam);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetSTDConfig(int iUserID, uint dwCommand, ref NET_DVR_STD_CONFIG lpConfigParam);
 
-        [DllImportAttribute(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetSTDConfig(int iUserID, uint dwCommand, ref NET_DVR_STD_CONFIG lpConfigParam);
 
         public delegate void RemoteConfigCallback(uint dwType, IntPtr lpBuffer, uint dwBufLen, IntPtr pUserData);
 
-        [DllImportAttribute(@"HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern int NET_DVR_StartRemoteConfig(int lUserID, int dwCommand, IntPtr lpInBuffer, Int32 dwInBufferLen, RemoteConfigCallback cbStateCallback, IntPtr pUserData);
 
-        [DllImportAttribute(@"HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern int NET_DVR_GetNextRemoteConfig(int lHandle, IntPtr lpOutBuff, int dwOutBuffSize);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SendRemoteConfig(int lHandle, int dwDataType, IntPtr pSendBuf, int dwBufSize);
 
-        [DllImportAttribute(@"HCNetSDK.dll")]
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_StopRemoteConfig(int lHandle);
+
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_RemoteControl(int lUserID, int dwCommand, IntPtr lpInBuffer, int dwInBufferSize);
+
+        [DllImportAttribute(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_RemoteControl(int lUserID, int dwCommand, ref CHCNetSDK.NET_DVR_FACE_PARAM_CTRL_CARDNO lpInBuffer, int dwInBufferSize);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_ContinuousShoot(Int32 lUserID, ref NET_DVR_SNAPCFG lpInter);
+
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_ManualSnap(Int32 lUserID, ref NET_DVR_MANUALSNAP lpInter, ref NET_DVR_PLATE_RESULT lpOuter);
 
         /*********************************************************
 		Function:	NET_DVR_GetDeviceAbility
-		Desc:		
-		Input:	
-		Output:	
+		Desc:
+		Input:
+		Output:
 		Return:	TRUE表示成功，FALSE表示失败。
 		**********************************************************/
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetDeviceAbility(int lUserID, uint dwAbilityType, IntPtr pInBuf, uint dwInLength, IntPtr pOutBuf, uint dwOutLength);
 
         //设置/获取参数关键字
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetBehaviorParamKey(int lUserID, int lChannel, uint dwParameterKey, int nValue);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetBehaviorParamKey(int lUserID, int lChannel, uint dwParameterKey, ref int pValue);
 
-        //获取/设置行为分析目标叠加接口
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        //获取/设置异常行为识别目标叠加接口
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetVCADrawMode(int lUserID, int lChannel, ref NET_VCA_DRAW_MODE lpDrawMode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetVCADrawMode(int lUserID, int lChannel, ref NET_VCA_DRAW_MODE lpDrawMode);
 
-        //双摄像机跟踪模式设置接口
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        //双摄像机模式设置接口
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetLFTrackMode(int lUserID, int lChannel, ref NET_DVR_LF_TRACK_MODE lpTrackMode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetLFTrackMode(int lUserID, int lChannel, ref NET_DVR_LF_TRACK_MODE lpTrackMode);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetCCDCfg(int lUserID, int lChannel, ref NET_DVR_CCD_CFG lpCCDCfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_SetCCDCfg(int lUserID, int lChannel, ref NET_DVR_CCD_CFG lpCCDCfg);
 
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_DVR_GetParamSetMode(int lUserID, ref uint dwParamSetMode);
 
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
+        public static extern bool NET_DVR_InquestStartCDW_V30(int lUserID, ref NET_DVR_INQUEST_ROOM lpInquestRoom, bool bNotBurn);
         #endregion
 
         #region 消息事件
@@ -16729,7 +20151,7 @@ namespace HikVisionNetSDK.Common
         {
             VCA_LOW_SPEED_SCENE = 0,//低速通过场景（收费站、小区门口、停车场）
             VCA_HIGH_SPEED_SCENE = 1,//高速通过场景（卡口、高速公路、移动稽查)
-            VCA_MOBILE_CAMERA_SCENE = 2,//移动摄像机应用） 
+            VCA_MOBILE_CAMERA_SCENE = 2,//移动摄像机应用）
         }
 
         //识别结果标志
@@ -16767,7 +20189,7 @@ namespace HikVisionNetSDK.Common
             public byte[] byCharPriority;// 汉字优先级
         }
 
-        /*wMinPlateWidth:该参数默认配置为80像素；该参数的配置对于车牌海康威视车牌识别说明文档 
+        /*wMinPlateWidth:该参数默认配置为80像素；该参数的配置对于车牌海康威视车牌识别说明文档
 	    识别有影响，如果设置过大，那么如果场景中出现小车牌就会漏识别；如果场景中车牌宽度普遍较大，可以把该参数设置稍大，便于减少对虚假车牌的处理。在标清情况下建议设置为80， 在高清情况下建议设置为120
         wTriggerDuration － 外部触发信号持续帧数量，其含义是从触发信号开始识别的帧数量。该值在低速场景建议设置为50～100；高速场景建议设置为15～25；移动识别时如果也有外部触发，设置为15～25；具体可以根据现场情况进行配置
         */
@@ -16800,15 +20222,15 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct NET_VCA_PLATE_INFO
         {
-            public VCA_RECOGNIZE_RESULT eResultFlag;//识别结果标志 
+            public VCA_RECOGNIZE_RESULT eResultFlag;//识别结果标志
             public VCA_PLATE_TYPE ePlateType;//车牌类型
             public VCA_PLATE_COLOR ePlateColor;//车牌颜色
             public NET_VCA_RECT struPlateRect;//车牌位置
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 4, ArraySubType = UnmanagedType.U4)]
-            public uint[] dwRes;//保留，设置为0 
+            public uint[] dwRes;//保留，设置为0
             public uint dwLicenseLen;//车牌长度
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_LICENSE_LEN)]
-            public string sLicense;//车牌号码 
+            public string sLicense;//车牌号码
             [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = MAX_LICENSE_LEN)]
             public string sBelieve;//各个识别字符的置信度，如检测到车牌"浙A12345", 置信度为10,20,30,40,50,60,70，则表示"浙"字正确的可能性只有10%，"A"字的正确的可能性是20%
         }
@@ -16832,7 +20254,7 @@ namespace HikVisionNetSDK.Common
         }
 
         //重启智能库
-        [DllImport(@"Lib\Hkvs\HCNetSDK.dll")]
+        [DllImport(@"Lib\HikVisionLib\HCNetSDK.dll")]
         public static extern bool NET_VCA_RestartLib(int lUserID, int lChannel);
 
         [StructLayoutAttribute(LayoutKind.Sequential)]
@@ -16874,7 +20296,7 @@ namespace HikVisionNetSDK.Common
             public byte byPlateColor;//车牌颜色
             public byte byDriveChan;//触发车道号
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 32, ArraySubType = UnmanagedType.I1)]
-            public byte[] byTimeInfo;/*时间信息*///plate_172.6.113.64_20090724155526948_197170484 
+            public byte[] byTimeInfo;/*时间信息*///plate_172.6.113.64_20090724155526948_197170484
             //目前是17位，精确到ms:20090724155526948
             public byte byCarSpeed;/*单位km/h*/
             public byte byCarSpeedH;/*cm/s高8位*/
@@ -16990,392 +20412,11 @@ namespace HikVisionNetSDK.Common
         public struct tagIMAGEPARAM
         {
             public uint dwSize;
-            //图像增强时间段参数配置，周日开始	
+            //图像增强时间段参数配置，周日开始
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = MAX_DAYS * MAX_TIMESEGMENT, ArraySubType = UnmanagedType.Struct)]
             public tagIMAGESUBPARAM[] struImageParamSched;
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 16, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
-        }
-
-        #region  取流模块相关结构与接口
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct PLAY_INFO
-        {
-            public int iUserID;      //注册用户ID
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 20)]
-            public string strDeviceIP;
-            public int iDevicePort;
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 32)]
-            public string strDevAdmin;
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 16)]
-            public string strDevPsd;
-            public int iChannel;      //播放通道号(从0开始)
-            public int iLinkMode;   //最高位(31)为0表示主码流，为1表示子码流，0－30位表示码流连接方式: 0：TCP方式,1：UDP方式,2：多播方式,3 - RTP方式，4-音视频分开(TCP)
-            public bool bUseMedia;     //是否启用流媒体
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 20)]
-            public string strMediaIP; //流媒体IP地址
-            public int iMediaPort;   //流媒体端口号
-        }
-
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_Init();
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_UnInit();
-
-
-        [DllImport("GetStream.dll")]
-        public static extern int CLIENT_SDK_GetStream(PLAY_INFO lpPlayInfo); //
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SetRealDataCallBack(int iRealHandle, SETREALDATACALLBACK fRealDataCallBack, uint lUser); //
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_StopStream(int iRealHandle);
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_GetVideoEffect(int iRealHandle, ref int iBrightValue, ref int iContrastValue, ref int iSaturationValue, ref int iHueValue);
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_SetVideoEffect(int iRealHandle, int iBrightValue, int iContrastValue, int iSaturationValue, int iHueValue);
-
-        [DllImport("GetStream.dll")]
-        public static extern bool CLIENT_SDK_MakeKeyFrame(int iRealHandle);
-
-        #endregion
-
-
-        #region VOD点播放库
-
-        public const int WM_NETERROR = 0x0400 + 102;          //网络异常消息
-        public const int WM_STREAMEND = 0x0400 + 103;		  //文件播放结束
-
-        public const int FILE_HEAD = 0;      //文件头
-        public const int VIDEO_I_FRAME = 1;  //视频I帧
-        public const int VIDEO_B_FRAME = 2;  //视频B帧
-        public const int VIDEO_P_FRAME = 3;  //视频P帧
-        public const int VIDEO_BP_FRAME = 4; //视频BP帧
-        public const int VIDEO_BBP_FRAME = 5; //视频B帧B帧P帧
-        public const int AUDIO_PACKET = 10;   //音频包
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct BLOCKTIME
-        {
-            public ushort wYear;
-            public byte bMonth;
-            public byte bDay;
-            public byte bHour;
-            public byte bMinute;
-            public byte bSecond;
-        }
-
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct VODSEARCHPARAM
-        {
-            public IntPtr sessionHandle;                                    //[in]VOD客户端句柄
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 50)]
-            public string dvrIP;                                            //	[in]DVR的网络地址
-            public uint dvrPort;                                            //	[in]DVR的端口地址
-            public uint channelNum;                                         //  [in]DVR的通道号
-            public BLOCKTIME startTime;                                     //	[in]查询的开始时间
-            public BLOCKTIME stopTime;                                      //	[in]查询的结束时间
-            public bool bUseIPServer;                                       //  [in]是否使用IPServer 
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string SerialNumber;                                     //  [in]设备的序列号
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct SECTIONLIST
-        {
-            public BLOCKTIME startTime;
-            public BLOCKTIME stopTime;
-            public byte byRecType;
-            public IntPtr pNext;
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct VODOPENPARAM
-        {
-            public IntPtr sessionHandle;                                    //[in]VOD客户端句柄
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 50)]
-            public string dvrIP;                                            //	[in]DVR的网络地址
-            public uint dvrPort;                                            //	[in]DVR的端口地址
-            public uint channelNum;                                         //  [in]DVR的通道号
-            public BLOCKTIME startTime;                                     //	[in]查询的开始时间
-            public BLOCKTIME stopTime;                                      //	[in]查询的结束时间
-            public uint uiUser;
-            public bool bUseIPServer;                                       //  [in]是否使用IPServer 
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string SerialNumber;                                     //  [in]设备的序列号
-
-            public VodStreamFrameData streamFrameData;
-        }
-
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct CONNPARAM
-        {
-            public uint uiUser;
-            public ErrorCallback errorCB;
-        }
-
-
-        // 异常回调函数
-        public delegate void ErrorCallback(System.IntPtr hSession, uint dwUser, int lErrorType);
-        //帧数据回调函数
-        public delegate void VodStreamFrameData(System.IntPtr hStream, uint dwUser, int lFrameType, System.IntPtr pBuffer, uint dwSize);
-
-        //模块初始化
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODServerConnect(string strServerIp, uint uiServerPort, ref IntPtr hSession, ref CONNPARAM struConn, IntPtr hWnd);
-
-        //模块销毁
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODServerDisconnect(IntPtr hSession);
-
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODStreamSearch(IntPtr pSearchParam, ref IntPtr pSecList);
-
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODDeleteSectionList(IntPtr pSecList);
-
-        // 根据ID、时间段打开流获取流句柄
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODOpenStream(IntPtr pOpenParam, ref IntPtr phStream);
-
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODCloseStream(IntPtr hStream);
-
-        //根据ID、时间段打开批量下载
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODOpenDownloadStream(ref VODOPENPARAM struVodParam, ref IntPtr phStream);
-
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODCloseDownloadStream(IntPtr hStream);
-
-        // 开始流解析，发送数据帧
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODStartStreamData(IntPtr phStream);
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODPauseStreamData(IntPtr hStream, bool bPause);
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODStopStreamData(IntPtr hStream);
-
-        // 根据时间定位
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODSeekStreamData(IntPtr hStream, IntPtr pStartTime);
-
-
-        // 根据时间定位
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODSetStreamSpeed(IntPtr hStream, int iSpeed);
-
-        // 根据时间定位
-        [DllImport("PdCssVodClient.dll")]
-        public static extern bool VODGetStreamCurrentTime(IntPtr hStream, ref BLOCKTIME pCurrentTime);
-
-        #endregion
-
-
-        #region 帧分析库
-
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct PACKET_INFO
-        {
-            public int nPacketType;     // packet type
-            // 0:  file head
-            // 1:  video I frame
-            // 2:  video B frame
-            // 3:  video P frame
-            // 10: audio frame
-            // 11: private frame only for PS
-
-
-            //      [System.Runtime.InteropServices.MarshalAsAttribute(System.Runtime.InteropServices.UnmanagedType.LPStr)]
-            public IntPtr pPacketBuffer;
-            public uint dwPacketSize;
-            public int nYear;
-            public int nMonth;
-            public int nDay;
-            public int nHour;
-            public int nMinute;
-            public int nSecond;
-            public uint dwTimeStamp;
-        }
-
-
-
-        /******************************************************************************
-        * function：get a empty port number
-        * parameters：
-        * return： 0 - 499 : empty port number
-        *          -1      : server is full  			
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern int AnalyzeDataGetSafeHandle();
-
-
-        /******************************************************************************
-        * function：open standard stream data for analyzing
-        * parameters：lHandle - working port number
-        *             pHeader - pointer to file header or info header
-        * return：TRUE or FALSE
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern bool AnalyzeDataOpenStreamEx(int iHandle, byte[] pFileHead);
-
-
-        /******************************************************************************
-        * function：close analyzing
-        * parameters：lHandle - working port number
-        * return：
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern bool AnalyzeDataClose(int iHandle);
-
-
-        /******************************************************************************
-        * function：input stream data
-        * parameters：lHandle		- working port number
-        *			  pBuffer		- data pointer
-        *			  dwBuffersize	- data size
-        * return：TRUE or FALSE
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern bool AnalyzeDataInputData(int iHandle, IntPtr pBuffer, uint uiSize); //byte []
-
-
-        /******************************************************************************
-        * function：get analyzed packet
-        * parameters：lHandle		- working port number
-        *			  pPacketInfo	- returned structure
-        * return：-1 : error
-        *          0 : succeed
-        *		   1 : failed
-        *		   2 : file end (only in file mode)				
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern int AnalyzeDataGetPacket(int iHandle, ref PACKET_INFO pPacketInfo);  //要把pPacketInfo转换成PACKET_INFO结构
-
-
-        /******************************************************************************
-        * function：get remain data from input buffer
-        * parameters：lHandle		- working port number
-        *			  pBuf	        - pointer to the mem which stored remain data
-        *             dwSize        - size of remain data  
-        * return： TRUE or FALSE				
-        * comment：
-        ******************************************************************************/
-        [DllImport("AnalyzeData.dll")]
-        public static extern bool AnalyzeDataGetTail(int iHandle, ref IntPtr pBuffer, ref uint uiSize);
-
-
-        [DllImport("AnalyzeData.dll")]
-        public static extern uint AnalyzeDataGetLastError(int iHandle);
-
-        #endregion
-
-
-        #region 录像库
-
-        public const int DATASTREAM_HEAD = 0;		//数据头
-        public const int DATASTREAM_BITBLOCK = 1;		//字节数据
-        public const int DATASTREAM_KEYFRAME = 2;		//关键帧数据
-        public const int DATASTREAM_NORMALFRAME = 3;		//非关键帧数据
-
-
-        public const int MESSAGEVALUE_DISKFULL = 0x01;
-        public const int MESSAGEVALUE_SWITCHDISK = 0x02;
-        public const int MESSAGEVALUE_CREATEFILE = 0x03;
-        public const int MESSAGEVALUE_DELETEFILE = 0x04;
-        public const int MESSAGEVALUE_SWITCHFILE = 0x05;
-
-
-
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct STOREINFO
-        {
-            public int iMaxChannels;
-            public int iDiskGroup;
-            public int iStreamType;
-            public bool bAnalyze;
-            public bool bCycWrite;
-            public uint uiFileSize;
-
-            public CALLBACKFUN_MESSAGE funCallback;
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct CREATEFILE_INFO
-        {
-            public int iHandle;
-
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string strCameraid;
-
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string strFileName;
-
-            public BLOCKTIME tFileCreateTime;
-        }
-
-        [StructLayoutAttribute(LayoutKind.Sequential)]
-        public struct CLOSEFILE_INFO
-        {
-            public int iHandle;
-
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string strCameraid;
-
-            [MarshalAsAttribute(UnmanagedType.ByValTStr, SizeConst = 128)]
-            public string strFileName;
-
-            public BLOCKTIME tFileSwitchTime;
-        }
-
-
-
-        public delegate int CALLBACKFUN_MESSAGE(int iMessageType, System.IntPtr pBuf, int iBufLen);
-
-
-        [DllImport("RecordDLL.dll")]
-        public static extern int Initialize(STOREINFO struStoreInfo);
-
-        [DllImport("RecordDLL.dll")]
-        public static extern int Release();
-
-        [DllImport("RecordDLL.dll")]
-        public static extern int OpenChannelRecord(string strCameraid, IntPtr pHead, uint dwHeadLength);
-
-        [DllImport("RecordDLL.dll")]
-        public static extern bool CloseChannelRecord(int iRecordHandle);
-
-        [DllImport("RecordDLL.dll")]
-        public static extern int GetData(int iHandle, int iDataType, IntPtr pBuf, uint uiSize);
-
-        #endregion        
-
-        public static IntPtr StructToIntPtr<T>(T info)
-        {
-            int size = Marshal.SizeOf(info);
-            IntPtr intPtr = Marshal.AllocHGlobal(size);
-            Marshal.StructureToPtr(info, intPtr, false);
-            return intPtr;
-        }
-
-        public static T IntPtrToStruct<T>(IntPtr info)
-        {
-            return (T)Marshal.PtrToStructure(info, typeof(T));
         }
     }
 }

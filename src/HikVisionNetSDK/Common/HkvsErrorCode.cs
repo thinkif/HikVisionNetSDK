@@ -177,6 +177,10 @@ namespace HikVisionNetSDK.Common
             HkvsErrors[186] = "已开启异步，该功能无效";
             HkvsErrors[187] = "已达到端口复用最大数目";
             HkvsErrors[188] = "连接尚未建立或连接无效";
+            HkvsErrors[189] = "接口不支持ISAPI协议";
+            HkvsErrors[250] = "设备未激活";
+            HkvsErrors[251] = "有风险的密码";
+            HkvsErrors[252] = "设备已激活";
         }
 
         /// <summary>

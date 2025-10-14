@@ -35,5 +35,10 @@ namespace HikVisionNetSDK.Models
         /// 密码
         /// </summary>
         public String Password { get; set; }
+
+        /// <summary>
+        /// 码流类型：1-主码流，2-子码流，3-第三码流，默认是主码流
+        /// </summary>
+        public int StreamType { get; set;  } = 1;
     }
 }

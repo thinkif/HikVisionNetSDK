@@ -8,8 +8,6 @@ using System.Text;
 using HikVisionNetSDK.Common;
 using HikVisionNetSDK.Enums;
 using HikVisionNetSDK.Models;
-using Office365Fx.Core;
-using Office365Fx.Core.Helpers;
 
 namespace HikVisionNetSDK.Services
 {
@@ -283,20 +281,20 @@ namespace HikVisionNetSDK.Services
             struVodPara.hWnd = _hPlayWnd;//回放窗口句柄
 
             //设置回放的开始时间 Set the starting time to search video files
-            struVodPara.struBeginTime.dwYear = (UInt32)beginTime.Year;
-            struVodPara.struBeginTime.dwMonth = (UInt32)beginTime.Month;
-            struVodPara.struBeginTime.dwDay = (UInt32)beginTime.Day;
-            struVodPara.struBeginTime.dwHour = (UInt32)beginTime.Hour;
-            struVodPara.struBeginTime.dwMinute = (UInt32)beginTime.Minute;
-            struVodPara.struBeginTime.dwSecond = (UInt32)beginTime.Second;
+            struVodPara.struBeginTime.dwYear = beginTime.Year;
+            struVodPara.struBeginTime.dwMonth = beginTime.Month;
+            struVodPara.struBeginTime.dwDay = beginTime.Day;
+            struVodPara.struBeginTime.dwHour = beginTime.Hour;
+            struVodPara.struBeginTime.dwMinute = beginTime.Minute;
+            struVodPara.struBeginTime.dwSecond = beginTime.Second;
 
             //设置回放的结束时间 Set the stopping time to search video files
-            struVodPara.struEndTime.dwYear = (UInt32)endTime.Year;
-            struVodPara.struEndTime.dwMonth = (UInt32)endTime.Month;
-            struVodPara.struEndTime.dwDay = (UInt32)endTime.Day;
-            struVodPara.struEndTime.dwHour = (UInt32)endTime.Hour;
-            struVodPara.struEndTime.dwMinute = (UInt32)endTime.Minute;
-            struVodPara.struEndTime.dwSecond = (UInt32)endTime.Second;
+            struVodPara.struEndTime.dwYear = endTime.Year;
+            struVodPara.struEndTime.dwMonth = endTime.Month;
+            struVodPara.struEndTime.dwDay = endTime.Day;
+            struVodPara.struEndTime.dwHour = endTime.Hour;
+            struVodPara.struEndTime.dwMinute = endTime.Minute;
+            struVodPara.struEndTime.dwSecond = endTime.Second;
 
             return struVodPara;
         }

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using HikVisionNetSDK.Models;
+using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.NetworkInformation;
-using HikVisionNetSDK.Models;
-using Office365Fx.Core;
 
 namespace HikVisionNetSDK.Codec
 {
@@ -21,17 +18,17 @@ namespace HikVisionNetSDK.Codec
 
         private readonly String _ffMpegPath;
         private readonly String _nodePath;
-        private readonly String _wsHost;
+        private readonly String _wsHost = "127.0.0.1";
 
         /// <summary>
         /// 初始化一个转码器。
         /// </summary>
         /// <param name="ffmpegPath">ffmpeg.exe文件路径</param>
-        /// <param name="nodePath">node.exe文件路径</param>
+        /// <param name="nodePath">node.exe文件路径, 不传此值则使用asp.net建立WebSocket</param>
         /// <param name="wsHost">本机对应的局域网地址或公网地址，以便生成可以从网络其它位置访问的websocket取流地址。</param>
-        public WebSocketTranscoder(String ffmpegPath, String nodePath, String wsHost)
+        public WebSocketTranscoder(String ffmpegPath, String nodePath = null, String wsHost = null)
         {
-            if (ffmpegPath.IsNullOrWhiteSpace())
+            if (String.IsNullOrWhiteSpace(ffmpegPath))
             {
                 throw new ArgumentNullException(nameof(ffmpegPath));
             }
@@ -41,9 +38,9 @@ namespace HikVisionNetSDK.Codec
                 throw new FileNotFoundException($"文件\"{ffmpegPath}\"不存在");
             }
 
-            if (nodePath.IsNullOrWhiteSpace())
+            if (!String.IsNullOrWhiteSpace(nodePath))
             {
-                throw new ArgumentNullException(nameof(nodePath));
+                _nodePath = nodePath;
             }
 
             if (!File.Exists(nodePath))
@@ -51,14 +48,12 @@ namespace HikVisionNetSDK.Codec
                 throw new FileNotFoundException($"文件\"{nodePath}\"不存在");
             }
 
-            if (wsHost.IsNullOrWhiteSpace())
+            if (!String.IsNullOrWhiteSpace(wsHost))
             {
-                throw new ArgumentNullException(nameof(wsHost));
+                _wsHost = wsHost;
             }
 
             _ffMpegPath = ffmpegPath;
-            _nodePath = nodePath;
-            _wsHost = wsHost;
         }
 
         /// <summary>
@@ -79,7 +74,7 @@ namespace HikVisionNetSDK.Codec
                 return new OResult<String>(url);
             }
 
-            if (secret.IsNullOrWhiteSpace())
+            if (String.IsNullOrWhiteSpace(secret))
             {
                 return new OResult<String>(default, "未提供转码密钥");
             }
@@ -95,6 +90,7 @@ namespace HikVisionNetSDK.Codec
                 IP = device.IP,
                 LoginPort = device.StreamPort,
                 ChannelNo = device.ChannelNo,
+                StreamType = device.StreamType,
                 UserName = device.UserName,
                 Password = device.Password,
                 Width = width,
@@ -236,6 +232,8 @@ namespace HikVisionNetSDK.Codec
 
         private static String BuildRSTPUrl(TranscodeRequest request)
         {
+            int streamType = request.StreamType;
+
             if (request.StartTime == null && request.EndTime == null)
             {
                 //老版本的设备，端口号从33开始
@@ -245,7 +243,7 @@ namespace HikVisionNetSDK.Codec
                 }
                 else //新版本的设备，端口号从1开始
                 {
-                    return $"rtsp://{request.UserName}:{request.Password}@{request.IP}:{request.LoginPort}/Streaming/Channels/{request.ChannelNo}01";
+                    return $"rtsp://{request.UserName}:{request.Password}@{request.IP}:{request.LoginPort}/Streaming/Channels/{request.ChannelNo}0{streamType}";
                 }
             }
             else
@@ -255,8 +253,8 @@ namespace HikVisionNetSDK.Codec
                 var endtime = request.EndTime != null ? $"{request.EndTime:yyyyMMdd}t{request.EndTime:HHmmss}z" : null;
 
                 var chNo = request.ChannelNo >= TranscodeRequest.CHANNEL_START_NO ? (request.ChannelNo - TranscodeRequest.CHANNEL_START_NO + 1) : request.ChannelNo;
-                var url = $"rtsp://{request.UserName}:{request.Password}@{request.IP}:{request.LoginPort}/Streaming/tracks/{chNo}01?starttime={starttime}";
-                if (endtime.HasValue())
+                var url = $"rtsp://{request.UserName}:{request.Password}@{request.IP}:{request.LoginPort}/Streaming/tracks/{chNo}0{streamType}?starttime={starttime}";
+                if (!String.IsNullOrWhiteSpace(endtime))
                 {
                     url += $"&endtime={endtime}";
                 }

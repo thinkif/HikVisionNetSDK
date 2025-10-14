@@ -5,7 +5,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using HikVisionNetSDK.Enums;
 using HikVisionNetSDK.Models;
-using Office365Fx.Core;
 
 namespace HikVisionNetSDK
 {

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using HikVisionNetSDK.Models;
-using Office365Fx.Core;
 
 namespace HikVisionNetSDK
 {
