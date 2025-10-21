@@ -5772,10 +5772,16 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_JPEGPARA
         {
-            /*注意：当图像压缩分辨率为VGA时，支持0=CIF, 1=QCIF, 2=D1抓图，
-	        当分辨率为3=UXGA(1600x1200), 4=SVGA(800x600), 5=HD720p(1280x720),6=VGA,7=XVGA, 8=HD900p
-	        仅支持当前分辨率的抓图*/
+            /// <summary>
+            /// 注意：当图像压缩分辨率为VGA时，支持0=CIF, 1=QCIF, 2=D1抓图，
+            // 当分辨率为3=UXGA(1600x1200), 4=SVGA(800x600), 5=HD720p(1280x720),6=VGA,7=XVGA, 8=HD900p 仅支持当前分辨率的抓图
+            /// 图片尺寸：0-CIF(352*288/352*240)，1-QCIF(176*144/176*120)，2-4CIF(704*576/704*480)或D1(720*576/720*486)，3-UXGA(1600*1200)， 4-SVGA(800*600)，5-HD720P(1280*720)，6-VGA(640*480)，7-XVGA(1280*960)，8-HD900P(1600*900)，9-HD1080P(1920*1080)，10-2560*1920， 11-1600*304，12-2048*1536，13-2448*2048，14-2448*1200，15-2448*800，16-XGA(1024*768)，17-SXGA(1280*1024)，18-WD1(960*576/960*480), 19-1080I(1920*1080)，20-576*576，21-1536*1536，22-1920*1920，23-320*240，24-720*720，25-1024*768，26-1280*1280，27-1600*600， 28-2048*768，29-160*120，75-336*256，78-384*256，79-384*216，80-320*256，82-320*192，83-512*384，127-480*272，128-512*272， 161-288*320，162-144*176，163-480*640，164-240*320，165-120*160，166-576*720，167-720*1280，168-576*960，180-180*240, 181-360*480, 182-540*720, 183-720*960, 184-960*1280, 185-1080*1440, 500-384*288, 0xff-Auto(使用当前码流分辨率)
+            /// </summary>
             public ushort wPicSize;/* 0=CIF, 1=QCIF, 2=D1 3=UXGA(1600x1200), 4=SVGA(800x600), 5=HD720p(1280x720),6=VGA*/
+
+            /// <summary>
+            /// 图片质量系数：0-最好，1-较好，2-一般
+            /// </summary>
             public ushort wPicQuality;/* 图片质量系数 0-最好 1-较好 2-一般 */
         }
 
@@ -17200,20 +17206,77 @@ namespace HikVisionNetSDK.Common
         [StructLayoutAttribute(LayoutKind.Sequential)]
         public struct NET_DVR_PREVIEWINFO
         {
-            public Int32 lChannel;//通道号
-            public uint dwStreamType;	// 码流类型，0-主码流，1-子码流，2-码流3，3-码流4 等以此类推
-            public uint dwLinkMode;// 0：TCP方式,1：UDP方式,2：多播方式,3 - RTP方式，4-RTP/RTSP,5-RSTP/HTTP
-            public IntPtr hPlayWnd;//播放窗口的句柄,为NULL表示不播放图象
-            public bool bBlocked;  //0-非阻塞取流, 1-阻塞取流, 如果阻塞SDK内部connect失败将会有5s的超时才能够返回,不适合于轮询取流操作.
-            public bool bPassbackRecord; //0-不启用录像回传,1启用录像回传
-            public byte byPreviewMode;//预览模式，0-正常预览，1-延迟预览
+            /// <summary>
+            /// 通道号
+            /// </summary>
+            public Int32 lChannel;
+
+            /// <summary>
+            /// 码流类型，0-主码流，1-子码流，2-码流3，3-码流4 等以此类推
+            /// </summary>
+            public uint dwStreamType;
+
+            /// <summary>
+            /// 0：TCP方式,1：UDP方式,2：多播方式,3 - RTP方式，4-RTP/RTSP,5-RSTP/HTTP
+            /// </summary>
+            public uint dwLinkMode;
+
+            /// <summary>
+            /// 播放窗口的句柄,为NULL表示不播放图象
+            /// </summary>
+            public IntPtr hPlayWnd;
+
+            /// <summary>
+            /// 0- 非阻塞取流，1- 阻塞取流
+            /// 若设为不阻塞，表示发起与设备的连接就认为连接成功，如果发生码流接收失败、播放失败等情况以预览异常的方式通知上层。在循环播放的时候可以减短停顿的时间，与NET_DVR_RealPlay处理一致。
+            /// 若设为阻塞，表示直到播放操作完成才返回成功与否，网络异常时SDK内部connect失败将会有5s的超时才能够返回，不适合于轮询取流操作。
+            /// </summary>
+            public bool bBlocked;
+
+            /// <summary>
+            /// 是否启用录像回传：0-不启用录像回传，1-启用录像回传。ANR断网补录功能，客户端和设备之间网络异常恢复之后自动将前端数据同步过来，需要设备支持。
+            /// </summary>
+            public bool bPassbackRecord;
+
+            /// <summary>
+            /// 预览模式，0-正常预览，1-延迟预览
+            /// </summary>
+            public byte byPreviewMode;
+
+            /// <summary>
+            /// 流ID，为字母、数字和"_"的组合，lChannel为0xffffffff时启用此参数
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = STREAM_ID_LEN, ArraySubType = UnmanagedType.I1)]
-            public byte[] byStreamID;//流ID，lChannel为0xffffffff时启用此参数
-            public byte byProtoType; //应用层取流协议，0-私有协议，1-RTSP协议
+            public byte[] byStreamID;
+
+            /// <summary>
+            /// 应用层取流协议：0- 私有协议，1- RTSP协议。主子码流支持的取流协议通过登录返回结构参数NET_DVR_DEVICEINFO_V30的byMainProto、bySubProto值得知。设备同时支持私协议和RTSP协议时，该参数才有效，默认使用私有协议，可选RTSP协议。
+            /// </summary>
+            public byte byProtoType;
+
+            /// <summary>
+            /// 保留，置为0
+            /// </summary>
             public byte byRes1;
-            public byte byVideoCodingType; //码流数据编解码类型 0-通用编码数据 1-热成像探测器产生的原始数据（温度数据的加密信息，通过去加密运算，将原始数据算出真实的温度值）
-            public uint dwDisplayBufNum; //播放库播放缓冲区最大缓冲帧数，范围1-50，置0时默认为1
-            public byte byNPQMode;	//NPQ是直连模式，还是过流媒体 0-直连 1-过流媒体
+
+            /// <summary>
+            /// 码流数据编解码类型 0-通用编码数据 1-热成像探测器产生的原始数据（温度数据的加密信息，通过去加密运算，将原始数据算出真实的温度值）
+            /// </summary>
+            public byte byVideoCodingType;
+
+            /// <summary>
+            /// 播放库播放缓冲区最大缓冲帧数，取值范围：1、6（默认，自适应播放模式）、15，置0时默认为1
+            /// </summary>
+            public uint dwDisplayBufNum;
+
+            /// <summary>
+            /// NPQ是直连模式，还是过流媒体 0-直连 1-过流媒体
+            /// </summary>
+            public byte byNPQMode;
+
+            /// <summary>
+            /// 保留，置为0
+            /// </summary>
             [MarshalAsAttribute(UnmanagedType.ByValArray, SizeConst = 215, ArraySubType = UnmanagedType.I1)]
             public byte[] byRes;
         }

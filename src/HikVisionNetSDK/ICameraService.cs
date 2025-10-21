@@ -1,10 +1,9 @@
-﻿using System;
+﻿using HikVisionNetSDK.Enums;
+using HikVisionNetSDK.Models;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using HikVisionNetSDK.Enums;
-using HikVisionNetSDK.Models;
 
 namespace HikVisionNetSDK
 {
@@ -25,7 +24,7 @@ namespace HikVisionNetSDK
         /// <summary>
         /// 截图。
         /// </summary>
-        OResult<Byte[]> CapturePicture();
+        OResult<Byte[]> CapturePicture(ushort wPicSize = 0xff, ushort wPicQuality = 0);
         /// <summary>
         /// 打开预览。
         /// </summary>

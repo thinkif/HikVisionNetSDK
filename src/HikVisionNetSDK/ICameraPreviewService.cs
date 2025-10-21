@@ -23,5 +23,10 @@ namespace HikVisionNetSDK
         /// 关闭实时预览。
         /// </summary>
         OResult<Boolean> Close();
+        /// <summary>
+        /// 实时预览抓图。
+        /// </summary>
+        /// <param name="filePath">图片保存路径</param>
+        OResult<Boolean> CapturePicture(String filePath);
     }
 }

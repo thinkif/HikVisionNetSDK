@@ -1,4 +1,4 @@
-﻿using HikVisionNetSDK.Common;
+using HikVisionNetSDK.Common;
 using HikVisionNetSDK.Enums;
 using HikVisionNetSDK.Models;
 using System;
@@ -19,6 +19,68 @@ namespace HikVisionNetSDK.Services
         private CameraLoginRequest _loginRequest;
         private Int32 _userId = -1;
         private CHCNetSDK.NET_DVR_DEVICEINFO_V40 _deviceInfo;
+
+        private static readonly object locker = new object();
+
+        // Win32 API 用于创建隐藏窗口
+        private static class Win32
+        {
+            public const int WS_POPUP = unchecked((int)0x80000000);
+            public const int WS_EX_TOOLWINDOW = 0x00000080;
+
+            [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern IntPtr CreateWindowEx(
+                int dwExStyle,
+                string lpClassName,
+                string lpWindowName,
+                int dwStyle,
+                int x, int y, int nWidth, int nHeight,
+                IntPtr hWndParent,
+                IntPtr hMenu,
+                IntPtr hInstance,
+                IntPtr lpParam);
+
+            [DllImport("user32.dll", SetLastError = true)]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool DestroyWindow(IntPtr hWnd);
+
+            [DllImport("user32.dll", SetLastError = true)]
+            public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+            [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+            public static extern IntPtr GetModuleHandle(string lpModuleName);
+        }
+
+        private static IntPtr CreateHiddenWindow()
+        {
+            var hInstance = Win32.GetModuleHandle(null);
+            // 使用预定义的 STATIC 类创建一个1x1的隐藏窗口
+            var hwnd = Win32.CreateWindowEx(
+                Win32.WS_EX_TOOLWINDOW,
+                "STATIC",
+                "HK_HiddenWnd",
+                Win32.WS_POPUP,
+                0, 0, 1, 1,
+                IntPtr.Zero,
+                IntPtr.Zero,
+                hInstance,
+                IntPtr.Zero);
+
+            if (hwnd != IntPtr.Zero)
+            {
+                Win32.ShowWindow(hwnd, 0); // SW_HIDE
+            }
+
+            return hwnd;
+        }
+
+        private static void DestroyHiddenWindow(IntPtr hwnd)
+        {
+            if (hwnd != IntPtr.Zero)
+            {
+                try { Win32.DestroyWindow(hwnd); } catch { }
+            }
+        }
 
         public CameraService()
         {
@@ -48,7 +110,7 @@ namespace HikVisionNetSDK.Services
                 struLogInfo.cbLoginResult = new CHCNetSDK.LOGINRESULTCALLBACK(LoginCallBack);
                 struLogInfo.bUseAsynLogin = false;
 
-                // 登录模式(不同模式具体含义详见“Remarks”说明)：0- SDK私有协议，1- ISAPI协议
+                // 登录模式(不同模式具体含义详见"Remarks"说明)：0- SDK私有协议，1- ISAPI协议
                 // 设备登录模式有两种：SDK私有协议和ISAPI协议。
                 // 1) SDK私有协议是我司私有的TCP / IP协议，登录使用的是设备服务端口（默认为8000），我司网络设备除特殊产品外基本都支持该协议方式登录，因此一般建议使用SDK私有协议模式登录。
                 // 2) ISAPI协议是基于标准HTTP REST架构，HTTP协议或者HTTPS协议访问设备，登录使用的是设备HTTP端口（默认为80）或者HTTPS端口（默认为443）。不支持SDK私有协议的设备如猎鹰、刀锋等采用ISAPI协议的方式登录。
@@ -72,7 +134,19 @@ namespace HikVisionNetSDK.Services
             }
         }
 
-        public OResult<Byte[]> CapturePicture()
+        /// <summary>
+        /// 抓图（无播放窗口句柄时使用设备直连抓图）。
+        /// </summary>
+        /// <param name="wPicSize">
+        /// 注意：当图像压缩分辨率为VGA时，支持0=CIF, 1=QCIF, 2=D1抓图，
+        // 当分辨率为3=UXGA(1600x1200), 4=SVGA(800x600), 5=HD720p(1280x720),6=VGA,7=XVGA, 8=HD900p 仅支持当前分辨率的抓图
+        /// 图片尺寸：0-CIF(352*288/352*240)，1-QCIF(176*144/176*120)，2-4CIF(704*576/704*480)或D1(720*576/720*486)，3-UXGA(1600*1200)， 4-SVGA(800*600)，5-HD720P(1280*720)，6-VGA(640*480)，7-XVGA(1280*960)，8-HD900P(1600*900)，9-HD1080P(1920*1080)，10-2560*1920， 11-1600*304，12-2048*1536，13-2448*2048，14-2448*1200，15-2448*800，16-XGA(1024*768)，17-SXGA(1280*1024)，18-WD1(960*576/960*480), 19-1080I(1920*1080)，20-576*576，21-1536*1536，22-1920*1920，23-320*240，24-720*720，25-1024*768，26-1280*1280，27-1600*600， 28-2048*768，29-160*120，75-336*256，78-384*256，79-384*216，80-320*256，82-320*192，83-512*384，127-480*272，128-512*272， 161-288*320，162-144*176，163-480*640，164-240*320，165-120*160，166-576*720，167-720*1280，168-576*960，180-180*240, 181-360*480, 182-540*720, 183-720*960, 184-960*1280, 185-1080*1440, 500-384*288, 0xff-Auto(使用当前码流分辨率)
+        /// 抓图分辨率需要设备支持
+        /// </param>
+        /// <param name="wPicQuality">图片质量系数：0-最好，1-较好，2-一般</param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public OResult<Byte[]> CapturePicture(ushort wPicSize = 0xff, ushort wPicQuality = 0)
         {
             if (_userId < 0)
             {
@@ -81,20 +155,14 @@ namespace HikVisionNetSDK.Services
 
             try
             {
-                //图片保存路径和文件名
-                //var picFileName = $"User_{_userId}_{DateTimeHelper.GetTimestamp()}.jpg";
+                // 设备直连抓图（分辨率取决于设备配置，wPicSize=0xff 使用当前码流分辨率）
+                CHCNetSDK.NET_DVR_JPEGPARA lpJpegPara = new CHCNetSDK.NET_DVR_JPEGPARA
+                {
+                    wPicQuality = wPicQuality,
+                    wPicSize = wPicSize
+                };
 
-                CHCNetSDK.NET_DVR_JPEGPARA lpJpegPara = new CHCNetSDK.NET_DVR_JPEGPARA();
-                lpJpegPara.wPicQuality = 0; //图像质量 Image quality
-                lpJpegPara.wPicSize = 0xff; //抓图分辨率 Picture size: 2- 4CIF，0xff- Auto(使用当前码流分辨率)，抓图分辨率需要设备支持，更多取值请参考SDK文档
-
-                //var captureSucc = CHCNetSDK.NET_DVR_CaptureJPEGPicture(_userId, _loginRequest.ChannelNo, ref lpJpegPara, picFileName);
-                //if (!captureSucc)
-                //{
-                //    return new OResult<Byte[]>(null, $"抓图失败：{GetLastErrorCode()}");
-                //}
-
-                UInt32 iBuffSize = 10 * 1024 * 1024; //缓冲区大小需要不小于一张图片数据的大小 The buffer size should not be less than the picture size
+                UInt32 iBuffSize = 10 * 1024 * 1024; //缓冲区大小不小于一张图片数据大小
                 Byte[] byJpegPicBuffer = new Byte[iBuffSize];
                 UInt32 dwSizeReturned = 0;
 
@@ -106,14 +174,126 @@ namespace HikVisionNetSDK.Services
                 }
 
                 var data = new Byte[dwSizeReturned];
-
                 Buffer.BlockCopy(byJpegPicBuffer, 0, data, 0, data.Length);
-
                 return new OResult<Byte[]>(data);
             }
             catch (Exception ex)
             {
                 return new OResult<Byte[]>(null, ex);
+            }
+        }
+
+        /// <summary>
+        /// 保存抓图到文件，如果隐藏窗口模式抓图失败，是否自动更改位设备SDK抓图（SDK抓图可能只会使用子码流）（优先使用主码流：创建隐藏窗口 -> 实时预览 -> 播放库抓图；失败则回退到设备抓图）。
+        /// </summary>
+        /// <param name="filePath">图片输出路径</param>
+        /// <param name="isAutoWhenError">如果隐藏窗口模式抓图失败，是否自动更改位设备SDK抓图（SDK抓图可能只会使用子码流）</param>
+        /// <returns></returns>
+        public OResult<bool> CapturePicture(string filePath, bool isAutoWhenError)
+        {
+            if (_userId < 0)
+            {
+                return new OResult<bool>(false, "用户未登录");
+            }
+
+            OResult<bool> captureResult = new OResult<bool>(false);
+            lock (locker)
+            {
+                ICameraPreviewService previewService = null;
+                IntPtr hwnd = IntPtr.Zero;
+                try
+                {
+                    // 1) 创建隐藏窗口，确保传入非空播放句柄
+                    hwnd = CreateHiddenWindow();
+                    if (hwnd != IntPtr.Zero)
+                    {
+                        // 2) 打开主码流实时预览
+                        var previewResult = OpenPreview(hwnd, StreamType.Main);
+                        if (previewResult.Success)
+                        {
+                            previewService = previewResult.Value;
+                            Thread.Sleep(1000); // 等待预览稳定
+                            // 3) 使用播放库抓图（NET_DVR_CapturePicture）
+                            captureResult = previewService.CapturePicture(filePath);
+                            if (captureResult.Success)
+                            {
+                                return captureResult;
+                            }
+                        }
+                    }
+
+                    if (String.IsNullOrWhiteSpace(captureResult.Message))
+                    {
+                        captureResult = new OResult<bool>(false, $"隐藏窗口抓图失败 {hwnd}");
+                    }
+                }
+                finally
+                {
+                    try { previewService?.Close(); } catch { }
+                    if (previewService != null) { _previewServices.Remove(previewService); }
+                    DestroyHiddenWindow(hwnd);
+                }
+            }
+
+            if (isAutoWhenError)
+            {
+                try
+                {
+                    // 回退方案：使用设备直连抓图并写文件
+                    var bytesResult = CapturePicture();
+                    if (!bytesResult.Success || bytesResult.Value == null)
+                    {
+                        return new OResult<bool>(false, bytesResult.ErrorCode, bytesResult.Message);
+                    }
+
+                    var dir = System.IO.Path.GetDirectoryName(filePath);
+                    if (!string.IsNullOrEmpty(dir))
+                    {
+                        System.IO.Directory.CreateDirectory(dir);
+                    }
+                    System.IO.File.WriteAllBytes(filePath, bytesResult.Value);
+                    return new OResult<bool>(true);
+                }
+                catch (Exception ex)
+                {
+                    return new OResult<bool>(false, ex);
+                }
+            }
+
+            return captureResult;
+        }
+
+        /// <summary>
+        /// 【给winform使用】使用播放窗口句柄抓图（需要非空 hPlayWnd，主码流清晰）。
+        /// </summary>
+        public OResult<bool> CapturePicture(IntPtr hPlayWnd, string filePath, StreamType streamType = StreamType.Main)
+        {
+            if (_userId < 0)
+            {
+                return new OResult<bool>(false, "用户未登录");
+            }
+
+            if (hPlayWnd == IntPtr.Zero)
+            {
+                return new OResult<bool>(false, "抓图需要非空的播放窗口句柄");
+            }
+
+            var previewResult = OpenPreview(hPlayWnd, streamType);
+            if (!previewResult.Success)
+            {
+                return new OResult<bool>(false, previewResult.ErrorCode, previewResult.Message);
+            }
+
+            var previewService = previewResult.Value;
+            try
+            {
+                var captureResult = previewService.CapturePicture(filePath);
+                return captureResult;
+            }
+            finally
+            {
+                try { previewService.Close(); } catch { }
+                _previewServices.Remove(previewService);
             }
         }
 

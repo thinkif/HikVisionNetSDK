@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -149,7 +149,7 @@ namespace HikVisionNetSDK.Services
                 lpPreviewInfo.dwLinkMode = 0;       //连接方式：0-TCP方式，1-UDP方式，2-多播方式，3-RTP方式，4-RTP/RTSP，5-RSTP/HTTP 
                 lpPreviewInfo.bBlocked = true;      //0-非阻塞取流，1-阻塞取流
                 lpPreviewInfo.dwDisplayBufNum = 15;  //播放库播放缓冲区最大缓冲帧数
-                lpPreviewInfo.byProtoType = 0;
+                lpPreviewInfo.byProtoType = 1;
                 lpPreviewInfo.byPreviewMode = 0;
 
 
@@ -160,6 +160,41 @@ namespace HikVisionNetSDK.Services
                 }
 
                 _inRealPlay = true;
+
+                return new OResult<Boolean>(true);
+            }
+            catch (Exception ex)
+            {
+                return new OResult<Boolean>(false, ex);
+            }
+        }
+
+        public OResult<Boolean> CapturePicture(String filePath)
+        {
+            if (_userId < 0)
+            {
+                return new OResult<Boolean>(false, "用户未登录");
+            }
+
+            if (!_inRealPlay)
+            {
+                return new OResult<Boolean>(false, "未开启预览");
+            }
+
+            try
+            {
+                var captureSucc = CHCNetSDK.NET_DVR_CapturePictureBlock(_realHandle, filePath, 0);
+
+                if (!captureSucc)
+                {
+                    //尝试使用另一种抓图方式
+                    captureSucc = CHCNetSDK.NET_DVR_CapturePicture(_realHandle, filePath);
+                }
+
+                if (!captureSucc)
+                {
+                    return new OResult<Boolean>(false, HkvsErrorCode.GetLastErrorCode(), $"抓图失败：{HkvsErrorCode.GetLastErrorMessage()}");
+                }
 
                 return new OResult<Boolean>(true);
             }
